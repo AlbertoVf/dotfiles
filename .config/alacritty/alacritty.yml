@@ -1,0 +1,36 @@
+import:
+  - ~/.config/alacritty/dracula.yml
+background_opacity: 0.95
+
+font:
+  bold:
+    family: Anonymice Nerd Font
+  italic:
+    family: Anonymice Nerd Font
+  normal:
+    family: Anonymice Nerd Font
+  size: 10
+
+scrolling:
+    history: 200
+mouse:
+    hide_when_typing: true
+draw_bold_text_with_bright_colors: true
+
+window:
+  dynamic_padding: true
+  padding:
+    x: 8
+    y: 8
+
+
+cursor:
+  style: Underline
+  unfocused_hollow: true
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste}
+  - { key: C, mods: Control|Shift, action: Copy}
+  - { key: Numpad0, mods: Control, action: ResetFontSize}
