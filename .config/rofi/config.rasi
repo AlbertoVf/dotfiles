@@ -1,0 +1,12 @@
+configuration {
+    modi: "window,run,ssh,file-browser-extended,drun";
+    display-window: "类 ";
+    display-run: " ";
+    display-ssh:" ";
+    display-file-browser-extended:" ";
+    display-drun:" ";
+    show-icons: true;
+    font: "Courier Prime 16";
+    display-format: "{icon} {name}";
+}
+@import "/usr/share/rofi/themes/Arc-Dark-Crimson.rasi"
