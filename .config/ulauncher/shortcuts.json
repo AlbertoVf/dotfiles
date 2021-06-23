@@ -1,0 +1,192 @@
+{
+    "86b79dd3-1a86-4500-971f-8b490f3d8de0": {
+        "id": "86b79dd3-1a86-4500-971f-8b490f3d8de0",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "~/.config/ulauncher/icons/google.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1619302703.2064755
+    },
+    "3850e928-8280-4f0e-aadf-b1cfb66870fa": {
+        "id": "3850e928-8280-4f0e-aadf-b1cfb66870fa",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "http://stackoverflow.com/search?q=%s",
+        "icon": "~/.config/ulauncher/icons/stackoverflow-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1619302703.206506
+    },
+    "e3e456b5-6a0c-4a65-be48-cfc7ca8103c2": {
+        "id": "e3e456b5-6a0c-4a65-be48-cfc7ca8103c2",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "~/.config/ulauncher/icons/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1619302703.2065248
+    },
+    "2569cb34-2980-4075-8e1b-ed5df0b2ffec": {
+        "id": "2569cb34-2980-4075-8e1b-ed5df0b2ffec",
+        "name": "Amazon",
+        "keyword": "amazon",
+        "cmd": "https://www.amazon.com/s?k=%s",
+        "icon": "~/.config/ulauncher/icons/amazon-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619340974.4842262
+    },
+    "b5caa0b8-5c90-4dfc-b829-196a720823fd": {
+        "id": "b5caa0b8-5c90-4dfc-b829-196a720823fd",
+        "name": "Arch Aur",
+        "keyword": "aur",
+        "cmd": "https://aur.archlinux.org/packages/?O=0&K=%s",
+        "icon": "~/.config/ulauncher/icons/arch-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341439.4467828
+    },
+    "69c7001e-95c3-4f78-b1c4-1db98e456231": {
+        "id": "69c7001e-95c3-4f78-b1c4-1db98e456231",
+        "name": "Arch Pkg",
+        "keyword": "pkg",
+        "cmd": "https://archlinux.org/packages/?sort=&q=%s",
+        "icon": "~/.config/ulauncher/icons/arch-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341466.6813743
+    },
+    "fb56d956-7316-4625-9c24-120b3f1033bf": {
+        "id": "fb56d956-7316-4625-9c24-120b3f1033bf",
+        "name": "Arch Wiki",
+        "keyword": "arch",
+        "cmd": "https://wiki.archlinux.org/index.php?search=%s",
+        "icon": "~/.config/ulauncher/icons/archlogo-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341489.797985
+    },
+    "45c75422-ae14-4555-bdeb-cc353ab8157f": {
+        "id": "45c75422-ae14-4555-bdeb-cc353ab8157f",
+        "name": "Duck Duck Go",
+        "keyword": "duck",
+        "cmd": "https://duckduckgo.com/?q=%s",
+        "icon": "~/.config/ulauncher/icons/duck-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341545.7384253
+    },
+    "8496a91c-0662-407b-bab8-68feabef76d0": {
+        "id": "8496a91c-0662-407b-bab8-68feabef76d0",
+        "name": "Ebay",
+        "keyword": "ebay",
+        "cmd": "https://www.ebay.com/sch/i.html?&_nkw=%s",
+        "icon": "~/.config/ulauncher/icons/ebay-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341562.3973794
+    },
+    "20b9a447-8d94-42be-b0ec-10dbe7f1f1a2": {
+        "id": "20b9a447-8d94-42be-b0ec-10dbe7f1f1a2",
+        "name": "GitHub",
+        "keyword": "github",
+        "cmd": "https://github.com/search?q=%s",
+        "icon": "~/.config/ulauncher/icons/github-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341581.043163
+    },
+    "cfa5378a-5c53-42dd-b350-927b6c6f500a": {
+        "id": "cfa5378a-5c53-42dd-b350-927b6c6f500a",
+        "name": "Git Lab",
+        "keyword": "gitlab",
+        "cmd": "https://gitlab.com/search?search=%s",
+        "icon": "~/.config/ulauncher/icons/gitlab-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341598.9179122
+    },
+    "5faf0158-8611-404d-815f-ece8a70001b8": {
+        "id": "5faf0158-8611-404d-815f-ece8a70001b8",
+        "name": "IMDB",
+        "keyword": "imdb",
+        "cmd": "https://www.imdb.com/find?q=%s",
+        "icon": "~/.config/ulauncher/icons/imdb-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341623.316803
+    },
+    "fcbe0bea-414e-4661-a7ee-1d691ce9d7d2": {
+        "id": "fcbe0bea-414e-4661-a7ee-1d691ce9d7d2",
+        "name": "Reddit",
+        "keyword": "reddit",
+        "cmd": "https://www.reddit.com/search/?q=%s",
+        "icon": "~/.config/ulauncher/icons/reddit-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341726.4327211
+    },
+    "59b9c87c-eadb-4c30-b24c-22c4957d9c18": {
+        "id": "59b9c87c-eadb-4c30-b24c-22c4957d9c18",
+        "name": "Source Forge",
+        "keyword": "sf",
+        "cmd": "https://sourceforge.net/directory/?q=%s",
+        "icon": "~/.config/ulauncher/icons/sourceforge-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341745.5967326
+    },
+    "8c390592-fc9a-4c53-bf5d-a412c30609f5": {
+        "id": "8c390592-fc9a-4c53-bf5d-a412c30609f5",
+        "name": "Translate",
+        "keyword": "translate",
+        "cmd": "https://translate.google.com/?sl=auto&tl=es&text=%s",
+        "icon": "~/.config/ulauncher/icons/translate-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341765.820946
+    },
+    "6841d609-1527-441c-9614-06f477509d63": {
+        "id": "6841d609-1527-441c-9614-06f477509d63",
+        "name": "You Tube",
+        "keyword": "youtube",
+        "cmd": "https://www.youtube.com/results?search_query=%s",
+        "icon": "~/.config/ulauncher/icons/youtube-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619341789.8984056
+    },
+    "46cc5e9a-7eca-4821-90cb-9745cece8b86": {
+        "id": "46cc5e9a-7eca-4821-90cb-9745cece8b86",
+        "name": "Iconfinder",
+        "keyword": "icon",
+        "cmd": "https://www.iconfinder.com/search/?q=%s&price=free",
+        "icon": "~/.config/ulauncher/icons/iconfinder-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1619343758.7492418
+    },
+    "7dfa2d18-f3ad-44bd-a557-6401e7aa5f6b": {
+        "id": "7dfa2d18-f3ad-44bd-a557-6401e7aa5f6b",
+        "name": "snapcraft",
+        "keyword": "snap",
+        "cmd": "https://snapcraft.io/search?q=%s",
+        "icon": "~/.config/ulauncher/icons/snap.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1622476718.233184
+    },
+    "830502cd-6513-46c2-a4dc-274139657943": {
+        "id": "830502cd-6513-46c2-a4dc-274139657943",
+        "name": "Twitter",
+        "keyword": "twitter",
+        "cmd": "https://twitter.com/%s",
+        "icon": "~/.config/ulauncher/icons/twitter-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1623246975.5424702
+    }
+}
