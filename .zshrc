@@ -123,4 +123,9 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 
 # DOTFILES
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
+alias dota='dotfiles add'
+alias dotl='dotfiles log --graph'
+alias dotlg='dotfiles log --stat'
+alias dotc='dotfiles commit -m'
+alias dotp='dotfiles push'
+alias dotst='dotfiles status'
