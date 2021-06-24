@@ -56,7 +56,7 @@
   "C_Cpp.intelliSenseEngine": "Disabled",
   "[c]": { "editor.defaultFormatter": "ms-vscode.cpptools" },
   "kite.showWelcomeNotificationOnStartup": false,
-  "sqltools.connections": [ ],
+  "sqltools.connections": [],
   "[shellscript]": { "editor.defaultFormatter": "shakram02.bash-beautify" },
   "workbench.colorTheme": "Dracula",
   "window.closeWhenEmpty": true,
