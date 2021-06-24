@@ -52,7 +52,7 @@ keys = [
         [],
         "Print",
         lazy.spawn(
-            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'"
+            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"
         ),
     ),
     # MULTIMEDIA KEYS

@@ -49,7 +49,7 @@ alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR 
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 
 # Dotfiles alias
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME'
 alias dota='dotfiles add'
 alias dotl='dotfiles log --graph'
 alias dotlg='dotfiles log --stat'
