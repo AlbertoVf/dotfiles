@@ -48,13 +48,10 @@ keys = [
     Key(["mod1"], "F5", lazy.spawn("rofi -show run")),
     Key(["mod1"], "Print", lazy.spawn("xfce4-screenshooter")),
     # SCREENSHOTS
-    Key(
-        [],
-        "Print",
+    Key([], "Print",
         lazy.spawn(
-            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"
+            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"),
         ),
-    ),
     # MULTIMEDIA KEYS
     # INCREASE/DECREASE BRIGHTNESS
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
@@ -67,17 +64,12 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
+]
+
+keys.extend([
     # Switch focus of monitors
-    Key(
-        [mod],
-        "period",
-        lazy.next_screen(),
-    ),
-    Key(
-        [mod],
-        "comma",
-        lazy.prev_screen(),
-    ),
+    Key([mod], "period", lazy.next_screen(), ),
+    Key([mod], "comma", lazy.prev_screen(), ),
     # Change Window to specific monitor
     Key([mod, "shift"], "period", lazy.to_screen(0)),
     Key([mod, "shift"], "comma", lazy.to_screen(1)),
@@ -98,70 +90,54 @@ keys = [
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
     # RESIZE UP, DOWN, LEFT, RIGHT
-    Key(
-        [mod, "control"],
-        "l",
+    Key([mod, "control"], "l",
         lazy.layout.grow_right(),
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
-    ),
-    Key(
-        [mod, "control"],
-        "Right",
+        ),
+    Key([mod, "control"], "Right",
         lazy.layout.grow_right(),
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
-    ),
-    Key(
-        [mod, "control"],
-        "h",
+        ),
+    Key([mod, "control"], "h",
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
-    ),
-    Key(
-        [mod, "control"],
-        "Left",
+        ),
+    Key([mod, "control"], "Left",
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
-    ),
-    Key(
-        [mod, "control"],
-        "k",
+        ),
+    Key([mod, "control"], "k",
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
         lazy.layout.section_up(),
-    ),
-    Key(
-        [mod, "control"],
-        "Up",
+        ),
+    Key([mod, "control"], "Up",
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
         lazy.layout.section_up(),
-    ),
-    Key(
-        [mod, "control"],
-        "j",
+        ),
+    Key([mod, "control"], "j",
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
         lazy.layout.section_down(),
-    ),
-    Key(
-        [mod, "control"],
-        "Down",
+        ),
+    Key([mod, "control"], "Down",
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
         lazy.layout.section_down(),
-    ),
+        ),
     # FLIP LAYOUT FOR BSP
     Key([mod, "mod1"], "k", lazy.layout.flip_up()),
     Key([mod, "mod1"], "j", lazy.layout.flip_down()),
@@ -170,18 +146,26 @@ keys = [
     # MOVE WINDOWS UP OR DOWN BSP LAYOUT
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
-        lazy.layout.swap_left()),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
-        lazy.layout.swap_right()),
+    Key([mod, "shift"], "h",
+        lazy.layout.shuffle_left(),
+        lazy.layout.swap_left()
+        ),
+    Key([mod, "shift"], "l",
+        lazy.layout.shuffle_right(),
+        lazy.layout.swap_right()
+        ),
     # MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "Left", lazy.layout.swap_left(),
-        lazy.layout.shuffle_left()),
-    Key([mod, "shift"], "Right", lazy.layout.swap_right(),
-        lazy.layout.shuffle_right()),
-]
+    Key([mod, "shift"], "Left",
+        lazy.layout.swap_left(),
+        lazy.layout.shuffle_left()
+        ),
+    Key([mod, "shift"], "Right",
+        lazy.layout.swap_right(),
+        lazy.layout.shuffle_right()
+        ),
+])
 
 for i in groups:
     keys.extend([

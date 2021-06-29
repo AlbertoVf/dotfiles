@@ -1,14 +1,14 @@
 # Dotfiles
 
-
-
 [Dotfiles Tutorial](https://www.atlassian.com/git/tutorials/dotfiles)
 
 ## External repository
 
-[Wallpappers](https://gitlab.com/AlbertoVf1/wallpapers)
+[Instalacion de programas](https://gitlab.com/snippets/2135457.git)
 
-[qtile](https://gitlab.com/AlbertoVf1/qtile)
+[Wallpapers](https://gitlab.com/AlbertoVf1/wallpapers)
+
+[Qtile](https://gitlab.com/AlbertoVf1/qtile)
 
 ## Start your dotfiles repository
 

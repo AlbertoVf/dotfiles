@@ -98,25 +98,29 @@ function extract {
   fi
 }
 
-# Youtube-dl alias
-function yt {
-  ruta="$(xdg-user-dir DOWNLOAD)/"
-  metadata="--embed-thumbnail --add-metadata"
-  extract=" --extract-audio --audio-quality 0 --audio-format"
 
-  file="-o $ruta'%(title)s.%(ext)s' --no-playlist"
-  list="-o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-  list2="-o $ruta'%(playlist)s/%(title)s.%(ext)s'"
-  case "$1" in
-    "conf") $EDITOR "~/.config/youtube-dl/config";;  # editor
-    "aac"| "flac" | "m4a" | "mp3" | "opus" | "vorbis" | "wav") youtube-dl $file $metadata $extract $1;; # audio
-    "mp4" | "webm") youtube-dl $file --add-metadata -f $1;; # video
-    "all") youtube-dl -o '$ruta%(title)s/%(title)s.%(ext)s' -f 'mp4,m4a' $metadata --no-playlist;; # audio + video
-    "video-list") youtube-dl $list --add-metadata -f mp4;; # playlist video
-    "audio-list") youtube-dl $list $metadata $extract mp3;; # playlist audio
-    "list") youtube-dl -o '$ruta%(title)s/%(playlist_index)s - %(title)s.%(ext)s' --add-metadata -f 'mp4,m4a';; # playlist audio + video
-    "video-unlist") youtube-dl $list2 --add-metadata -f mp4;; # playlist - unorder videos
-    "audio-unlist") youtube-dl $list2 $metadata $extract mp3;; # playlist - unorder audio
-    "unlist") youtube-dl -o '$ruta%(title)s/%(title)s.%(ext)s' --add-metadata -f 'mp4,m4a';; # playlist - unorder
-  esac
-}
+# Toutube-dl alias
+ruta="$(xdg-user-dir DOWNLOAD)/"
+metadata="--embed-thumbnail --add-metadata"
+extract="--extract-audio --audio-quality 0 --audio-format"
+file="-o $ruta'%(title)s.%(ext)s' --no-playlist"
+list="-o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+list2="-o $ruta'%(playlist)s/%(title)s.%(ext)s'"
+
+# youtube audio
+alias yt-mp3="youtube-dl $file $metadata $extract mp3"
+alias yt-m4a="youtube-dl $file $metadata $extract m4a"
+alias yt-aac="youtube-dl $file $metadata $extract aac"
+alias yt-flac="youtube-dl $file $metadata $extract flac"
+# youtube video
+alias yt-mp4="youtube-dl $file --add-metadata -f mp4"
+alias yt-all="youtube-dl -o '$ruta%(title)s/%(title)s.%(ext)s' -f 'mp4,m4a' $metadata --no-playlist" # audio + video
+# youtube playlist
+alias yt-video-list="youtube-dl $list --add-metadata -f mp4" # playlist video
+alias yt-audio-list="youtube-dl $list $metadata $extract mp3" # playlist audio
+alias yt-all-list="youtube-dl -o '$ruta%(title)s/%(playlist_index)s - %(title)s.%(ext)s' --add-metadata -f 'mp4,m4a'"
+alias yt-video-unlist="youtube-dl $list2 --add-metadata -f mp4"
+alias yt-audio-unlist="youtube-dl $list2 $metadata $extract mp3"
+alias yt-all-unlist="youtube-dl -o '$ruta%(title)s/%(title)s.%(ext)s' --add-metadata -f 'mp4,m4a'"
+
+alias yt-conf=$EDITOR "~/.config/youtube-dl/config" # editor
