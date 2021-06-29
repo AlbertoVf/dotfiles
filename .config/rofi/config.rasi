@@ -6,7 +6,7 @@ configuration {
     display-file-browser-extended:" ";
     display-drun:" ";
     show-icons: true;
-    font: "Courier Prime 16";
+    font: "CaskaydiaCove Nerd Font Bold 14";
     display-format: "{icon} {name}";
 }
-@import "/usr/share/rofi/themes/Arc-Dark-Crimson.rasi"
+@import "/usr/share/rofi/themes/Arc-Dark.rasi"
