@@ -40,42 +40,16 @@ def init_widgets_list():
             foreground=colors["focus"],
         ),
         widget.CapsNumLockIndicator(
-            fmt="[ {} ]",
-            foreground=colors["color4"],
+            fmt="[ {} ",
+            foreground=colors["color3"],
             backgound=colors["dark"]
         ),
-        widget.Clock(
-            format="[ %c ]",
-            mouse_callbacks={
-                "Button1":
-                lambda: qtile.cmd_spawn("evolution --component=calendar")
-            },
-            foreground=colors["color3"],
-            background=colors["dark"],
-        ),
-        widget.Net(
-            format="[ Up:{up}  Down:{down}",
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn("nm-connection-editor"),
-            },
-            foreground=colors["color2"],
-        ),
-        separator(fg=colors["color2"], size=30),
-        widget.CheckUpdates(
-            distro="Arch",
-            custom_command="pacman -Qu",
-            update_interval=1800,
-            execute=f"{terminal} -e sudo pacman -Syu",
-            display_format='Updates: {updates} ]',
-            no_update_string="Updates: 0 ]",
-            colour_no_updates=colors["color2"],
-            colour_have_updates=colors["color2"],
-        ),
+        separator(fg=colors["color3"], size=30),
         widget.Volume(
-            fmt="[ Vol: {}",
-            foreground=colors["color1"],
+            fmt=" Vol: {}",
+            foreground=colors["color3"],
         ),
-        separator(fg=colors["color1"], size=30),
+        separator(fg=colors["color3"], size=30),
         widget.Battery(
             format="Bat: {percent:2.0%} ]",
             mouse_callbacks={
@@ -85,7 +59,34 @@ def init_widgets_list():
                 "Button3": lambda: qtile.cmd_spawn("xfce4-taskmanager"),
             },
             update_interval=10,
+            foreground=colors["color3"],
+        ),
+        widget.Clock(
+            format="[ %c ]",
+            mouse_callbacks={
+                "Button1":
+                lambda: qtile.cmd_spawn("evolution --component=calendar")
+            },
+            foreground=colors["color2"],
+            background=colors["dark"],
+        ),
+        widget.Net(
+            format="[ Up:{up}  Down:{down}",
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn("nm-connection-editor"),
+            },
             foreground=colors["color1"],
+        ),
+        separator(fg=colors["color1"], size=30),
+        widget.CheckUpdates(
+            distro="Arch",
+            custom_command="pacman -Qu",
+            update_interval=1800,
+            execute=f"{terminal} -e sudo pacman -Syu",
+            display_format='Updates: {updates} ]',
+            no_update_string="Updates: 0 ]",
+            colour_no_updates=colors["color1"],
+            colour_have_updates=colors["color1"],
         ),
         systray(),
     ]
@@ -104,7 +105,7 @@ def init_widgets_list01():
         separator(),
         widget.Clock(
             format="[ %c ]",
-            foreground=colors["color3"],
+            foreground=colors["color1"],
             background=colors["dark"],
         ),
     ]

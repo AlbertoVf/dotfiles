@@ -6,7 +6,7 @@ configuration {
     display-file-browser-extended:" ";
     display-drun:" ";
     show-icons: true;
-    font: "CaskaydiaCove Nerd Font Bold 14";
+    font: "Anonymice Nerd Font Bold 14";
     display-format: "{icon} {name}";
 }
 @import "/usr/share/rofi/themes/Arc-Dark.rasi"
