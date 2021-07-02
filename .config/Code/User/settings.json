@@ -65,5 +65,16 @@
   "[scss]": { "editor.suggest.insertMode": "replace", "gitlens.codeLens.scopes": ["document"], },
   "redhat.telemetry.enabled": true,
   "timeline.excludeSources": [],
-  "sqltools.useNodeRuntime": true
+  "sqltools.useNodeRuntime": true,
+  "[html]": {
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  },
+  "html.format.indentInnerHtml": true,
+  "html.format.templating": true,
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
 }
