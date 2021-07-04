@@ -65,7 +65,7 @@ def init_widgets_list():
             format="[ %c ]",
             mouse_callbacks={
                 "Button1":
-                lambda: qtile.cmd_spawn("evolution --component=calendar")
+                lambda: qtile.cmd_spawn("gnome-calendar")
             },
             foreground=colors["color2"],
             background=colors["dark"],

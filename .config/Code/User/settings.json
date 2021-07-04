@@ -76,5 +76,15 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  }
+  },
+  "workbench.preferredDarkColorTheme": "Dracula",
+  "workbench.preferredLightColorTheme": "GitHub Plus",
+  "markdown.preview.typographer": true,
+  "bashBeautify.tabSize": 2,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.executeInFileDir": true,
+  "files.autoGuessEncoding": true,
+  "scss.lint.duplicateProperties": "warning",
+  "less.lint.duplicateProperties": "warning",
+  "css.lint.duplicateProperties": "warning"
 }

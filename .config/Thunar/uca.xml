@@ -85,12 +85,21 @@
 	<image-files/>
 </action>
 <action>
-	<icon>imagemagick</icon>
+	<icon>image-x-generic</icon>
 	<name>Convert png to jpg</name>
 	<unique-id>1510662686010963-1</unique-id>
-	<command>convert %f -quality 90 `basename %f .png`.jpg</command>
+	<command>convert %F -quality 90 `basename %f .png`.jpg</command>
 	<description>Convert png to jpg</description>
 	<patterns>*.png</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Convert jpg to png</name>
+	<unique-id>1625404269177731-1</unique-id>
+	<command>convert %F `basename %f .jpg`.png</command>
+	<description>Convert jpg to png</description>
+	<patterns>*.jpg</patterns>
 	<image-files/>
 </action>
 <action>
