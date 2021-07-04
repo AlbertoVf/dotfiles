@@ -3,11 +3,9 @@ export EDITOR="nvim"
 
 alias grep='grep --color'
 alias h='history'
-alias help='man'
 alias ag="alias | grep"
 alias s="sudo"
-alias vim="nvim"
-
+alias example="tldr"
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='exa -tRFh'   	#sorted by date,recursive,show type,human readable
 alias ls='exa -l --color=always --group-directories-first'  # long format
@@ -20,6 +18,7 @@ alias l.='exa -a | egrep "^\."'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias mkdir='mkdir -pv'
 # Git alias
 alias ga='git add'
 alias gaa='git add --all'
@@ -29,11 +28,12 @@ alias gl='git log --graph'
 alias glg='git log --stat'
 alias gc='git commit -m'
 alias gp='git push'
+alias gpm='git push --mirror'
 alias gpl='git pull'
-alias gr='git restore'
-alias gra='git restore :/'
-alias grem='git remote -v'
-alias gst='git status'
+alias grst='git restore'
+alias grsta='git restore :/'
+alias gr='git remote'
+alias gst='git status' 
 alias gt='git tag -a'
 # Pacman & Paru alias
 alias pacin='sudo pacman -S'
@@ -51,8 +51,7 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 # Dotfiles alias
 alias dotfiles='/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME'
 alias dota='dotfiles add'
-alias dotl='dotfiles log --graph'
-alias dotlg='dotfiles log --stat'
+alias dotl='dotfiles log --stat'
 alias dotc='dotfiles commit -m'
 alias dotp='dotfiles push'
 alias dotst='dotfiles status'

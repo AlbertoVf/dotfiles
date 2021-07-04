@@ -1,11 +1,28 @@
 {
-  "[java]": { "editor.defaultFormatter": "redhat.java" },
-  "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
-  "[python]": { "editor.defaultFormatter": "ms-python.python" },
-  "[typescript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "bashBeautify.tabSize": 2,
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "css.lint.duplicateProperties": "warning",
+  "debug.terminal.clearBeforeReusing": true,
   "diffEditor.codeLens": true,
-  "editor.acceptSuggestionOnEnter": "smart",
-  "editor.fontFamily": "CaskaydiaCove Nerd Font,FantasqueSansMono Nerd Font, monospace",
+  "editor.fontFamily": "Anonymice NF,FantasqueSansMono Nerd Font, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.fontWeight": "500",
@@ -14,67 +31,79 @@
   "editor.formatOnType": true,
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
-  "editor.suggestSelection": "first",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "all",
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
   "editor.wrappingIndent": "deepIndent",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   "explorer.incrementalNaming": "smart",
-  "files.associations": { "*.html": "html" },
+  "files.associations": {
+    "*.html": "html"
+  },
+  "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 10000,
   "files.eol": "\n",
-  "files.exclude": { "*.meta": true, "**.meta": true, "**/.classpath": true, "**/.factorypath": true, "**/.project": true, "**/.settings": true, "**/*.meta": true },
+  "files.exclude": {
+    "*.meta": true,
+    "**.meta": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/*.meta": true
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "git.inputValidationLength": 120,
   "gitlens.views.remotes.branches.layout": "list",
-  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODI3LFwiaGVpZ2h0XCI6MTE2OX0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
+  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltcIkZGRkZGRlwiXSxcImZvcm1hdFdpZHRoXCI6XCIyNDBcIixcImNyZWF0ZVRhcmdldFwiOmZhbHNlLFwicGFnZUZvcm1hdFwiOntcInhcIjowLFwieVwiOjAsXCJ3aWR0aFwiOjgyNyxcImhlaWdodFwiOjExNjl9LFwic2VhcmNoXCI6dHJ1ZSxcInNob3dTdGFydFNjcmVlblwiOnRydWUsXCJncmlkQ29sb3JcIjpcIiNkMGQwZDBcIixcImRhcmtHcmlkQ29sb3JcIjpcIiM2ZTZlNmVcIixcImF1dG9zYXZlXCI6dHJ1ZSxcInJlc2l6ZUltYWdlc1wiOm51bGwsXCJvcGVuQ291bnRlclwiOjAsXCJ2ZXJzaW9uXCI6MTgsXCJ1bml0XCI6MSxcImlzUnVsZXJPblwiOmZhbHNlLFwidWlcIjpcIlwifSJ9",
   "hediet.vscode-drawio.theme": "Kennedy",
   "html.format.contentUnformatted": "",
+  "html.format.indentInnerHtml": true,
+  "html.format.templating": true,
   "html.format.wrapLineLength": 0,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "kite.showWelcomeNotificationOnStartup": false,
+  "less.lint.duplicateProperties": "warning",
+  "markdown.preview.typographer": true,
   "python.showStartPage": false,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.executeInFileDir": true,
+  "redhat.telemetry.enabled": true,
+  "scss.lint.duplicateProperties": "warning",
+  "search.showLineNumbers": true,
+  "sqltools.connections": [],
+  "sqltools.useNodeRuntime": true,
   "tabnine.experimentalAutoImports": true,
+  "timeline.excludeSources": [],
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.closeWhenEmpty": true,
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " /",
+  "workbench.colorTheme": "Dracula",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
-  "workbench.editorAssociations": { "*.ipynb": "jupyter.notebook.ipynb" },
   "workbench.iconTheme": "helium-icon-theme",
   "workbench.list.multiSelectModifier": "alt",
   "workbench.list.openMode": "doubleClick",
   "workbench.list.smoothScrolling": true,
+  "workbench.preferredDarkColorTheme": "Dracula",
+  "workbench.preferredLightColorTheme": "GitHub Plus",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.tree.indent": 16,
-  "C_Cpp.intelliSenseEngine": "Disabled",
-  "[c]": { "editor.defaultFormatter": "ms-vscode.cpptools" },
-  "kite.showWelcomeNotificationOnStartup": false,
-  "sqltools.connections": [],
-  "[shellscript]": { "editor.defaultFormatter": "shakram02.bash-beautify" },
-  "workbench.colorTheme": "Dracula",
-  "window.closeWhenEmpty": true,
-  "search.showLineNumbers": true,
-  "debug.terminal.clearBeforeReusing": true,
-  "[scss]": { "editor.suggest.insertMode": "replace", "gitlens.codeLens.scopes": ["document"], },
-  "redhat.telemetry.enabled": true,
-  "timeline.excludeSources": [],
-  "sqltools.useNodeRuntime": true,
-  "[html]": {
-    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.preview": true,
+  "editor.suggest.showStatusBar": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
   },
-  "html.format.indentInnerHtml": true,
-  "html.format.templating": true,
-  "[css]": {
-    "editor.defaultFormatter": "HookyQR.beautify"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  }
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

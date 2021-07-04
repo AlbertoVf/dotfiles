@@ -1,27 +1,27 @@
 from libqtile.config import Key
 from libqtile.command import lazy
-from settings.shortcut import mod, mod1, editor, terminal, fileManager, browser
+from settings.shortcut import editor, terminal, fileManager, browser, mail
 from settings.groups import groups
 
+mod = "mod4"  # mod4 or mod = super key
 keys = [
     # SUPER + FUNCTION KEYS
+    Key([mod], "a", lazy.spawn("xfce4-appfinder")),
     Key([mod], "b", lazy.spawn("bitwarden")),
-    Key([mod], "d", lazy.spawn("drawio")),
+    Key([mod], "c", lazy.spawn("catfish")),
+    Key([mod], "d", lazy.spawn("drawio"),),
     Key([mod], "e", lazy.spawn(editor)),
     Key([mod], "g", lazy.spawn("gparted")),
     Key([mod], "i", lazy.spawn("eclipse")),
-    Key([mod], "k", lazy.spawn("krita")),
     Key([mod], "m", lazy.spawn("pragha")),
     Key([mod], "o", lazy.spawn("obs")),
-    Key([mod], "p", lazy.spawn("eclipse")),
-    Key([mod], "q", lazy.window.kill()),
+    Key([mod], "p", lazy.spawn("postman")),
+    Key([mod], "q", lazy.window.kill(), desc='Kill the focused window'),
     Key([mod], "s", lazy.spawn("pamac-manager")),
-    Key([mod], "t", lazy.spawn("timeshift")),
+    Key([mod], "t", lazy.spawn("teamviewer")),
     Key([mod], "v", lazy.spawn("vlc --video-on-top")),
     Key([mod], "x", lazy.spawn("arcolinux-logout")),
-    Key([mod], "Escape", lazy.spawn("xkill")),
-    Key([mod], "Return", lazy.spawn(terminal)),
-    Key([mod], "KP_Enter", lazy.spawn("gnome-calculator")),
+    Key([mod], "z", lazy.spawn("zeal")),
     Key([mod], "F1", lazy.spawn(browser)),
     Key([mod], "F2", lazy.spawn(editor)),
     Key([mod], "F3", lazy.spawn("inkscape")),
@@ -30,29 +30,36 @@ keys = [
     Key([mod], "F6", lazy.spawn("vlc --video-on-top")),
     Key([mod], "F7", lazy.spawn("virtualbox")),
     Key([mod], "F8", lazy.spawn(fileManager)),
-    Key([mod], "F9", lazy.spawn("evolution")),
+    Key([mod], "F9", lazy.spawn(mail)),
     Key([mod], "F10", lazy.spawn("spotify")),
     Key([mod], "F11", lazy.spawn("rofi -show run -fullscreen")),
     Key([mod], "F12", lazy.spawn("rofi -show run")),
+    Key([mod], "Escape", lazy.spawn("xkill"), desc='Select window to kill'),
+    Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "KP_Enter", lazy.spawn("gnome-calculator")),
     # SUPER + SHIFT KEYS
-    Key([mod, "shift"], "Return", lazy.spawn(fileManager)),
-    Key([mod, "shift"], "q", lazy.window.kill()),
-    Key([mod, "control"], "r", lazy.restart()),
+    Key([mod, "shift"], "q", lazy.window.kill(), desc='Kill the focused window'),
+    # SUPER + CONTROL KEYS
+    Key([mod, "control"], "r", lazy.restart(), desc='restart qtile'),
+    Key([mod, "control"], "q", lazy.shutdown(), desc='Close session'),
+    Key([mod, "control"], "Return", lazy.spawn(fileManager)),
     # ALT + ... KEYS
     Key(["mod1"], "Escape", lazy.spawn("xfce4-taskmanager")),
     Key(["mod1"], "F1", lazy.spawn("rofi -show window")),
-    # Key(["mod1"], "F2", lazy.spawn("ulauncher")),
     Key(["mod1"], "F2", lazy.spawn("rofi -show drun")),
     Key(["mod1"], "F3", lazy.spawn("rofi -show file-browser-extended")),
     Key(["mod1"], "F4", lazy.spawn("rofi -show ssh")),
     Key(["mod1"], "F5", lazy.spawn("rofi -show run")),
-    Key(["mod1"], "Print", lazy.spawn("xfce4-screenshooter")),
+    Key(["mod1"], "h", lazy.spawn(terminal + ' -e htop')),
+    Key(["mod1"], "Left", lazy.spawn('variety -p')),
+    Key(["mod1"], "Right", lazy.spawn('variety -n')),
+
     # SCREENSHOTS
+    Key(["mod1"], "Print", lazy.spawn("xfce4-screenshooter")),
     Key([], "Print",
         lazy.spawn(
             "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"),
         ),
-    # MULTIMEDIA KEYS
     # INCREASE/DECREASE BRIGHTNESS
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
@@ -60,6 +67,7 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
+    # MULTIMEDIA KEYS
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
@@ -68,8 +76,8 @@ keys = [
 
 keys.extend([
     # Switch focus of monitors
-    Key([mod], "period", lazy.next_screen(), ),
-    Key([mod], "comma", lazy.prev_screen(), ),
+    Key([mod], "period", lazy.next_screen()),
+    Key([mod], "comma", lazy.prev_screen()),
     # Change Window to specific monitor
     Key([mod, "shift"], "period", lazy.to_screen(0)),
     Key([mod, "shift"], "comma", lazy.to_screen(1)),
