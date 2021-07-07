@@ -44,14 +44,14 @@ def init_widgets_list():
             foreground=colors["color3"],
             backgound=colors["dark"]
         ),
-        separator(fg=colors["color3"], size=30),
+        separator(fg=colors["color2"], size=30),
         widget.Volume(
             fmt=" Vol: {}",
             foreground=colors["color3"],
         ),
-        separator(fg=colors["color3"], size=30),
+        separator(fg=colors["color2"], size=30),
         widget.Battery(
-            format="Bat: {percent:2.0%} ]",
+            format="Bat: {percent:2.0%}",
             mouse_callbacks={
                 "Button1":
                 lambda: qtile.cmd_spawn("xfce4-power-manager-settings"),
@@ -61,23 +61,7 @@ def init_widgets_list():
             update_interval=10,
             foreground=colors["color3"],
         ),
-        widget.Clock(
-            format="[ %c ]",
-            mouse_callbacks={
-                "Button1":
-                lambda: qtile.cmd_spawn("gnome-calendar")
-            },
-            foreground=colors["color2"],
-            background=colors["dark"],
-        ),
-        widget.Net(
-            format="[ Up:{up}  Down:{down}",
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn("nm-connection-editor"),
-            },
-            foreground=colors["color1"],
-        ),
-        separator(fg=colors["color1"], size=30),
+        separator(fg=colors["color2"], size=30),
         widget.CheckUpdates(
             distro="Arch",
             custom_command="pacman -Qu",
@@ -87,6 +71,15 @@ def init_widgets_list():
             no_update_string="Updates: 0 ]",
             colour_no_updates=colors["color1"],
             colour_have_updates=colors["color1"],
+        ),
+        widget.Clock(
+            format="[ %c ]",
+            mouse_callbacks={
+                "Button1":
+                lambda: qtile.cmd_spawn("gnome-calendar")
+            },
+            foreground=colors["color2"],
+            background=colors["dark"],
         ),
         systray(),
     ]
