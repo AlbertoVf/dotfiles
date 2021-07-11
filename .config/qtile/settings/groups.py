@@ -3,7 +3,7 @@ from libqtile.config import Group
 
 def group(group_labels):
     group = []
-    group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    group_names = ["1", "2", "3", "4", "5", "6", "7"]
     for i in range(len(group_names)):
         group.append(Group(
             name=group_names[i],
@@ -12,8 +12,8 @@ def group(group_labels):
     return group
 
 
-groups = group(
-    ["Web", "Dev", "Term", "Vbox", "Chat", "Act", "Sys", "File", "Media", "Game"])
+groups = group(["Web", "Developer", "Terminal",
+               "Vbox", "Planning", "System", "Multimedia"])
 
 # groups = group(["\uf8a4", "\uf8a7", "\uf8aa", "\uf8ad", "\uf8b0",
 #                 "\uf8b3", "\uf8b6", "\uf8b9", "\uf8bc", "\uf8a1"])

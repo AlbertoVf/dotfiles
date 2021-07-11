@@ -31,7 +31,7 @@ def init_widgets_list():
         ),
         separator(),
         widget.CurrentLayout(
-            foreground=colors["focus"],
+            foreground=colors["color4"],
         ),
         separator(),
         widget.WindowName(
@@ -41,15 +41,15 @@ def init_widgets_list():
         ),
         widget.CapsNumLockIndicator(
             fmt="[ {} ",
-            foreground=colors["color3"],
+            foreground=colors["color2"],
             backgound=colors["dark"]
         ),
-        separator(fg=colors["color2"], size=30),
+        separator(fg=colors["color3"], size=30),
         widget.Volume(
             fmt=" Vol: {}",
-            foreground=colors["color3"],
+            foreground=colors["color2"],
         ),
-        separator(fg=colors["color2"], size=30),
+        separator(fg=colors["color3"], size=30),
         widget.Battery(
             format="Bat: {percent:2.0%}",
             mouse_callbacks={
@@ -59,9 +59,9 @@ def init_widgets_list():
                 "Button3": lambda: qtile.cmd_spawn("xfce4-taskmanager"),
             },
             update_interval=10,
-            foreground=colors["color3"],
+            foreground=colors["color2"],
         ),
-        separator(fg=colors["color2"], size=30),
+        separator(fg=colors["color3"], size=30),
         widget.CheckUpdates(
             distro="Arch",
             custom_command="pacman -Qu",
@@ -69,8 +69,8 @@ def init_widgets_list():
             execute=f"{terminal} -e sudo pacman -Syu",
             display_format='Updates: {updates} ]',
             no_update_string="Updates: 0 ]",
-            colour_no_updates=colors["color1"],
-            colour_have_updates=colors["color1"],
+            colour_no_updates=colors["color2"],
+            colour_have_updates=colors["color2"],
         ),
         widget.Clock(
             format="[ %c ]",
@@ -78,7 +78,7 @@ def init_widgets_list():
                 "Button1":
                 lambda: qtile.cmd_spawn("gnome-calendar")
             },
-            foreground=colors["color2"],
+            foreground=colors["color1"],
             background=colors["dark"],
         ),
         systray(),
@@ -98,7 +98,7 @@ def init_widgets_list01():
         separator(),
         widget.Clock(
             format="[ %c ]",
-            foreground=colors["color1"],
+            foreground=colors["color4"],
             background=colors["dark"],
         ),
     ]

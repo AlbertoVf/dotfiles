@@ -1,11 +1,10 @@
 from libqtile import layout
 from settings.shortcut import colors
-from settings.widgets import font
 
 
 def init_layout_theme():
     return {
-        "margin": 2,
+        "margin": 4,
         "border_width": 2,
         "border_focus": colors["focus"],
         "border_normal": colors["grey"],
@@ -48,6 +47,6 @@ floating_layout = layout.Floating(
     ],
     fullscreen_border_width=0,
     border_width=2,
-    border_normal=colors["urgent"],
+    border_normal=colors["color4"],
     border_focus=colors["focus"],
 )
