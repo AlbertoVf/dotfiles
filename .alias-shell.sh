@@ -5,7 +5,7 @@ alias grep='grep --color'
 alias h='history'
 alias ag="alias | grep"
 alias s="sudo"
-
+alias example="tldr"
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='exa -tRFh'   	#sorted by date,recursive,show type,human readable
 alias ls='exa -l --color=always --group-directories-first'  # long format

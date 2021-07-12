@@ -23,4 +23,4 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 run volumeicon &
 run megasync &
-teamviewer --daemon start
+run teamviewer --daemon start
