@@ -13,9 +13,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }" Prettier
+    Plug 'norcalli/nvim-colorizer.lua' "Colorized
     Plug 'machakann/vim-sandwich'
     Plug 'tpope/vim-surround'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'airblade/vim-gitgutter' "git
     " Themes
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -23,6 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'arcticicestudio/nord-vim'
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
 " Remap escape
@@ -86,3 +89,6 @@ nmap <space>r :RnvimrToggle<CR>
 " vim commentary
 nnoremap <space>/ :Commentary<CR>
 vnoremap <space>/ :Commentary<CR>
+
+" nvim colorizer
+lua require'colorizer'.setup()

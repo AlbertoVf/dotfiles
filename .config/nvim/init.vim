@@ -15,4 +15,4 @@ source $HOME/.config/nvim/plug-config/vim-closetag.vim
 
 " Themes. Change source location to change theme
 source $HOME/.config/nvim/themes/airline.vim
-source $HOME/.config/nvim/themes/nord.vim
+source $HOME/.config/nvim/themes/palenight.vim
