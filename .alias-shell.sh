@@ -33,7 +33,7 @@ alias gpl='git pull'
 alias grst='git restore'
 alias grsta='git restore :/'
 alias gr='git remote'
-alias gst='git status' 
+alias gst='git status'
 alias gt='git tag -a'
 # Pacman & Paru alias
 alias pacin='sudo pacman -S'
@@ -97,6 +97,37 @@ function extract {
   fi
 }
 
+function run {
+  if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: run <path/file_name>.<sh|zsh|bash>
+                            <py|ts|js|java>
+                            <mp4|mp3|m4a|aac|flac>
+                            <jpg|jpeg|png|bmp|gif>
+                            <pdf>"
+  else
+    for n in "$@"
+      do
+        if [ -f "$n" ] ; then
+          case "${n%,}" in
+            *.sh) sh ./"$n";;
+            *.zsh) zsh ./"$n";;
+            *.bash) bash ./"$n";;
+            *.py) python ./"$n";;
+            *.java) java ./"$n";;
+            *.ts|*.js) deno run ./"$n";;
+            *.mp4|*.mp3|*.m4a|*.aac|*.flac) vlc ./"$n";;
+            *.pdf) evince ./"$n";;
+            *.jpg|*.jpeg|*.png|*.bmp|*.gif) feh ./"$n";;
+            *) $EDITOR ./"$n"
+          esac
+        else
+          echo "'$n' - file does not exist"
+          return 1
+        fi
+      done
+  fi
+}
 
 # Toutube-dl alias
 ruta="$(xdg-user-dir DOWNLOAD)/"

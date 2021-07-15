@@ -7,10 +7,7 @@ function run {
   fi
 }
 
-#start the conky to learn the shortcuts
-(conky -c $HOME/.config/qtile/scripts/system-overview) &
-#autostart ArcoLinux Welcome App
-run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
+(conky -c $HOME/.config/qtile/scripts/qtile.conkyrc) &
 run concky-toogle
 run variety &
 run nm-applet &

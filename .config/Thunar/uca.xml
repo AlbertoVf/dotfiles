@@ -20,15 +20,6 @@
 	<directories/>
 </action>
 <action>
-	<icon>final-term</icon>
-	<name>Extract here</name>
-	<unique-id>1489091300385082-4</unique-id>
-	<command>tar xjf %n</command>
-	<description></description>
-	<patterns>*.tar.bz2;*.tbz2</patterns>
-	<other-files/>
-</action>
-<action>
 	<icon>insert-link-symbolic</icon>
 	<name>Create symlink</name>
 	<unique-id>1526631663081446-14</unique-id>
@@ -135,14 +126,14 @@
 	<icon>cs-startup-programs</icon>
 	<name>Run</name>
 	<unique-id>1526630606202525-4</unique-id>
-	<command>tilix -e %f</command>
+	<command>alacritty -e %f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<other-files/>
 	<text-files/>
 </action>
 <action>
-	<icon>aplication-x-executable</icon>
+	<icon>run-build</icon>
 	<name>Make executable</name>
 	<unique-id>1526670239648084-2</unique-id>
 	<command>chmod +x %f</command>
