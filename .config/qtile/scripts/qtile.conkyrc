@@ -15,10 +15,10 @@ conky.config = {
     --Placement
     alignment = 'middle_right',
     gap_x = 40,
-    gap_y = 150,
+    gap_y = 0,
     minimum_height = 200,
-    minimum_width = 360,
-    maximum_width = 360,
+    minimum_width = 200,
+    maximum_width = 400,
 
     --Graphical
     border_outer_margin = 5,
@@ -27,7 +27,7 @@ conky.config = {
     default_bar_width = 280,
     default_bar_height = 10,
     default_gauge_height = 25,
-    default_gauge_width =40,
+    default_gauge_width = 40,
     default_graph_height = 40,
     default_graph_width = 153,
     default_shade_color = '#000000',
@@ -76,21 +76,20 @@ conky.config = {
     color6 = '#F1544B',
 };
 conky.text = [[
-${color2}${alignc}SYSTEM INFO${color}
+${color1}${voffset 4}${font Courier New:size=42:Bold}${time %H}:${time %M} ${font}${color}
+
+${color2}${voffset 4}${font Courier New:size=20:Bold}${alignc}${time %A %e de %B, %Y}${font}${color}
+
 ${color1}${hr}${color}
 ${color1}Host:${alignr}${color2}${nodename}${color}
 ${color1}Kernel:${color2}${alignr}$kernel${color}
 ${color1}Uptime:${color2}${alignr}${uptime}${color}
+${color1}Ip:${color2}${font} ${alignr}${addr wlp2s0}
+${color1}Temp:${color}${alignr}${hwmon 1 temp 1}°C
 ${color3}${hr}${color}
-${color1}Home:${goto 60}${color2}${alignr}${fs_used /home} / ${fs_size /home}${color}
-${color1}RAM:${goto 60}${alignr}${color2}${mem} / ${memmax}${color}
-${color1}CPU:${goto 60} ${alignr}\
-${if_match ${cpu cpu0} <= 40} ${color4}${cpu cpu0}\
-${else}${if_match ${cpu cpu0} <= 80} ${color5}${cpu cpu0}\
-${else}${if_match ${cpu cpu0} <= 100} ${color6}${cpu cpu0}\
-${else}${cpu cpu0}${endif}${endif}${endif}%${alignr} - ${freq_g}GHz${color}
-
-${color2}${alignc}SHORTCUT KEYS${color}
+${color1}${fs_free_perc /home}% HDD ${alignr}${color0}${fs_bar /}
+${color1}${cpu cpu0}% CPU${font} ${alignr}${color0}${cpubar cpu0}
+${color1}${memperc}% RAM${font} ${alignr}${color0}${membar}
 ${color1}${hr}${color}
 ${color1}[Alt] + [F2]${alignr}${color2}Rofi Menu${color}
 ${color1}[Super] + Enter${alignr}${color2}Terminal${color}
