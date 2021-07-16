@@ -1,0 +1,90 @@
+conky.config = {
+	--Various settings
+	background = true,
+	cpu_avg_samples = 2,
+	diskio_avg_samples = 10,
+	double_buffer = true,
+	if_up_strictness = 'address',
+	net_avg_samples = 2,
+	no_buffers = true,
+	temperature_unit = 'celsius',
+	text_buffer_size = 2048,
+	update_interval = 1,
+	imlib_cache_size = 0,
+
+	--Placement
+	alignment = 'bottom_right',
+
+	--Arch Duoscreen
+	gap_x = 0,
+	gap_y = 50,
+	minimum_height = 320,
+	minimum_width = 680,
+	maximum_width = 680,
+
+	--Graphical
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	border_width = 0,
+	default_bar_width = 280,
+	default_bar_height = 10,
+	default_gauge_height = 25,
+	default_gauge_width =40,
+	default_graph_height = 40,
+	default_graph_width = 153,
+	default_shade_color = '#000000',
+	default_outline_color = '#000000',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_shades = false,
+	draw_outline = false,
+	stippled_borders = 0,
+
+	--Textual
+	extra_newline = false,
+	format_human_readable = true,
+	font = '1942 report:size=20:bold',
+	max_text_width = 0,
+	max_user_text = 16384,
+	override_utf8_locale = true,
+	short_units = true,
+	top_name_width = 21,
+	top_name_verbose = false,
+	uppercase = false,
+	use_spacer = 'none',
+	use_xft = true,
+	xftalpha = 1,
+
+	--Windows
+	own_window = true,
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+	own_window_class = 'Conky',
+	own_window_colour = '#000000',
+	own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = false,
+	own_window_title = 'system_conky',
+	own_window_type = 'override',
+
+	--Colours
+	default_color = '#000000',
+	color1 = '#222c37',
+	color2 = '#FFFFFF',
+	color3 = '#1793d1',
+	color4 = '#1F7411',
+	color5 = '#FFA726',
+	color6 = '#F1544B',
+
+};
+
+conky.text = [[
+${image ~/.config/conky/images/back-tw.png -p 0,-30 -s 630x450}
+${voffset 30 }${offset 50 }${font 1942 report:size=38:bold}${color}${time %H:%M %e/%m/%Y}
+${alignc}${font 1942 report:size=20:bold}Cpu: ${cpu cpu0}%  \
+Mem $mem  \
+Temp:${hwmon 1 temp 1} C${font}
+
+${color3}${alignc}Host:${nodename}
+${alignc}Kernel:$kernel
+${alignc}Ip:${addr wlp2s0}
+]];
