@@ -7,7 +7,7 @@ function run {
   fi
 }
 
-(conky -c $HOME/.config/qtile/scripts/qtile.conkyrc) &
+(conky -c $HOME/.config/qtile/scripts/.conkyrc) &
 run concky-toogle
 run variety &
 run nm-applet &

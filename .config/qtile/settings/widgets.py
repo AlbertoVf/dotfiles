@@ -16,7 +16,7 @@ def init_widgets_list():
     widgets_list = [
         widget.GroupBox(
             font=font,
-            fontsize=12,
+            fontsize=11,
             borderwidth=4,
             rounded=False,
             disable_drag=True,

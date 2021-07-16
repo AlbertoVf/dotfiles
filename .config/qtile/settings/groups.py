@@ -13,9 +13,4 @@ def group(group_labels):
 
 
 groups = group(["Web", "Developer", "Terminal",
-               "Vbox", "Planning", "System", "Multimedia"])
-
-# groups = group(["\uf8a4", "\uf8a7", "\uf8aa", "\uf8ad", "\uf8b0",
-#                 "\uf8b3", "\uf8b6", "\uf8b9", "\uf8bc", "\uf8a1"])
-
-# groups = group(["", "", "ﲵ", "", "漣", "", "ﱘ", "", "", ""])
+                "Vbox", "Planning", "System", "Multimedia"])

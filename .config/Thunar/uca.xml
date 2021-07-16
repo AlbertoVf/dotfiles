@@ -188,4 +188,18 @@
 	<text-files/>
 	<video-files/>
 </action>
+<action>
+	<icon>clipboard</icon>
+	<name>Copiar ruta de archivos</name>
+	<unique-id>1626443329564542-1</unique-id>
+	<command>echo %F | xclip -sel c</command>
+	<description>Copy file path</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>
