@@ -56,12 +56,12 @@ def set_floating(window):
 @hook.subscribe.client_new
 def assign_app_group(client):
     d = {}
-    d["1"] = ["Vivaldi-stable", "Brave-browser", "bitwarden", "discord", "slack"]
-    d["2"] = ["code-oss", "code", "Eclipse", "emacs", "pycharm", "idea"]
-    d["3"] = ["Alacritty", "tilix", "termite", "Vim", "NeoVim", ]
+    d["1"] = ["vivaldi-stable", "brave-browser", "bitwarden", "discord", "slack"]
+    d["2"] = ["code", "emacs", "neovim", "Eclipse",  "pycharm", "idea"]
+    d["3"] = ["Alacritty", "tilix", "termite", "GitAhead", "alacritty"]
     d["4"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer", ]
-    d["5"] = ["evolution", "notion", ]
-    d["6"] = ["thunar", "ristretto", "feh", "pamac-manager"]
+    d["5"] = ["evolution", "notion"]
+    d["6"] = ["pamac-manager", "stacer"]
     d["7"] = ["vlc", "spotify", "pragha"]
 
     wm_class = client.window.get_wm_class()[0]

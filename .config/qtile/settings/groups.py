@@ -12,5 +12,10 @@ def group(group_labels):
     return group
 
 
-groups = group(["Web", "Developer", "Terminal",
-                "Vbox", "Planning", "System", "Multimedia"])
+groups = group(["Web", "Developer", "Terminal", "Vbox",
+               "Planning", "System", "Multimedia"])
+# groups = group(["\uf8a3", "\uf8a6", "\uf8a9",
+#                "\uf8ac", "\uf8af", "\uf8b2", "\uf8b5"])
+
+# groups = group(["\uf65e", "\uf673", "\uf68c",
+#                "\uf6c4", "\ufd2c", "\uf303", "\uf721"])
