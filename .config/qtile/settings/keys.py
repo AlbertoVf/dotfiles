@@ -181,10 +181,11 @@ keys.extend([
         lazy.layout.swap_left(),
         lazy.layout.shuffle_left()
     ),
-    Key([mod, "shift"], "Right",
+    Key(
+        [mod, "shift"], "Right",
         lazy.layout.swap_right(),
         lazy.layout.shuffle_right()
-        ),
+    ),
 ])
 
 for i in groups:

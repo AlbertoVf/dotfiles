@@ -7,8 +7,8 @@ function run {
   fi
 }
 
-(conky -c $HOME/.config/qtile/scripts/type-writer.conkyrc) &
-run concky-toogle
+(conky -c $HOME/.conkyrc) &
+# run concky-toogle
 run variety &
 run nm-applet &
 run pamac-tray &
