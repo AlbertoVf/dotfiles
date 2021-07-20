@@ -15,43 +15,40 @@ icon_used = icon_triangle
 def init_widgets_list():
     widgets_list = [
         widget.GroupBox(
-            font=font,
             fontsize=12,
-            borderwidth=4,
+            borderwidth=2,
             rounded=False,
             disable_drag=True,
             highlight_method="line",
             active=colors["active"],
             inactive=colors["inactive"],
-            highlight_color=colors["grey"],
+            highlight_color=colors["text"],
             this_current_screen_border=colors["focus"],
-            other_current_screen_border=colors["focus"],
-            this_screen_border=colors["color3"],
-            other_screen_border=colors["color3"],
+            other_current_screen_border=colors["text"],
         ),
-        separator(),
         widget.CurrentLayout(
-            foreground=colors["color4"],
+            font=f"{font} Bold",
+            foreground=colors["urgent"],
         ),
-        separator(),
         widget.WindowName(
+            font=f"{font} Bold",
             max_chars=50,
             formant="{name}",
             foreground=colors["focus"],
         ),
         widget.CapsNumLockIndicator(
-            fmt="[ {} ",
-            foreground=colors["color2"],
-            backgound=colors["dark"]
+            font=f"{font} Bold",
+            fmt="{}",
+            foreground=colors["color4"],
         ),
-        separator(fg=colors["color3"], size=30),
         widget.Volume(
-            fmt=" Vol: {}",
-            foreground=colors["color2"],
+            font=f"{font} Bold",
+            fmt="\uf026 {}",
+            foreground=colors["color3"],
         ),
-        separator(fg=colors["color3"], size=30),
         widget.Battery(
-            format="Bat: {percent:2.0%}",
+            font=f"{font} Bold",
+            format=" {percent:2.0%} \ufbd3",
             mouse_callbacks={
                 "Button1":
                 lambda: qtile.cmd_spawn("xfce4-power-manager-settings"),
@@ -61,19 +58,20 @@ def init_widgets_list():
             update_interval=10,
             foreground=colors["color2"],
         ),
-        separator(fg=colors["color3"], size=30),
         widget.CheckUpdates(
+            font=f"{font} Bold",
             distro="Arch",
             custom_command="pacman -Qu",
-            update_interval=1800,
             execute=f"{terminal} -e sudo pacman -Syu",
-            display_format='Updates: {updates} ]',
-            no_update_string="Updates: 0 ]",
-            colour_no_updates=colors["color2"],
-            colour_have_updates=colors["color2"],
+            update_interval=3600,
+            display_format='\uf547 {updates} Updates',
+            # no_update_string="\uf547  0 Updates",
+            colour_have_updates=colors["urgent"],
+            # colour_no_updates=colors["urgent"],
         ),
         widget.Clock(
-            format="[ %c ]",
+            font=f"{font} Bold",
+            format="\uf5ec  %c",
             mouse_callbacks={
                 "Button1":
                 lambda: qtile.cmd_spawn("gnome-calendar")
@@ -92,11 +90,12 @@ def init_widgets_list():
 def init_widgets_list01():
     widgets_list = [
         widget.WindowName(
+            font=f"{font} Bold",
             formant="{name}",
             foreground=colors["focus"],
         ),
-        separator(),
         widget.Clock(
+            font=f"{font} Bold",
             format="[ %c ]",
             foreground=colors["color4"],
             background=colors["dark"],

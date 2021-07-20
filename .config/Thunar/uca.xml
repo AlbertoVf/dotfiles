@@ -190,10 +190,10 @@
 </action>
 <action>
 	<icon>clipboard</icon>
-	<name>Copiar ruta de archivos</name>
+	<name>Copy file path</name>
 	<unique-id>1626443329564542-1</unique-id>
-	<command>echo %F | xclip -sel c</command>
-	<description>Copy file path</description>
+	<command>echo &quot;%F&quot; | xclip -sel c</command>
+	<description>Copia ruta completa</description>
 	<patterns>*</patterns>
 	<directories/>
 	<audio-files/>
@@ -201,5 +201,28 @@
 	<other-files/>
 	<text-files/>
 	<video-files/>
+</action>
+<action>
+	<icon>clipboard</icon>
+	<name>Copy name</name>
+	<unique-id>1626704690182391-1</unique-id>
+	<command>echo &quot;%N&quot; | xclip -sel c</command>
+	<description>Copia nombre</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-pdf</icon>
+	<name>Merge PDF</name>
+	<unique-id>1627148699144999-1</unique-id>
+	<command>pdftk %F cat output output.pdf</command>
+	<description>merge pdf</description>
+	<patterns>*.pdf</patterns>
+	<other-files/>
 </action>
 </actions>

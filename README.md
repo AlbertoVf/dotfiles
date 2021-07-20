@@ -10,6 +10,8 @@
 
 [Qtile](https://gitlab.com/AlbertoVf1/qtile)
 
+[Rofi themes](https://github.com/adi1090x/rofi.git)
+
 ## Start your dotfiles repository
 
 ```bash
@@ -36,4 +38,3 @@ echo "dotfiles" >> .gitignore
 git clone --bare <git-repo-url> $HOME/dotfiles
 dotfiles config --local status.showUntrackedFiles no
 ```
-

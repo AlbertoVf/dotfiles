@@ -12,10 +12,10 @@ keys = [
     Key([mod], "d", lazy.spawn("drawio"),),
     Key([mod], "e", lazy.spawn(editor)),
     Key([mod], "g", lazy.spawn("gparted")),
-    Key([mod], "i", lazy.spawn("eclipse")),
+    Key([mod], "i", lazy.spawn("idea")),
     Key([mod], "m", lazy.spawn("pragha")),
     Key([mod], "o", lazy.spawn("obs")),
-    Key([mod], "p", lazy.spawn("postman")),
+    Key([mod], "p", lazy.spawn("pycharm")),
     Key([mod], "q", lazy.window.kill(), desc='Kill the focused window'),
     Key([mod], "s", lazy.spawn("pamac-manager")),
     Key([mod], "t", lazy.spawn("teamviewer")),
@@ -66,8 +66,16 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
     # INCREASE/DECREASE/MUTE VOLUME
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
+    Key(
+        [], "XF86AudioLowerVolume",
+        lazy.spawn("amixer -q set Master 5%-"),
+        lazy.spawn("amixer -q set Master unmuted")
+    ),
+    Key(
+        [], "XF86AudioRaiseVolume",
+        lazy.spawn("amixer -q set Master 5%+"),
+        lazy.spawn("amixer -q set Master unmuted")
+    ),
     # MULTIMEDIA KEYS
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),

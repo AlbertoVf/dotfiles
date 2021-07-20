@@ -12,7 +12,7 @@ font:
   size: 10
 
 scrolling:
-    history: 200
+    history: 3000
 mouse:
     hide_when_typing: true
 draw_bold_text_with_bright_colors: true

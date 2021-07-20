@@ -17,7 +17,7 @@ bring_front_click = True
 cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "focus"  # "smart"
-wmname = "Qtile"  # "LG3D"
+wmname = "LG3D"
 
 
 @lazy.function
@@ -53,21 +53,20 @@ def set_floating(window):
         window.floating = True
 
 
-@hook.subscribe.client_new
-def assign_app_group(client):
-    d = {}
-    d["1"] = ["vivaldi-stable", "brave-browser", "bitwarden", "discord", "slack"]
-    d["2"] = ["code", "emacs", "neovim", "Eclipse",  "pycharm", "idea"]
-    d["3"] = ["Alacritty", "tilix", "termite", "GitAhead", "alacritty"]
-    d["4"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer", ]
-    d["5"] = ["evolution", "notion"]
-    d["6"] = ["pamac-manager", "stacer"]
-    d["7"] = ["vlc", "spotify", "pragha"]
-
-    wm_class = client.window.get_wm_class()[0]
-
-    for i in range(len(d)):
-        if wm_class in list(d.values())[i]:
-            group = list(d.keys())[i]
-            client.togroup(group)
-            client.group.cmd_toscreen()
+# @hook.subscribe.client_new
+# def assign_app_group(client):
+#     d = {
+#         "1": ["vivaldi-stable", "brave-browser", "bitwarden", "discord", "slack"],
+#         "2": ["code", "emacs", "neovim", "pycharm", "IDEA"],
+#         "3": ["Alacritty", "tilix", "termite", "GitAhead", "alacritty"],
+#         "4": ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer", ],
+#         "5": ["evolution", "notion"],
+#         "6": ["pamac-manager", "stacer"],
+#         "7": ["vlc", "spotify", "pragha"],
+#     }
+#     wm_class = client.window.get_wm_class()[0]
+#     for i in range(len(d)):
+#         if wm_class in list(d.values())[i]:
+#             group = list(d.keys())[i]
+#             client.togroup(group)
+#             client.group.cmd_toscreen()

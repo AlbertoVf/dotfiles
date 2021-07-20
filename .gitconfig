@@ -1,6 +1,6 @@
 [user]
 	name = AlbertoVf
-	email = 8244709-AlbertoVf1@users.noreply.gitlab.com
+	email = 26661334+AlbertoVf@users.noreply.github.com
 [credential]
 	helper = store
 [color]
@@ -36,3 +36,5 @@
 	tool = meld
 [merge]
 	tool = meld
+[gui]
+	editor = nvim

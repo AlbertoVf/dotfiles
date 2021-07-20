@@ -9,4 +9,7 @@ configuration {
     font: "Anonymice Nerd Font Bold 14";
     display-format: "{icon} {name}";
 }
-@import "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+@import "./extensions/rofi-themes/launchers/misc/blurry.rasi"
+//@import "./extensions/rofi-themes/launchers/misc/launchpad.rasi"
+//@import "./extensions/rofi-themes/launchers/ribbon/ribbon_left_round.rasi"

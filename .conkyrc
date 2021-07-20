@@ -16,7 +16,7 @@ conky.config = {
 	alignment = 'bottom_right',
 
 	--Arch Duoscreen
-	gap_x = 0,
+	gap_x = 20,
 	gap_y = 50,
 	minimum_height = 320,
 	minimum_width = 680,
@@ -78,11 +78,12 @@ conky.config = {
 };
 
 conky.text = [[
-${image ~/.config/conky/images/back-tw.png -p 0,-30 -s 630x450}
+${image ~/.config/conky/images/back-tw.png -p 0,-30 -s 680x450}
 ${voffset 30 }${offset 50 }${font 1942 report:size=38:bold}${color}${time %H:%M %e/%m/%Y}
-${alignc}${font 1942 report:size=20:bold}Cpu: ${cpu cpu0}%  \
-Mem $mem  \
-Temp:${hwmon 1 temp 1} C${font}
+${alignc}${font 1942 report:size=20:bold}Cpu:${cpu cpu0}% \
+Ram:$mem \
+Bat:${battery_percent BAT0}% \
+Temp:${hwmon 1 temp 1}${font}
 
 ${color3}${alignc}Host:${nodename}
 ${alignc}Kernel:$kernel
