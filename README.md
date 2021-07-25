@@ -10,7 +10,7 @@
 
 [Qtile](https://gitlab.com/AlbertoVf1/qtile)
 
-[Rofi themes](https://github.com/adi1090x/rofi.git)
+[Rofi](.config/rofi/README.md)
 
 ## Start your dotfiles repository
 

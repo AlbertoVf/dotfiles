@@ -45,6 +45,9 @@ def init_widgets_list():
             font=f"{font} Bold",
             fmt="\uf026 {}",
             foreground=colors["color3"],
+            mouse_callbacks={
+                "Button3": lambda: qtile.cmd_spawn("pavucontrol"),
+            },
         ),
         widget.Battery(
             font=f"{font} Bold",

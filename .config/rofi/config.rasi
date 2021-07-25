@@ -3,13 +3,11 @@ configuration {
     display-window: "类 ";
     display-run: " ";
     display-ssh:" ";
-    display-file-browser-extended:" ";
     display-drun:" ";
-    show-icons: true;
-    font: "Anonymice Nerd Font Bold 14";
+    display-file-browser-extended:" ";
     display-format: "{icon} {name}";
+    drun-display-format:  "{name}";
+    font: "Anonymice Nerd Font Bold 12";
 }
 
-@import "./extensions/rofi-themes/launchers/misc/blurry.rasi"
-//@import "./extensions/rofi-themes/launchers/misc/launchpad.rasi"
-//@import "./extensions/rofi-themes/launchers/ribbon/ribbon_left_round.rasi"
+@import "./themes/blurry.rasi"
