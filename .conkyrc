@@ -79,7 +79,7 @@ conky.config = {
 
 conky.text = [[
 ${image ~/.config/conky/images/back-tw.png -p 0,-30 -s 680x450}
-${voffset 30 }${offset 50 }${font 1942 report:size=38:bold}${color}${time %H:%M %e/%m/%Y}
+${voffset 30 }${offset 50 }${font 1942 report:size=38:bold}${color}${time %H:%M %d/%m/%Y}
 ${alignc}${font 1942 report:size=20:bold}Cpu:${cpu cpu0}% \
 Ram:$mem \
 Bat:${battery_percent BAT0}% \

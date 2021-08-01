@@ -1,32 +1,69 @@
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'tpope/vim-commentary'" Comment code
-    Plug 'sheerun/vim-polyglot'" Syntax support
-    Plug 'jiangmiao/auto-pairs'" Autopairs
-    Plug 'scrooloose/NERDTree'" File explorer
-    Plug 'ryanoasis/vim-devicons'" Icons
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}" Intellisense
-    Plug 'Yggdroot/indentLine' " Indent guides
-    Plug 'mhinz/vim-signify' " Git integration
-    Plug 'alvan/vim-closetag' " Autoclose tags
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'} " Ranger
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }" Fzf
-    Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
+
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'kassio/neoterm' "terminal
+  "Plug 'preservim/nerdcommenter'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'vuciv/vim-bujo' "todo list
+
+  " syntax {
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }" Prettier
-    Plug 'norcalli/nvim-colorizer.lua' "Colorized
-    Plug 'machakann/vim-sandwich'
-    Plug 'tpope/vim-surround'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'sheerun/vim-polyglot'" Syntax support
+    Plug 'dense-analysis/ale' "linter
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}" Intellisense
+    Plug 'mattn/emmet-vim'
+    Plug 'zxqfl/tabnine-vim'
+  " }
+
+  " git {
     Plug 'airblade/vim-gitgutter' "git
-    " Themes
-    Plug 'vim-airline/vim-airline'
+    Plug 'mhinz/vim-signify' " Git integration
+    Plug 'tpope/vim-fugitive' " git
+
+  " }
+
+  " file explorer{
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }" Fzf
+    "Plug 'kevinhwang91/rnvimr', {'do': 'make sync'} " Ranger
+    Plug 'scrooloose/NERDTree'" File explorer
+  "}
+
+  " Formater{
+    "Plug 'airblade/vim-rooter'
+    Plug 'alvan/vim-closetag' " Autoclose tags
+    Plug 'Yggdroot/indentLine' " Indent guides
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'jiangmiao/auto-pairs'" Autopairs
+    Plug 'tpope/vim-commentary'" Comment code
+    Plug 'tpope/vim-surround'
+  " }
+
+  " interface{
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline'
+    Plug 'frazrepo/vim-rainbow'
+    Plug 'ryanoasis/vim-devicons'" Icons
+    Plug 'norcalli/nvim-colorizer.lua' "Colorized
+    Plug 'arcticicestudio/nord-vim'
     Plug 'ayu-theme/ayu-vim'
     Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'arcticicestudio/nord-vim'
-    Plug 'sonph/onehalf', { 'rtp': 'vim' }
     Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
+  " }
+
+
+
+
+
+
 call plug#end()
+
+
+
+"
+" Plugin Config
+"
 
 " Remap escape
 nnoremap <C-c> <Esc>
@@ -59,10 +96,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
-"
-" Plugin Config
-"
 
 "explorer
 nmap <Leader>e :CocCommand explorer<CR>
