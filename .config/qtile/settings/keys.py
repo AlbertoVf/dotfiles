@@ -49,7 +49,8 @@ keys = [
     Key(["mod1"], "F1", lazy.spawn("rofi -show window")),
     Key(["mod1"], "F2", lazy.spawn("rofi -show drun")),
     Key(["mod1"], "F3", lazy.spawn("rofi -show file-browser-extended")),
-    Key(["mod1"], "F4", lazy.spawn("rofi -show file-browser-extended -file-browser-dir ~/Proyectos")),
+    Key(["mod1"], "F4", lazy.spawn(
+        "rofi -show file-browser-extended -file-browser-dir ~/Proyectos")),
     Key(["mod1"], "F5", lazy.spawn("rofi -show ssh")),
     Key(["mod1"], "h", lazy.spawn(terminal + ' -e htop')),
     Key(["mod1"], "Left", lazy.spawn('variety -p')),
@@ -84,57 +85,99 @@ keys = [
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
 ]
 
+# focus and screen
 keys.extend([
     # Switch focus of monitors
     Key([mod], "period", lazy.next_screen()),
     Key([mod], "comma", lazy.prev_screen()),
+    Key([mod], "space", lazy.next_layout()),
+    # CHANGE FOCUS
+    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "Up", lazy.layout.up()),
+    Key([mod], "j", lazy.layout.down()),
+    Key([mod], "Down", lazy.layout.down()),
+    Key([mod], "h", lazy.layout.left()),
+    Key([mod], "Left", lazy.layout.left()),
+    Key([mod], "l", lazy.layout.right()),
+    Key([mod], "Right", lazy.layout.right()),
     # Change Window to specific monitor
     Key([mod, "shift"], "period", lazy.to_screen(0)),
     Key([mod, "shift"], "comma", lazy.to_screen(1)),
-    # QTILE LAYOUT KEYS
-    Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "space", lazy.next_layout()),
-    # FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    Key([mod, "shift"], "f", lazy.layout.flip()),
-    # TOGGLE FLOATING LAYOUT
-    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
-    # CHANGE FOCUS
-    Key([mod], "Up", lazy.layout.up()),
-    Key([mod], "Down", lazy.layout.down()),
-    Key([mod], "Left", lazy.layout.left()),
-    Key([mod], "Right", lazy.layout.right()),
-    Key([mod], "k", lazy.layout.up()),
-    Key([mod], "j", lazy.layout.down()),
-    Key([mod], "h", lazy.layout.left()),
-    Key([mod], "l", lazy.layout.right()),
-    # RESIZE UP, DOWN, LEFT, RIGHT
+    # WINDOWS STATE
+    Key([mod, "shift"], "n", lazy.layout.normalize()),
+    Key([mod, "shift"], "m", lazy.layout.maximize()),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+    Key([mod, "shift"], "space", lazy.layout.flip(), lazy.layout.toggle_split()),
+
+    # MOVE WINDOW
     Key(
-        [mod, "control"], "l",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
+        [mod, "shift"], "j",
+        lazy.layout.shuffle_down(),
+        lazy.layout.swap_down(),
     ),
     Key(
-        [mod, "control"], "Right",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
+        [mod, "shift"], "Down",
+        lazy.layout.shuffle_down(),
+        lazy.layout.swap_down(),
     ),
     Key(
-        [mod, "control"], "h",
-        lazy.layout.grow_left(),
+        [mod, "shift"], "k",
+        lazy.layout.shuffle_up(),
+        lazy.layout.swap_up(),
+    ),
+    Key(
+        [mod, "shift"], "Up",
+        lazy.layout.shuffle_up(),
+        lazy.layout.swap_up(),
+    ),
+    Key(
+        [mod, "shift"], "h",
+        lazy.layout.shuffle_left(),
+        lazy.layout.swap_left(),
+        lazy.layout.swap_column_left()
+    ),
+    Key(
+        [mod, "shift"], "Left",
+        lazy.layout.shuffle_left(),
+        lazy.layout.swap_left(),
+        lazy.layout.swap_column_left()
+    ),
+    Key(
+        [mod, "shift"], "l",
+        lazy.layout.shuffle_right(),
+        lazy.layout.swap_right(),
+        lazy.layout.swap_column_right()
+    ),
+    Key(
+        [mod, "shift"], "Right",
+        lazy.layout.shuffle_right(),
+        lazy.layout.swap_right(),
+        lazy.layout.swap_column_right()
+    ),
+    # Reorder windows
+    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "Down", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "Up", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "Left", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    Key([mod, "mod1"], "Right", lazy.layout.flip_right()),
+
+    # SIZE WINDOWS
+    Key(
+        [mod, "control"], "j",
+        lazy.layout.grow_down(),
         lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
+        lazy.layout.increase_nmaster(),
+        lazy.layout.section_down(),
     ),
     Key(
-        [mod, "control"], "Left",
-        lazy.layout.grow_left(),
+        [mod, "control"], "Down",
+        lazy.layout.grow_down(),
         lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
+        lazy.layout.increase_nmaster(),
+        lazy.layout.section_down(),
     ),
     Key(
         [mod, "control"], "k",
@@ -151,49 +194,32 @@ keys.extend([
         lazy.layout.section_up(),
     ),
     Key(
-        [mod, "control"], "j",
-        lazy.layout.grow_down(),
+        [mod, "control"], "h",
+        lazy.layout.grow_left(),
         lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        lazy.layout.section_down(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
     ),
     Key(
-        [mod, "control"], "Down",
-        lazy.layout.grow_down(),
+        [mod, "control"], "Left",
+        lazy.layout.grow_left(),
         lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        lazy.layout.section_down(),
-    ),
-    # FLIP LAYOUT FOR BSP
-    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
-    # MOVE WINDOWS UP OR DOWN BSP LAYOUT
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key(
-        [mod, "shift"], "h",
-        lazy.layout.shuffle_left(),
-        lazy.layout.swap_left()
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
     ),
     Key(
-        [mod, "shift"], "l",
-        lazy.layout.shuffle_right(),
-        lazy.layout.swap_right()
-    ),
-    # MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
-    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    Key(
-        [mod, "shift"], "Left",
-        lazy.layout.swap_left(),
-        lazy.layout.shuffle_left()
+        [mod, "control"], "l",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
     ),
     Key(
-        [mod, "shift"], "Right",
-        lazy.layout.swap_right(),
-        lazy.layout.shuffle_right()
+        [mod, "control"], "Right",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
     ),
 ])
 

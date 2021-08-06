@@ -33,7 +33,7 @@ def init_widgets_list():
         widget.WindowName(
             font=f"{font} Bold",
             max_chars=50,
-            formant="{name}",
+            format="{class} > {name}",
             foreground=colors["focus"],
         ),
         widget.CapsNumLockIndicator(
