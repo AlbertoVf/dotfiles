@@ -9,7 +9,7 @@
 
 configuration {
   show-icons:         true;
-  icon-theme:         "Papirus";
+  icon-theme:         "Surfn-Papirus-Blue";
   disable-history:    false;
   fullscreen:         false;
   hide-scrollbar:     true;
@@ -28,10 +28,8 @@ window {
   transparency:       "real";
   background-color:   @background;
   text-color:         @foreground;
-  border:             0px;
-  border-color:       @border;
-  border-radius:      10px;
-  width:              40%;
+  border-radius:      30px;
+  width:              60%;
   location:           center;
   x-offset:           0;
   y-offset:           0;
@@ -50,8 +48,7 @@ entry {
   text-color:         @foreground;
   placeholder-color:  @foreground;
   expand:             true;
-  horizontal-align:   0;
-  //placeholder:      "Search";
+  horizontal-align:   0.5;
   padding:            0.10% 0% 0% 0%;
   blink:              true;
 }
@@ -70,7 +67,7 @@ inputbar {
 
 listview {
   background-color:   @background-alt;
-  columns:            6;
+  columns:            5;
   lines:              3;
   spacing:            0%;
   cycle:              true;
@@ -102,7 +99,7 @@ element-icon {
 }
 
 element-text {
-  expand:             true;
+  expand:             false;
   horizontal-align:   0.5;
   vertical-align:     0.5;
   margin:             0.5% 0.5% -0.5% 0.5%;

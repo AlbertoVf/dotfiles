@@ -87,7 +87,7 @@
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " /",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Palenight Italic",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
