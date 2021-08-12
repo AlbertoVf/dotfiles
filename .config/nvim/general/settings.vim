@@ -4,14 +4,14 @@ filetype plugin on
 syntax enable
 set number relativenumber
 set colorcolumn=120
-set shiftwidth=2
+set shiftwidth=4
 set cursorline
-set laststatus=0
+set laststatus=4
 set smartindent
 set autoindent
 set expandtab
 set smarttab
-set tabstop=2
+set tabstop=4
 set showtabline=2
 set hidden
 set wrap
@@ -22,6 +22,6 @@ set autochdir
 set formatoptions-=cro
 set encoding=utf-8
 set mouse=a
-set clipboard=unnamedplus
+set clipboard=unnamed
 set background=dark
 set fileencoding=utf-8

@@ -23,7 +23,7 @@ def init_widgets_list():
             active=colors["active"],
             inactive=colors["inactive"],
             highlight_color=colors["text"],
-            this_current_screen_border=colors["focus"],
+            this_current_screen_border=colors["color2"],
             other_current_screen_border=colors["color3"],
         ),
         widget.CurrentLayout(
@@ -32,8 +32,8 @@ def init_widgets_list():
         ),
         widget.WindowName(
             font=f"{font} Bold",
-            max_chars=50,
-            format="{class} > {name}",
+            format="{name}",
+            max_chars=90,
             foreground=colors["focus"],
         ),
         widget.CapsNumLockIndicator(
@@ -66,11 +66,9 @@ def init_widgets_list():
             distro="Arch",
             custom_command="pacman -Qu",
             execute=f"{terminal} -e sudo pacman -Syu",
-            update_interval=3600,
+            update_interval=1800,
             display_format='\uf547 {updates} Updates',
-            # no_update_string="\uf547  0 Updates",
             colour_have_updates=colors["urgent"],
-            # colour_no_updates=colors["urgent"],
         ),
         widget.Clock(
             font=f"{font} Bold",
@@ -112,7 +110,7 @@ def init_widgets_list01():
             active=colors["active"],
             inactive=colors["inactive"],
             highlight_color=colors["text"],
-            this_current_screen_border=colors["focus"],
+            this_current_screen_border=colors["color2"],
             other_current_screen_border=colors["color3"],
         ),
     ]

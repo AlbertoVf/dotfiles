@@ -1,40 +1,51 @@
 [user]
-name = AlbertoVf
-email = 8244709-AlbertoVf1@users.noreply.gitlab.com
+	name = AlbertoVf
+	email = 8244709-AlbertoVf1@users.noreply.gitlab.com
 [credential]
-helper = store
+	helper = store
 [color]
-ui = true
+	ui = true
 [color "branch"]
-current = yellow reverse
-local = yellow
-remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-meta = yellow bold
-frag = magenta bold
-old = red bold
-new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-added = green
-changed = yellow
-untracked = red
+	added = green
+	changed = yellow
+	untracked = red
 [push]
-default = simple
+	default = simple
 [core]
-whitespace = trailing-space
-symlinks = false
-eol = lf
-autocrlf = input
+	whitespace = trailing-space
+	symlinks = false
+	eol = lf
+	autocrlf = input
 [init]
-defaultBranch = main
+	defaultBranch = main
 [filter "lfs"]
-clean = git-lfs clean -- %f
-smudge = git-lfs smudge -- %f
-process = git-lfs filter-process
-required = true
-[diff]
-tool = meld
-[merge]
-tool = meld
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [gui]
-editor = code
+	editor = code
+[alias]
+	st = status
+	a = add
+	aa = add --all
+	b = branch
+	d = diff
+	l = log --oneline --decorate --all --graph
+	lg = log --stat
+	c = commit -m
+	p = push
+	pm = push --mirror
+	pl = pull
+	rst = restore
+	r = remote
+	t = tag -a

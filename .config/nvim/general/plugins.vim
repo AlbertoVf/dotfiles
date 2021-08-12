@@ -14,6 +14,21 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}" Intellisense
     Plug 'mattn/emmet-vim'
     Plug 'zxqfl/tabnine-vim'
+    Plug 'klen/python-mode'
+    Plug 'pangloss/vim-javascript'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'mxw/vim-jsx'
+    Plug 'fatih/vim-go'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'elzr/vim-json'
+    Plug 'rust-lang/rust.vim'
+    Plug 'hail2u/vim-css3-syntax'
+    Plug 'cakebaker/scss-syntax.vim'
+    Plug 'ekalinin/dockerfile.vim'
+    Plug 'stanangeloff/php.vim'
+    Plug 'chrisbra/csv.vim'
+
   " }
 
   " git {
@@ -49,17 +64,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'ayu-theme/ayu-vim'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'Badacadabra/vim-archery'
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
   " }
 
-
-
-
-
-
 call plug#end()
-
-
 
 "
 " Plugin Config

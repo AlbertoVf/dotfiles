@@ -25,8 +25,8 @@ window:
 
 
 cursor:
-  style: Underline
-  unfocused_hollow: true
+  style: Beam
+  unfocused_hollow: false
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
