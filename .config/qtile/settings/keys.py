@@ -91,6 +91,9 @@ keys.extend([
     Key([mod], "period", lazy.next_screen()),
     Key([mod], "comma", lazy.prev_screen()),
     Key([mod], "space", lazy.next_layout()),
+    # Change Window to specific monitor
+    Key([mod, "shift"], "period", lazy.to_screen(0)),
+    Key([mod, "shift"], "comma", lazy.to_screen(1)),
     # CHANGE FOCUS
     Key([mod], "k", lazy.layout.up()),
     Key([mod], "Up", lazy.layout.up()),
@@ -100,12 +103,9 @@ keys.extend([
     Key([mod], "Left", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
     Key([mod], "Right", lazy.layout.right()),
-    # Change Window to specific monitor
-    Key([mod, "shift"], "period", lazy.to_screen(0)),
-    Key([mod, "shift"], "comma", lazy.to_screen(1)),
     # WINDOWS STATE
-    Key([mod, "shift"], "n", lazy.layout.normalize()),
-    Key([mod, "shift"], "m", lazy.layout.maximize()),
+    Key([mod, "control"], "n", lazy.layout.normalize()),
+    Key([mod, "control"], "m", lazy.layout.maximize()),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod, "shift"], "space", lazy.layout.flip(), lazy.layout.toggle_split()),
 
@@ -114,55 +114,54 @@ keys.extend([
         [mod, "shift"], "j",
         lazy.layout.shuffle_down(),
         lazy.layout.swap_down(),
+        lazy.layout.flip_down(),
     ),
     Key(
         [mod, "shift"], "Down",
         lazy.layout.shuffle_down(),
         lazy.layout.swap_down(),
+        lazy.layout.flip_down(),
     ),
     Key(
         [mod, "shift"], "k",
         lazy.layout.shuffle_up(),
         lazy.layout.swap_up(),
+        lazy.layout.flip_up(),
     ),
     Key(
         [mod, "shift"], "Up",
         lazy.layout.shuffle_up(),
         lazy.layout.swap_up(),
+        lazy.layout.flip_up(),
     ),
     Key(
         [mod, "shift"], "h",
         lazy.layout.shuffle_left(),
         lazy.layout.swap_left(),
-        lazy.layout.swap_column_left()
+        lazy.layout.swap_column_left(),
+        lazy.layout.flip_left(),
     ),
     Key(
         [mod, "shift"], "Left",
         lazy.layout.shuffle_left(),
         lazy.layout.swap_left(),
-        lazy.layout.swap_column_left()
+        lazy.layout.swap_column_left(),
+        lazy.layout.flip_left(),
     ),
     Key(
         [mod, "shift"], "l",
         lazy.layout.shuffle_right(),
         lazy.layout.swap_right(),
-        lazy.layout.swap_column_right()
+        lazy.layout.swap_column_right(),
+        lazy.layout.flip_right(),
     ),
     Key(
         [mod, "shift"], "Right",
         lazy.layout.shuffle_right(),
         lazy.layout.swap_right(),
-        lazy.layout.swap_column_right()
+        lazy.layout.swap_column_right(),
+        lazy.layout.flip_right(),
     ),
-    # Reorder windows
-    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "Down", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "Up", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
-    Key([mod, "mod1"], "Left", lazy.layout.flip_left()),
-    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    Key([mod, "mod1"], "Right", lazy.layout.flip_right()),
 
     # SIZE WINDOWS
     Key(

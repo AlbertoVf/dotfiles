@@ -24,7 +24,7 @@ def init_widgets_list():
             inactive=colors["inactive"],
             highlight_color=colors["text"],
             this_current_screen_border=colors["focus"],
-            other_current_screen_border=colors["text"],
+            other_current_screen_border=colors["color3"],
         ),
         widget.CurrentLayout(
             font=f"{font} Bold",
@@ -102,6 +102,18 @@ def init_widgets_list01():
             format="[ %c ]",
             foreground=colors["color4"],
             background=colors["dark"],
+        ),
+        widget.GroupBox(
+            fontsize=12,
+            borderwidth=2,
+            rounded=False,
+            disable_drag=True,
+            highlight_method="line",
+            active=colors["active"],
+            inactive=colors["inactive"],
+            highlight_color=colors["text"],
+            this_current_screen_border=colors["focus"],
+            other_current_screen_border=colors["color3"],
         ),
     ]
     return widgets_list
