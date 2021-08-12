@@ -23,7 +23,7 @@
 	<icon>insert-link-symbolic</icon>
 	<name>Create symlink</name>
 	<unique-id>1526631663081446-14</unique-id>
-	<command>ln -s  %f &quot;%n&quot;</command>
+	<command>ln -s %f &quot;%n&quot;</command>
 	<description>Softlink between two files or directories</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -56,24 +56,6 @@
 	<description>Check md5sum</description>
 	<patterns>*.iso;*.ISO;*.tar.gz;*.TAR.GZ;*.zip;*.ZIP</patterns>
 	<other-files/>
-</action>
-<action>
-	<icon>preferences-desktop-wallpaper</icon>
-	<name>Set wallpaper dual</name>
-	<unique-id>1526628754365261-1</unique-id>
-	<command>nitrogen --save --set-zoom-fill %f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<image-files/>
-</action>
-<action>
-	<icon>preferences-desktop-wallpaper</icon>
-	<name>Set wallpaper single</name>
-	<unique-id>1489091195323731-3</unique-id>
-	<command>nitrogen --save --set-zoom-fill  --head=0 %f  &amp;&amp; nitrogen --set-zoom-fill  --head=1 %f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<image-files/>
 </action>
 <action>
 	<icon>image-x-generic</icon>
@@ -114,23 +96,13 @@
 	<text-files/>
 </action>
 <action>
-	<icon>gitahead</icon>
-	<name>Open with gitahead</name>
+	<icon>gitg</icon>
+	<name>Open with gitUI</name>
 	<unique-id>1587287434852027-1</unique-id>
-	<command>gitahead %F</command>
-	<description>Open with gitahead</description>
+	<command>gitkraken %F</command>
+	<description>Open with gitUI</description>
 	<patterns>*</patterns>
 	<directories/>
-</action>
-<action>
-	<icon>cs-startup-programs</icon>
-	<name>Run</name>
-	<unique-id>1526630606202525-4</unique-id>
-	<command>alacritty -e %f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<other-files/>
-	<text-files/>
 </action>
 <action>
 	<icon>run-build</icon>
@@ -143,53 +115,17 @@
 	<text-files/>
 </action>
 <action>
-	<icon>system-file-manager</icon>
-	<name>Abrir como root</name>
-	<unique-id>1493475601060449-3</unique-id>
-	<command>pkexec thunar %f</command>
+	<icon>cs-startup-programs</icon>
+	<name>Run</name>
+	<unique-id>1526630606202525-4</unique-id>
+	<command>alacritty -e %f</command>
 	<description></description>
 	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>ktexteditorautobrace</icon>
-	<name>Editar como root</name>
-	<unique-id>1526631419798289-11</unique-id>
-	<command>gksudo nvim %F</command>
-	<description>edit as root</description>
-	<patterns>*</patterns>
-	<text-files/>
-</action>
-<action>
-	<icon>settings</icon>
-	<name>Hacer propiedad de root</name>
-	<unique-id>1526631155250282-8</unique-id>
-	<command>gnome-keyring-daemon -r -d;gksu &quot;chown -R root:root %F&quot;</command>
-	<description>Change permissions to root</description>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
 	<other-files/>
 	<text-files/>
-	<video-files/>
 </action>
 <action>
-	<icon>settings</icon>
-	<name>Hacer de tu propiedad</name>
-	<unique-id>1526631178674034-9</unique-id>
-	<command>gnome-keyring-daemon -r -d;gksu &quot;chown -R $USER:$USER %F&quot;</command>
-	<description>Change permissions to user</description>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
-<action>
-	<icon>clipboard</icon>
+	<icon>paperclip</icon>
 	<name>Copy file path</name>
 	<unique-id>1626443329564542-1</unique-id>
 	<command>echo &quot;%F&quot; | xclip -sel c</command>
@@ -203,7 +139,7 @@
 	<video-files/>
 </action>
 <action>
-	<icon>clipboard</icon>
+	<icon>paperclip</icon>
 	<name>Copy name</name>
 	<unique-id>1626704690182391-1</unique-id>
 	<command>echo &quot;%N&quot; | xclip -sel c</command>
@@ -217,12 +153,58 @@
 	<video-files/>
 </action>
 <action>
-	<icon>application-pdf</icon>
+	<icon>pdfeditor</icon>
 	<name>Merge PDF</name>
 	<unique-id>1627148699144999-1</unique-id>
 	<command>pdftk %F cat output output.pdf</command>
 	<description>merge pdf</description>
 	<patterns>*.pdf</patterns>
 	<other-files/>
+</action>
+<action>
+	<icon>icon_user</icon>
+	<name>Hacer de tu propiedad</name>
+	<unique-id>1526631178674034-9</unique-id>
+	<command>gnome-keyring-daemon -r -d;gksu &quot;chown -R $USER:$USER %F&quot;</command>
+	<description>Change permissions to user</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>system-file-manager</icon>
+	<name>Abrir como root</name>
+	<unique-id>1493475601060449-3</unique-id>
+	<command>pkexec thunar %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>com.bixense.PasswordCalculator</icon>
+	<name>Editar como root</name>
+	<unique-id>1526631419798289-11</unique-id>
+	<command>gksudo nvim %F</command>
+	<description>edit as root</description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>preferences-system-user-sudo</icon>
+	<name>Hacer propiedad de root</name>
+	<unique-id>1526631155250282-8</unique-id>
+	<command>gnome-keyring-daemon -r -d;gksu &quot;chown -R root:root %F&quot;</command>
+	<description>Change permissions to root</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>
