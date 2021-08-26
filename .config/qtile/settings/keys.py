@@ -91,9 +91,6 @@ keys.extend([
     Key([mod], "period", lazy.next_screen()),
     Key([mod], "comma", lazy.prev_screen()),
     Key([mod], "space", lazy.next_layout()),
-    # Change Window to specific monitor
-    Key([mod, "shift"], "period", lazy.to_screen(0)),
-    Key([mod, "shift"], "comma", lazy.to_screen(1)),
     # CHANGE FOCUS
     Key([mod], "k", lazy.layout.up()),
     Key([mod], "Up", lazy.layout.up()),

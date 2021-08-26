@@ -80,7 +80,7 @@ def init_widgets_list():
             foreground=colors["color1"],
             background=colors["dark"],
         ),
-        systray(),
+        systray(size=22),
     ]
     return widgets_list
 

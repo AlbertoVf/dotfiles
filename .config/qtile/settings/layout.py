@@ -1,11 +1,6 @@
 from libqtile import layout
 from settings.shortcut import colors
 
-
-# def init_layout_theme():
-#     return
-
-
 layout_theme = {
     "margin": 4,
     "border_width": 2,

@@ -1,32 +1,22 @@
 {
-  "[css]": {
-    "editor.defaultFormatter": "HookyQR.beautify"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
+  "[html]": { "editor.defaultFormatter": "vscode.html-language-features" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
+  "[python]": { "editor.defaultFormatter": "ms-python.python" },
   "[scss]": {
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": [
-      "document"
-    ],
-    "editor.defaultFormatter": "SimonSiefke.prettier-vscode",
+    "gitlens.codeLens.scopes": ["document"],
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "bashBeautify.tabSize": 2,
   "C_Cpp.intelliSenseEngine": "Disabled",
   "css.lint.duplicateProperties": "warning",
   "debug.terminal.clearBeforeReusing": true,
   "diffEditor.codeLens": true,
-  "editor.fontFamily": "JetbrainsMono Nerd Font,Anoymice NF, monospace",
+  "editor.fontFamily": "FantasqueSansMono Nerd Font, Anoymice NF, monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  // "editor.fontWeight": "500",
+  "editor.fontSize": 16,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -34,15 +24,16 @@
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.preview": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.suggestSelection": "first",
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
   "editor.wrappingIndent": "deepIndent",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   "explorer.incrementalNaming": "smart",
-  "files.associations": {
-    "*.html": "html"
-  },
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 10000,
@@ -56,7 +47,6 @@
     "**/.settings": true,
     "**/*.meta": true
   },
-  "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
@@ -69,13 +59,11 @@
   "html.format.templating": true,
   "html.format.wrapLineLength": 0,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "kite.showWelcomeNotificationOnStartup": false,
   "less.lint.duplicateProperties": "warning",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdown.preview.typographer": true,
-  "python.showStartPage": false,
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.terminal.executeInFileDir": true,
-  "redhat.telemetry.enabled": true,
   "scss.lint.duplicateProperties": "warning",
   "search.showLineNumbers": true,
   "sqltools.connections": [],
@@ -83,11 +71,11 @@
   "tabnine.experimentalAutoImports": true,
   "timeline.excludeSources": [],
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.closeWhenEmpty": true,
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " /",
-  "workbench.colorTheme": "Palenight Italic",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
@@ -98,21 +86,9 @@
   "workbench.preferredDarkColorTheme": "Dracula",
   "workbench.preferredLightColorTheme": "GitHub Plus",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
-  "workbench.tree.indent": 16,
-  "editor.snippetSuggestions": "top",
-  "editor.suggest.preview": true,
-  "editor.suggest.showStatusBar": true,
-  "[shellscript]": {
-    "editor.defaultFormatter": "shakram02.bash-beautify"
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "markdown.extension.tableFormatter.normalizeIndentation": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
-  "editor.tabSize": 2,
-  "[xml]": {
-    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
-  },
+  "workbench.colorTheme": "Dracula",
+  "editor.tabSize": 2
 }

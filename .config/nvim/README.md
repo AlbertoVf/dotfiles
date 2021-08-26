@@ -1,8 +1,4 @@
-![Neovim](./neovim.png)
-
-***Idioma***
-- 🇪🇸 Español
-- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.config/nvim)
+- [original](https://github.com/antoniosarosi/dotfiles/tree/master/.config/nvim)
 
 
 Para usar esta configuración, primero descarga las dependencias:

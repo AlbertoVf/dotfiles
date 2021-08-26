@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
+	<icon>multimedia-video-player</icon>
+	<name>Crear Reproduccion</name>
+	<unique-id>1630055795331873-1</unique-id>
+	<command>fd -at f -e mp4 --full-path %f&gt; %n.m3u</command>
+	<description>Crea una lista de reproduccion de la carpeta</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>vlc</icon>
+	<name>Open with Vlc</name>
+	<unique-id>1629287747170523-1</unique-id>
+	<command>vlc --recursive expand %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1488955845049151-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<command>alacritty --working-directory %f</command>
 	<description>Example for a custom action</description>
 	<patterns>*</patterns>
 	<startup-notify/>
@@ -99,7 +117,7 @@
 	<icon>gitg</icon>
 	<name>Open with gitUI</name>
 	<unique-id>1587287434852027-1</unique-id>
-	<command>gitkraken %F</command>
+	<command>gitkraken -p %f</command>
 	<description>Open with gitUI</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -128,7 +146,7 @@
 	<icon>paperclip</icon>
 	<name>Copy file path</name>
 	<unique-id>1626443329564542-1</unique-id>
-	<command>echo &quot;%F&quot; | xclip -sel c</command>
+	<command>echo &quot;%F&quot;| xclip -sel c</command>
 	<description>Copia ruta completa</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -142,7 +160,7 @@
 	<icon>paperclip</icon>
 	<name>Copy name</name>
 	<unique-id>1626704690182391-1</unique-id>
-	<command>echo &quot;%N&quot; | xclip -sel c</command>
+	<command>echo &quot;%N&quot;| xclip -sel c</command>
 	<description>Copia nombre</description>
 	<patterns>*</patterns>
 	<directories/>

@@ -1,71 +1,75 @@
 #!/bin/bash
 export EDITOR="nvim"
 
-alias grep='grep --color'
-alias h='history'
 alias ag="alias | grep"
-alias s="sudo"
 alias example="tldr"
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias find="fd"
+alias grep="grep --color"
+alias h="history"
+alias s="sudo"
 
 # Folders alias{
   # Show files and dirs: sorted by type, icons, readable
-  alias ls='exa --icons -tR -s type'
+  alias ls="exa --icons -tR -s type"
   # long format, sorted by type, view octal permissions
-  alias l='exa -lh -s type --octal-permissions --time-style long-iso'
-  alias lsa='exa --icons -a -s type' # all files and dirs, sorted by type
-  # allaliasiles and dir long format, sorted by type, view octal permissions
-  alias la='exa -alh -s type --octal-permissions --time-style long-iso'
-  alias lt='exa -aT --icons' # tree listing
-  alias ll="exa -1@ | grep '\->' | awk -F '->' '{ print $1 }'"
+  alias l="exa -lh -s type --octal-permissions --time-style long-iso"
+  alias lsa="exa --icons -a -s type" # all files and dirs, sorted by type
+  # long format, sorted by type, view octal permissions
+  alias la="exa -alh -s type --octal-permissions --time-style long-iso"
   alias lg="exa -laGRTh -I .git --no-user --no-time --no-filesize --no-permissions -rs modified --octal-permissions --git-ignore --git"
+  alias ll="exa -1@ | grep '\->' | awk -F '->' '{ print $1 }'"
+  alias lt="exa -aT --icons" # tree listing
 
-  alias cp='cp -i'
-  alias mv='mv -i'
-  alias rm='rm -i'
-  alias mkdir='mkdir -pv'
+  alias cp="cp -i"
+  alias mkdir="mkdir -pv"
+  alias mv="mv -i"
+  alias rm="rm -i"
 # }
 
-# Pacman & Paru alias {
-  alias pacin='sudo pacman -S'
-  alias pacins='sudo pacman -U'
-  alias paclsorphans='sudo pacman -Qdt'
-  alias pacre='sudo pacman -R'
-  alias pacrem='sudo pacman -Rns'
-  alias pacupg='sudo pacman -Syu'
-  alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
-  alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # cleanup orphaned packages
-  alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
-  alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
-  alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
+# packages alias {
+
+  alias pacin="sudo pacman -S"                      # install package
+  alias pacrem="sudo pacman -Rns"                   # remove package and dependencies
+  alias pacsyu="sudo pacman -Syyu"                  # update only standard pkgs
+  alias unlock="sudo rm /var/lib/pacman/db.lck"     # remove pacman lock
+
+  alias parsua="sudo paru -Sua"                     # update aur packages
+  alias parsyu="sudo paru -Syu"                     # update standar packages and aur
+
+  alias ain="sudo aura -A"                          # install aur package
+  alias ad="sudo aura -C"                           # downgrade a package
+  alias aup="sudo aura -Akua"                       # upgrade all aur packages
+  alias aclean="sudo aura -Cc 2"                    # clean packages, retains 2 last packages
+  alias ab="sudo aura -B"                           # save packages state
+  alias cleanup="sudo aura -Oj"                     # cleanup orphaned packages
 # }
 
 # git alias {
-  alias g="git"
-  alias gst="git status"
+  alias branch="git branch"
+  alias checkout="git checkout"
+  alias clone="git clone"
+  alias diff="git diff"
+  alias fetch="git fetch"
   alias ga="git add"
   alias gaa="git add --all"
-  alias gb="git branch"
-  alias gd="git diff"
-  alias gl="git log --oneline --decorate --all --graph"
-  alias glg="git log --stat"
+  alias gau="git add -u"
   alias gc="git commit -m"
-  alias gp="git push"
-  alias gpm="git push --mirror"
-  alias gpl="git pull"
-  alias grst="git restore"
-  alias gr="git remote"
-  alias gt="git tag -a"
+  alias gl="git log --oneline --decorate --all --graph"
+  alias gls="git log --stat"
+  alias gst="git status"
+  alias pull="git pull origin"
+  alias push="git push origin"
+  alias remotes="git remote -v"
 # }
 
 # Dotfiles alias {
-  alias dotfiles='/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME'
-  alias dota='dotfiles add'
-  alias dotl='dotfiles log --stat'
-  alias dotc='dotfiles commit -m'
-  alias dotp='dotfiles push'
-  alias dotst='dotfiles status'
+  alias dotfiles="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
+  alias dota="dotfiles add -u"
+  alias dotc="dotfiles commit -m"
+  alias dotd="dotfiles diff"
+  alias dotl="dotfiles log --oneline --decorate --all --graph"
+  alias dotp="dotfiles push"
+  alias dotst="dotfiles status"
 # }
 
 # function alias {
@@ -79,19 +83,18 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
       do
         if [ -f "$n" ] ; then
           case "${n%,}" in
-            *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) tar xvf "$n";;
-            *.lzma) unlzma ./"$n";;
+            *.7z|*.arj|*.cab|*.cb7|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.pkg|*.rpm|*.udf|*.wim|*.xar) z x ./"$n";;
             *.bz2) bunzip2 ./"$n";;
-            *.cbr|*.rar) unrar x -ad ./"$n";;
-            *.gz) gunzip ./"$n";;
-            *.cbz|*.epub|*.zip) unzip ./"$n";;
-            *.z) uncompress ./"$n";;
-            *.7z|*.arj|*.cab|*.cb7|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.pkg|*.rpm|*.udf|*.wim|*.xar)
-            z x ./"$n";;
-            *.xz) unxz ./"$n";;
-            *.exe) cabextract ./"$n";;
-            *.cpio) cpio -id < ./"$n";;
             *.cba|*.ace) unace x ./"$n";;
+            *.cbr|*.rar) unrar x -ad ./"$n";;
+            *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) tar xvf "$n";;
+            *.cbz|*.epub|*.zip) unzip ./"$n";;
+            *.cpio) cpio -id < ./"$n";;
+            *.exe) cabextract ./"$n";;
+            *.gz) gunzip ./"$n";;
+            *.lzma) unlzma ./"$n";;
+            *.xz) unxz ./"$n";;
+            *.z) uncompress ./"$n";;
             *)
               echo "extract: '$n' - unknown archive method"
               return 1
@@ -118,15 +121,15 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
       do
         if [ -f "$n" ] ; then
           case "${n%,}" in
-            *.sh) sh ./"$n";;
-            *.zsh) zsh ./"$n";;
             *.bash) bash ./"$n";;
-            *.py) python ./"$n";;
             *.java) java ./"$n";;
-            *.ts|*.js) deno run ./"$n";;
-            *.mp4|*.mp3|*.m4a|*.aac|*.flac) vlc ./"$n";;
-            *.pdf) evince ./"$n";;
             *.jpg|*.jpeg|*.png|*.bmp|*.gif) feh ./"$n";;
+            *.mp4|*.mp3|*.m4a|*.aac|*.flac) mpv ./"$n";;
+            *.pdf) evince ./"$n";;
+            *.py) python ./"$n";;
+            *.sh) sh ./"$n";;
+            *.ts|*.js) deno run ./"$n";;
+            *.zsh) zsh ./"$n";;
             *) $EDITOR ./"$n"
           esac
         else
@@ -147,25 +150,19 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
   list2="-o $ruta'%(playlist)s/%(title)s.%(ext)s'"
 
   # youtube audio
-  alias yt-mp3="youtube-dl $metadata $extract mp3 $file"
-  alias yt-m4a="youtube-dl $metadata $extract m4a $file"
   alias yt-aac="youtube-dl $metadata $extract aac $file"
   alias yt-flac="youtube-dl $metadata $extract flac $file"
-
+  alias yt-m4a="youtube-dl $metadata $extract m4a $file"
+  alias yt-mp3="youtube-dl $metadata $extract mp3 $file"
   # youtube video
   alias yt-mp4="youtube-dl --add-metadata -f mp4 $file"
-
   # youtube playlist order
   alias yt-audio-list="youtube-dl -w $metadata $extract mp3 $list"
   alias yt-video-list="youtube-dl -w --add-metadata -f mp4 $list"
-
   # youtube playlist unorder
   alias yt-audio-unlist="youtube-dl -w $metadata $extract mp3 $list2"
   alias yt-video-unlist="youtube-dl -w --add-metadata -f mp4 $list2"
-
   # youtube user videos
   alias yt-user-audio="youtube-dl -w  $metadata $extract mp3 -o $ruta'%(uploader)s/%(title)s.%(ext)s'"
   alias yt-user-video="youtube-dl -w --add-metadata -f mp4 -o $ruta'%(uploader)s/%(title)s.%(ext)s'"
-
-  alias yt-conf=$EDITOR "~/.config/youtube-dl/config" # editor
 # }

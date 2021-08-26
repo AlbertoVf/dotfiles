@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/dracula.yml
+  - ~/.config/alacritty/colors.yml
 background_opacity: 0.95
 
 font:
@@ -9,7 +9,7 @@ font:
     family: Anonymice Nerd Font
   normal:
     family: Anonymice Nerd Font
-  size: 10
+  size: 9
 
 scrolling:
     history: 3000

@@ -6,7 +6,7 @@ set number relativenumber
 set colorcolumn=120
 set shiftwidth=4
 set cursorline
-set laststatus=4
+set laststatus=2
 set smartindent
 set autoindent
 set expandtab
