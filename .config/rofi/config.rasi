@@ -1,13 +1,15 @@
 configuration {
-    modi: "window,run,ssh,file-browser-extended,drun";
-    display-window: "类 ";
-    display-run: " ";
-    display-ssh:" ";
-    display-drun:" ";
-    display-file-browser-extended:" ";
-    display-format: "{icon} {name}";
-    drun-display-format:  "{name}";
-    font: "Anonymice Nerd Font Bold 12";
+    modi                            : "window,run,ssh,file-browser-extended,drun";
+    display-window                  : "类 ";
+    display-run                     : " ";
+    display-ssh                     : " ";
+    display-drun                    : " ";
+    display-file-browser-extended   : " ";
+    display-format                  : "{icon} {name}";
+    drun-display-format             : " {name}";
+    font                            : "Anonymice Nerd Font Bold 14";
+    show-icons                      : true;
+    icon-theme                      : "Papirus";
 }
 
-@import "./themes/blurry.rasi"
+@theme "/usr/share/rofi/themes/Arc-Polo.rasi"

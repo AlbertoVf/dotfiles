@@ -1,4 +1,4 @@
-from libqtile.config import Key
+from libqtile.config import Key, KeyChord
 from libqtile.command import lazy
 from settings.shortcut import editor, terminal, fileManager, browser, mail
 from settings.groups import groups
@@ -49,9 +49,19 @@ keys = [
     Key(["mod1"], "F1", lazy.spawn("rofi -show window")),
     Key(["mod1"], "F2", lazy.spawn("rofi -show drun")),
     Key(["mod1"], "F3", lazy.spawn("rofi -show file-browser-extended")),
-    Key(["mod1"], "F4", lazy.spawn(
-        "rofi -show file-browser-extended -file-browser-dir ~/Proyectos")),
-    Key(["mod1"], "F5", lazy.spawn("rofi -show ssh")),
+    Key(["mod1"], "F4", lazy.spawn("rofi -show ssh ")),
+
+    KeyChord(["mod1"], "q", [
+        Key([], "h", lazy.spawn(
+            "rofi -show file-browser-extended -file-browser-dir ~/.config")),
+        Key([], "j", lazy.spawn(
+            "rofi -show file-browser-extended -file-browser-dir ~/Git")),
+        Key([], "k", lazy.spawn(
+            "rofi -show file-browser-extended -file-browser-dir ~/.screenlayout"), ),
+        Key([], "l", lazy.spawn(
+            "rofi -show file-browser-extended -file-browser-dir ~/Proyectos")),
+        # todo: atajo para listar aplicaciones favoritas
+    ]),
     Key(["mod1"], "h", lazy.spawn(terminal + ' -e htop')),
     Key(["mod1"], "Left", lazy.spawn('variety -p')),
     Key(["mod1"], "Right", lazy.spawn('variety -n')),
@@ -63,6 +73,12 @@ keys = [
         lazy.spawn(
             "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"),
     ),
+
+]
+
+
+# Media keys
+keys.extend([
     # INCREASE/DECREASE BRIGHTNESS
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
@@ -83,7 +99,7 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-]
+])
 
 # focus and screen
 keys.extend([
