@@ -1,7 +1,10 @@
 from libqtile.config import Key, KeyChord
 from libqtile.command import lazy
 from settings.shortcut import editor, terminal, fileManager, browser, mail
-from settings.groups import groups
+from settings.screen import groups
+
+from libqtile.config import Click, Drag
+from libqtile.command import lazy
 
 mod = "mod4"  # mod4 or mod = super key
 keys = [
@@ -9,7 +12,6 @@ keys = [
     Key([mod], "a", lazy.spawn("xfce4-appfinder")),
     Key([mod], "b", lazy.spawn("bitwarden")),
     Key([mod], "c", lazy.spawn("catfish")),
-    Key([mod], "d", lazy.spawn("drawio"),),
     Key([mod], "e", lazy.spawn(editor)),
     Key([mod], "f", lazy.spawn("firefox")),
     Key([mod], "g", lazy.spawn("gparted")),
@@ -19,7 +21,6 @@ keys = [
     Key([mod], "p", lazy.spawn("pycharm")),
     Key([mod], "q", lazy.window.kill(), desc='Kill the focused window'),
     Key([mod], "s", lazy.spawn("pamac-manager")),
-    Key([mod], "t", lazy.spawn("teamviewer")),
     Key([mod], "v", lazy.spawn("vlc --video-on-top")),
     Key([mod], "x", lazy.spawn("arcolinux-logout")),
     Key([mod], "z", lazy.spawn("zeal")),
@@ -33,7 +34,6 @@ keys = [
     Key([mod], "F8", lazy.spawn(fileManager)),
     Key([mod], "F9", lazy.spawn(mail)),
     Key([mod], "F10", lazy.spawn("spotify")),
-    Key([mod], "F11", lazy.spawn("rofi -show run -fullscreen")),
     Key([mod], "F12", lazy.spawn("rofi -show run")),
     Key([mod], "Escape", lazy.spawn("xkill"), desc='Select window to kill'),
     Key([mod], "Return", lazy.spawn(terminal)),
@@ -53,15 +53,19 @@ keys = [
 
     KeyChord(["mod1"], "q", [
         Key([], "h", lazy.spawn(
-            "rofi -show file-browser-extended -file-browser-dir ~/.config")),
+            "rofi -show file-browser-extended -file-browser-dir ~/.config"
+        )),
         Key([], "j", lazy.spawn(
-            "rofi -show file-browser-extended -file-browser-dir ~/Git")),
+            "rofi -show file-browser-extended -file-browser-dir ~/Git"
+        )),
         Key([], "k", lazy.spawn(
-            "rofi -show file-browser-extended -file-browser-dir ~/.screenlayout"), ),
+            "rofi -show file-browser-extended -file-browser-dir ~/.screenlayout"
+        )),
         Key([], "l", lazy.spawn(
-            "rofi -show file-browser-extended -file-browser-dir ~/Proyectos")),
-        # todo: atajo para listar aplicaciones favoritas
-    ]),
+            "rofi -show file-browser-extended -file-browser-dir ~/Proyectos"
+        )),
+    ]
+    ),
     Key(["mod1"], "h", lazy.spawn(terminal + ' -e htop')),
     Key(["mod1"], "Left", lazy.spawn('variety -p')),
     Key(["mod1"], "Right", lazy.spawn('variety -n')),
@@ -71,11 +75,10 @@ keys = [
     Key(
         [], "Print",
         lazy.spawn(
-            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"),
+            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"
+        ),
     ),
-
 ]
-
 
 # Media keys
 keys.extend([
@@ -99,7 +102,8 @@ keys.extend([
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-])
+]
+)
 
 # focus and screen
 keys.extend([
@@ -232,7 +236,8 @@ keys.extend([
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
     ),
-])
+]
+)
 
 for i in groups:
     keys.extend([
@@ -247,4 +252,22 @@ for i in groups:
 
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-    ])
+    ]
+    )
+
+mouse = [
+    Click(
+        ["mod"], "Button1",
+        lazy.window.bring_to_front()
+    ),
+    Drag(
+        ["mod"], "Button2",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+    ),
+    Drag(
+        ["mod"], "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size()
+    ),
+]

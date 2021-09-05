@@ -2,9 +2,9 @@
 <actions>
 <action>
 	<icon>multimedia-video-player</icon>
-	<name>Crear Reproduccion</name>
+	<name>Crear Lista de reproduccion</name>
 	<unique-id>1630055795331873-1</unique-id>
-	<command>fd -at f -e mp4 --full-path %f&gt; %n.m3u</command>
+	<command>fd -a -e mp3 -e mp4 --full-path %f &gt; %n.m3u</command>
 	<description>Crea una lista de reproduccion de la carpeta</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -22,18 +22,8 @@
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1488955845049151-1</unique-id>
-	<command>alacritty --working-directory %f</command>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description>Example for a custom action</description>
-	<patterns>*</patterns>
-	<startup-notify/>
-	<directories/>
-</action>
-<action>
-	<icon>visual-studio-code</icon>
-	<name>Open with code</name>
-	<unique-id>1623447440733564-1</unique-id>
-	<command>code %f</command>
-	<description>Abrir carpeta en VS Code</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
@@ -94,36 +84,16 @@
 	<image-files/>
 </action>
 <action>
-	<icon>catfish</icon>
-	<name>Search with catfish</name>
-	<unique-id>1489089852658523-2</unique-id>
-	<command>catfish --path=$f$d</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>meld</icon>
-	<name>Compare</name>
-	<unique-id>1492232362549799-1</unique-id>
-	<command>meld %F</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-	<other-files/>
-	<text-files/>
-</action>
-<action>
 	<icon>gitg</icon>
 	<name>Open with gitUI</name>
 	<unique-id>1587287434852027-1</unique-id>
-	<command>gitkraken -p %f</command>
+	<command>gitahead %f</command>
 	<description>Open with gitUI</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
-	<icon>run-build</icon>
+	<icon>gmrun</icon>
 	<name>Make executable</name>
 	<unique-id>1526670239648084-2</unique-id>
 	<command>chmod +x %f</command>
@@ -143,7 +113,7 @@
 	<text-files/>
 </action>
 <action>
-	<icon>paperclip</icon>
+	<icon>clipboard</icon>
 	<name>Copy file path</name>
 	<unique-id>1626443329564542-1</unique-id>
 	<command>echo &quot;%F&quot;| xclip -sel c</command>
@@ -157,7 +127,7 @@
 	<video-files/>
 </action>
 <action>
-	<icon>paperclip</icon>
+	<icon>clipboard</icon>
 	<name>Copy name</name>
 	<unique-id>1626704690182391-1</unique-id>
 	<command>echo &quot;%N&quot;| xclip -sel c</command>
@@ -180,49 +150,21 @@
 	<other-files/>
 </action>
 <action>
-	<icon>icon_user</icon>
-	<name>Hacer de tu propiedad</name>
-	<unique-id>1526631178674034-9</unique-id>
-	<command>gnome-keyring-daemon -r -d;gksu &quot;chown -R $USER:$USER %F&quot;</command>
-	<description>Change permissions to user</description>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
-<action>
 	<icon>system-file-manager</icon>
 	<name>Abrir como root</name>
 	<unique-id>1493475601060449-3</unique-id>
-	<command>pkexec thunar %f</command>
+	<command>gksu thunar %f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
 <action>
-	<icon>com.bixense.PasswordCalculator</icon>
+	<icon>preferences-system-user-sudo</icon>
 	<name>Editar como root</name>
 	<unique-id>1526631419798289-11</unique-id>
 	<command>gksudo nvim %F</command>
 	<description>edit as root</description>
 	<patterns>*</patterns>
 	<text-files/>
-</action>
-<action>
-	<icon>preferences-system-user-sudo</icon>
-	<name>Hacer propiedad de root</name>
-	<unique-id>1526631155250282-8</unique-id>
-	<command>gnome-keyring-daemon -r -d;gksu &quot;chown -R root:root %F&quot;</command>
-	<description>Change permissions to root</description>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
 </action>
 </actions>

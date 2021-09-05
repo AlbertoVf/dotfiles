@@ -16,11 +16,11 @@ conky.config = {
 	alignment = 'bottom_right',
 
 	--Arch Duoscreen
-	gap_x = 20,
-	gap_y = 50,
-	minimum_height = 320,
-	minimum_width = 680,
-	maximum_width = 680,
+	gap_x = 10,
+	gap_y = 60,
+	minimum_height = 220,
+	minimum_width = 580,
+	maximum_width = 580,
 
 	--Graphical
 	border_inner_margin = 0,
@@ -35,8 +35,8 @@ conky.config = {
 	default_shade_color = '#000000',
 	default_outline_color = '#000000',
 	draw_borders = false,
-	draw_graph_borders = true,
-	draw_shades = false,
+	draw_graph_borders = false,
+	draw_shades = true,
 	draw_outline = false,
 	stippled_borders = 0,
 
@@ -62,28 +62,26 @@ conky.config = {
 	own_window_class = 'Conky',
 	own_window_colour = '#000000',
 	own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
-	own_window_transparent = false,
+	own_window_transparent = true,
 	own_window_title = 'system_conky',
 	own_window_type = 'override',
 
 	--Colours
 	default_color = '#000000',
-	color1 = '#222c37',
-	color2 = '#FFFFFF',
-	color3 = '#1793d1',
-	color4 = '#1F7411',
-	color5 = '#FFA726',
-	color6 = '#F1544B',
-
+	color1 = '#292d3e',
+	color2 = '#f1f1f1',
+	color3 = '#bd93f9',
+	color4 = '#5af78d',
+	color5 = '#ffb86c',
+	color6 = '#ff5454',
 };
 
 conky.text = [[
-${image ~/.config/conky/images/back-tw.png -p 0,-30 -s 680x450}
-${voffset 30 }${offset 50 }${font 1942 report:size=38:bold}${color}${time %H:%M %d/%m/%Y}
-${alignc}${font 1942 report:size=20:bold}Cpu:${cpu cpu0}% \
+${alignc}${font 1942 report:size=34:bold}${color2}${time %H:%M %d/%m/%Y}
+${color3}${alignc}${font 1942 report:size=18:bold}Cpu:${cpu cpu0}% \
 Ram:$mem \
 Bat:${battery_percent BAT0}% \
-Temp:${hwmon 1 temp 1}${font}
+Temp:${hwmon 1 temp 1}*${font}
 
 ${color3}${alignc}Host:${nodename}
 ${alignc}Kernel:$kernel

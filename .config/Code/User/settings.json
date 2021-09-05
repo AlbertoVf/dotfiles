@@ -14,7 +14,7 @@
   "css.lint.duplicateProperties": "warning",
   "debug.terminal.clearBeforeReusing": true,
   "diffEditor.codeLens": true,
-  "editor.fontFamily": "FantasqueSansMono Nerd Font, Anoymice NF, monospace",
+  "editor.fontFamily": "FantasqueSansMono Nerd Font, Anoymice Nerd Font, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
@@ -52,7 +52,7 @@
   "git.autofetch": true,
   "git.inputValidationLength": 120,
   "gitlens.views.remotes.branches.layout": "list",
-  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltcIkZGRkZGRlwiXSxcImZvcm1hdFdpZHRoXCI6XCIyNDBcIixcImNyZWF0ZVRhcmdldFwiOmZhbHNlLFwicGFnZUZvcm1hdFwiOntcInhcIjowLFwieVwiOjAsXCJ3aWR0aFwiOjgyNyxcImhlaWdodFwiOjExNjl9LFwic2VhcmNoXCI6dHJ1ZSxcInNob3dTdGFydFNjcmVlblwiOnRydWUsXCJncmlkQ29sb3JcIjpcIiNkMGQwZDBcIixcImRhcmtHcmlkQ29sb3JcIjpcIiM2ZTZlNmVcIixcImF1dG9zYXZlXCI6dHJ1ZSxcInJlc2l6ZUltYWdlc1wiOm51bGwsXCJvcGVuQ291bnRlclwiOjAsXCJ2ZXJzaW9uXCI6MTgsXCJ1bml0XCI6MSxcImlzUnVsZXJPblwiOmZhbHNlLFwidWlcIjpcIlwifSJ9",
+  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltcIkZGRkZGRlwiXSxcImZvcm1hdFdpZHRoXCI6XCIyNDBcIixcImNyZWF0ZVRhcmdldFwiOmZhbHNlLFwicGFnZUZvcm1hdFwiOntcInhcIjowLFwieVwiOjAsXCJ3aWR0aFwiOjExNjksXCJoZWlnaHRcIjo4Mjd9LFwic2VhcmNoXCI6dHJ1ZSxcInNob3dTdGFydFNjcmVlblwiOnRydWUsXCJncmlkQ29sb3JcIjpcIiNkMGQwZDBcIixcImRhcmtHcmlkQ29sb3JcIjpcIiM2ZTZlNmVcIixcImF1dG9zYXZlXCI6dHJ1ZSxcInJlc2l6ZUltYWdlc1wiOm51bGwsXCJvcGVuQ291bnRlclwiOjAsXCJ2ZXJzaW9uXCI6MTgsXCJ1bml0XCI6MSxcImlzUnVsZXJPblwiOmZhbHNlLFwidWlcIjpcIlwifSJ9",
   "hediet.vscode-drawio.theme": "Kennedy",
   "html.format.contentUnformatted": "",
   "html.format.indentInnerHtml": true,
@@ -90,5 +90,5 @@
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "workbench.colorTheme": "Dracula",
-  "editor.tabSize": 2
+  "cmake.configureOnOpen": true
 }
