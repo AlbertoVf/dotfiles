@@ -20,7 +20,7 @@ conky.config = {
 	gap_y = 60,
 	minimum_height = 220,
 	minimum_width = 580,
-	maximum_width = 580,
+	maximum_width = 640,
 
 	--Graphical
 	border_inner_margin = 0,
@@ -43,7 +43,7 @@ conky.config = {
 	--Textual
 	extra_newline = false,
 	format_human_readable = true,
-	font = '1942 report:size=20:bold',
+	font = '1942 report:size=18:bold',
 	max_text_width = 0,
 	max_user_text = 16384,
 	override_utf8_locale = true,
@@ -77,7 +77,7 @@ conky.config = {
 };
 
 conky.text = [[
-${alignc}${font 1942 report:size=34:bold}${color2}${time %H:%M %d/%m/%Y}
+${alignc}${font 1942 report:size=36:bold}${color2}${time %H:%M %d/%m/%Y}
 ${color3}${alignc}${font 1942 report:size=18:bold}Cpu:${cpu cpu0}% \
 Ram:$mem \
 Bat:${battery_percent BAT0}% \

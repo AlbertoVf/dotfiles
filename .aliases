@@ -31,7 +31,7 @@ alias s="sudo"
   alias pacsyu="sudo pacman -Syyu"                  # update only standard pkgs
   alias unlock="sudo rm /var/lib/pacman/db.lck"     # remove pacman lock
 
-  alias parsua="paru -Sua"                     # update aur packages
+  alias parsua="paru -Sua"                          # update aur packages
   alias parsyu="paru -Syu"                          # update standar packages and aur
 
   alias ain="sudo aura -A"                          # install aur package
@@ -178,27 +178,26 @@ alias s="sudo"
 # }
 
 # Youtube-dl alias {
-  ruta="$(xdg-user-dir DOWNLOAD)/"
-  metadata="--embed-thumbnail --add-metadata"
-  extract="--extract-audio --audio-quality 0 --audio-format"
-  file="-o $ruta'%(title)s.%(ext)s' --no-playlist"
-  list="-o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-  list2="-o $ruta'%(playlist)s/%(title)s.%(ext)s'"
-
+  ruta="-o $(xdg-user-dir DOWNLOAD)/"
+  extract="-i --embed-thumbnail --add-metadata --no-post-overwrites --extract-audio --audio-quality 0 --audio-format"
+  file="$ruta'%(title)s.%(ext)s' --no-playlist"
+  list="$ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+  list2="$ruta'%(playlist)s/%(title)s.%(ext)s'"
+  user="$ruta'%(uploader)s/%(playlist)/%(title)s.%(ext)s'"
   # youtube audio
-  alias yt-aac="youtube-dl $metadata $extract aac $file"
-  alias yt-flac="youtube-dl $metadata $extract flac $file"
-  alias yt-m4a="youtube-dl $metadata $extract m4a $file"
-  alias yt-mp3="youtube-dl $metadata $extract mp3 $file"
+  alias yt-aac="youtube-dl $extract aac $file"
+  alias yt-flac="youtube-dl $extract flac $file"
+  alias yt-m4a="youtube-dl $extract m4a $file"
+  alias yt-mp3="youtube-dl $extract mp3 $file"
   # youtube video
   alias yt-mp4="youtube-dl --add-metadata -f mp4 $file"
   # youtube playlist order
-  alias yt-audio-list="youtube-dl -w $metadata $extract mp3 $list"
+  alias yt-audio-list="youtube-dl -w $extract mp3 $list"
   alias yt-video-list="youtube-dl -w --add-metadata -f mp4 $list"
   # youtube playlist unorder
-  alias yt-audio-unlist="youtube-dl -w $metadata $extract mp3 $list2"
+  alias yt-audio-unlist="youtube-dl -w $extract mp3 $list2"
   alias yt-video-unlist="youtube-dl -w --add-metadata -f mp4 $list2"
   # youtube user videos
-  alias yt-user-audio="youtube-dl -w  $metadata $extract mp3 -o $ruta'%(uploader)s/%(title)s.%(ext)s'"
-  alias yt-user-video="youtube-dl -w --add-metadata -f mp4 -o $ruta'%(uploader)s/%(title)s.%(ext)s'"
+  alias yt-user-audio="youtube-dl -w $extract mp3 $user"
+  alias yt-user-video="youtube-dl -w --add-metadata --no-post-overwrites -f mp4 $user"
 # }
