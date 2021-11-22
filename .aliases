@@ -19,7 +19,7 @@ alias s="sudo"
   alias lt="exa -aT --icons" # tree listing
 
   alias cp="cp -i"
-  alias mkdir="mkdir -pv"
+  alias md="mkdir -pv"
   alias mv="mv -i"
   alias rm="rm -i"
 # }
@@ -41,10 +41,10 @@ alias s="sudo"
   alias ab="sudo aura -B"                           # save packages state
 
   # get fastest mirrors
-  alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-  alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-  alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-  alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+  alias mirror="sudo reflector -f 20 -l 15 -n 10 --verbose --save /etc/pacman.d/mirrorlist"
+  alias mirrord="sudo reflector -l 15 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
+  alias mirrors="sudo reflector -l 15 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
+  alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
 # }
 
 # git alias {
@@ -183,7 +183,7 @@ alias s="sudo"
   file="$ruta'%(title)s.%(ext)s' --no-playlist"
   list="$ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
   list2="$ruta'%(playlist)s/%(title)s.%(ext)s'"
-  user="$ruta'%(uploader)s/%(playlist)/%(title)s.%(ext)s'"
+  user="$ruta'%(uploader)s/%(title)s.%(ext)s'"
   # youtube audio
   alias yt-aac="youtube-dl $extract aac $file"
   alias yt-flac="youtube-dl $extract flac $file"

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
+	<icon>visual-studio-code</icon>
+	<name>Open with code</name>
+	<unique-id>1637863025872685-1</unique-id>
+	<command>code %f</command>
+	<description>open with code</description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
 	<icon>multimedia-video-player</icon>
 	<name>Crear Lista de reproduccion</name>
 	<unique-id>1630055795331873-1</unique-id>
@@ -69,7 +79,7 @@
 	<icon>image-x-generic</icon>
 	<name>Convert png to jpg</name>
 	<unique-id>1510662686010963-1</unique-id>
-	<command>convert %f -quality 90 `basename %f .png`.jpg</command>
+	<command>convert %f -quality 100 `basename %f .png`.jpg</command>
 	<description>Convert png to jpg</description>
 	<patterns>*.png</patterns>
 	<image-files/>

@@ -1,0 +1,62 @@
+{
+  "arc-dark-crimson": {
+    "background": "#292d3e",
+    "foreground": "#F9F9F9",
+    "active": "#DC141E",
+    "inactive": "#7C8189",
+    "color1": "#CC6666",
+    "color2": "#f0883e",
+    "color3": "#586875",
+    "color4": "#65ACFF"
+  },
+  "arch-linux": {
+    "background": "#222c37",
+    "foreground": "#ffffff",
+    "active": "#1793d1",
+    "inactive": "#ffffff",
+    "color1": "#ffffff",
+    "color2": "#1793d1",
+    "color3": "#ffffff",
+    "color4": "#1793d1"
+  },
+  "default": {
+    "background": "#0f101a",
+    "foreground": "#f1ffff",
+    "active": "#f1ffff",
+    "inactive": "#4c566a",
+    "color1": "#a151d3",
+    "color2": "#F07178",
+    "color3": "#fb9f7f",
+    "color4": "#ffd47e"
+  },
+  "dracula": {
+    "background": "#292d3e",
+    "foreground": "#ffffff",
+    "active": "#FF5454",
+    "inactive": "#f1ffff",
+    "color1": "#5AF78D",
+    "color2": "#BD93F9",
+    "color3": "#7197E7",
+    "color4": "#ffb86c"
+  },
+  "one-dark": {
+    "background": "#23272e",
+    "foreground": "#ffffff",
+    "active": "#f1ffff",
+    "inactive": "#4c566a",
+    "color1": "#C678DD",
+    "color2": "#E06C75",
+    "color3": "#61AFEF",
+    "color4": "#98C379"
+  },
+  "palenight": {
+    "background": "#292d3e",
+    "foreground": "#f1f1f1",
+    "active": "#82aaff",
+    "inactive": "#959dcb",
+    "color1": "#c3e88d",
+    "color2": "#82aaff",
+    "color3": "#c792ea",
+    "color4": "#ffcb6b"
+  }
+}

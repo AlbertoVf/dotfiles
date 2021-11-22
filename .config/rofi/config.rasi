@@ -7,9 +7,8 @@ configuration {
     display-file-browser-extended   : " ";
     display-format                  : "{icon} {name}";
     drun-display-format             : " {name}";
-    font                            : "Anonymice Nerd Font Bold 14";
+    font                            : "Anonymice Nerd Font Bold 16";
     show-icons                      : true;
-    icon-theme                      : "Papirus";
+    icon-theme                      : "Surfn-Arch-Blue";
 }
-
 @theme "/usr/share/rofi/themes/Arc-Polo.rasi"

@@ -4,21 +4,17 @@
 
 ## External repository
 
-[Instalacion de programas](https://gitlab.com/snippets/2135457.git)
+[Install](https://gitlab.com/AlbertoVf1/arco-install)
 
 [Wallpapers](https://gitlab.com/AlbertoVf1/wallpapers)
-
-[Qtile](https://gitlab.com/AlbertoVf1/qtile)
-
-[Rofi](.config/rofi/README.md)
 
 ## Start your dotfiles repository
 
 ```bash
 git init --bare $HOME/dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bash
 ```
 
 ## Add files to your repo
@@ -33,8 +29,8 @@ dotfiles push
 ## Install your dotfiles onto a new system
 
 ```bash
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
-echo "dotfiles" >> .gitignore
-git clone --bare <git-repo-url> $HOME/dotfiles
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bash
+echo ".dotfiles" >> .gitignore
+git clone --bare <git-repo-url> $HOME/.dotfiles
 dotfiles config --local status.showUntrackedFiles no
 ```

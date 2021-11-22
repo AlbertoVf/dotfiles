@@ -10,6 +10,7 @@ function run {
 run variety &
 run plank &
 run xfce4-power-manager &
+run xfce4-clipman &
 numlockx on &
 run volumeicon &
 run nm-applet &
