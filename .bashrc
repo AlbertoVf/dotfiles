@@ -16,4 +16,3 @@ fi
 bind "set completion-ignore-case on"
 
 [[ -f ~/.aliases ]] && . ~/.aliases
-. "$HOME/.cargo/env"

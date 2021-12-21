@@ -45,8 +45,11 @@
 	<description>Softlink between two files or directories</description>
 	<patterns>*</patterns>
 	<directories/>
+	<audio-files/>
+	<image-files/>
 	<other-files/>
 	<text-files/>
+	<video-files/>
 </action>
 <action>
 	<icon>checkbox</icon>

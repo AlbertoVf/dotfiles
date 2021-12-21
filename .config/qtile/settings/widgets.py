@@ -38,6 +38,7 @@ def init_widgets_list():
             },
             update_interval=10,
             foreground=colors["color2"],
+            background=colors["background"],
         ),
         widget.CheckUpdates(
             font=f"{font} Bold",
@@ -45,7 +46,7 @@ def init_widgets_list():
             execute=f"{terminal} -e sudo pacman -Syu",
             update_interval=1800,
             display_format='\uf547 {updates} Updates',
-            colour_have_updates=colors["color1"],
+            colour_have_updates=colors["foreground"],
         ),
         widget.Clock(
             font=f"{font} Bold",

@@ -10,7 +10,7 @@ mod = "mod4"  # mod4 or mod = super key
 keys = [
     # SUPER + FUNCTION KEYS
     Key([mod], "a", lazy.spawn("xfce4-appfinder")),
-    Key([mod], "b", lazy.spawn("bitwarden")),
+    Key([mod], "b", lazy.spawn("bitwarden-desktop")),
     Key([mod], "c", lazy.spawn("catfish")),
     Key([mod], "e", lazy.spawn(editor)),
     Key([mod], "f", lazy.spawn("firefox")),
