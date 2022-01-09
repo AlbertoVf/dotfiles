@@ -5,7 +5,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
 
-ZSH_THEME="spaceship" # mikeh, nano
+ZSH_THEME="gozilla"
 CASE_SENSITIVE="false"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -27,3 +27,4 @@ alias ag="acs"
 alias reload="clear && . ~/.zshrc"
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 neofetch
+eval "$(zoxide init zsh)"

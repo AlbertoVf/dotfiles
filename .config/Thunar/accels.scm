@@ -2,6 +2,7 @@
 ; this file is an automated accelerator map dump
 ;
 ; (gtk_accel_path "<Actions>/ThunarLauncher/delete-3" "<Shift>KP_Delete")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/91c96b30118933489243f44755a71764" "")
 (gtk_accel_path "<Actions>/ThunarActions/uca-action-1526631663081446-14" "<Alt>s")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/move-to-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/delete" "")
