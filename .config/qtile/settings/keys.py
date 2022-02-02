@@ -1,10 +1,9 @@
 from libqtile.config import Key, KeyChord
 from libqtile.command import lazy
-from settings.shortcut import editor, terminal, fileManager, browser, mail
-from settings.screen import groups
-
 from libqtile.config import Click, Drag
 from libqtile.command import lazy
+from settings.screen import groups
+from settings.manager import editor, terminal, fileManager, browser, mail
 
 mod = "mod4"  # mod4 or mod = super key
 keys = [

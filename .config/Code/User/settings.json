@@ -19,9 +19,9 @@
   "editor.fontFamily": "FantasqueSansMono Nerd Font, Anoymice Nerd Font, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
   "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToImplementation",
   "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToReferences",
   "editor.inlineSuggest.enabled": true,
@@ -74,11 +74,11 @@
   "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " /",
   "workbench.colorCustomizations": {},
-  "workbench.colorTheme": "Palenight Operator",
+  "workbench.colorTheme": "Palenight Italic",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-great-icons",
   "workbench.list.multiSelectModifier": "alt",
   "workbench.list.openMode": "doubleClick",
   "workbench.list.smoothScrolling": true,
@@ -86,5 +86,9 @@
   "workbench.preferredLightColorTheme": "Quiet Light",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.tree.indent": 16,
-  "zenMode.centerLayout": false
+  "zenMode.centerLayout": false,
+  "workbench.editorAssociations": {
+    "*.pdf": "pdf.preview"
+  },
+  "python.formatting.provider": "none"
 }

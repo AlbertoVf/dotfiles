@@ -159,7 +159,7 @@
 	<unique-id>1627148699144999-1</unique-id>
 	<command>pdftk %F cat output output.pdf</command>
 	<description>merge pdf</description>
-	<patterns>*.pdf</patterns>
+	<patterns>*</patterns>
 	<other-files/>
 </action>
 <action>
