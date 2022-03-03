@@ -11,4 +11,9 @@ configuration {
     show-icons                      : true;
     icon-theme                      : "Surfn-Arch-Blue";
 }
-@theme "/usr/share/rofi/themes/Arc-Polo.rasi"
+// @theme "./themes/ribbon_bottom_round.rasi"
+// @theme "./themes/blurry.rasi"
+
+// @theme "/usr/share/rofi/themes/Arc-Polo.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Evopop.rasi"
+@theme "/usr/share/rofi/themes/Arc-Tory.rasi"

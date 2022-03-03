@@ -6,6 +6,8 @@ from settings.manager import theme, terminal, font
 from settings.widgets_mod import *
 
 # PRYMARY WIDGETS LIST
+
+
 def init_widgets_list():
     widgets_list = [
         group_box(theme["color2"], theme["color3"]),
@@ -55,7 +57,7 @@ def init_widgets_list():
             },
             foreground=theme["color1"],
         ),
-         systray(size=22),
+        systray(size=22),
     ]
     return widgets_list
 

@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'terryma/vim-multiple-cursors'
+  Plug 'github/copilot.vim'
 
   " syntax {
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }" Prettier
