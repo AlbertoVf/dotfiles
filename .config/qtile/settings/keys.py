@@ -20,6 +20,7 @@ keys = [
     Key([mod], "s", lazy.spawn("pamac-manager")),
     Key([mod], "v", lazy.spawn("vlc --video-on-top")),
     Key([mod], "x", lazy.spawn("arcolinux-logout")),
+    # Key([mod], "x", lazy.spawn("menu_powermenu")),
     Key([mod], "z", lazy.spawn("zeal")),
     Key([mod], "F1", lazy.spawn(browser)),
     Key([mod], "F2", lazy.spawn(editor)),
@@ -47,6 +48,9 @@ keys = [
     Key(["mod1"], "F2", lazy.spawn("rofi -show drun")),
     Key(["mod1"], "F3", lazy.spawn("rofi -show file-browser-extended")),
     Key(["mod1"], "F4", lazy.spawn("rofi -show ssh ")),
+    Key(["mod1"], "F5", lazy.spawn("menu_apps")),
+    Key(["mod1"], "F6", lazy.spawn("menu_time")),
+    Key(["mod1"], "F7", lazy.spawn("menu_network")),
 
     KeyChord(["mod1"], "q", [
         Key([], "h", lazy.spawn(
@@ -73,10 +77,11 @@ keys = [
 
     # SCREENSHOTS
     Key(["mod1"], "Print", lazy.spawn("xfce4-screenshooter")),
-    Key([], "Print",
+    Key(
+        [], "Print",
         lazy.spawn(
             "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"),
-        ),
+    ),
 ]
 
 # Media keys
@@ -233,8 +238,7 @@ for i in groups:
 
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-    ]
-    )
+    ])
 
 mouse = [
     Click(

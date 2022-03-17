@@ -35,9 +35,10 @@ alias purge="sudo pacman -Rs $(pacman -Qtdq)" # purge unused pkgs
 
 alias parsua="paru -Sua" # update aur packages
 alias parsyu="paru -Syu" # update standar packages and aur
+alias paru="paru --limit 20 --searchby name"
 
 # get fastest mirrors
-alias mirror="sudo reflector -f 20 -l 15 -n 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo reflector --verbose -f 20 -l 15 -n 10 --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector -l 15 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector -l 15 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
@@ -137,41 +138,6 @@ function run {
       fi
     done
   fi
-}
-
-function order_downloads {
-  docs_ext=(pdf txt doc docx odt)
-  music_ext=(mp3)
-  img_ext=(png gif jpg jpeg)
-  video_ext=(avi mp4 mkv)
-
-  tput setaf2
-  echo "Documents: "
-  tput setaf 3
-  for n in "${docs_ext[@]}"; do
-    mv -v "$(xdg-user-dir DOWNLOAD)/$n" "$(xdg-user-dir DOCUMENTS)/$n"
-  done
-
-  tput setaf2
-  echo "Music: "
-  tput setap3
-  for n in "${music_ext[@]}"; do
-    mv -v "$(xdg-user-dir DOWNLOAD)/$n" "$(xdg-user-dir MUSIC)/$n"
-  done
-
-  tput setaf2
-  echo "Pictures: "
-  tput setap3
-  for n in "${img_ext[@]}"; do
-    mv -v "$(xdg-user-dir DOWNLOAD)/$n" "$(xdg-user-dir PICTURES)/$n"
-  done
-
-  tput setaf2
-  echo "Videos: "
-  tput setap3
-  for n in "${video_ext[@]}"; do
-    mv -v "$(xdg-user-dir DOWNLOAD)/$n" "$(xdg-user-dir VIDEOS)/$n"
-  done
 }
 # }
 

@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
-	<icon>visual-studio-code</icon>
-	<name>Open with code</name>
-	<unique-id>1637863025872685-1</unique-id>
-	<command>code %f</command>
-	<description>open with code</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-	<text-files/>
-</action>
-<action>
-	<icon>multimedia-video-player</icon>
-	<name>Crear Lista de reproduccion</name>
-	<unique-id>1630055795331873-1</unique-id>
-	<command>fd -a -e mp3 -e mp4 --full-path %f &gt; %n.m3u</command>
-	<description>Crea una lista de reproduccion de la carpeta</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
 	<icon>vlc</icon>
 	<name>Open with Vlc</name>
 	<unique-id>1629287747170523-1</unique-id>
@@ -32,11 +11,31 @@
 	<directories/>
 </action>
 <action>
+	<icon>gitg</icon>
+	<name>Open with gitUI</name>
+	<unique-id>1587287434852027-1</unique-id>
+	<command>gitfiend %f</command>
+	<description>Open with gitUI</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1488955845049151-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Crear Lista de reproduccion</name>
+	<unique-id>1630055795331873-1</unique-id>
+	<command>fd -a -e mp3 -e mp4 --full-path %f &gt; %n.m3u</command>
+	<description>Crea una lista de reproduccion de la carpeta</description>
 	<range></range>
 	<patterns>*</patterns>
 	<directories/>
@@ -107,36 +106,15 @@
 	<image-files/>
 </action>
 <action>
-	<icon>gitg</icon>
-	<name>Open with gitUI</name>
-	<unique-id>1587287434852027-1</unique-id>
-	<command>gitahead %f</command>
-	<description>Open with gitUI</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>gmrun</icon>
-	<name>Make executable</name>
-	<unique-id>1526670239648084-2</unique-id>
-	<command>chmod +x %f</command>
-	<description>Make a file execuble</description>
+	<icon>pdfeditor</icon>
+	<name>Merge PDF</name>
+	<unique-id>1627148699144999-1</unique-id>
+	<command>pdftk %F cat output $(zenity --entry --title=&apos;Merge pdf&apos;--text=&apos;Nombre de nuevo archivo&apos; --entry-text=&apos;output&apos;).pdf
+</command>
+	<description>merge pdf</description>
 	<range></range>
 	<patterns>*</patterns>
 	<other-files/>
-	<text-files/>
-</action>
-<action>
-	<icon>cs-startup-programs</icon>
-	<name>Run</name>
-	<unique-id>1526630606202525-4</unique-id>
-	<command>alacritty -e %f</command>
-	<description></description>
-	<range></range>
-	<patterns>*</patterns>
-	<other-files/>
-	<text-files/>
 </action>
 <action>
 	<icon>clipboard</icon>
@@ -169,17 +147,6 @@
 	<video-files/>
 </action>
 <action>
-	<icon>pdfeditor</icon>
-	<name>Merge PDF</name>
-	<unique-id>1627148699144999-1</unique-id>
-	<command>pdftk %F cat output $(zenity --entry --title=&apos;Merge pdf&apos;--text=&apos;Nombre de nuevo archivo&apos; --entry-text=&apos;output&apos;).pdf
-</command>
-	<description>merge pdf</description>
-	<range></range>
-	<patterns>*</patterns>
-	<other-files/>
-</action>
-<action>
 	<icon>system-file-manager</icon>
 	<name>Abrir como root</name>
 	<unique-id>1493475601060449-3</unique-id>
@@ -197,6 +164,28 @@
 	<description>edit as root</description>
 	<range></range>
 	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>gmrun</icon>
+	<name>Make executable</name>
+	<unique-id>1526670239648084-2</unique-id>
+	<command>chmod +x %f</command>
+	<description>Make a file execuble</description>
+	<range></range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>cs-startup-programs</icon>
+	<name>Run</name>
+	<unique-id>1526630606202525-4</unique-id>
+	<command>alacritty -e %f</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<other-files/>
 	<text-files/>
 </action>
 </actions>

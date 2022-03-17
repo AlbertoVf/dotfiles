@@ -53,7 +53,8 @@ def init_widgets_list():
             format="\uf5ec %c",
             mouse_callbacks={
                 "Button1": lambda: qtile.cmd_spawn(terminal + " -e calcurse"),
-                "Button3": lambda: qtile.cmd_spawn("gnome-calendar")
+                "Button2": lambda: qtile.cmd_spawn("evolution"),
+                "Button3": lambda: qtile.cmd_spawn("gnome-calendar"),
             },
             foreground=theme["color1"],
         ),
