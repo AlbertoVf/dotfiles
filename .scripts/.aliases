@@ -2,7 +2,7 @@
 export EDITOR="nvim"
 alias grep="grep --color"
 alias s="sudo"
-
+alias pys="python scripts.py"
 # modern commands {
 alias example="tldr"
 alias du="ncdu2"
@@ -74,71 +74,14 @@ alias dotst="dotfiles status"
 # }
 
 # function alias {
-function extract {
-  if [ -z "$1" ]; then
-    # display usage if no parameters given
-    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
-  else
-    for n in "$@"; do
-      if [ -f "$n" ]; then
-        case "${n%,}" in
-        *.7z | *.arj | *.cab | *.cb7 | *.chm | *.deb | *.dmg | *.iso | *.lzh | *.msi | *.pkg | *.rpm | *.udf | *.wim | *.xar) z x ./"$n" ;;
-        *.bz2) bunzip2 ./"$n" ;;
-        *.cba | *.ace) unace x ./"$n" ;;
-        *.cbr | *.rar) unrar x -ad ./"$n" ;;
-        *.cbt | *.tar.bz2 | *.tar.gz | *.tar.xz | *.tbz2 | *.tgz | *.txz | *.tar) tar xvf "$n" ;;
-        *.cbz | *.epub | *.zip) unzip ./"$n" ;;
-        *.cpio) cpio -id <./"$n" ;;
-        *.exe) cabextract ./"$n" ;;
-        *.gz) gunzip ./"$n" ;;
-        *.lzma) unlzma ./"$n" ;;
-        *.xz) unxz ./"$n" ;;
-        *.z) uncompress ./"$n" ;;
-        *)
-          echo "extract: '$n' - unknown archive method"
-          return 1
-          ;;
-        esac
-      else
-        echo "'$n' - file does not exist"
-        return 1
-      fi
-    done
-  fi
-}
+pfs="python ~/.scripts/files-scripts.py"
+alias pfs_rename="$pfs -r"
+alias pfs_organize="$pfs -o"
+alias pfs_visibility="$pfs -v"
+alias run="$pfs -e"
+alias pfs_watch="$pfs --watch"
+alias extract="$pfs -ex"
 
-function run {
-  if [ -z "$1" ]; then
-    # display usage if no parameters given
-    echo "Usage: run <path/file_name>.<sh|zsh|bash>
-                              <py|ts|js|java>
-                              <mp4|mp3|m4a|aac|flac>
-                              <jpg|jpeg|png|bmp|gif>
-      <pdf>"
-  else
-    for n in "$@"; do
-      if [ -f "$n" ]; then
-        case "${n%,}" in
-        *.bash) bash ./"$n" ;;
-        *.html | *.htm | *.xhtm) firefox ./"$n" ;;
-        *.java) java ./"$n" ;;
-        *.jpg | *.jpeg | *.png | *.bmp | *.gif) feh ./"$n" ;;
-        *.mp4 | *.mp3 | *.m4a | *.aac | *.flac) mpv ./"$n" ;;
-        *.pdf) evince ./"$n" ;;
-        *.py) python ./"$n" ;;
-        *.sh) sh ./"$n" ;;
-        *.ts | *.js) deno run ./"$n" ;;
-        *.zsh) zsh ./"$n" ;;
-        *) $EDITOR ./"$n" ;;
-        esac
-      else
-        echo "'$n' - file does not exist"
-        return 1
-      fi
-    done
-  fi
-}
 # }
 
 # Youtube-dl alias {

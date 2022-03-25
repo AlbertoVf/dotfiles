@@ -23,7 +23,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.aliases
+source $HOME/.scripts/.aliases
 alias ag="acs"
 alias reload="clear && . ~/.zshrc"
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
