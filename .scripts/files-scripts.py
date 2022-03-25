@@ -6,7 +6,6 @@ import subprocess
 from os import listdir
 from os.path import isfile, join
 
-
 def list_files(root) -> list:
     return [f for f in listdir(root) if isfile(join(root, f))]
 
@@ -104,9 +103,9 @@ def extract(f:str):
 
 
 def watch(f:str):
-    if (f.isdecimal):
+    if (re.search("[0-9]{2}| [0-9]{4}",f)):
         os.system(f"firefox localhost:{f} || brave localhost:{f}")
-    elif re.search("http|https|localhost",f):
+    if re.search("http://|https://|localhost://",f):
         os.system(f"firefox {f} || brave {f}")
     else:
         os.system(f'bat ./"{f}" || cat "{f}"')
@@ -157,6 +156,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # watch("https://gitlab.com")
-    # watch("localhost:8080")
-    # watch("http://gitlab.com")
