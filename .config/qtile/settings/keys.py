@@ -20,7 +20,6 @@ keys = [
     Key([mod], "s", lazy.spawn("pamac-manager")),
     Key([mod], "v", lazy.spawn("vlc --video-on-top")),
     Key([mod], "x", lazy.spawn("arcolinux-logout")),
-    # Key([mod], "x", lazy.spawn("menu_powermenu")),
     Key([mod], "z", lazy.spawn("zeal")),
     Key([mod], "F1", lazy.spawn(browser)),
     Key([mod], "F2", lazy.spawn(editor)),
@@ -77,11 +76,8 @@ keys = [
 
     # SCREENSHOTS
     Key(["mod1"], "Print", lazy.spawn("xfce4-screenshooter")),
-    Key(
-        [], "Print",
-        lazy.spawn(
-            "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'"),
-    ),
+    Key([], "Print", lazy.spawn(
+        "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'")),
 ]
 
 # Media keys
@@ -91,14 +87,10 @@ keys.extend([
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
     # INCREASE/DECREASE/MUTE VOLUME
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume",
-        lazy.spawn("amixer -q set Master 5%-"),
-        lazy.spawn("amixer -q set Master unmuted")
-        ),
-    Key([], "XF86AudioRaiseVolume",
-        lazy.spawn("amixer -q set Master 5%+"),
-        lazy.spawn("amixer -q set Master unmuted")
-        ),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-"),
+        lazy.spawn("amixer -q set Master unmuted")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+"),
+        lazy.spawn("amixer -q set Master unmuted")),
     # MULTIMEDIA KEYS
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
@@ -241,18 +233,9 @@ for i in groups:
     ])
 
 mouse = [
-    Click(
-        ["mod"], "Button1",
-        lazy.window.bring_to_front(),
-    ),
-    Drag(
-        ["mod"], "Button2",
-        lazy.window.set_position_floating(),
-        start=lazy.window.get_position(),
-    ),
-    Drag(
-        ["mod"], "Button3",
-        lazy.window.set_size_floating(),
-        start=lazy.window.get_size()
-    ),
+    Click(["mod"], "Button1", lazy.window.bring_to_front(), ),
+    Drag(["mod"], "Button2", lazy.window.set_position_floating(),
+         start=lazy.window.get_position(), ),
+    Drag(["mod"], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
 ]

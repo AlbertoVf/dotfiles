@@ -5,9 +5,8 @@ from libqtile import qtile, widget
 from settings.manager import theme, terminal, font
 from settings.widgets_mod import *
 
+
 # PRYMARY WIDGETS LIST
-
-
 def init_widgets_list():
     widgets_list = [
         group_box(theme["color2"], theme["color3"]),

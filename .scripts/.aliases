@@ -29,7 +29,7 @@ alias s="sudo"
   alias pacrem="sudo pacman -Rns"               # remove package and dependencies
   alias pacsyu="sudo pacman -Syyu"              # update only standard pkgs
   alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-  alias purge="sudo pacman -Rs $(pacman -Qtdq)" # purge unused pkgs
+  alias pacrs="sudo pacman -Rs $(pacman -Qtdq)" # purge unused pkgs
 
   alias parsua="paru -Sua" # update aur packages
   alias parsyu="paru -Syu" # update standar packages and aur
