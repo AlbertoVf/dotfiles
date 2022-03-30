@@ -1,23 +1,18 @@
 import:
   - ~/.config/alacritty/colors.yml
-background_opacity: 0.95
+draw_bold_text_with_bright_colors: true
 
 font:
-  bold:
-    family: FantasqueSansMono Nerd Font
-  italic:
-    family: FantasqueSansMono Nerd Font
-  normal:
-    family: FantasqueSansMono Nerd Font
-  size: 9 
+  family: "JetBrainsMono Nerd Font"
+  size: 9
 
 scrolling:
     history: 3000
 mouse:
     hide_when_typing: true
-draw_bold_text_with_bright_colors: true
 
 window:
+  opacity: 0.95
   dynamic_padding: true
   padding:
     x: 8

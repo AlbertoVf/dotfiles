@@ -57,7 +57,7 @@ super + F10
 super + F12
 	rofi -show run
 super + Return
-	alacritty
+	kitty
 super + KP_Enter
 	gnome-calculator
 super + x
@@ -84,7 +84,7 @@ alt + F6
 alt + F7
 	menu_network
 alt + h
-	alacritty -e htop
+	kitty -e htop
 #reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
@@ -102,9 +102,9 @@ ctrl + alt + k
 ctrl + alt + l
 	rofi -show file-browser-extended -file-browser-dir ~/Proyectos
 ctrl + alt + 1
-	alacritty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --off --output HDMI2 --off
+	kitty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --off --output HDMI2 --off
 ctrl + alt + 2
-	alacritty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal
+	kitty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal
 
 #
 # Media KEYS
