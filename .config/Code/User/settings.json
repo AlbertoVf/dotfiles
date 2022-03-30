@@ -8,7 +8,6 @@
   "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "clangd.detectExtensionConflicts": false,
-  "codespaces.accountProvider": "GitHub",
   "css.lint.duplicateProperties": "warning",
   "debug.terminal.clearBeforeReusing": true,
   "diffEditor.codeLens": true,
@@ -18,7 +17,7 @@
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorStyle": "line",
   "editor.foldingImportsByDefault": true,
-  "editor.fontFamily": "FantasqueSansMono Nerd Font, Anoymice Nerd Font, monospace",
+  "editor.fontFamily": "FantasqueSansMono Nerd Font, Anonymice Nerd Font, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
@@ -102,7 +101,6 @@
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.tree.indent": 16,
   "zenMode.centerLayout": false,
-  "tabnine.experimentalAutoImports": true,
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
