@@ -106,6 +106,13 @@ alias yt-user-audio="youtube-dl -w $extract mp3 $user"
 alias yt-user-video="youtube-dl -w --add-metadata --no-post-overwrites -f mp4 $user"
 # }
 
-# script files {
-source ~/.scripts/.py_aliases
+# files-scripts {
+pfs="python ~/.scripts/files-scripts.py"
+alias pfs="$pfs"
+alias pfs_rename="$pfs -r"
+alias pfs_organize="$pfs -o"
+alias pfs_visibility="$pfs -v"
+alias pfs_watch="$pfs --watch"
+alias extract="$pfs -ex"
+alias run="$pfs -e"
 # }
