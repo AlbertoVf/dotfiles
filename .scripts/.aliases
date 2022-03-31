@@ -4,98 +4,108 @@ alias grep="grep --color"
 alias s="sudo"
 
 # modern commands {
-  alias du="ncdu2"
-  alias cat="bat"
-  alias find="fd"
+alias du="ncdu2"
+alias cat="bat"
+alias find="fd"
 # }
 
 # Folders alias{
-  alias ls="exa --icons -tR -s type"                                    # Show files and dirs: sorted by type, icons, readable
-  alias l="exa -lh -s type --octal-permissions --time-style long-iso"   # long format, sorted by type, view octal permissions
-  alias lsa="exa --icons -a -s type"                                    # all files and dirs, sorted by type
-  alias la="exa -alh -s type --octal-permissions --time-style long-iso" # long format, sorted by type, view octal permissions
-  alias lt="exa -aT --icons"                                            # tree listing
-  alias lg="exa -laGRTh -I .git --no-user --no-time --no-filesize --no-permissions -rs modified --octal-permissions --git-ignore --git"
-  alias ll="exa -1@ | grep '\->' | awk -F '->' '{ print $1 }'"
+alias ls="exa --icons -tR -s type"                                    # Show files and dirs: sorted by type, icons, readable
+alias l="exa -lh -s type --octal-permissions --time-style long-iso"   # long format, sorted by type, view octal permissions
+alias lsa="exa --icons -a -s type"                                    # all files and dirs, sorted by type
+alias la="exa -alh -s type --octal-permissions --time-style long-iso" # long format, sorted by type, view octal permissions
+alias lt="exa -aT --icons"                                            # tree listing
+alias lg="exa -laGRTh -I .git --no-user --no-time --no-filesize --no-permissions -rs modified --octal-permissions --git-ignore --git"
+alias ll="exa -1@ | grep '\->' | awk -F '->' '{ print $1 }'"
 
-  alias cp="cp -i"
-  alias md="mkdir -pv"
-  alias mv="mv -i"
-  alias rm="rm -i"
+alias cp="cp -i"
+alias md="mkdir -pv"
+alias mv="mv -i"
+alias rm="rm -i"
 # }
 
 # packages alias {
-  alias pacin="sudo pacman -S"                  # install package
-  alias pacrem="sudo pacman -Rns"               # remove package and dependencies
-  alias pacsyu="sudo pacman -Syyu"              # update only standard pkgs
-  alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-  alias pacrs="sudo pacman -Rs $(pacman -Qtdq)" # purge unused pkgs
+alias pacin="sudo pacman -S"                  # install package
+alias pacrem="sudo pacman -Rns"               # remove package and dependencies
+alias pacsyu="sudo pacman -Syyu"              # update only standard pkgs
+alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
+alias pacrs="sudo pacman -Rs $(pacman -Qtdq)" # purge unused pkgs
 
-  alias parsua="paru -Sua" # update aur packages
-  alias parsyu="paru -Syu" # update standar packages and aur
-  alias paru="paru --limit 20 --searchby name"
+alias parsua="paru -Sua" # update aur packages
+alias parsyu="paru -Syu" # update standar packages and aur
+alias paru="paru --limit 20 --searchby name"
 # }
-# get fastest mirrors
-  alias mirror="sudo reflector --verbose -f 20 -l 15 -n 10 --save /etc/pacman.d/mirrorlist"
-  alias mirrord="sudo reflector -l 15 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
-  alias mirrors="sudo reflector -l 15 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
-  alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
+
+# get fastest mirrors {
+alias mirror="sudo reflector --verbose -f 20 -l 15 -n 10 --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector -l 15 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector -l 15 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
 # }
 
 # git alias {
-  alias branch="git branch"
-  alias checkout="git checkout"
-  alias clone="git clone"
-  alias diff="git diff"
-  alias fetch="git fetch"
-  alias ga="git add"
-  alias gaa="git add --all"
-  alias gau="git add -u"
-  alias gc="git commit -m"
-  alias gca="git commit --amend"
-  alias gl="git log --oneline --decorate --all --graph"
-  alias gls="git log --stat"
-  alias gst="git status"
-  alias pull="git pull origin"
-  alias push="git push origin"
-  alias remotes="git remote -v"
+alias branch="git branch"
+alias checkout="git checkout"
+alias clone="git clone"
+alias diff="git diff"
+alias fetch="git fetch"
+alias ga="git add"
+alias gaa="git add --all"
+alias gau="git add -u"
+alias gc="git commit -m"
+alias gca="git commit --amend"
+alias gl="git log --oneline --decorate --all --graph"
+alias gls="git log --stat"
+alias gst="git status"
+alias pull="git pull origin"
+alias push="git push origin"
+alias remotes="git remote -v"
 # }
 
 # Dotfiles alias {
-  alias dotfiles="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
-  alias dota="dotfiles add -u"
-  alias dotc="dotfiles commit -m"
-  alias dotd="dotfiles diff"
-  alias dotl="dotfiles log --oneline --decorate --all --graph"
-  alias dotp="dotfiles push"
-  alias dotst="dotfiles status"
+alias dotfiles="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
+
+alias dota="dotfiles add"
+alias dotaa="dotfiles add -u"
+
+alias dotc="dotfiles commit -m"
+alias dotca="dotfiles commit --amend"
+
+alias dotd="dotfiles diff"
+alias dotr="dotfiles restore"
+alias dotrs="dotfiles restore --staged"
+
+alias dotl="dotfiles log --oneline --decorate --all --graph"
+alias dotst="dotfiles status"
+
+alias dotp="dotfiles push"
 # }
 
 # Youtube-dl alias {
-  ruta="-o $(xdg-user-dir DOWNLOAD)/"
-  extract="-i --embed-thumbnail --add-metadata --no-post-overwrites --extract-audio --audio-quality 0 --audio-format"
-  file="$ruta'%(title)s.%(ext)s' --no-playlist"
-  list="$ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-  list2="$ruta'%(playlist)s/%(title)s.%(ext)s'"
-  user="$ruta'%(uploader)s/%(title)s.%(ext)s'"
-  # youtube audio
-  alias yt-aac="youtube-dl $extract aac $file"
-  alias yt-flac="youtube-dl $extract flac $file"
-  alias yt-m4a="youtube-dl $extract m4a $file"
-  alias yt-mp3="youtube-dl $extract mp3 $file"
-  # youtube video
-  alias yt-mp4="youtube-dl --add-metadata -f mp4 $file"
-  # youtube playlist order
-  alias yt-audio-list="youtube-dl -w $extract mp3 $list"
-  alias yt-video-list="youtube-dl -w --add-metadata -f mp4 $list"
-  # youtube playlist unorder
-  alias yt-audio-unlist="youtube-dl -w $extract mp3 $list2"
-  alias yt-video-unlist="youtube-dl -w --add-metadata -f mp4 $list2"
-  # youtube user videos
-  alias yt-user-audio="youtube-dl -w $extract mp3 $user"
-  alias yt-user-video="youtube-dl -w --add-metadata --no-post-overwrites -f mp4 $user"
+ruta="-o $(xdg-user-dir DOWNLOAD)/"
+extract="-i --embed-thumbnail --add-metadata --no-post-overwrites --extract-audio --audio-quality 0 --audio-format"
+file="$ruta'%(title)s.%(ext)s' --no-playlist"
+list="$ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+list2="$ruta'%(playlist)s/%(title)s.%(ext)s'"
+user="$ruta'%(uploader)s/%(title)s.%(ext)s'"
+# youtube audio
+alias yt-aac="youtube-dl $extract aac $file"
+alias yt-flac="youtube-dl $extract flac $file"
+alias yt-m4a="youtube-dl $extract m4a $file"
+alias yt-mp3="youtube-dl $extract mp3 $file"
+# youtube video
+alias yt-mp4="youtube-dl --add-metadata -f mp4 $file"
+# youtube playlist order
+alias yt-audio-list="youtube-dl -w $extract mp3 $list"
+alias yt-video-list="youtube-dl -w --add-metadata -f mp4 $list"
+# youtube playlist unorder
+alias yt-audio-unlist="youtube-dl -w $extract mp3 $list2"
+alias yt-video-unlist="youtube-dl -w --add-metadata -f mp4 $list2"
+# youtube user videos
+alias yt-user-audio="youtube-dl -w $extract mp3 $user"
+alias yt-user-video="youtube-dl -w --add-metadata --no-post-overwrites -f mp4 $user"
 # }
 
 # script files {
-  source ~/.scripts/.py_aliases
+source ~/.scripts/.py_aliases
 # }
