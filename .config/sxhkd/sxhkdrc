@@ -22,20 +22,8 @@ alt + Print
 	xfce4-screenshooter
 alt + Right
 	variety -n
-ctrl + alt + 1
-	alacritty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --off --output HDMI2 --off
-ctrl + alt + 2
-	alacritty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal
-ctrl + alt + h
-	rofi -show file-browser-extended -file-browser-dir ~/.config
-ctrl + alt + j
-	rofi -show file-browser-extended -file-browser-dir ~/Git
-ctrl + alt + k
-	rofi -show file-browser-extended -file-browser-dir ~/.screenlayout
-ctrl + alt + l
-	rofi -show file-browser-extended -file-browser-dir ~/Proyectos
-ctrl + alt + o
-	picom ~/.config/picom/picom-toggle.sh
+Print
+	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 super + a
 	xfce4-appfinder
 super + b
@@ -92,10 +80,22 @@ super + z
 	zeal
 super + shift + Escape
 	xkill
+super + shift + 1
+	alacritty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --off --output HDMI2 --off
+super + shift + 2
+	alacritty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal
+super + shift + o
+	picom ~/.config/picom/picom-toggle.sh
 super + shift + s
 	pkill -USR1 -x sxhkd
-Print
-	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+super + alt + h
+	rofi -show file-browser-extended -file-browser-dir ~/.config
+super + alt + j
+	rofi -show file-browser-extended -file-browser-dir ~/Git
+super + alt + k
+	rofi -show file-browser-extended -file-browser-dir ~/.screenlayout
+super + alt + l
+	rofi -show file-browser-extended -file-browser-dir ~/Proyectos
 XF86AudioLowerVolume
 	amixer set Master 5%-
 XF86AudioMute

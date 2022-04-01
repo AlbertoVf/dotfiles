@@ -116,3 +116,7 @@ alias pfs_watch="$pfs --watch"
 alias extract="$pfs -ex"
 alias run="$pfs -e"
 # }
+
+# system scripts {
+alias keys="python ~/.scripts/system-scripts.py --keys"
+# }
