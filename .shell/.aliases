@@ -106,8 +106,10 @@ alias yt-user-audio="youtube-dl -w $extract mp3 $user"
 alias yt-user-video="youtube-dl -w --add-metadata --no-post-overwrites -f mp4 $user"
 # }
 
+
+scripts="$HOME/.shell"
 # files-scripts {
-pfs="python ~/.scripts/files-scripts.py"
+pfs="python $scripts/files-scripts.py"
 alias pfs="$pfs"
 alias pfs_rename="$pfs -r"
 alias pfs_organize="$pfs -o"
@@ -118,5 +120,5 @@ alias run="$pfs -e"
 # }
 
 # system scripts {
-alias keys="python ~/.scripts/system-scripts.py --keys"
+alias keys="python $scripts/system-scripts.py --keys"
 # }

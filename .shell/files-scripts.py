@@ -133,23 +133,17 @@ def info():
 
 
 def main():
-    if len(sys.argv) == 1 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
-        info()
-    else:
-        if sys.argv[1] == '-r' or sys.argv[1] == '--rename':
-            rename_files(f=sys.argv[2], folder=False) if len(sys.argv) == 3 else rename_files(folder=True)
-        elif sys.argv[1] == '-o' or sys.argv[1] == '--organize':
-            organize_files()
-        elif sys.argv[1] == '-e' or sys.argv[1] == '--execute':
-            execute(sys.argv[2]) if len(sys.argv) == 3 else print('Error: no file specified')
-        elif sys.argv[1] == '-ex' or sys.argv[1] == '--extract':
-            extract(sys.argv[2]) if len(sys.argv) == 3 else print('Error: no file specified')
-        elif sys.argv[1] == '-w' or sys.argv[1] == '--watch':
-            watch(sys.argv[2]) if len(sys.argv) == 3 else print('Error: no file/url specified')
-        elif sys.argv[1] == '-v' or sys.argv[1] == '--visibility':
-            visibility(sys.argv[2]) if len(sys.argv) == 3 else print('Error: no file specified')
-        else:
-            print('Error: invalid command')
+    args = {"-h": info, "--help": info, "-r": rename_files, "--rename": rename_files, "-o": organize_files, "--organize": organize_files, "-e": execute,
+            "--execute": execute, "-ex": extract, "--extract": extract, "-w": watch, "--watch": watch, "-v": visibility, "--visibility": visibility}
+    try:
+        if len(sys.argv) == 1:
+            args['--help']()
+        elif len(sys.argv) == 2:
+            args[sys.argv[1]]()
+        elif len(sys.argv) == 3:
+            args[sys.argv[1]](sys.argv[2])
+    except:
+        args['--help']()
 
 
 if __name__ == '__main__':
