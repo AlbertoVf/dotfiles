@@ -8,7 +8,7 @@
 
 # All SpaceVim option below [option] section
 [options]
-  colorscheme = "palenight"
+  colorscheme = "gruvbox" # gruvbox, nord, one, palenight,
   colorscheme_bg = "dark"
   enable_guicolors = true
   statusline_separator = "arrow"
@@ -42,6 +42,9 @@
   name = "core#statusline"
 [[layers]]
   name ="core#tabline"
+[[layers]]
+  name = "ui"
+    indentline_char = ':'
 
 [[layers]]
   name = "format"
@@ -55,6 +58,13 @@
 [[layers]]
   name= 'VersionControl'
 
+
+[[layers]]
+  name = "lsp"
+  filetypes = ["php"]
+  enabled_clients = ['intelephense']
+  [layers.override_cmd]
+    php = ["intelephense", "--stdio"]
 [[layers]]
   name = "lang#batch"
 [[layers]]
