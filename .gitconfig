@@ -1,10 +1,20 @@
 [user]
 	name = AlbertoVf
 	email = avf.git-repos@protonmail.com
+[init]
+	defaultBranch = main
+[gui]
+	editor = code
 [credential]
 	helper = store
 [color]
 	ui = true
+[push]
+	default = simple
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -18,23 +28,30 @@
 	added = green
 	changed = yellow
 	untracked = red
-[push]
-	default = simple
-[core]
-	whitespace = trailing-space
-	symlinks = false
-	eol = lf
-	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
-[init]
-	defaultBranch = main
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[gui]
-	editor = code
+[core]
+	whitespace = trailing-space
+	symlinks = false
+	eol = lf
+	autocrlf = input
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	side-by-side = true
+	line-numbers = true
+	features = decorations
+[delta "interactive"]
+	keep-plus-minus-markers = false
+[delta "decorations"]
+	commit-decoration-style = blue ol
+	commit-style = raw
+
 [alias]
 	st = status
 	a = add

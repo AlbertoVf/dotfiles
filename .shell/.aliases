@@ -1,5 +1,4 @@
-#!/bin/bash
-export EDITOR="nvim"
+#!/bin/zsh
 alias grep="grep --color"
 alias s="sudo"
 
@@ -7,6 +6,7 @@ alias s="sudo"
 alias du="ncdu2"
 alias cat="bat"
 alias find="fd"
+alias cd="z"
 # }
 
 # Folders alias{
@@ -15,9 +15,7 @@ alias l="exa -lh -s type --octal-permissions --time-style long-iso"   # long for
 alias lsa="exa --icons -a -s type"                                    # all files and dirs, sorted by type
 alias la="exa -alh -s type --octal-permissions --time-style long-iso" # long format, sorted by type, view octal permissions
 alias lt="exa -aT --icons"                                            # tree listing
-alias lg="exa -laGRTh -I .git --no-user --no-time --no-filesize --no-permissions -rs modified --octal-permissions --git-ignore --git"
-alias ll="exa -1@ | grep '\->' | awk -F '->' '{ print $1 }'"
-
+alias lg="exa -lhaTI .git --icons --no-user --no-permissions --octal-permissions --git-ignore --git --no-time"
 alias cp="cp -i"
 alias md="mkdir -pv"
 alias mv="mv -i"
@@ -29,10 +27,8 @@ alias pacin="sudo pacman -S"                  # install package
 alias pacrem="sudo pacman -Rns"               # remove package and dependencies
 alias pacsyu="sudo pacman -Syyu"              # update only standard pkgs
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-alias pacrs="sudo pacman -Rs $(pacman -Qtdq)" # purge unused pkgs
-
-alias parsua="paru -Sua" # update aur packages
-alias parsyu="paru -Syu" # update standar packages and aur
+alias parsua="paru -Sua"                      # update aur packages
+alias parsyu="paru -Syu"                      # update standar packages and aur
 alias paru="paru --limit 20 --searchby name"
 # }
 
@@ -64,61 +60,50 @@ alias remotes="git remote -v"
 
 # Dotfiles alias {
 alias dotfiles="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
-
 alias dota="dotfiles add"
 alias dotaa="dotfiles add -u"
-
 alias dotc="dotfiles commit -m"
 alias dotca="dotfiles commit --amend"
-
 alias dotd="dotfiles diff"
 alias dotr="dotfiles restore"
 alias dotrs="dotfiles restore --staged"
-
 alias dotl="dotfiles log --oneline --decorate --all --graph"
 alias dotst="dotfiles status"
-
 alias dotp="dotfiles push"
 # }
 
 # Youtube-dl alias {
-ruta="-o $(xdg-user-dir DOWNLOAD)/"
+ruta="$(xdg-user-dir DOWNLOAD)/"
 extract="-i --embed-thumbnail --add-metadata --no-post-overwrites --extract-audio --audio-quality 0 --audio-format"
-file="$ruta'%(title)s.%(ext)s' --no-playlist"
-list="$ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-list2="$ruta'%(playlist)s/%(title)s.%(ext)s'"
-user="$ruta'%(uploader)s/%(title)s.%(ext)s'"
-# youtube audio
-alias yt-aac="youtube-dl $extract aac $file"
-alias yt-flac="youtube-dl $extract flac $file"
-alias yt-m4a="youtube-dl $extract m4a $file"
-alias yt-mp3="youtube-dl $extract mp3 $file"
-# youtube video
-alias yt-mp4="youtube-dl --add-metadata -f mp4 $file"
-# youtube playlist order
-alias yt-audio-list="youtube-dl -w $extract mp3 $list"
-alias yt-video-list="youtube-dl -w --add-metadata -f mp4 $list"
-# youtube playlist unorder
-alias yt-audio-unlist="youtube-dl -w $extract mp3 $list2"
-alias yt-video-unlist="youtube-dl -w --add-metadata -f mp4 $list2"
-# youtube user videos
-alias yt-user-audio="youtube-dl -w $extract mp3 $user"
-alias yt-user-video="youtube-dl -w --add-metadata --no-post-overwrites -f mp4 $user"
+alias yt-aac="youtube-dl $extract aac -o $ruta'%(title)s.%(ext)s' --no-playlist"
+alias yt-mp3="youtube-dl $extract mp3 -o $ruta'%(title)s.%(ext)s' --no-playlist"
+alias yt-mp4="youtube-dl --add-metadata -f mp4 -o $ruta'%(title)s.%(ext)s' --no-playlist"
+alias yt-audio-list="youtube-dl -w $extract mp3 -o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yt-video-list="youtube-dl -w --add-metadata -f mp4 -o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
 # }
-
 
 scripts="$HOME/.shell"
 # files-scripts {
 pfs="python $scripts/files-scripts.py"
 alias pfs="$pfs"
 alias pfs_rename="$pfs -r"
-alias pfs_organize="$pfs -o"
 alias pfs_visibility="$pfs -v"
 alias pfs_watch="$pfs --watch"
-alias extract="$pfs -ex"
 alias run="$pfs -e"
 # }
 
 # system scripts {
-alias keys="python $scripts/system-scripts.py --keys"
+alias keys="python $scripts/system-scripts.py"
 # }
+
+function init_repo() {
+  mkdir -p $1/{src,docs,test}
+  cd $1
+  touch LICENSE MAKEFILE
+  echo "# $1" >>README.md
+  if [ $2 ]; then
+    curl -fLw '\n' https://www.gitignore.io/api/$2 >>.gitignore || touch .gitignore
+  fi
+  git init && git add -A
+  git commit -m 'Init repo'
+}
