@@ -80,6 +80,7 @@
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.terminal.executeInFileDir": true,
   "search.showLineNumbers": true,
+  "security.workspace.trust.banner": "never",
   "settingsSync.ignoredSettings": ["workbench.colorTheme"],
   "timeline.excludeSources": ["git-history"],
   "typescript.updateImportsOnFileMove.enabled": "always",
