@@ -15,4 +15,4 @@ fi
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
-[[ -f ~/.scripts/.aliases ]] && . ~/.scripts/.aliases
+[[ -f ~/.shell/scripts/aliases.sh ]] && . ~/.shell/scripts/aliases.sh

@@ -2,7 +2,7 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$HOME/.config/rofi/bin:$PATH
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_FUZZY=2
 export MCFLY_RESULTS=10
@@ -10,7 +10,7 @@ export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_RESULTS_SORT=LAST_RUN
 #env
 #export TODO_PATH="$HOME/.todo"
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR=vim
 export SUDO_PROMPT="Password: "
 

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 alias grep="grep --color"
 alias s="sudo"
 
@@ -40,18 +40,15 @@ alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirror
 # }
 
 # git alias {
-alias branch="git branch"
 alias checkout="git checkout"
 alias clone="git clone"
 alias diff="git diff"
-alias fetch="git fetch"
 alias ga="git add"
 alias gaa="git add --all"
 alias gau="git add -u"
 alias gc="git commit -m"
 alias gca="git commit --amend"
 alias gl="git log --oneline --decorate --all --graph"
-alias gls="git log --stat"
 alias gst="git status"
 alias pull="git pull origin"
 alias push="git push origin"
@@ -82,7 +79,7 @@ alias yt-audio-list="youtube-dl -w $extract mp3 -o $ruta'%(playlist)s/%(playlist
 alias yt-video-list="youtube-dl -w --add-metadata -f mp4 -o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
 # }
 
-scripts="$HOME/.shell"
+scripts="$HOME/.shell/scripts"
 # files-scripts {
 pfs="python $scripts/files-scripts.py"
 alias pfs="$pfs"

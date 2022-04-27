@@ -22,8 +22,8 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.shell/.aliases
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+source $HOME/.shell/scripts/aliases.sh
 
 alias ag="acs"
 alias reload="clear && . ~/.zshrc"
