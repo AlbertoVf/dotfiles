@@ -39,6 +39,7 @@
 	eol = lf
 	autocrlf = input
 	pager = delta
+	editor = vim
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 [delta]

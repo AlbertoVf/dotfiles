@@ -13,14 +13,15 @@ conky.config = {
 	imlib_cache_size = 0,
 
 	--Placement
-	alignment = 'bottom_right',
+	alignment = 'middle_middle',
 
 	--Arch Duoscreen
-	gap_x = 10,
-	gap_y = 60,
+	gap_x = 0,
+	gap_y = 0,
 	minimum_height = 220,
-	minimum_width = 580,
-	maximum_width = 640,
+	maximum_height = 220,
+	minimum_width = 970,
+	maximum_width = 970,
 
 	--Graphical
 	border_inner_margin = 0,
@@ -43,7 +44,7 @@ conky.config = {
 	--Textual
 	extra_newline = false,
 	format_human_readable = true,
-	font = '1942 report:size=18:bold',
+	font = '1942 report:size=22:bold',
 	max_text_width = 0,
 	max_user_text = 16384,
 	override_utf8_locale = true,
@@ -77,13 +78,11 @@ conky.config = {
 };
 
 conky.text = [[
-${alignc}${font 1942 report:size=36:bold}${color2}${time %H:%M %d/%m/%Y}
-${color3}${alignc}${font 1942 report:size=18:bold}Cpu:${cpu cpu0}% \
-Ram:$mem \
-Bat:${battery_percent BAT0}% \
-Temp:${hwmon 1 temp 1}*${font}
+${alignc}${font Anonymice Nerd Font:size=64:bold}${color4}\
+${time %H:%M %d/%m/%Y}
+${color4}${alignc}${font Anonymice Nerd Font:size=32:bold}\
+Cpu:${cpu cpu0}% | Ram:$mem | Bat:${battery_percent BAT0}% | Temp:${hwmon 1 temp 1}˚C
 
-${color3}${alignc}Host:${nodename}
-${alignc}Kernel:$kernel
-${alignc}Ip:${addr wlp2s0}
+${alignc}\
+Ip:${addr enp3s0f1}
 ]];

@@ -75,7 +75,7 @@ super + s
 super + v
 	vlc --video-on-top
 super + x
-	arcolinux-logout
+	archlinux-logout
 super + z
 	zeal
 super + shift + Escape
