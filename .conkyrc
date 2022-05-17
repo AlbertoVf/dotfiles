@@ -78,11 +78,11 @@ conky.config = {
 };
 
 conky.text = [[
-${alignc}${font Anonymice Nerd Font:size=64:bold}${color4}\
-${time %H:%M %d/%m/%Y}
-${color4}${alignc}${font Anonymice Nerd Font:size=32:bold}\
+${alignc}${color4}${font Anonymice Nerd Font:size=64:bold}\
+${time %H:%M %d.%m.%Y}
+${alignc}${color4}${font Anonymice Nerd Font:size=32:bold}\
 Cpu:${cpu cpu0}% | Ram:$mem | Bat:${battery_percent BAT0}% | Temp:${hwmon 1 temp 1}˚C
 
-${alignc}\
+${alignc}${color4}\
 Ip:${addr enp3s0f1}
 ]];

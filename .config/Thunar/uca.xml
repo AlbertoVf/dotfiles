@@ -10,10 +10,10 @@
 	<directories/>
 </action>
 <action>
-	<icon>gitg</icon>
+	<icon>folder-black-git</icon>
 	<name>Open with gitUI</name>
 	<unique-id>1587287434852027-1</unique-id>
-	<command>gitfiend %f</command>
+	<command>gitkraken %f</command>
 	<description>Open with gitUI</description>
 	<patterns>*</patterns>
 	<directories/>
