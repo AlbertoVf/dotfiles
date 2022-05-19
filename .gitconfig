@@ -15,15 +15,6 @@
 	conflictstyle = diff3
 [diff]
 	colorMoved = default
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
 [color "status"]
 	added = green
 	changed = yellow
@@ -40,6 +31,7 @@
 	autocrlf = input
 	pager = delta
 	editor = vim
+	filemode = false
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 [delta]
@@ -52,19 +44,19 @@
 [delta "decorations"]
 	commit-decoration-style = blue ol
 	commit-style = raw
-
 [alias]
-	st = status
 	a = add
 	aa = add --all
-	b = branch
+	au = add -u
+	c = commit -m
+	ca = commit --amend
+	check = checkout
 	d = diff
 	l = log --oneline --decorate --all --graph
-	lg = log --stat
-	c = commit -m
-	p = push
-	pm = push --mirror
-	pl = pull
-	rst = restore
-	r = remote
+	pull = pull origin
+	push = push origin
+	remotes = remote -v
+	res = restore
+	ress = restore --staged
+	st = status
 	t = tag -a

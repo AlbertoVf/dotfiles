@@ -63,87 +63,23 @@ def rename_files(f='', folder=True):
         subprocess.Popen(['mv', f'{root}/{f}', f'{root}/{n}'])
 
 
-def visibility(f: str) -> None:
-    if f[0] == '.':
-        n = join(os.getcwd(), f[1:])
-    else:
-        n = join(os.getcwd(), f".{f}")
-    os.system(f'mv {join(os.getcwd(), f)} {n}')
-    subprocess.Popen((['echo', f'{f} >> {n}']))
-
-
-def execute(f: str):
-    command = {
-        "deno run": ["js", "ts"],
-        "evince": ["pdf"],
-        "feh": ["jpg", "png", "jpeg", "bmp", "gif"],
-        "firefox": ["html", "htm", "xhtm"],
-        "java": ["java"],
-        "mpv": ["mp4", "mp3", "m4a", "aac", "flac"],
-        "python": ["py"],
-        "sh": ["sh", "bash", "zsh"],
-    }
-    ext = get_extension(f)
-    if get_key(ext, command) is None:
-        key = 'nvim'
-    else:
-        key = get_key(ext, command)
-    os.system(f'{key} "{f}" || vim "{f}"')
-
-
-def extract(f: str):
-    command = {
-        "uncompress": ["z"],
-        "unxz": ["xz"],
-        "unlzma": ["lzma"],
-        "gunzip": ["gz"],
-        "cabextract": ["exe"],
-        "cpio -id <": ["cpio"],
-        "unzip": ["cbz", "epub", "zip"],
-        "tar xvf": ["cbt", "tar.bz2", "tar.gz", "tar.xz", "tbz2", "tgz", "txz", "tar"],
-        "unrar x -ad": ["cbr", "rar"],
-        "unace x": ["cba", "ace"],
-        "bunzip2": ["bz2"],
-        "z x": ["7z", "arj", "cab", "cb7", "chm", "deb", "dmg", "iso", "lzh", "msi", "pkg", "rpm", "udf", "wim", "xar"],
-    }
-    ext = get_extension(f)
-    if get_key(ext, command) is not None:
-        key = get_key(ext, command)
-    else:
-        return None
-    os.system(f'{key} {f}')
-
-
-def watch(f: str):
-    if re.search("[0-9]{2}| [0-9]{4}", f):
-        os.system(f"firefox localhost:{f} || brave localhost:{f}")
-    os.system(f"firefox {f} || brave {f}") if re.search("http://|https://|localhost://", f) else os.system(
-        f'bat ./"{f}" || cat "{f}"')
-
-
 def info():
     print(""" Scripts para organizar archivos
   -h, --help: Muestra esta ayuda
   -r <file?>, --rename <file?>: Renombra los archivos
-  -o, --organize: Organiza los archivos
-  -e <file>, --execute <file>: Ejecuta el archivo especificado
-  -ex <file>, --extract <file>: Extrae el archivo especificado
-  -w <file>|<url>|<port>, --watch <file>|<url>|<port>: Muestra la localizacion
-  -v <file>, --visibility <file>: Cambia la visibilidad de los archivos """)
+  -o, --organize: Organiza los archivos""")
 
 
 def main():
-    args = {"-h": info, "--help": info, "-r": rename_files, "--rename": rename_files, "-o": organize_files, "--organize": organize_files, "-e": execute,
-            "--execute": execute, "-ex": extract, "--extract": extract, "-w": watch, "--watch": watch, "-v": visibility, "--visibility": visibility}
     try:
-        if len(sys.argv) == 1:
-            args['--help']()
-        elif len(sys.argv) == 2:
-            args[sys.argv[1]]()
-        elif len(sys.argv) == 3:
-            args[sys.argv[1]](sys.argv[2])
+        if sys.argv[1] in ["--help", "-h"]:
+            info()
+        elif sys.argv[1] in ['-o', '--organize']:
+            organize_files()
+        elif sys.argv[1] in ['-r', '--rename']:
+            rename_files(sys.argv[2], True) if len( sys.argv) == 2 else rename_files(sys.argv[2], False)
     except:
-        args['--help']()
+        info()
 
 
 if __name__ == '__main__':

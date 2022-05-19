@@ -10,7 +10,7 @@ export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_RESULTS_SORT=LAST_RUN
 #env
 #export TODO_PATH="$HOME/.todo"
-export VISUAL=vim
+export VISUAL=code
 export EDITOR=vim
 export SUDO_PROMPT="Password: "
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 alias grep="grep --color"
-alias s="sudo"
+alias cf="xclip -sel clip" # copy file content to clipboard
 
 # modern commands {
 alias du="ncdu2"
@@ -10,14 +10,14 @@ alias cd="z"
 # }
 
 # Folders alias{
-alias ls="exa --icons -tR -s type"                                    # Show files and dirs: sorted by type, icons, readable
 alias l="exa -lh -s type --octal-permissions --time-style long-iso"   # long format, sorted by type, view octal permissions
-alias lsa="exa --icons -a -s type"                                    # all files and dirs, sorted by type
+alias ls="exa --icons -tR -s type"                                    # Show files and dirs: sorted by type, icons, readable
 alias la="exa -alh -s type --octal-permissions --time-style long-iso" # long format, sorted by type, view octal permissions
+alias lsa="exa --icons -a -s type"                                    # all files and dirs, sorted by type
 alias lt="exa -aT --icons"                                            # tree listing
 alias lg="exa -lhaTI .git --icons --no-user --no-permissions --octal-permissions --git-ignore --git --no-time"
+alias md="mkdir -p"
 alias cp="cp -i"
-alias md="mkdir -pv"
 alias mv="mv -i"
 alias rm="rm -i"
 # }
@@ -40,67 +40,25 @@ alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirror
 # }
 
 # git alias {
-alias checkout="git checkout"
-alias clone="git clone"
-alias diff="git diff"
-alias ga="git add"
-alias gaa="git add --all"
-alias gau="git add -u"
-alias gc="git commit -m"
-alias gca="git commit --amend"
-alias gl="git log --oneline --decorate --all --graph"
-alias gst="git status"
-alias pull="git pull origin"
-alias push="git push origin"
-alias remotes="git remote -v"
-# }
-
-# Dotfiles alias {
-alias dotfiles="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
-alias dota="dotfiles add"
-alias dotaa="dotfiles add -u"
-alias dotc="dotfiles commit -m"
-alias dotca="dotfiles commit --amend"
-alias dotd="dotfiles diff"
-alias dotr="dotfiles restore"
-alias dotrs="dotfiles restore --staged"
-alias dotl="dotfiles log --oneline --decorate --all --graph"
-alias dotst="dotfiles status"
-alias dotp="dotfiles push"
+alias g="/usr/bin/git"
+alias dotf="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
 # }
 
 # Youtube-dl alias {
-ruta="$(xdg-user-dir DOWNLOAD)/"
+download="$(xdg-user-dir DOWNLOAD)/"
 extract="-i --embed-thumbnail --add-metadata --no-post-overwrites --extract-audio --audio-quality 0 --audio-format"
-alias yt-aac="youtube-dl $extract aac -o $ruta'%(title)s.%(ext)s' --no-playlist"
-alias yt-mp3="youtube-dl $extract mp3 -o $ruta'%(title)s.%(ext)s' --no-playlist"
-alias yt-mp4="youtube-dl --add-metadata -f mp4 -o $ruta'%(title)s.%(ext)s' --no-playlist"
-alias yt-audio-list="youtube-dl -w $extract mp3 -o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-alias yt-video-list="youtube-dl -w --add-metadata -f mp4 -o $ruta'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yt-aac="youtube-dl $extract aac -o $download'%(title)s.%(ext)s' --no-playlist"
+alias yt-mp3="youtube-dl $extract mp3 -o $download'%(title)s.%(ext)s' --no-playlist"
+alias yt-mp4="youtube-dl --add-metadata -f mp4 -o $download'%(title)s.%(ext)s' --no-playlist"
+alias yt-audio-list="youtube-dl -w $extract mp3 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yt-video-list="youtube-dl -w --add-metadata -f mp4 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yt-file-mp3="yt-mp3 --batch-file"
+alias yt-file-mp4="yt-mp4 --batch-file"
 # }
 
-scripts="$HOME/.shell/scripts"
 # files-scripts {
-pfs="python $scripts/files-scripts.py"
-alias pfs="$pfs"
-alias pfs_rename="$pfs -r"
-alias pfs_visibility="$pfs -v"
-alias pfs_watch="$pfs --watch"
-alias run="$pfs -e"
-# }
-
-# system scripts {
+scripts="$HOME/.shell/scripts"
+alias pfs="python $scripts/files-scripts.py"
 alias keys="python $scripts/system-scripts.py"
+source "$scripts/functions.sh"
 # }
-
-function init_repo() {
-  mkdir -p $1/{src,docs,test}
-  cd $1
-  touch LICENSE MAKEFILE
-  echo "# $1" >>README.md
-  if [ $2 ]; then
-    curl -fLw '\n' https://www.gitignore.io/api/$2 >>.gitignore || touch .gitignore
-  fi
-  git init && git add -A
-  git commit -m 'Init repo'
-}
