@@ -58,7 +58,7 @@ alias yt-file-mp4="yt-mp4 --batch-file"
 
 # files-scripts {
 scripts="$HOME/.shell/scripts"
-alias pfs="python $scripts/files-scripts.py"
-alias keys="python $scripts/system-scripts.py"
-source "$scripts/functions.sh"
+alias pfs="python $scripts/file_scripts.py"
+alias keys="python $scripts/get_shortcuts.py"
+source "$scripts/shell_scripts.sh"
 # }

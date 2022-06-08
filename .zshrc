@@ -23,7 +23,7 @@ plugins=(
 )
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-source $HOME/.shell/scripts/aliases.sh
+source $HOME/.shell/scripts/alias_shell.sh
 
 alias ag="acs"
 alias reload="clear && . ~/.zshrc"
