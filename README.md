@@ -4,17 +4,18 @@
 
 ## External repository
 
-[Install](https://gitlab.com/AlbertoVf1/arco-install)
+[Install](https://github.com/AlbertoVf/arco-install)
 
-[Wallpapers](https://gitlab.com/AlbertoVf1/wallpapers)
+[Wallpapers](https://github.com/AlbertoVf/wallpapers)
 
 ## Start your dotfiles repository
 
 ```bash
-git init --bare $HOME/dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles config --local status.showUntrackedFiles no
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bash
+git init --bare $HOME/.dotfiles
+alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotf config --local status.showUntrackedFiles no
+echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 ```
 
 ## Add files to your repo
@@ -46,8 +47,20 @@ wget -qO- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Fanta
 ## Install your dotfiles onto a new system
 
 ```bash
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bash
+echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 echo ".dotfiles" >> .gitignore
 git clone --bare <git-repo-url> $HOME/.dotfiles
-dotfiles config --local status.showUntrackedFiles no
+dotf config --local status.showUntrackedFiles no
+```
+
+## Install my dotfiles
+
+```bash
+echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+echo ".dotfiles" >> .gitignore
+git clone --bare https://github.com/AlbertoVf/dotfiles $HOME/.dotfiles
+dotf config --local status.showUntrackedFiles no
+
+dotf reset --hard
 ```
