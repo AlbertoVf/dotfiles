@@ -40,7 +40,7 @@
 	<icon>insert-link-symbolic</icon>
 	<name>Create symlink</name>
 	<unique-id>1526631663081446-14</unique-id>
-	<command>ln -s %f &quot;%n&quot;</command>
+	<command>ln -s %f %n-enlace</command>
 	<description>Softlink between two files or directories</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -123,7 +123,7 @@
 	<icon>clipboard</icon>
 	<name>Copy name</name>
 	<unique-id>1626704690182391-1</unique-id>
-	<command>zenity --info --text=&apos;Nombre copiado&apos; ; echo &quot;%N&quot;| xclip -sel c</command>
+	<command>zenity --timeout=2 --info --text=&apos;Nombre copiado&apos; ; echo &quot;%N&quot;| xclip -sel c</command>
 	<description>Copia nombre</description>
 	<patterns>*</patterns>
 	<directories/>

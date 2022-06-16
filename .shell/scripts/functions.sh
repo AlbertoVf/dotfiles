@@ -1,15 +1,20 @@
 #!/bin/sh
 
 function init_repo() {
-  mkdir -p $1/{src,test,assets/{img,fonts,js,css,docs}}
-  cd $1
-  touch LICENSE Makefile
+  mkdir -p $1/{src,test,assets/{img,fonts,js,css,docs}} && cd $1
+  files=('README.md' '.gitignore' 'LICENSE.md' 'Makefile' 'Dockerfile' 'CHANGELOG.md' '.editorconfig')
+  git init
   echo "# $1" >>README.md
   if [ $2 ]; then
     gitignores="${2//" "/","}"
     curl -fLw '\n' https://www.gitignore.io/api/$gitignores >>.gitignore
   fi
-  git init && git add -A
+  for i in "${files[@]}"; do
+    touch $i
+    if [ -s $i ]; then
+      git add $i
+    fi
+  done
   git commit -m "build: :hammer: Create proyect structure."
 }
 
@@ -24,6 +29,7 @@ function visibility() {
 
 function extract() {
   case $file in
+    *.7z) 7z x $file ;;
     *.gz) gunzip $file ;;
     *.bz2) bunzip2 $file ;;
     *.zip) unzip $file ;;

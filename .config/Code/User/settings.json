@@ -20,7 +20,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": "500",
-  "editor.formatOnPaste": false,
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToImplementation",
@@ -87,14 +87,15 @@
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " /",
-  "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+  "workbench.colorTheme": "Palenight Operator",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
-  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
   "workbench.list.multiSelectModifier": "alt",
   "workbench.list.openMode": "doubleClick",
   "workbench.list.smoothScrolling": true,
   "workbench.tree.indent": 16,
-  "zenMode.centerLayout": false
+  "zenMode.centerLayout": false,
+  "diffEditor.ignoreTrimWhitespace": false
 }
