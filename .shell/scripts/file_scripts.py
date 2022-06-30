@@ -6,23 +6,14 @@ import sys
 from os import listdir
 from os.path import isfile, join
 
+rootPath = os.path.expanduser("~")
+
 
 def list_files(root) -> list:
     return [f for f in listdir(root) if isfile(join(root, f))]
 
 
-def get_key(e: str, dictionary: dict):
-    for (k, v) in dictionary.items():
-        if e in v:
-            return k
-    return None
-
-
-def get_extension(f: str):
-    return f.split('.')[-1]
-
-
-def normalize(f: str):
+def normalize(f: str) -> str:
     f = re.sub(r"[-|_|+]", ' ', f)
     f = re.sub(r'[^a-zA-Z0-9\s\.]', '', f).replace("..", ".")
 
@@ -33,19 +24,43 @@ def normalize(f: str):
 
 
 def organize_files():
-    home = os.path.expanduser('~')
-    extensiones = {
-        'audio': join(home, 'Musica'),
-        'video': join(home, 'Videos'),
-        'image': join(home, 'Imagenes'),
-        'text': join(home, 'Documentos'),
-        'application': join(home, 'Documentos')}
+    downloads = {
+        'path': os.path.join(rootPath, "Descargas/")
+    }
+    music = {
+        'path': os.path.join(rootPath, "Música/"),
+        'extensions': ['.mp3', '.wav', '.flac', '.m4a']
+    }
+    video = {
+        'path': os.path.join(rootPath, "Vídeos/"),
+        'extensions': ['.mp4', '.mkv', '.avi', '.flv', '.wmv', '.mov', '.mpg', '.mpeg']
+    }
+    documents = {
+        'path': os.path.join(rootPath, "Documentos/"),
+        'extensions': ['.zip', '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx']
+    }
+    images = {
+        'path': os.path.join(rootPath, "Imágenes/"),
+        'extensions': ['.png', '.jpg', '.jpeg', '.gif', '.bmp']
+    }
 
-    for f in list_files(os.getcwd()):
-        tipo = mimetypes.guess_type(f)[0].split('/')[0]
-        proceso = ['mv', f, extensiones[tipo]]
-        subprocess.Popen((['echo', f'{f} >> {extensiones[tipo]}']))
-        subprocess.Popen(proceso)
+    for filename in list_files(downloads['path']):
+        name, extension = os.path.splitext(downloads['path'] + filename)
+        src = downloads['path'] + filename
+
+        if extension in images['extensions']:
+            dst = images['path'] + filename
+        elif extension in music['extensions']:
+            dst = music['path'] + filename
+        elif extension in documents['extensions']:
+            dst = documents['path'] + filename
+        elif extension in video['extensions']:
+            dst = video['path'] + filename
+        else:
+            print('Not moved: ' + filename)
+            continue
+        os.rename(src, dst)
+        print(f'Moved: {src} >> {dst}')
 
 
 def rename_files(f='', folder=True):
@@ -55,12 +70,11 @@ def rename_files(f='', folder=True):
         for f in ficheros:
             n = normalize(f)
             if f != n:
-                subprocess.Popen((['echo', f'{f} >> {n}']))
-                subprocess.Popen(['mv', f'{root}/{f}', f'{root}/{n}'])
+                os.rename(f'{root}/{f}', f'{root}/{n}')
     else:
         n = normalize(f)
-        subprocess.Popen((['echo', f'{f} >> {n}']))
-        subprocess.Popen(['mv', f'{root}/{f}', f'{root}/{n}'])
+        os.rename(f'{root}/{f}', f'{root}/{n}')
+    print(f'Renamed: {f} >> {n}')
 
 
 def info():
@@ -70,17 +84,11 @@ def info():
   -o, --organize: Organiza los archivos""")
 
 
-def main():
-    try:
-        if sys.argv[1] in ["--help", "-h"]:
-            info()
-        elif sys.argv[1] in ['-o', '--organize']:
-            organize_files()
-        elif sys.argv[1] in ['-r', '--rename']:
-            rename_files(sys.argv[2], True) if len( sys.argv) == 2 else rename_files(sys.argv[2], False)
-    except:
-        info()
-
-
 if __name__ == '__main__':
-    main()
+    if sys.argv[1] in ['-o', '--organize']:
+        organize_files()
+    elif sys.argv[1] in ['-r', '--rename']:
+        rename_files(sys.argv[2], True) if len(
+            sys.argv) == 2 else rename_files(sys.argv[2], False)
+    else:
+        info()

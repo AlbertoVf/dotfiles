@@ -12,7 +12,6 @@ def read_file(file):
 
 def read_sxhkd_keys():
     content = read_file(path.join('sxhkd', 'sxhkdrc'))
-
     for i, line in enumerate(content):
         key = line.strip()
         if (i % 2) == 0:
@@ -26,12 +25,9 @@ def read_qtile_keys():
     for l in content:
         if l.find(r'Key(') != -1:
             l = l.split("Key")[1].split("lazy.", 1)
-
             key = re.sub(r'[()",]', '', l[0]).strip()
-
             action = ''.join(l[1:])
             action = re.sub(r"lazy.|[(),]", '', action).strip()
-
             keys[key] = action
     return keys
 
@@ -41,10 +37,8 @@ def read_kitty_keys():
     for l in content:
         if l.find('map ') != -1:
             l = l.split('map ')[1].split(' ', 1)
-
             key = l[0].strip()
             action = l[1].strip()
-
             keys[key] = action
     return keys
 
@@ -64,7 +58,6 @@ def export_json():
         "kitty": read_kitty_keys(),
         "sxhkd": read_sxhkd_keys()
     }
-    # write a json file
     with open('keys.json', 'w') as f:
         json.dump(keys, f, indent=2, sort_keys=True)
 
@@ -81,10 +74,9 @@ def info():
     """)
 
 
-def main():
+if __name__ == '__main__':
     try:
         if sys.argv[1] in ["--export", "-e"]:
-            print(sys.argv[1])
             export_json()
         else:
             if sys.argv[1] in ["--qtile", "-q"]:
@@ -100,7 +92,3 @@ def main():
             transform_keys(keys)
     except:
         info()
-
-
-if __name__ == '__main__':
-    main()

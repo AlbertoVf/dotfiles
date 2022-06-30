@@ -1,10 +1,6 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.shell/zsh/.p10k.zsh ]] || source ~/.shell/zsh/.p10k.zsh
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ZSH_THEME=:"gozilla"
 CASE_SENSITIVE="false"

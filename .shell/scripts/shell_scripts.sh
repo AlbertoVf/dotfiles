@@ -1,8 +1,11 @@
 #!/bin/sh
 
+# functions in shell
+
 function init_repo() {
-  mkdir -p $1/{src,test,assets/{img,fonts,js,css,docs}} && cd $1
-  files=('README.md' '.gitignore' 'LICENSE.md' 'Makefile' 'Dockerfile' 'CHANGELOG.md' '.editorconfig')
+  # init_repo 'name-app' 'language1 language2 ...'
+  mkdir -p $1/{src,test,assets/{img,docs}} && cd $1
+  files=('README.md' '.gitignore' '.editorconfig' 'Makefile' 'Dockerfile' 'docker-compose.yml' 'LICENSE.md')
   git init
   echo "# $1" >>README.md
   if [ $2 ]; then
@@ -10,9 +13,10 @@ function init_repo() {
     curl -fLw '\n' https://www.gitignore.io/api/$gitignores >>.gitignore
   fi
   for i in "${files[@]}"; do
-    touch $i
     if [ -s $i ]; then
       git add $i
+    else
+      touch $i && echo "Generate the $i file"
     fi
   done
   git commit -m "build: :hammer: Create proyect structure."
@@ -59,7 +63,7 @@ function run(){
     *.cpp | *.hpp) g++ $file ;;
     *.js | *.ts) deno run $file ;;
     *.html | *.htm | *.xhtm) xdg-open $file ;;
-
+    *.php) php -f $file;;
     *.mp3 | *.mp4 | *.m4a | *.aac | *.flac) xdg-open $file ;;
     *.pdf) xdg-open $file ;;
     *.jpg | *.jpeg | *.png | *.gif | *.bmp | *.tiff | *.svg) feh $file ;;
@@ -67,15 +71,22 @@ function run(){
   esac
 }
 
-function my_ip(){
-  xdg-open "https://ipinfo.io/" &
-  local_ip="$(ip route get 1.1.1.1 | grep -oP 'src \K[^ ]+')"
-  external_ip="$(curl -s https://api.my-ip.io/ip)"
-  echo -e "Local: $local_ip\nExternal: $external_ip"
-  speedtest --single --simple
-}
-
 function clear_marks(){
   # remove marks (') from a file
   sed -i "s/'//g" $1
+}
+
+function create_playlist(){
+  folder_name="$(pwd | awk -F '/' '{print $NF}')"
+  name="playlist_$folder_name.m3u"
+
+  echo -e "# $(date) - $(pwd)\n" > $name
+  fd -a -d1 -e mp3 -e mp4 >> $name
+}
+
+function my_ip(){
+  scripts="$(xdg-user-dir SHELLSCRIPTS)"
+  python $scripts/my_ip.py -i | bat -l json
+  python $scripts/my_ip.py -c | bat -l json
+  python $scripts/my_ip.py -s | bat -l json
 }

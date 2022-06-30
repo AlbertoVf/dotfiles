@@ -15,4 +15,5 @@ configuration {
 //@theme "./launchers/misc/launchpad.rasi"
 //@theme "./launchers/ribbon/ribbon_bottom_round.rasi"
 //@theme "/usr/share/rofi/themes/Arc-Dark-Polo.rasi"
-@theme "/usr/share/rofi/themes/Arc-Dark-Evopop.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark-Evopop.rasi"
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
