@@ -22,7 +22,7 @@
 	<icon>insert-link-symbolic</icon>
 	<name>Create symlink</name>
 	<unique-id>1526631663081446-14</unique-id>
-	<command>ln -s %f %n-enlace</command>
+	<command>ln -s %f %n-link</command>
 	<description>Softlink between two files or directories</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -78,11 +78,10 @@
 	<image-files/>
 </action>
 <action>
-	<icon>pdfeditor</icon>
+	<icon>qpdfview</icon>
 	<name>Merge PDF</name>
 	<unique-id>1627148699144999-1</unique-id>
-	<command>pdftk %F cat output $(zenity --entry --title=&apos;Merge pdf&apos;--text=&apos;Nombre de nuevo archivo&apos; --entry-text=&apos;output&apos;).pdf
-</command>
+	<command>pdftk %F cat output $(zenity --entry --title=&quot;Merge pdf&quot; --text=&quot;Nombre de nuevo archivo&quot; --entry-text=&quot;output&quot;).pdf</command>
 	<description>merge pdf</description>
 	<patterns>*</patterns>
 	<other-files/>
@@ -91,7 +90,7 @@
 	<icon>clipboard</icon>
 	<name>Copy file path</name>
 	<unique-id>1626443329564542-1</unique-id>
-	<command>zenity --timeout=1 --info --text=&apos;Ruta copiada&apos; ; echo &quot;%F&quot; | xclip -sel c</command>
+	<command>notify-send &apos;Ruta copiada&apos; ; echo &quot;%F&quot; | xclip -sel c</command>
 	<description>Copia ruta completa</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -105,7 +104,7 @@
 	<icon>clipboard</icon>
 	<name>Copy name</name>
 	<unique-id>1626704690182391-1</unique-id>
-	<command>zenity --timeout=1 --info --text=&apos;Nombre copiado&apos; ; echo &quot;%N&quot; | xclip -sel c</command>
+	<command>notify-send &apos;Nombre copiado&apos; ; echo &quot;%N&quot; | xclip -sel c</command>
 	<description>Copia nombre</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -128,7 +127,7 @@
 	<icon>preferences-system-user-sudo</icon>
 	<name>Editar como root</name>
 	<unique-id>1526631419798289-11</unique-id>
-	<command>gksudo nvim %F</command>
+	<command>gksudo vim %f</command>
 	<description>edit as root</description>
 	<patterns>*</patterns>
 	<text-files/>
@@ -152,5 +151,21 @@
 	<patterns>*</patterns>
 	<other-files/>
 	<text-files/>
+</action>
+<action>
+	<icon>link</icon>
+	<name>Crear link</name>
+	<unique-id>1662556204328140-2</unique-id>
+	<command>  OUTPUT=$(zenity --forms --title=&quot;Crea un link&quot; --text=&quot;Crea un link a una pagina&quot; --separator=&quot;,&quot; --add-entry=&quot;url de la pagina&quot; --add-entry=&quot;nombre del fichero&quot;)
+  accepted=$?
+  if ((accepted != 0)); then
+      exit 1
+  fi
+  url=$(awk -F, &apos;{print $1}&apos; &lt;&lt;&lt;$OUTPUT)
+  nombre=$(awk -F, &apos;{print $2}&apos; &lt;&lt;&lt;$OUTPUT)
+  echo -e &quot;[Desktop Entry]\nVersion=1.0\nType=Link\nName=$nombre\nComment=\nIcon=user-bookmarks\nURL=$url&quot; &gt; &quot;$nombre&quot;.desktop</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
 </action>
 </actions>

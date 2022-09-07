@@ -90,3 +90,16 @@ function my_ip(){
   python $scripts/my_ip.py -c | bat -l json
   python $scripts/my_ip.py -s | bat -l json
 }
+
+function linked_page(){
+# crear formulario con url y nombre del fichero
+  OUTPUT=$(zenity --forms --title="Crea un link" --text="Crea un link a una pagina" --separator="," --add-entry="url de la pagina" --add-entry="nombre del fichero")
+  accepted=$?
+  if ((accepted != 0)); then
+      echo "something went wrong"
+      exit 1
+  fi
+  url=$(awk -F, '{print $1}' <<<$OUTPUT)
+  nombre=$(awk -F, '{print $2}' <<<$OUTPUT)
+  echo -e "[Desktop Entry]\nVersion=1.0\nType=Link\nName=$nombre\nComment=\nIcon=user-bookmarks\nURL=$url" > "$nombre".desktop
+}
