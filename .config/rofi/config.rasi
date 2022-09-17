@@ -1,19 +1,20 @@
+
+//@theme "./launchers/type-2/style-9.rasi"
+//@theme "./launchers/type-3/style-10.rasi"
+@theme "./launchers/type-6/style-6.rasi"
+
 configuration {
-    modi                            : "window,run,ssh,file-browser-extended,drun";
-    display-window                  : "类 ";
-    display-run                     : " ";
-    display-ssh                     : " ";
-    display-drun                    : " ";
-    display-file-browser-extended   : " ";
+    modi                            : "drun,window,file-browser-extended,ssh,run";
+    display-window                  : "类";
+    display-run                     : "";
+    display-ssh                     : "💻";
+    display-drun                    : "";
+    display-file-browser-extended   : "📂";
+    display-keys                    : "🔑";
     display-format                  : "{icon} {name}";
-    drun-display-format             : " {name}";
-    font                            : "Anonymice Nerd Font Bold 16";
+    drun-display-format             : "{name}";
+    font                            : "CaskaydiaCove Nerd Font Bold 16";
     show-icons                      : true;
-    icon-theme                      : "Surfn-Arch-Blue";
+    icon-theme                      : "Tela-circle-nord-dark";
+    terminal                        : "kitty";
 }
-//@theme "./launchers/misc/blurry.rasi"
-//@theme "./launchers/misc/launchpad.rasi"
-//@theme "./launchers/ribbon/ribbon_bottom_round.rasi"
-//@theme "/usr/share/rofi/themes/Arc-Dark-Polo.rasi"
-//@theme "/usr/share/rofi/themes/Arc-Dark-Evopop.rasi"
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

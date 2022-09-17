@@ -73,19 +73,13 @@ super + alt + l
 alt + Escape
 	xfce4-taskmanager
 alt + F1
-	rofi -show window
+	rofi -show file-browser-extended
 alt + F2
 	rofi -show drun
 alt + F3
-	rofi -show file-browser-extended
+	rofi -show window
 alt + F4
 	rofi -show ssh
-alt + F5
-	menu_apps
-alt + F6
-	menu_time
-alt + F7
-	menu_network
 alt + h
 	kitty -e htop
 alt + Left
