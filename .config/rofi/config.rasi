@@ -1,20 +1,17 @@
-
-//@theme "./launchers/type-2/style-9.rasi"
-//@theme "./launchers/type-3/style-10.rasi"
-@theme "./launchers/type-6/style-6.rasi"
+@theme "./rofi/files/launchers/type-6/style-6.rasi"
 
 configuration {
-    modi                            : "drun,window,file-browser-extended,ssh,run";
-    display-window                  : "类";
-    display-run                     : "";
-    display-ssh                     : "💻";
-    display-drun                    : "";
-    display-file-browser-extended   : "📂";
-    display-keys                    : "🔑";
-    display-format                  : "{icon} {name}";
-    drun-display-format             : "{name}";
-    font                            : "CaskaydiaCove Nerd Font Bold 16";
-    show-icons                      : true;
-    icon-theme                      : "Tela-circle-nord-dark";
-    terminal                        : "kitty";
+	modi                            : "drun,window,file-browser-extended,ssh,run";
+	display-window                  : "类";
+	display-run                     : "";
+	display-ssh                     : "💻";
+	display-drun                    : "";
+	display-file-browser-extended   : "📂";
+	display-keys                    : "🔑";
+	display-format                  : "{icon} {name}";
+	drun-display-format             : "{name}";
+	font                            : "CaskaydiaCove Nerd Font Bold 16";
+	show-icons                      : true;
+	icon-theme                      : "Tela-circle-nord-dark";
+	terminal                        : "kitty";
 }

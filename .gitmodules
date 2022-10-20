@@ -1,0 +1,9 @@
+[submodule ".config/qtile"]
+	path = .config/qtile
+	url = https://github.com/AlbertoVf/qtile
+[submodule ".wallpapers"]
+	path = .wallpapers
+	url = https://github.com/AlbertoVf/wallpapers
+[submodule ".config/rofi/rofi"]
+	path = .config/rofi/rofi
+	url = https://github.com/adi1090x/rofi.git
