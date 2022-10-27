@@ -78,6 +78,15 @@
 	<image-files/>
 </action>
 <action>
+	<icon>image-x-generic</icon>
+	<name>Convert webp to png</name>
+	<unique-id>1664910391014116-1</unique-id>
+	<command>dwebp %f -o &quot;`basename %f .webp`.png&quot;</command>
+	<description>Convert from webp to png</description>
+	<patterns>*.webp</patterns>
+	<image-files/>
+</action>
+<action>
 	<icon>qpdfview</icon>
 	<name>Merge PDF</name>
 	<unique-id>1627148699144999-1</unique-id>
@@ -156,7 +165,7 @@
 	<icon>link</icon>
 	<name>Crear link</name>
 	<unique-id>1662556204328140-2</unique-id>
-	<command>  OUTPUT=$(zenity --forms --title=&quot;Crea un link&quot; --text=&quot;Crea un link a una pagina&quot; --separator=&quot;,&quot; --add-entry=&quot;url de la pagina&quot; --add-entry=&quot;nombre del fichero&quot;)
+	<command>OUTPUT=$(zenity --forms --title=&quot;Crea un link&quot; --text=&quot;Crea un link a una pagina&quot; --separator=&quot;,&quot; --add-entry=&quot;url de la pagina&quot; --add-entry=&quot;nombre del fichero&quot;)
   accepted=$?
   if ((accepted != 0)); then
       exit 1
