@@ -33,12 +33,12 @@ function visibility() {
 
 function extract() {
   case $file in
-    *.7z) 7z x $file ;;
-    *.gz) gunzip $file ;;
-    *.bz2) bunzip2 $file ;;
-    *.zip) unzip $file ;;
-    *.tar) tar $file ;;
-    *) echo no era un archivo comprimido ;;
+  *.7z) 7z x $file ;;
+  *.gz) gunzip $file ;;
+  *.bz2) bunzip2 $file ;;
+  *.zip) unzip $file ;;
+  *.tar) tar $file ;;
+  *) echo no era un archivo comprimido ;;
   esac
 }
 
@@ -56,18 +56,18 @@ function run() {
   file=$1
   extension="$(echo $file | cut -d '.' -f2-)"
   case $file in
-    *.sh | *.zsh | *.bash) $extension $file ;;
-    *.py) python $file ;;
-    *.java) javac $file ;;
-    *.c | *.h) gcc $file ;;
-    *.cpp | *.hpp) g++ $file ;;
-    *.js | *.ts) deno run $file ;;
-    *.html | *.htm | *.xhtm) xdg-open $file ;;
-    *.php) php -f $file ;;
-    *.mp3 | *.mp4 | *.m4a | *.aac | *.flac) xdg-open $file ;;
-    *.pdf) xdg-open $file ;;
-    *.jpg | *.jpeg | *.png | *.gif | *.bmp | *.tiff | *.svg) feh $file ;;
-    *) xdg-open $file ;;
+  *.sh | *.zsh | *.bash) $extension $file ;;
+  *.py) python $file ;;
+  *.java) javac $file ;;
+  *.c | *.h) gcc $file ;;
+  *.cpp | *.hpp) g++ $file ;;
+  *.js | *.ts) deno run $file ;;
+  *.html | *.htm | *.xhtm) xdg-open $file ;;
+  *.php) php -f $file ;;
+  *.mp3 | *.mp4 | *.m4a | *.aac | *.flac) xdg-open $file ;;
+  *.pdf) xdg-open $file ;;
+  *.jpg | *.jpeg | *.png | *.gif | *.bmp | *.tiff | *.svg) feh $file ;;
+  *) xdg-open $file ;;
   esac
 }
 
@@ -102,4 +102,18 @@ function linked_page() {
   url=$(awk -F, '{print $1}' <<<$OUTPUT)
   nombre=$(awk -F, '{print $2}' <<<$OUTPUT)
   echo -e "[Desktop Entry]\nVersion=1.0\nType=Link\nName=$nombre\nComment=\nIcon=user-bookmarks\nURL=$url" >"$nombre".desktop
+}
+
+function convert_image() {
+  # convierto una imagen a png
+  image_extension="png"
+  file=$1
+  extension="$(echo $file | cut -d '.' -f2-)"
+  name="$(echo $file | cut -d '.' -f1)"
+  $name="$name.$image_extension"
+  case $extension in
+  jpg | jpeg) convert $file $name ;;
+  webp) dwebp $file -o $name ;;
+  bimp | bmp) mogrify -format $image_extension $file ;;
+  esac
 }
