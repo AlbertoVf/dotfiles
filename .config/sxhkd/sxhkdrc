@@ -80,6 +80,8 @@ alt + F3
 	rofi -show window
 alt + F4
 	rofi -show ssh
+alt + F5
+	rofi -show emoji
 alt + h
 	kitty -e htop
 alt + Left

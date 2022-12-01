@@ -1,17 +1,23 @@
 @theme "./rofi/files/launchers/type-6/style-6.rasi"
 
 configuration {
-	modi                            : "drun,window,file-browser-extended,ssh,run";
-	display-window                  : "类";
-	display-run                     : "";
-	display-ssh                     : "💻";
-	display-drun                    : "";
-	display-file-browser-extended   : "📂";
-	display-keys                    : "🔑";
-	display-format                  : "{icon} {name}";
-	drun-display-format             : "{name}";
-	font                            : "CaskaydiaCove Nerd Font Bold 16";
-	show-icons                      : true;
-	icon-theme                      : "Tela-circle-nord-dark";
-	terminal                        : "kitty";
+    modi                          : "file-browser-extended,drun,window,ssh,emoji,clipboard:greenclip print";
+    display-window                : "🪟";
+    display-run                   : "🧑‍💻";
+    display-ssh                   : "💻";
+    display-drun                  : "🔎";
+    display-file-browser-extended : "📂";
+    display-keys                  : "🔑";
+    display-emoji                 : "✏️";
+    display-clipboard             : "📎";
+    display-format                : "{icon} {name}";
+    drun-display-format           : "{name}";
+    font                          : "CaskaydiaCove Nerd Font Bold 16";
+    show-icons                    : true;
+    icon-theme                    : "Tela-circle-nord-dark";
+    terminal                      : "kitty";
+}
+
+textbox-prompt-colon {
+    str: "🔎";
 }
