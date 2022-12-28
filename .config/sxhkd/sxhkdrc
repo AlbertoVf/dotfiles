@@ -1,3 +1,4 @@
+#Super + Shift + Key
 super + shift + Escape
 	xkill
 super + shift + 1
@@ -8,6 +9,30 @@ super + shift + o
 	picom ~/.config/picom/picom-toggle.sh
 super + shift + s
 	pkill -USR1 -x sxhkd
+# Super + F?
+super + F1
+	brave
+super + F2
+	code
+super + F3
+	gimp
+super + F4
+	timeshift-launcher
+super + F5
+	notion-app
+super + F6
+	ferdium
+super + F7
+	virtualbox
+super + F8
+	thunar
+super + F9
+	thunderbird
+super + F10
+	spotify
+super + F11
+	kodi
+#Super + Key
 super + a
 	xfce4-appfinder
 super + b
@@ -18,28 +43,6 @@ super + e
 	code
 super + f
 	firefox
-super + F1
-	brave
-super + F10
-	spotify
-super + F12
-	rofi -show run
-super + F2
-	code
-super + F3
-	inkscape
-super + F4
-	gimp
-super + F5
-	meld
-super + F6
-	vlc --video-on-top
-super + F7
-	virtualbox
-super + F8
-	thunar
-super + F9
-	thunderbird
 super + g
 	gparted
 super + i
@@ -52,8 +55,6 @@ super + o
 	obs
 super + p
 	pycharm
-super + Return
-	kitty
 super + s
 	pamac-manager
 super + v
@@ -62,14 +63,18 @@ super + x
 	archlinux-logout
 super + z
 	zeal
+super + Return
+	kitty
+# Super + alt + key
 super + alt + h
 	rofi -show file-browser-extended -file-browser-dir ~/.config
 super + alt + j
-	rofi -show file-browser-extended -file-browser-dir ~/Git
+	rofi -show file-browser-extended -file-browser-dir ~/Proyectos/Git
 super + alt + k
 	rofi -show file-browser-extended -file-browser-dir ~/.screenlayout
 super + alt + l
 	rofi -show file-browser-extended -file-browser-dir ~/Proyectos
+# alt + key
 alt + Escape
 	xfce4-taskmanager
 alt + F1
@@ -90,6 +95,7 @@ alt + Print
 	xfce4-screenshooter
 alt + Right
 	variety -n
+# media key
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 XF86AudioLowerVolume

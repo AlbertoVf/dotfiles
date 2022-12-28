@@ -31,7 +31,7 @@
 	autocrlf = input
 	pager = delta
 	editor = vim
-	filemode = false
+	fileMode = false
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 [delta]

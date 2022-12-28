@@ -22,9 +22,9 @@ def read_sxhkd_keys():
 
 def read_qtile_keys():
     content = read_file(path.join('qtile', 'settings', 'keys.py'))
-    for l in content:
-        if l.find(r'Key(') != -1:
-            l = l.split("Key")[1].split("lazy.", 1)
+    for c in content:
+        if c.find(r'Key(') != -1:
+            l = c.split("Key")[1].split("lazy.", 1)
             key = re.sub(r'[()",]', '', l[0]).strip()
             action = ''.join(l[1:])
             action = re.sub(r"lazy.|[(),]", '', action).strip()
@@ -34,9 +34,9 @@ def read_qtile_keys():
 
 def read_kitty_keys():
     content = read_file(path.join('kitty', 'kitty.conf'))
-    for l in content:
-        if l.find('map ') != -1:
-            l = l.split('map ')[1].split(' ', 1)
+    for c in content:
+        if c.find('map ') != -1:
+            l = c.split('map ')[1].split(' ', 1)
             key = l[0].strip()
             action = l[1].strip()
             keys[key] = action
@@ -90,5 +90,5 @@ if __name__ == '__main__':
                 keys.update(read_qtile_keys())
                 keys.update(read_sxhkd_keys())
             transform_keys(keys)
-    except:
+    except Exception as e:
         info()

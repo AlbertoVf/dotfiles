@@ -1,3 +1,4 @@
+import speedtest
 import sys
 import socket
 import uuid
@@ -13,7 +14,7 @@ def get_hostname():
 
 
 def get_mac_address():
-    return(':'.join(re.findall('..', '%012x' % uuid.getnode())))
+    return (':'.join(re.findall('..', '%012x' % uuid.getnode())))
 
 
 def get_public_ip():
@@ -58,8 +59,8 @@ def get_connection_info(ip):
 
 
 def speed_test():
-    import speedtest
     s = speedtest.Speedtest()
+    s.get_servers()
     s.get_best_server()
     s.download()
     s.upload()
