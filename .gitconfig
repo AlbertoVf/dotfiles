@@ -1,62 +1,59 @@
-[user]
-	name = AlbertoVf
-	email = avf.git-repos@protonmail.com
-[init]
-	defaultBranch = main
-[gui]
-	editor = code
+[alias]
+	a       = add
+	aa      = add --all
+	au      = add -u
+	c       = commit -m
+	ca      = commit --amenda
+	can     = commit --amend --no-edit
+	check   = checkout
+	d       = difftool
+	l       = log --oneline --decorate --all --graph
+	reb     = rebase -i
+	remotes = remote -v
+	res     = restore
+	ress    = restore --staged
+	st      = status
+	t       = tag -a
 [credential]
 	helper = store
 [color]
 	ui = true
-[push]
-	default = simple
-[merge]
-	conflictstyle = diff3
+[color "status"]
+	added     = green
+	changed   = yellow
+	untracked = red
+[core]
+	autocrlf   = input
+	editor     = code --wait
+	eol        = lf
+	filemode   = false
+	symlinks   = false
+	whitespace = trailing-space
 [diff]
 	colorMoved = default
-[color "status"]
-	added = green
-	changed = yellow
-	untracked = red
+	tool       = code
+[difftool]
+	prompt = false
+[difftool "code"]
+	cmd = code --wait --disable-extensions --diff --reuse-window $LOCAL $REMOTE
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+	clean    = git-lfs clean -- %f
+	process  = git-lfs filter-process
 	required = true
-[core]
-	whitespace = trailing-space
-	symlinks = false
-	eol = lf
-	autocrlf = input
-	pager = delta
-	editor = vim
-	fileMode = false
-[interactive]
-	diffFilter = delta --color-only --features=interactive
-[delta]
-	navigate = true  # use n and N to move between diff sections
-	side-by-side = true
-	line-numbers = true
-	features = decorations
-[delta "interactive"]
-	keep-plus-minus-markers = false
-[delta "decorations"]
-	commit-decoration-style = blue ol
-	commit-style = raw
-[alias]
-	a = add
-	aa = add --all
-	au = add -u
-	c = commit -m
-	ca = commit --amend
-	check = checkout
-	d = diff
-	l = log --oneline --decorate --all --graph
-	pull = pull origin
-	push = push origin
-	remotes = remote -v
-	res = restore
-	ress = restore --staged
-	st = status
-	t = tag -a
+	smudge   = git-lfs smudge -- %f
+[gui]
+	editor = code
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = diff3
+	tool          = code
+[mergetool]
+	keepBackup = false
+[mergetool "code"]
+	cmd = code --wait --disable-extensions --new-window $MERGED
+[push]
+	default = current
+[user]
+	name  = AlbertoVf
+	email = avf.git-repos@protonmail.com

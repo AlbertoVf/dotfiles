@@ -1,7 +1,7 @@
 @theme "./rofi/files/launchers/type-6/style-6.rasi"
 
 configuration {
-    modi                          : "file-browser-extended,drun,window,ssh,emoji,clipboard:greenclip print";
+    modi                          : "file-browser-extended,drun,window,ssh,emoji";
     display-window                : "🪟";
     display-run                   : "🧑‍💻";
     display-ssh                   : "💻";
