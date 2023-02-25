@@ -3,7 +3,7 @@
 	aa      = add --all
 	au      = add -u
 	c       = commit -m
-	ca      = commit --amenda
+	ca      = commit --amend
 	can     = commit --amend --no-edit
 	check   = checkout
 	d       = difftool

@@ -45,13 +45,15 @@ alias cf="xclip -sel clip" # copy file content to clipboard
 # }
 
 # Youtube-dl alias {
+  # yt="youtube-dl"
+  yt="yt-dlp"
   download="$(xdg-user-dir DOWNLOAD)/"
   extract="-i --embed-thumbnail --add-metadata --no-post-overwrites --audio-quality 0 -f bestaudio -x --audio-format"
-  alias yt-mp3="youtube-dl $extract mp3 -o $download'%(title)s.%(ext)s' --no-playlist"
-  alias yt-mp4="youtube-dl --add-metadata -f mp4 -o $download'%(title)s.%(ext)s' --no-playlist"
-  alias yt-best="youtube-dl --add-metadata -f 'bestvideo,bestaudio' -o $download'%(title)s.%(ext)s' --no-playlist"
-  alias yt-audio-list="youtube-dl -w $extract mp3 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-  alias yt-video-list="youtube-dl -w --add-metadata -f mp4 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+  alias yt-mp3="$yt $extract mp3 -o $download'%(title)s.%(ext)s' --no-playlist"
+  alias yt-mp4="$yt --add-metadata -f mp4 -o $download'%(title)s.%(ext)s' --no-playlist"
+  alias yt-best="$yt --add-metadata -f 'bestvideo,bestaudio' -o $download'%(title)s.%(ext)s' --no-playlist"
+  alias yt-audio-list="$yt -w $extract mp3 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+  alias yt-video-list="$yt -w --add-metadata -f mp4 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
   alias yt-file-mp3="yt-mp3 --batch-file"
   alias yt-file-mp4="yt-mp4 --batch-file"
 # }

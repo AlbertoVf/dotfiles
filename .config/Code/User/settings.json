@@ -1,27 +1,65 @@
 {
-    "[css]": { "editor.defaultFormatter": "rvest.vs-code-prettier-eslint" },
-    "[dockerfile]": { "editor.defaultFormatter": "ms-azuretools.vscode-docker" },
-    "[dotenv]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
-    "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-    "[ignore]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
-    "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
-    "[kotlin]": { "editor.defaultFormatter": "esafirm.kotlin-formatter" },
-    "[markdown]": { "editor.defaultFormatter": "rvest.vs-code-prettier-eslint" },
-    "[python]": { "editor.defaultFormatter": "ms-python.python" },
-    "[scss]": { "editor.defaultFormatter": "vscode.css-language-features" },
-    "[shellscript]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
-    "[sql]": { "editor.defaultFormatter": "cweijan.vscode-database-client2" },
-    "[typescript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
-    "[yaml]": { "editor.defaultFormatter": "redhat.vscode-yaml" },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[ignore]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[kotlin]": {
+        "editor.defaultFormatter": "esafirm.kotlin-formatter"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "cweijan.vscode-database-client2"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "betterAlign.operatorPadding": "right",
-    "betterAlign.surroundSpace": { "colon": [1, 1], "assignment": [1, 1], "arrow": [1, 1], "comment": 2 },
-    "bookmarks.useWorkaroundForFormatters": true,
+    "betterAlign.surroundSpace": {
+        "colon": [1, 1],
+        "assignment": [1, 1],
+        "arrow": [1, 1],
+        "comment": 2
+    },
     "code-runner.clearPreviousOutput": true,
-    "code-runner.executorMap": { "typescript": "deno run $dir$fileName" },
+    "code-runner.executorMap": {
+        "typescript": "deno run $dir$fileName"
+    },
     "code-runner.saveFileBeforeRun": true,
     "codesnap.containerPadding": "3px",
     "codesnap.showWindowControls": true,
     "codesnap.transparentBackground": true,
+    "codetour.showMarkers": false,
     "css.format.spaceAroundSelectorSeparator": true,
     "css.lint.duplicateProperties": "warning",
     "csv-edit.doubleClickColumnHandleForcedWith": 50,
@@ -33,40 +71,24 @@
     "debug.terminal.clearBeforeReusing": true,
     "dev.containers.defaultExtensions": [
         "adpyke.codesnap",
-        "chouzz.vscode-better-align",
-        "christian-kohler.path-intellisense",
-        "codezombiech.gitignore",
-        "cschleiden.vscode-github-actions",
-        "donjayamanne.githistory",
-        "EditorConfig.EditorConfig",
-        "esbenp.prettier-vscode",
-        "formulahendry.code-runner",
-        "foxundermoon.shell-format",
-        "GitHub.codespaces",
-        "GitHub.remotehub",
-        "GitHub.vscode-pull-request-github",
-        "Gruntfuggly.todo-tree",
-        "hbenl.vscode-test-explorer",
-        "kisstkondoros.vscode-gutter-preview",
-        "mhutchie.git-graph",
-        "mintlify.document",
-        "ms-vscode.vscode-github-issue-notebooks",
         "naumovs.color-highlight",
-        "Perkovec.emoji",
-        "rangav.vscode-thunder-client",
+        "formulahendry.code-runner",
+        "yzhang.markdown-all-in-one",
         "redjue.git-commit-plugin",
-        "TabNine.tabnine-vscode",
-        "tomoki1207.pdf",
-        "VisualStudioExptTeam.intellicode-api-usage-examples",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "wayou.vscode-todo-highlight"
+        "EditorConfig.EditorConfig",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "christian-kohler.path-intellisense"
     ],
     "diffEditor.codeLens": true,
     "docwriter.progress.trackClasses": true,
     "editor.autoIndent": "advanced",
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.codeActionsOnSave": { "source.fixAll": true, "source.organizeImports": true },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorStyle": "line",
@@ -76,8 +98,7 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.fontWeight": "600",
-    "editor.formatOnPaste": false,
-    "editor.formatOnSave": false,
+    "editor.formatOnPaste": true,
     "editor.formatOnType": true,
     "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToImplementation",
     "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToReferences",
@@ -87,6 +108,7 @@
     "editor.inlayHints.fontSize": 11,
     "editor.inlayHints.padding": true,
     "editor.inlineSuggest.enabled": true,
+    "editor.insertSpaces": false,
     "editor.letterSpacing": 0.5,
     "editor.lineHeight": 25,
     "editor.linkedEditing": true,
@@ -110,7 +132,7 @@
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
-    "editor.wrappingIndent": "deepIndent",
+    "editor.wrappingStrategy": "advanced",
     "emmet.excludeLanguages": [],
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.triggerExpansionOnTab": true,
@@ -157,13 +179,25 @@
             "label": "Created Issues",
             "query": "author:${user} state:open repo:${owner}/${repository} sort:created-asc"
         },
-        { "label": "My Issues", "query": "default" }
+        {
+            "label": "My Issues",
+            "query": "default"
+        }
     ],
     "githubPullRequests.defaultMergeMethod": "squash",
     "githubPullRequests.queries": [
-        { "label": "Assigned To Me", "query": "is:open assignee:${user}" },
-        { "label": "Created By Me", "query": "is:open author:${user}" },
-        { "label": "Waiting For My Review", "query": "is:open review-requested:${user}" }
+        {
+            "label": "Assigned To Me",
+            "query": "is:open assignee:${user}"
+        },
+        {
+            "label": "Created By Me",
+            "query": "is:open author:${user}"
+        },
+        {
+            "label": "Waiting For My Review",
+            "query": "is:open review-requested:${user}"
+        }
     ],
     "hediet.vscode-drawio.theme": "Kennedy",
     "html.format.indentHandlebars": true,
@@ -172,23 +206,16 @@
     "html.format.wrapLineLength": 0,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "less.format.spaceAroundSelectorSeparator": true,
-    "livePreview.openPreviewTarget": "External Browser",
+    "livePreview.customExternalBrowser": "Firefox",
+    "livePreview.openPreviewTarget": "Embedded Preview",
     "livePreview.showServerStatusNotifications": true,
-    "markdown-mermaid.darkModeTheme": "neutral",
-    "markdown-pdf.breaks": true,
-    "markdown-pdf.displayHeaderFooter": false,
-    "markdown-pdf.highlightStyle": "github.css",
-    "markdown-pdf.includeDefaultStyles": true,
-    "markdown-pdf.margin.bottom": "1.5cm",
-    "markdown-pdf.omitBackground": true,
-    "markdown-pdf.styles": ["~/.config/Code/User/markdown-pdf.css"],
+    "markdown-mermaid.darkModeTheme": "base",
+    "markdown-mermaid.lightModeTheme": "base",
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.tableFormatter.normalizeIndentation": true,
-    "markdown.extension.toc.levels": "1..3",
+    "markdown.extension.toc.levels": "2..3",
     "markdown.extension.toc.orderedList": true,
     "markdown.extension.toc.unorderedList.marker": "-",
-    "markdown.marp.pdf.noteAnnotations": true,
-    "markdown.marp.pdf.outlines": "headings",
     "markdown.occurrencesHighlight.enabled": true,
     "markdown.preview.breaks": true,
     "markdown.preview.typographer": true,
@@ -212,13 +239,13 @@
     "problems.defaultViewMode": "table",
     "problems.showCurrentInStatus": true,
     "python.analysis.autoImportCompletions": true,
-    "python.linting.": true,
     "python.linting.enabled": true,
     "references.preferredLocation": "view",
     "scm.alwaysShowActions": true,
-    "scm.diffDecorationsGutterPattern": { "added": true },
+    "scm.diffDecorationsGutterPattern": {
+        "added": true
+    },
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
-    "scm.inputFontFamily": "editor",
     "scm.repositories.sortOrder": "path",
     "scss.format.preserveNewLines": false,
     "scss.format.spaceAroundSelectorSeparator": true,
@@ -243,15 +270,6 @@
     "testing.automaticallyOpenPeekView": "failureAnywhere",
     "testing.automaticallyOpenPeekViewDuringAutoRun": true,
     "thunder-client.indentSize": 4,
-    "todo-tree.general.tags": ["FIXME", "NOTE", "REVIEW", "TODO", "TEST"],
-    "todo-tree.highlights.customHighlight": {
-        "FIXME": { "icon": "alert-fill", "iconColour": "#ff41a6" },
-        "NOTE": { "icon": "pencil", "iconColour": "#0da235" },
-        "REVIEW": { "icon": "shield", "iconColour": "#ff3636" },
-        "TEST": { "icon": "zap", "iconColour": "#ffdd00" },
-        "TODO": { "icon": "check-circle", "iconColour": "#3eaeff" }
-    },
-    "todo-tree.highlights.defaultHighlight": { "icon": "alert", "type": "text", "background": "#00000000" },
     "todohighlight.defaultStyle": {
         "backgroundColor": "#fafafa00",
         "fontStyle": "italic",
@@ -259,11 +277,28 @@
         "isWholeLine": true
     },
     "todohighlight.keywords": [
-        { "text": "FIXME:", "color": "#ff41a6", "backgroundColor": "#fafafa00" },
-        { "text": "NOTE:", "color": "#0da235" },
-        { "text": "REVIEW:", "color": "#ff3636" },
-        { "text": "TEST:", "color": "#ffdd00" },
-        { "text": "TODO:", "color": "#3eaeff", "backgroundColor": "#fafafa00" }
+        {
+            "text": "FIXME:",
+            "color": "#ff41a6",
+            "backgroundColor": "#fafafa00"
+        },
+        {
+            "text": "NOTE:",
+            "color": "#0da235"
+        },
+        {
+            "text": "REVIEW:",
+            "color": "#ff3636"
+        },
+        {
+            "text": "TEST:",
+            "color": "#ffdd00"
+        },
+        {
+            "text": "TODO:",
+            "color": "#3eaeff",
+            "backgroundColor": "#fafafa00"
+        }
     ],
     "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
     "typescript.updateImportsOnFileMove.enabled": "always",

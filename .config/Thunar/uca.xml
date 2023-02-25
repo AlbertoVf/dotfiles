@@ -150,7 +150,7 @@
 <action>
 	<icon>system-file-manager</icon>
 	<name>Abrir como root</name>
-	<submenu>Prpiedades</submenu>
+	<submenu>Archivo</submenu>
 	<unique-id>1493475601060449-3</unique-id>
 	<command>gksu thunar %f</command>
 	<description></description>
