@@ -1,15 +1,16 @@
 #!/bin/sh
 
 function init_repo() {
-	# init_repo 'name-app' 'language1 language2...' 'license'
-	name=$1
-	ignore=$2
+	# init_repo "name" "language1 language2..." "license"
+
+	name="$(echo $1 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')"
+	ignore="$2,visualstudiocode,$(uname -s)"
 	license=$3
 	files=('LICENSE.md' 'README.md' '.gitignore' '.editorconfig' '.env' 'Makefile')
 
-	mkdir -p $name/{src,test,dist,assets/{img,docs},.github/workflows} && cd $name && git init
+	mkdir -p $name/{src,test,dist,assets/{img,docs},.github/workflows,.settings,.devcontainer} && cd $name && git init
 
-	echo "# $name" >>README.md
+	echo "# $name" | sed 's/-/ /g' | tr '[:upper:]' '[:lower:]' | sed 's/\b[a-z]/\u&/g' >> README.md
 	if [ $ignore ]; then
 		gitignores="${ignore//" "/","}"
 		curl -fLw '\n' https://www.gitignore.io/api/$gitignores >>.gitignore
@@ -28,7 +29,7 @@ function init_repo() {
 		if [ -s $i ]; then
 			git add $i
 		else
-			echo "🧪 Generate the $i file" # && touch $i
+			echo "🧪 Generate $i"
 		fi
 	done
 
@@ -85,17 +86,17 @@ function run() {
 	esac
 }
 
-function clear_marks() {
-	# remove marks (') from a file
-	sed -i "s/'//g" $1
-}
-
 function create_playlist() {
-	folder_name="$(pwd | awk -F '/' '{print $NF}')"
+	if [ $1 ]; then
+		folder_name=$1
+		root="$(pwd)/$1"
+	else
+		folder_name="$(pwd | awk -F '/' '{print $NF}')"
+		root="$(pwd)"
+	fi
 	name="playlist_$folder_name.m3u"
-
-	echo -e "# $(date) - $(pwd)\n" >$name
-	fd -a -d1 -e mp3 -e mp4 >>$name
+	echo -e "# $(date)\n# $root\n" >$name
+	fd "mp\d$" -a -d1 --base-directory $root >>$name
 }
 
 function my_ip() {

@@ -14,6 +14,7 @@
 	ress    = restore --staged
 	st      = status
 	t       = tag -a
+	pf      = push --force
 [credential]
 	helper = store
 [color]
@@ -24,7 +25,7 @@
 	untracked = red
 [core]
 	autocrlf   = input
-	editor     = code --wait
+	editor     = code --wait --profile minimal
 	eol        = lf
 	filemode   = false
 	symlinks   = false
@@ -35,7 +36,7 @@
 [difftool]
 	prompt = false
 [difftool "code"]
-	cmd = code --wait --disable-extensions --diff --reuse-window $LOCAL $REMOTE
+	cmd = code --profile minimal --wait --diff --reuse-window $LOCAL $REMOTE
 [filter "lfs"]
 	clean    = git-lfs clean -- %f
 	process  = git-lfs filter-process
@@ -51,9 +52,11 @@
 [mergetool]
 	keepBackup = false
 [mergetool "code"]
-	cmd = code --wait --disable-extensions --new-window $MERGED
+	cmd = code --profile minimal --wait --reuse-window $MERGED
 [push]
 	default = current
+[sequence]
+	editor = code --profile minimal --wait --reuse-window
 [user]
 	name  = AlbertoVf
 	email = avf.git-repos@protonmail.com

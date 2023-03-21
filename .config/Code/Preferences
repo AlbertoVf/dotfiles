@@ -1,1 +1,8 @@
-{"spellcheck":{"dictionaries":["es-ES"],"dictionary":""}}
+{
+    "spellcheck": {
+        "dictionaries": [
+            "es-ES"
+        ],
+        "dictionary": ""
+    }
+}
