@@ -1,18 +1,6 @@
 {
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
-    "[dotenv]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[ignore]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -29,18 +17,43 @@
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[sql]": {
-        "editor.defaultFormatter": "cweijan.vscode-database-client2"
-    },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#ff3636",
+            "bold": true
+        },
+        {
+            "tag": "?",
+            "color": "#FF8C00",
+            "italic": true
+        },
+        {
+            "tag": "*",
+            "color": "#00ff00",
+            "italic": true
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true
+        },
+        {
+            "tag": ">",
+            "color": "#ff41a6",
+            "italic": true
+        },
+        {
+            "tag": "todo",
+            "color": "#3498DB"
+        }
+    ],
     "betterAlign.operatorPadding": "right",
     "betterAlign.surroundSpace": {
         "arrow": [
@@ -57,7 +70,6 @@
         ],
         "comment": 2
     },
-    "cSpell.language": "es-ES,en",
     "code-runner.clearPreviousOutput": true,
     "code-runner.executorMap": {
         "typescript": "deno run $dir$fileName"
@@ -65,9 +77,9 @@
     "code-runner.saveFileBeforeRun": true,
     "codesnap.containerPadding": "2px",
     "codesnap.transparentBackground": true,
+    "cSpell.language": "es-ES,en",
     "css.format.spaceAroundSelectorSeparator": true,
     "css.lint.duplicateProperties": "warning",
-    "csv-edit.doubleClickColumnHandleForcedWith": 50,
     "database-client.highlightSQLBlock": true,
     "database-client.showProcedure": false,
     "database-client.terminalLocaltion": "Panel",
@@ -75,17 +87,15 @@
     "debug.terminal.clearBeforeReusing": true,
     "dev.containers.defaultExtensions": [
         "adpyke.codesnap",
-        "naumovs.color-highlight",
-        "formulahendry.code-runner",
-        "yzhang.markdown-all-in-one",
-        "redjue.git-commit-plugin",
-        "EditorConfig.EditorConfig",
-        "mhutchie.git-graph",
+        "christian-kohler.path-intellisense",
         "donjayamanne.githistory",
-        "christian-kohler.path-intellisense"
+        "formulahendry.code-runner",
+        "mhutchie.git-graph",
+        "naumovs.color-highlight",
+        "redjue.git-commit-plugin",
+        "yzhang.markdown-all-in-one",
     ],
     "diffEditor.codeLens": true,
-    "docwriter.progress.trackClasses": true,
     "editor.autoIndent": "advanced",
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -96,7 +106,6 @@
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorStyle": "line",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.detectIndentation": true,
     "editor.fontFamily": "CaskaydiaCove Nerd Font,CaskaydiaCove NF, monospace",
     "editor.fontLigatures": true,
@@ -149,27 +158,24 @@
     "files.autoSaveDelay": 10000,
     "files.eol": "\n",
     "files.exclude": {
-        ".editorconfig": false,
-        "**/.git/": true,
-        "**/.gitignore": true,
-        "**/.gitkeep": true,
-        "**/*.meta": true,
+        "**/__pycache__/": true,
         "**/.classpath": true,
         "**/.factorypath": true,
+        "**/.git/": true,
+        "**/.gitkeep": true,
+        "**/.idea": true,
         "**/.project": true,
         "**/.settings": true,
+        "**/*.meta": true,
         "**/*.pyc": true,
-        "**/.idea": true,
-        "**/__pycache__/": true,
         "**/node_modules/": false,
     },
-    "files.insertFinalNewline": true,
     "files.maxMemoryForLargeFilesMB": 2048,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "git.autofetch": true,
     "git.autoRepositoryDetection": "openEditors",
     "git.autoStash": true,
-    "git.autofetch": true,
     "git.closeDiffOnOperation": true,
     "git.detectSubmodules": true,
     "git.followTagsWhenSync": true,
@@ -237,17 +243,19 @@
     "notebook.markup.fontSize": 15,
     "notebook.outline.showCodeCells": true,
     "notebook.output.textLineLimit": 15,
-    "notebook.outputFontSize": 10,
     "npm.enableRunFromFolder": true,
     "oneDarkPro.bold": true,
     "oneDarkPro.vivid": true,
     "path-intellisense.showHiddenFiles": false,
-    "prettier.bracketSameLine": true,
-    "prettier.printWidth": 120,
-    "prettier.proseWrap": "never",
-    "prettier.tabWidth": 4,
     "problems.defaultViewMode": "table",
     "problems.showCurrentInStatus": true,
+    "projectManager.git.baseFolders": [
+        "~/Proyectos/"
+    ],
+    "projectManager.git.maxDepthRecursion": 3,
+    "projectManager.groupList": true,
+    "projectManager.ignoreProjectsWithinProjects": true,
+    "projectManager.supportSymlinksOnBaseFolders": true,
     "python.analysis.autoImportCompletions": true,
     "python.linting.enabled": true,
     "references.preferredLocation": "view",
@@ -269,7 +277,6 @@
     "settingsSync.keybindingsPerPlatform": false,
     "svg.preview.background": "transparent",
     "svg.preview.mode": "svg",
-    "tabnine.experimentalAutoImports": false,
     "telemetry.telemetryLevel": "error",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.smoothScrolling": true,
@@ -282,36 +289,6 @@
     "testing.automaticallyOpenPeekView": "failureAnywhere",
     "testing.automaticallyOpenPeekViewDuringAutoRun": true,
     "thunder-client.indentSize": 4,
-    "todohighlight.defaultStyle": {
-        "backgroundColor": "#fafafa00",
-        "fontStyle": "italic",
-        "fontWeight": "bold",
-        "isWholeLine": true
-    },
-    "todohighlight.keywords": [
-        {
-            "backgroundColor": "#fafafa00",
-            "color": "#ff41a6",
-            "text": "FIXME:"
-        },
-        {
-            "color": "#0da235",
-            "text": "NOTE:"
-        },
-        {
-            "color": "#ff3636",
-            "text": "REVIEW:"
-        },
-        {
-            "color": "#ffdd00",
-            "text": "TEST:"
-        },
-        {
-            "backgroundColor": "#fafafa00",
-            "color": "#3eaeff",
-            "text": "TODO:"
-        }
-    ],
     "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "window.closeWhenEmpty": true,
@@ -331,9 +308,9 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.multiSelectModifier": "ctrlCmd",
     "workbench.list.openMode": "doubleClick",
-    "workbench.productIconTheme": "fluent-icons",
+    "workbench.productIconTheme": "material-product-icons",
     "workbench.tree.indent": 16,
     "workbench.view.alwaysShowHeaderActions": true,
     "yaml.format.proseWrap": "always",
-    "yaml.format.singleQuote": true
+    "yaml.format.singleQuote": true,
 }
