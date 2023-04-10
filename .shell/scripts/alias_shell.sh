@@ -60,7 +60,6 @@ alias yt-file-video="yt-video --batch-file"
 
 # files-scripts {
 scripts="$(xdg-user-dir SHELLSCRIPTS)"
-alias file="python $scripts/file_scripts.py"
 alias keys="python $scripts/get_shortcuts.py"
 source "$scripts/shell_scripts.sh"
 # }

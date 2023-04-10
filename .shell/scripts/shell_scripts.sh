@@ -1,29 +1,37 @@
 #!/bin/sh
 
 function init_repo() {
-	# init_repo "name" "language1 language2..." "license"
+	# * init_repo -n "name" -l "license" -i "languages"
 
-	name="$(echo $1 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')"
-	ignore="$2,visualstudiocode,$(uname -s)"
-	license=$3
 	files=('LICENSE.md' 'README.md' '.gitignore' '.editorconfig' '.env' 'Makefile')
-
-	mkdir -p $name/{src,test,dist,assets/{img,docs},.github/workflows,.settings,.devcontainer} && cd $name && git init
-
-	echo "# $name" | sed 's/-/ /g' | tr '[:upper:]' '[:lower:]' | sed 's/\b[a-z]/\u&/g' >> README.md
-	if [ $ignore ]; then
-		gitignores="${ignore//" "/","}"
-		curl -fLw '\n' https://www.gitignore.io/api/$gitignores >>.gitignore
-	fi
-
-	if [ $license ]; then
-		response=$(curl -sLX GET "https://api.github.com/licenses/$license" | jq ".body")
-		echo -en $response >LICENSE.md
-		sed -Ee 's/(\\"|\")//g' \
-			-e s/"\[year\]"/"$(date +%Y)"/g \
-			-e s/"\[fullname\]"/"$(git config user.name)"/g \
-			-i LICENSE.md
-	fi
+	while getopts ":n:l:i:" opt; do
+	case $opt in
+		n)
+			name="$(echo $OPTARG | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')"
+			mkdir $name && cd $name && git init
+			mkdir -p src test assets/{data,img,docs} .github/{ISSUE_TEMPLATE,workflows}
+			echo "# $name" | sed 's/-/ /g' | tr '[:upper:]' '[:lower:]' | sed 's/\b[a-z]/\u&/g' >> README.md
+		;;
+		i)
+			ignore="$OPTARG,visualstudiocode,$(uname -s)"
+			if [ $ignore ]; then
+				gitignores="${ignore//" "/","}"
+				curl -fLw '\n' https://www.gitignore.io/api/$gitignores >>.gitignore
+			fi
+		;;
+		l)
+			license=$OPTARG
+			if [ $license ]; then
+				response=$(curl -sLX GET "https://api.github.com/licenses/$license" | jq ".body")
+				echo -en $response >LICENSE.md
+				sed -Ee 's/(\\"|\")//g' \
+					-e s/"\[year\]"/"$(date +%Y)"/g \
+					-e s/"\[fullname\]"/"$(git config user.name)"/g \
+					-i LICENSE.md
+			fi
+		;;
+	esac
+	done
 
 	for i in "${files[@]}"; do
 		if [ -s $i ]; then
@@ -34,7 +42,7 @@ function init_repo() {
 	done
 
 	git commit -m "🎉 init(build): Set project environment."
-	code . #&& exit
+	code . #//&& exit
 }
 
 function visibility() {
@@ -53,7 +61,7 @@ function extract() {
 	*.bz2) bunzip2 $file ;;
 	*.zip) unzip $file ;;
 	*.tar) tar $file ;;
-	*) echo no era un archivo comprimido ;;
+	*) echo "no era un archivo comprimido" ;;
 	esac
 }
 
@@ -100,10 +108,9 @@ function create_playlist() {
 }
 
 function my_ip() {
-	scripts="$(xdg-user-dir SHELLSCRIPTS)"
-	python $scripts/my_ip.py -i | bat -l json
-	python $scripts/my_ip.py -c | bat -l json
-	# python $scripts/my_ip.py -s | bat -l json
+	privada="$(ip addr show | grep 'inet.*brd' | awk '{print $2}' | cut -f1 -d'/' | head -n1)"
+	publica="$(curl -s ifconfig.me | awk '{print $1}')"
+	echo "\"publica\": $publica\n\"privada\": $privada" | bat -l json
 }
 
 function convert_image() {
@@ -117,4 +124,27 @@ function convert_image() {
 	webp) dwebp $file -o $name ;;
 	bimp | bmp) mogrify -format $image_extension $file ;;
 	esac
+}
+
+function enable_service(){
+	sudo systemctl start $1
+	sudo systemctl enable $1
+}
+
+function create_sxhkdrc(){
+	folder="$HOME/.config/sxhkd"
+	# Ruta del archivo JSON de entrada
+	input_file="$folder/shortcuts.json"
+	# Ruta del archivo de texto de salida
+	output_file="$folder/sxhkdrc"
+
+	cp -f $output_file $output_file.old
+
+	# Extrae las claves y valores del archivo JSON para cada clave
+	jq -r 'keys[] as $k | "\($k) \(.[$k] | to_entries[] | [.key, .value] | @tsv)"' "$input_file" > "$output_file"
+
+	sed -i 's/^ //g' "$output_file"
+	sed -i 's/\t/\n\t/g' "$output_file"
+
+	sed -i "1i # Generated on $(date +'%Y-%m-%d %H:%M')" "$output_file"
 }
