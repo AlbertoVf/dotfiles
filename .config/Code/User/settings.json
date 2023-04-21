@@ -113,8 +113,6 @@
     "editor.fontWeight": "600",
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
-    "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToImplementation",
-    "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToReferences",
     "editor.guides.bracketPairs": true,
     "editor.guides.bracketPairsHorizontal": false,
     "editor.inlayHints.enabled": "offUnlessPressed",
@@ -312,5 +310,5 @@
     "workbench.tree.indent": 16,
     "workbench.view.alwaysShowHeaderActions": true,
     "yaml.format.proseWrap": "always",
-    "yaml.format.singleQuote": true,
+    "yaml.format.singleQuote": true
 }

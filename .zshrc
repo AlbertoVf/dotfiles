@@ -7,14 +7,14 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
-  aliases
-  colored-man-pages
-  command-not-found
-  gitignore
-  sudo
-  zsh-autosuggestions
-  zsh-interactive-cd
-  zsh-syntax-highlighting
+    aliases
+    colored-man-pages
+    command-not-found
+    gitignore
+    sudo
+    zsh-autosuggestions
+    zsh-interactive-cd
+    zsh-syntax-highlighting
 )
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
@@ -26,7 +26,6 @@ alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc f
 eval "$(zoxide init zsh)"
 eval "$(mcfly init zsh)"
 alias h="mcfly search"
-
 
 # BINDING
 # ^  : Control

@@ -1,62 +1,62 @@
 [alias]
-	a       = add
-	aa      = add --all
-	au      = add -u
-	c       = commit -m
-	ca      = commit --amend
-	can     = commit --amend --no-edit
-	check   = checkout
-	d       = difftool
-	l       = log --oneline --decorate --all --graph
-	reb     = rebase -i
-	remotes = remote -v
-	res     = restore
-	ress    = restore --staged
-	st      = status
-	t       = tag -a
-	pf      = push --force
+    a       = add
+    aa      = add --all
+    au      = add -u
+    c       = commit -m
+    ca      = commit --amend
+    can     = commit --amend --no-edit
+    check   = checkout
+    d       = difftool
+    l       = log --oneline --decorate --all --graph
+    reb     = rebase -i
+    remotes = remote -v
+    res     = restore
+    ress    = restore --staged
+    st      = status
+    t       = tag -a
+    pf      = push --force
 [credential]
-	helper = store
+    helper = store
 [color]
-	ui = true
+    ui = true
 [color "status"]
-	added     = green
-	changed   = yellow
-	untracked = red
+    added     = green
+    changed   = yellow
+    untracked = red
 [core]
-	autocrlf   = input
-	editor     = code --wait --profile minimal
-	eol        = lf
-	filemode   = false
-	symlinks   = false
-	whitespace = trailing-space
+    autocrlf   = input
+    editor     = code --wait --profile minimal
+    eol        = lf
+    filemode   = false
+    symlinks   = false
+    whitespace = trailing-space
 [diff]
-	colorMoved = default
-	tool       = code
+    colorMoved = default
+    tool       = code
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "code"]
-	cmd = code --profile minimal --wait --diff --reuse-window $LOCAL $REMOTE
+    cmd = code --profile minimal --wait --diff --reuse-window $LOCAL $REMOTE
 [filter "lfs"]
-	clean    = git-lfs clean -- %f
-	process  = git-lfs filter-process
-	required = true
-	smudge   = git-lfs smudge -- %f
+    clean    = git-lfs clean -- %f
+    process  = git-lfs filter-process
+    required = true
+    smudge   = git-lfs smudge -- %f
 [gui]
-	editor = code
+    editor = code
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [merge]
-	conflictstyle = diff3
-	tool          = code
+    conflictstyle = diff3
+    tool          = code
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 [mergetool "code"]
-	cmd = code --profile minimal --wait --reuse-window $MERGED
+    cmd = code --profile minimal --wait --reuse-window $MERGED
 [push]
-	default = current
+    default = current
 [sequence]
-	editor = code --profile minimal --wait --reuse-window
+    editor = code --profile minimal --wait --reuse-window
 [user]
-	name  = AlbertoVf
-	email = avf.git-repos@protonmail.com
+    name  = AlbertoVf
+    email = avf.git-repos@protonmail.com

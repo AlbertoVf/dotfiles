@@ -23,21 +23,21 @@ echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >>
 ## Add files to your repo
 
 ```bash
-dotfiles status
-dotfiles add <your-file>
-dotfiles commit -m "<message>"
-dotfiles push
+dotf status
+dotf add <your-file>
+dotf commit -m "<message>"
+dotf push
 ```
 
 ## Install Packages
 
 ```bash
 # Install software
-sudo pacman -S vim visual-studio-code-bin
+sudo pacman -S visual-studio-code-bin
 sudo pacman -S conky picom variety sxhkd xrandr
 sudo pacman -S zsh neofetch ranger
 sudo pacman -S thunar rofi qtile
-sudo pacman -S alacritty kitty termite
+sudo pacman -S kitty
 sudo pacman -S archlinux-logout archlinux-betterlockscreen
 curl -sLf https://spacevim.org/install.sh | bash
 
