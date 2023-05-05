@@ -63,4 +63,5 @@ echo ".dotfiles" >> .gitignore
 git clone --bare https://github.com/AlbertoVf/dotfiles $HOME/.dotfiles
 dotf config --local status.showUntrackedFiles no
 dotf reset --hard
+dotf submodule update --init
 ```

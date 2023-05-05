@@ -30,6 +30,7 @@
     filemode   = false
     symlinks   = false
     whitespace = trailing-space
+	excludesfile = ~/.gitignore_global
 [diff]
     colorMoved = default
     tool       = code

@@ -7,6 +7,7 @@ alias du="ncdu2"
 alias cat="bat"
 alias find="fd"
 alias cd="z"
+alias man="batman"
 # }
 
 # Folders alias{
@@ -60,6 +61,12 @@ alias yt-file-video="yt-video --batch-file"
 
 # files-scripts {
 scripts="$(xdg-user-dir SHELLSCRIPTS)"
-alias keys="python $scripts/get_shortcuts.py"
 source "$scripts/shell_scripts.sh"
+# }
+
+# kitty + kitten {
+alias kitten="kitty +kitten"
+alias icat="kitten icat"
+alias icon="kitten unicode_input"
+alias themes="kitten themes"
 # }
