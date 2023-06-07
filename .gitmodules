@@ -1,9 +1,18 @@
 [submodule ".config/qtile"]
 	path = .config/qtile
-	url = https://github.com/AlbertoVf/qtile
+	url  = https://github.com/AlbertoVf/qtile
 [submodule ".wallpapers"]
 	path = .wallpapers
-	url = https://github.com/AlbertoVf/wallpapers
+	url  = https://github.com/AlbertoVf/wallpapers
 [submodule ".config/rofi/rofi"]
 	path = .config/rofi/rofi
-	url = https://github.com/adi1090x/rofi.git
+	url  = https://github.com/adi1090x/rofi.git
+[submodule ".shell/zsh/plugins/zsh-autocomplete"]
+	path = .shell/zsh/plugins/zsh-autocomplete
+	url  = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule ".shell/zsh/plugins/zsh-autosuggestions"]
+	path = .shell/zsh/plugins/zsh-autosuggestions
+	url  = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".shell/zsh/plugins/zsh-syntax-highlighting"]
+	path = .shell/zsh/plugins/zsh-syntax-highlighting
+	url  = https://github.com/zsh-users/zsh-syntax-highlighting

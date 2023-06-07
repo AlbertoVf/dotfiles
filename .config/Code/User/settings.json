@@ -45,7 +45,7 @@
             "strikethrough": true
         },
         {
-            "tag": ">",
+            "tag": "::",
             "color": "#ff41a6",
             "italic": true
         },
@@ -75,7 +75,7 @@
     "code-runner.executorMap": {
         "typescript": "deno run $dir$fileName",
         "csharp": "dotnet run $dir",
-        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
     },
     "code-runner.saveFileBeforeRun": true,
     "codesnap.containerPadding": "2px",
@@ -134,7 +134,6 @@
     "editor.scrollbar.scrollByPage": true,
     "editor.smoothScrolling": true,
     "editor.snippetSuggestions": "top",
-    "editor.stickyScroll.enabled": true,
     "editor.suggest.matchOnWordStartOnly": false,
     "editor.suggest.shareSuggestSelections": true,
     "editor.suggest.showDeprecated": false,
@@ -148,6 +147,16 @@
     "emmet.excludeLanguages": [],
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.triggerExpansionOnTab": true,
+    "emojisense.languages": {
+        "makefile": true,
+        "markdown": true,
+        "plaintext": {
+            "markupCompletionsEnabled": false,
+            "emojiDecoratorsEnabled": false
+        },
+        "scminput": true,
+        "git-commit": true
+    },
     "errorLens.enableOnDiffView": true,
     "errorLens.fontStyleItalic": true,
     "errorLens.fontWeight": "900",
@@ -168,7 +177,7 @@
         "**/.settings": true,
         "**/*.meta": true,
         "**/*.pyc": true,
-        "**/node_modules/": false,
+        "**/node_modules/": false
     },
     "files.maxMemoryForLargeFilesMB": 2048,
     "files.trimFinalNewlines": true,
@@ -210,6 +219,7 @@
             "query": "is:open review-requested:${user}"
         }
     ],
+    "hediet.vscode-drawio.codeLinkActivated": true,
     "hediet.vscode-drawio.theme": "Kennedy",
     "html.format.indentHandlebars": true,
     "html.format.indentInnerHtml": true,
@@ -222,6 +232,9 @@
     "livePreview.showServerStatusNotifications": true,
     "markdown-mermaid.darkModeTheme": "base",
     "markdown-mermaid.lightModeTheme": "base",
+    "markdown-preview-enhanced.previewTheme": "atom-light.css",
+    "markdown-preview-github-styles.colorTheme": "light",
+    "markdown-preview-github-styles.darkTheme": "dark_dimmed",
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.tableFormatter.normalizeIndentation": true,
     "markdown.extension.toc.levels": "2..3",
@@ -236,16 +249,8 @@
     "markdownExtended.pdfDisplayHeaderFooter": false,
     "material-icon-theme.activeIconPack": "angular_ngrx",
     "merge-conflict.autoNavigateNextConflict.enabled": true,
-    "mergeEditor.diffAlgorithm": "smart",
-    "notebook.cellToolbarVisibility": "hover",
-    "notebook.diff.ignoreMetadata": true,
-    "notebook.lineNumbers": "on",
-    "notebook.markup.fontSize": 15,
-    "notebook.outline.showCodeCells": true,
-    "notebook.output.textLineLimit": 15,
+    "mergeEditor.diffAlgorithm": "advanced",
     "npm.enableRunFromFolder": true,
-    "oneDarkPro.bold": true,
-    "oneDarkPro.vivid": true,
     "path-intellisense.showHiddenFiles": false,
     "problems.defaultViewMode": "table",
     "problems.showCurrentInStatus": true,
@@ -298,7 +303,6 @@
     "window.openFilesInNewWindow": "default",
     "window.restoreWindows": "none",
     "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
-    "window.titleSeparator": " /",
     "workbench.colorCustomizations": {},
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.commandPalette.history": 15,

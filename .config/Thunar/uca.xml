@@ -2,7 +2,7 @@
 <actions>
     <action>
         <icon>vlc</icon>
-        <name>Open with Vlc</name>
+        <name>Abrir con VLC</name>
         <submenu></submenu>
         <unique-id>1629287747170523-1</unique-id>
         <command>vlc --recursive expand %F</command>
@@ -13,30 +13,14 @@
     </action>
     <action>
         <icon>utilities-terminal</icon>
-        <name>Open Terminal Here</name>
+        <name>Abrir en terminal</name>
         <submenu></submenu>
         <unique-id>1488955845049151-1</unique-id>
         <command>exo-open --working-directory %f --launch TerminalEmulator</command>
-        <description>Example for a custom action</description>
+        <description>Abrir una terminal en la carpeta seleccionada</description>
         <range></range>
         <patterns>*</patterns>
         <directories/>
-    </action>
-    <action>
-        <icon>insert-link-symbolic</icon>
-        <name>Create symlink</name>
-        <submenu>Archivo</submenu>
-        <unique-id>1526631663081446-14</unique-id>
-        <command>ln -s %f %n-link</command>
-        <description>Softlink between two files or directories</description>
-        <range></range>
-        <patterns>*</patterns>
-        <directories/>
-        <audio-files/>
-        <image-files/>
-        <other-files/>
-        <text-files/>
-        <video-files/>
     </action>
     <action>
         <icon>checkbox</icon>
@@ -73,35 +57,13 @@
     </action>
     <action>
         <icon>image-x-generic</icon>
-        <name>Convert png to jpg</name>
+        <name>Imagen a png</name>
         <submenu></submenu>
-        <unique-id>1510662686010963-1</unique-id>
-        <command>convert %f -quality 100 `basename %f .png`.jpg</command>
-        <description>Convert png to jpg</description>
-        <range></range>
-        <patterns>*.png</patterns>
-        <image-files/>
-    </action>
-    <action>
-        <icon>image-x-generic</icon>
-        <name>Convert jpg to png</name>
-        <submenu></submenu>
-        <unique-id>1625404269177731-1</unique-id>
-        <command>convert %f `basename %f .jpg`.png</command>
-        <description>Convert jpg to png</description>
-        <range></range>
-        <patterns>*.jpg</patterns>
-        <image-files/>
-    </action>
-    <action>
-        <icon>image-x-generic</icon>
-        <name>Convert webp to png</name>
-        <submenu></submenu>
-        <unique-id>1664910391014116-1</unique-id>
-        <command>dwebp %f -o &quot;`basename %f .webp`.png&quot;</command>
-        <description>Convert from webp to png</description>
-        <range></range>
-        <patterns>*.webp</patterns>
+        <unique-id>1683970269066777-1</unique-id>
+        <command>convert %f -background white -flatten -alpha off $( basename %n | cut -d. -f1).png</command>
+        <description>Convierte una imagen en formato png</description>
+        <range>*</range>
+        <patterns>*</patterns>
         <image-files/>
     </action>
     <action>
@@ -110,7 +72,7 @@
         <submenu>Archivo</submenu>
         <unique-id>1627148699144999-1</unique-id>
         <command>pdftk %F cat output &quot;$(zenity --entry --title=&quot;Merge pdf&quot; --text=&quot;Nombre de nuevo archivo&quot; --entry-text=output)&quot;.pdf</command>
-        <description>merge pdf</description>
+        <description>Fusiona archivos pdf</description>
         <range></range>
         <patterns>*.pdf</patterns>
         <other-files/>
@@ -148,6 +110,34 @@
         <video-files/>
     </action>
     <action>
+        <icon>insert-link-symbolic</icon>
+        <name>Create symlink</name>
+        <submenu>Archivo</submenu>
+        <unique-id>1526631663081446-14</unique-id>
+        <command>ln -s %f %n_1</command>
+        <description>Softlink between two files or directories</description>
+        <range></range>
+        <patterns>*</patterns>
+        <directories/>
+        <audio-files/>
+        <image-files/>
+        <other-files/>
+        <text-files/>
+        <video-files/>
+    </action>
+    <action>
+        <icon>gmrun</icon>
+        <name>Make executable</name>
+        <submenu>Archivo</submenu>
+        <unique-id>1526670239648084-2</unique-id>
+        <command>chmod +x %f</command>
+        <description>Añade permisos de ejecucion al archivo</description>
+        <range></range>
+        <patterns>*</patterns>
+        <other-files/>
+        <text-files/>
+    </action>
+    <action>
         <icon>system-file-manager</icon>
         <name>Abrir como root</name>
         <submenu>Archivo</submenu>
@@ -168,32 +158,5 @@
         <range></range>
         <patterns>*</patterns>
         <text-files/>
-    </action>
-    <action>
-        <icon>gmrun</icon>
-        <name>Make executable</name>
-        <submenu>Archivo</submenu>
-        <unique-id>1526670239648084-2</unique-id>
-        <command>chmod +x %f</command>
-        <description>Make a file execuble</description>
-        <range></range>
-        <patterns>*</patterns>
-        <other-files/>
-        <text-files/>
-    </action>
-    <action>
-        <icon>emblem-web</icon>
-        <name>Crear link</name>
-        <submenu></submenu>
-        <unique-id>1662556204328140-2</unique-id>
-        <command>OUTPUT=$(zenity --forms --title=&quot;Crea un link&quot; --text=&quot;Crea un link a una pagina&quot; --separator=&quot;,&quot; --add-entry=&quot;url de la pagina&quot; --add-entry=&quot;nombre del fichero&quot;) accepted=$?
-  if ((accepted != 0)); then
-      exit 1
-  fi url=$(awk -F, &apos;{print $1}&apos; &lt;&lt;&lt;$OUTPUT) nombre=$(awk -F, &apos;{print $2}&apos; &lt;&lt;&lt;$OUTPUT)
-  echo -e &quot;[Desktop Entry]\nVersion=1.0\nType=Link\nName=$nombre\nComment=\nIcon=user-bookmarks\nURL=$url&quot; &gt; &quot;$nombre&quot;.desktop</command>
-        <description>Crea un link a una pagina web</description>
-        <range></range>
-        <patterns>*</patterns>
-        <directories/>
     </action>
 </actions>

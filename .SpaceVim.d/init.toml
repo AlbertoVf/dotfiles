@@ -9,7 +9,7 @@
 # All SpaceVim option below [option] section
 [options]
     # "onedark","palenight", "one", "nord", "gruvbox", "dracula"
-    colorscheme                  = "palenight"
+    colorscheme                  = "gruvbox"
     colorscheme_bg               = "dark"
     enable_guicolors             = true
     statusline_separator         = "arrow"
@@ -60,13 +60,12 @@
 [[layers]]
     name= 'VersionControl'
 
-
 [[layers]]
-  name = "lang#dockerfile"
+    name = "lang#dockerfile"
 [[layers]]
-  name = "lang#html"
-  emmet_leader_key = "<C-e>"
-  emmet_filetyps = ['html']
+    name = "lang#html"
+    emmet_leader_key = "<C-e>"
+    emmet_filetyps = ['html']
 [[layers]]
   name = 'lang#java'
   java_file_head = [
@@ -77,23 +76,23 @@
     ''
   ]
 [[layers]]
-  name = "lang#javascript"
-  auto_fix = true
-  enable_flow_syntax = true
+    name = "lang#javascript"
+    auto_fix = true
+    enable_flow_syntax = true
 [[layers]]
-  name = "lang#kotlin"
+    name = "lang#kotlin"
 [[layers]]
-  name = "lang#markdown"
+    name = "lang#markdown"
 [[layers]]
-  name = "lang#python"
-  enable_typeinfo = true
+    name = "lang#python"
+    enable_typeinfo = true
 [[layers]]
-  name = "lang#sh"
+    name = "lang#sh"
 [[layers]]
-  name = "lang#toml"
+    name = "lang#toml"
 [[layers]]
-  name = "lang#typescript"
+    name = "lang#typescript"
 [[layers]]
-  name = "lang#vim"
+    name = "lang#vim"
 [[layers]]
-  name = "lang#xml"
+    name = "lang#xml"

@@ -1,16 +1,17 @@
 #!/bin/sh
 
-convert_image() {
-    file=$1
-    image_extension="png"
-    extension="$(echo $file | cut -d '.' -f2-)"
-    name="$(echo $file | cut -d '.' -f1)"
-    $name="$name.$image_extension"
-    case $extension in
-    jpg | jpeg) convert $file $name ;;
-    webp) dwebp $file -o $name ;;
-    bimp | bmp) mogrify -format $image_extension $file ;;
-    esac
+convert_image(){
+    files=()
+    for parametro in "$@"; do
+        files+=("$parametro")
+    done
+    for f in "${files[@]}"; do
+        name=$(basename "$f")
+        folder=$(dirname "$f")
+        name="${name%.*}"
+        convert "$f" "$folder/$name.png"
+        echo "Imagen convertida: $name -> $name.png"
+    done
 }
 
 create_playlist() {
@@ -22,17 +23,17 @@ create_playlist() {
         root="$(pwd)"
     fi
     name="playlist_$folder_name.m3u"
-    echo -e "# $(date)\n# $root\n" >$name
+    echo -e "#!/usr/bin/vlc\n# $(date)\n# $root\n" >$name
     fd "mp\d$" -a -d1 --base-directory $root >>$name
 }
 
-create_sxhkdrc(){
+create_sxhkdrc() {
     folder="$HOME/.config/sxhkd"
     input_file="$folder/shortcuts.json"
     output_file="$folder/sxhkdrc"
 
     cp -f $output_file $output_file.old
-    jq -r 'keys[] as $k | "\($k) \(.[$k] | to_entries[] | [.key, .value] | @tsv)"' "$input_file" > "$output_file"
+    jq -r 'keys[] as $k | "\($k) \(.[$k] | to_entries[] | [.key, .value] | @tsv)"' "$input_file" >"$output_file"
 
     sed -i 's/^ //g' "$output_file"
     sed -i 's/\t/\n\t/g' "$output_file"
@@ -40,7 +41,7 @@ create_sxhkdrc(){
     sed -i "1i # Generated on $(date +'%Y-%m-%d %H:%M')" "$output_file"
 }
 
-enable_service(){
+enable_service() {
     sudo systemctl start $1
     sudo systemctl enable $1
 }
@@ -57,7 +58,11 @@ extract() {
     esac
 }
 
-get_shortcuts(){
+find_repos() {
+	fd -sHapL -d 2 --regex '\.git$' "$1/" -x echo {//}
+}
+
+get_shortcuts() {
     echo -e '\033[1;34m KITTY \033[37;0m'
     grep '^map' $HOME/.config/kitty/kitty.conf | awk '{for (i=2; i <= NF; i++) printf "%s ", $i; printf "\n"}'
 
@@ -69,11 +74,16 @@ get_shortcuts(){
 }
 
 image_to_pdf() {
-    for image_file in "$@"; do
-        pdf_file="${1%.*}.pdf"
+    files=()
+    for parametro in "$@"; do
+        files+=("$parametro")
+    done
+    for image_file in "${files[@]}"; do
+        pdf_file="${image_file%.*}.pdf"
         convert "$image_file" "$pdf_file"
     done
 }
+
 init_repo () {
     files=('LICENSE.md' 'README.md' '.gitignore' '.editorconfig' '.env' 'Makefile')
     while getopts ":n:l:i:" opt; do
@@ -81,8 +91,13 @@ init_repo () {
         n)
             name="$(echo $OPTARG | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')"
             mkdir $name && cd $name && git init
+
+            alias_properties=$(awk '/^\[alias\]/ {p=1; next} /^\[.*\]/ {p=0} p' ~/.gitconfig)
+            echo -e "\n[alias]\n$alias_properties" >> .git/config
+
             mkdir -p src test assets/{data,img,docs} .github/{ISSUE_TEMPLATE,workflows}
             echo "# $name" | sed 's/-/ /g' | tr '[:upper:]' '[:lower:]' | sed 's/\b[a-z]/\u&/g' >> README.md
+            xdg-open . &
         ;;
         i)
             ignore="$OPTARG,visualstudiocode,$(uname -s)"
@@ -109,7 +124,7 @@ init_repo () {
         if [ -s $i ]; then
             git add $i
         else
-            echo "🧪 Generate $i" >> todo.md
+            echo "🧪 Generate $i" | tee -a todo.md
         fi
     done
 
@@ -117,10 +132,19 @@ init_repo () {
     code . #//&& exit
 }
 
+mount_disk() {
+    label=$(lsblk -o LABEL | grep "$1")
+    device=$(blkid -l -o device -t LABEL="$label")
+    d="/run/media/$USER/$label"
+    sudo mkdir -p "$d" && sudo mount "$device" "$d"
+    echo "[MOUNTED] $device --> $d"
+}
+
 my_ip() {
     privada="$(ip addr show | grep 'inet.*brd' | awk '{print $2}' | cut -f1 -d'/' | head -n1)"
     publica="$(curl -s ifconfig.me | awk '{print $1}')"
-    echo "\"publica\": $publica\n\"privada\": $privada" | bat -l json
+    echo "{\"publica\":\"$publica\",\"privada\":\"$privada\"}" | jq '.'
+    curl -s http://ip-api.com/json/$publica | jq '.'
 }
 
 refactor_files() {
@@ -141,7 +165,6 @@ refactor_files() {
         pdf | *opendocument*) mv -v $archivo "$(xdg-user-dir DOCUMENTS)/" ;;
         *template) mv -v $archivo "$(xdg-user-dir TEMPLATES)/" ;;
         *rom | octet-stream) mv -v $archivo "$HOME/Games/" ;;
-        *) echo "$archivo: no se ha movido" ;;
         esac
     done
 }

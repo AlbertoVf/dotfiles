@@ -7,14 +7,16 @@
     can     = commit --amend --no-edit
     check   = checkout
     d       = difftool
+    f       = fetch
     l       = log --oneline --decorate --all --graph
+    pf      = push --force
     reb     = rebase -i
     remotes = remote -v
     res     = restore
     ress    = restore --staged
+    rm      = rm --cached
     st      = status
     t       = tag -a
-    pf      = push --force
 [credential]
     helper = store
 [color]
@@ -24,12 +26,12 @@
     changed   = yellow
     untracked = red
 [core]
-    autocrlf   = input
-    editor     = code --wait --profile minimal
-    eol        = lf
-    filemode   = false
-    symlinks   = false
-    whitespace = trailing-space
+	autocrlf     = input
+	editor       = code --wait --profile GIT
+	eol          = lf
+	filemode     = false
+	symlinks     = false
+	whitespace   = trailing-space
 	excludesfile = ~/.gitignore_global
 [diff]
     colorMoved = default
@@ -37,7 +39,7 @@
 [difftool]
     prompt = false
 [difftool "code"]
-    cmd = code --profile minimal --wait --diff --reuse-window $LOCAL $REMOTE
+    cmd = code --profile GIT --wait --diff --reuse-window $LOCAL $REMOTE
 [filter "lfs"]
     clean    = git-lfs clean -- %f
     process  = git-lfs filter-process
@@ -53,11 +55,11 @@
 [mergetool]
     keepBackup = false
 [mergetool "code"]
-    cmd = code --profile minimal --wait --reuse-window $MERGED
+    cmd = code --profile GIT --wait --reuse-window $MERGED
 [push]
     default = current
 [sequence]
-    editor = code --profile minimal --wait --reuse-window
+    editor = code --profile GIT --wait --reuse-window
 [user]
     name  = AlbertoVf
     email = avf.git-repos@protonmail.com
