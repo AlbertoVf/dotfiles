@@ -1,44 +1,24 @@
-# Generated on 2023-04-10 14:03
+# Generated on 2023-06-09 17:18
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-XF86AudioLowerVolume
-	amixer set Master 5%-
+{XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	amixer set Master {5%-,5%+}
 XF86AudioMute
 	amixer -D pulse set Master 1+ toggle
-XF86AudioNext
-	playerctl next
-XF86AudioPlay
-	playerctl play-pause
-XF86AudioPrev
-	playerctl previous
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-XF86AudioStop
-	playerctl stop
-XF86MonBrightnessDown
-	xbacklight -dec 5
-XF86MonBrightnessUp
-	xbacklight -inc 5
+{XF86AudioNext,XF86AudioPlay,XF86AudioPrev,XF86AudioStop}
+	playerctl {next,play-pause,previous,stop}
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+	xbacklight {-dec,-inc} 5
 alt Escape
 	xfce4-taskmanager
-alt F1
-	rofi -show file-browser-extended
-alt F2
-	rofi -show drun
-alt F3
-	rofi -show window
-alt F4
-	rofi -show ssh
-alt F5
-	rofi -show emoji
-alt h
-	kitty -e htop
-alt Left
-	variety -p
+alt {F1,F2,F3,F4,F5}
+	rofi -show {file-browser-extended,drun,window,ssh,emoji}
+alt {h,j,k,l}
+	rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}
 alt Print
 	xfce4-screenshooter
-alt Right
-	variety -n
+alt {Left,Right}
+	variety -{p,n}
 super F1
 	brave
 super F2
@@ -89,14 +69,6 @@ super KP_Enter
 	gnome-calculator
 super Return
 	kitty
-super + alt h
-	rofi -show file-browser-extended -file-browser-dir ~/.config
-super + alt j
-	rofi -show file-browser-extended -file-browser-dir ~/Proyectos/Git
-super + alt k
-	rofi -show file-browser-extended -file-browser-dir ~/.screenlayout
-super + alt l
-	rofi -show file-browser-extended -file-browser-dir ~/Proyectos
 super + shift Escape
 	xkill
 super + shift 1
