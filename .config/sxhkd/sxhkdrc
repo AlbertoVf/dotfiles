@@ -13,16 +13,16 @@ alt Escape
 	xfce4-taskmanager
 alt {F1,F2,F3,F4,F5}
 	rofi -show {file-browser-extended,drun,window,ssh,emoji}
+alt {h,j,k,l}
+	rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}
 alt Print
 	xfce4-screenshooter
 alt {Left,Right}
 	variety -{p,n}
-alt+shift {h,j,k,l}
-	rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}
 super F1
 	brave
 super F2
-	codium
+	code
 super F3
 	gimp
 super F4
@@ -46,7 +46,7 @@ super a
 super b
 	bitwarden-desktop
 super e
-	codium
+	code
 super f
 	firefox
 super g

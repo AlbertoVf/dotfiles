@@ -27,7 +27,7 @@
     untracked = red
 [core]
 	autocrlf     = input
-	editor       = codium --wait --profile GIT
+	editor       = code --wait --profile GIT
 	eol          = lf
 	filemode     = false
 	symlinks     = false
@@ -35,31 +35,31 @@
 	excludesfile = ~/.gitignore_global
 [diff]
     colorMoved = default
-    tool       = codium
+    tool       = code
 [difftool]
     prompt = false
-[difftool "codium"]
-    cmd = codium --profile GIT --wait --diff --reuse-window $LOCAL $REMOTE
+[difftool "code"]
+    cmd = code --profile GIT --wait --diff --reuse-window $LOCAL $REMOTE
 [filter "lfs"]
     clean    = git-lfs clean -- %f
     process  = git-lfs filter-process
     required = true
     smudge   = git-lfs smudge -- %f
 [gui]
-    editor = codium
+    editor = code
 [init]
     defaultBranch = main
 [merge]
     conflictstyle = diff3
-    tool          = codium
+    tool          = code
 [mergetool]
     keepBackup = false
-[mergetool "codium"]
-    cmd = codium --profile GIT --wait --reuse-window $MERGED
+[mergetool "code"]
+    cmd = code --profile GIT --wait --reuse-window $MERGED
 [push]
     default = current
 [sequence]
-    editor = codium --profile GIT --wait --reuse-window
+    editor = code --profile GIT --wait --reuse-window
 [user]
     name  = AlbertoVf
     email = avf.git-repos@protonmail.com

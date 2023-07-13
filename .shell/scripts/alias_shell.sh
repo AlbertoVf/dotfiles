@@ -1,7 +1,7 @@
 #!/bin/sh
 alias grep="grep --color"
 alias cf="xclip -sel clip" # copy file content to clipboard
-alias code="codium"
+
 # modern commands {
 alias du="ncdu2"
 alias cat="bat"
