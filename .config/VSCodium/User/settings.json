@@ -1,24 +1,73 @@
 {
-    "[html]": { "editor.defaultFormatter": "vscode.html-language-features" },
-    "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
-    "[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features" },
-    "[markdown]": { "editor.defaultFormatter": "DavidAnson.vscode-markdownlint" },
-    "[python]": { "editor.defaultFormatter": "ms-python.python" },
-    "[scss]": { "editor.defaultFormatter": "vscode.css-language-features" },
-    "[typescript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
-    "[yaml]": { "editor.defaultFormatter": "redhat.vscode-yaml" },
+    "editor.cursorBlinking": "expand",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "better-comments.tags": [
-        { "tag": "!", "color": "#ff3636", "bold": true },
-        { "tag": "?", "color": "#FF8C00", "italic": true },
-        { "tag": "*", "color": "#00ff00", "italic": true },
-        { "tag": "//", "color": "#474747", "strikethrough": true },
-        { "tag": "::", "color": "#ff41a6", "italic": true },
-        { "tag": "todo", "color": "#3498DB" }
+        {
+            "tag": "!",
+            "color": "#ff3636",
+            "bold": true
+        },
+        {
+            "tag": "?",
+            "color": "#FF8C00",
+            "italic": true
+        },
+        {
+            "tag": "*",
+            "color": "#00ff00",
+            "italic": true
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true
+        },
+        {
+            "tag": "::",
+            "color": "#ff41a6",
+            "italic": true
+        },
+        {
+            "tag": "todo",
+            "color": "#3498DB"
+        }
     ],
     "betterAlign.surroundSpace": {
-        "arrow": [ 1, 1 ],
-        "assignment": [ 1, 1 ],
-        "colon": [ 1, 1 ],
+        "arrow": [
+            1,
+            1
+        ],
+        "assignment": [
+            1,
+            1
+        ],
+        "colon": [
+            1,
+            1
+        ],
         "comment": 2
     },
     "code-runner.clearPreviousOutput": true,
@@ -30,7 +79,6 @@
     "code-runner.saveFileBeforeRun": true,
     "codesnap.containerPadding": "2px",
     "codesnap.transparentBackground": true,
-    "color-highlight.matchWords": true,
     "cSpell.enabled": false,
     "cSpell.language": "es-ES,en",
     "css.format.spaceAroundSelectorSeparator": true,
@@ -55,21 +103,22 @@
         "source.fixAll": true,
         "source.organizeImports": true
     },
-	"editor.cursorBlinking": "expand",
     "editor.fontFamily": "CaskaydiaCove Nerd Font, monospace",
     "editor.fontLigatures": true,
     "editor.fontVariations": true,
     "editor.guides.bracketPairs": false,
     "editor.guides.bracketPairsHorizontal": false,
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.insertSpaces": false,
-    "editor.letterSpacing": 1,
+    "editor.letterSpacing": 1.5,
     "editor.lineHeight": 2.1,
-    "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
     "editor.padding.top": 10,
     "editor.renderWhitespace": "all",
     "editor.smoothScrolling": true,
+    "editor.snippetSuggestions": "top",
     "editor.suggest.showDeprecated": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordWrap": "wordWrapColumn",
@@ -79,17 +128,21 @@
     "emojisense.languages": {
         "makefile": true,
         "markdown": true,
-        "plaintext": {
-            "markupCompletionsEnabled": false,
-            "emojiDecoratorsEnabled": false
-        },
-        "scminput": true,
         "git-commit": true
     },
     "errorLens.enableOnDiffView": true,
     "errorLens.fontStyleItalic": true,
     "errorLens.fontWeight": "700",
     "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "README.md": "*.md",
+        "*.ts": "${capture}.js, ${capture}.test.ts",
+        "*.py": "${capture}_test.py,test_${capture}.py,${capture}test.py,test${capture}.py,",
+        "*.html": "${capture}.css,${capture}.js",
+        "*.css": "${capture}.scss,${capture}.less,${capture}.sass",
+        "Makefile": ".env, .env.example, Dockerfile, docker-compose.*,requirements.txt",
+        ".editorconfig": ".git*,_config.yml,.prettier*,.eslintrc*,.*lint.yml,.*lint.yaml,.*lint.json",
+    },
     "explorer.incrementalNaming": "smart",
     "files.autoGuessEncoding": true,
     "files.autoSave": "afterDelay",
@@ -106,16 +159,36 @@
     "git.mergeEditor": true,
     "github-actions.workflows.pinned.refresh.enabled": true,
     "githubIssues.queries": [
-        { "label": "Closed Issues", "query": "author:${user} state:closed repo:${owner}/${repository} sort:created-asc" },
-        { "label": "Created Issues", "query": "author:${user} state:open repo:${owner}/${repository} sort:created-asc" },
-        { "label": "My Issues", "query": "default" }
+        {
+            "label": "Closed Issues",
+            "query": "author:${user} state:closed repo:${owner}/${repository} sort:created-asc"
+        },
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-asc"
+        },
+        {
+            "label": "My Issues",
+            "query": "default"
+        }
     ],
     "githubPullRequests.defaultMergeMethod": "squash",
     "githubPullRequests.queries": [
-        { "label": "Assigned To Me", "query": "is:open assignee:${user}" },
-        { "label": "Created By Me", "query": "is:open author:${user}" },
-        { "label": "Waiting For My Review", "query": "is:open review-requested:${user}" }
+        {
+            "label": "Assigned To Me",
+            "query": "is:open assignee:${user}"
+        },
+        {
+            "label": "Created By Me",
+            "query": "is:open author:${user}"
+        },
+        {
+            "label": "Waiting For My Review",
+            "query": "is:open review-requested:${user}"
+        }
     ],
+    "gitlens.graph.dateStyle": "absolute",
+    "gitlens.graph.layout": "editor",
     "hediet.vscode-drawio.theme": "Kennedy",
     "html.format.indentHandlebars": true,
     "html.format.indentInnerHtml": true,
@@ -123,32 +196,37 @@
     "html.format.wrapLineLength": 0,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "less.format.spaceAroundSelectorSeparator": true,
-    "livePreview.customExternalBrowser": "Firefox",
     "livePreview.openPreviewTarget": "Embedded Preview",
     "livePreview.showServerStatusNotifications": true,
     "markdown-mermaid.darkModeTheme": "base",
     "markdown-mermaid.lightModeTheme": "base",
+    "markdown-preview-github-styles.colorTheme": "light",
     "markdown.extension.tableFormatter.normalizeIndentation": true,
+    "markdown.extension.toc.orderedList": true,
     "markdown.marp.pdf.noteAnnotations": true,
     "markdown.marp.pdf.outlines": "headings",
     "markdown.math.enabled": true,
+    "markdown.preview.breaks": true,
     "markdown.preview.typographer": true,
     "markdown.updateLinksOnFileMove.enabled": "always",
+    "markdownExtended.exportOutDirName": "PDFs",
+    "markdownExtended.pdfDisplayHeaderFooter": false,
     "material-icon-theme.activeIconPack": "angular_ngrx",
     "merge-conflict.autoNavigateNextConflict.enabled": true,
     "mergeEditor.diffAlgorithm": "advanced",
     "npm.enableRunFromFolder": true,
     "path-intellisense.showHiddenFiles": false,
     "problems.defaultViewMode": "table",
-    "problems.showCurrentInStatus": true,
-    "projectManager.git.baseFolders": [ "~/Proyectos/" ],
-    "projectManager.git.maxDepthRecursion": 3,
+    "projectManager.git.baseFolders": [
+        "~/Proyectos/"
+    ],
     "projectManager.groupList": true,
     "projectManager.ignoreProjectsWithinProjects": true,
     "projectManager.supportSymlinksOnBaseFolders": true,
-    "scm.diffDecorationsGutterPattern": { "added": true },
+    "scm.diffDecorationsGutterPattern": {
+        "added": true
+    },
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
-    "scm.repositories.sortOrder": "path",
     "scss.format.preserveNewLines": false,
     "scss.format.spaceAroundSelectorSeparator": true,
     "search.mode": "newEditor",
@@ -158,7 +236,6 @@
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.enabled": false,
     "tabnine.experimentalAutoImports": false,
-    "telemetry.telemetryLevel": "crash",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.smoothScrolling": true,
     "testExplorer.hideWhen": "noTests",
@@ -172,11 +249,13 @@
     "thunder-client.indentSize": 4,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "window.closeWhenEmpty": true,
+    "window.menuBarVisibility": "toggle",
     "window.openFilesInNewWindow": "default",
     "window.restoreWindows": "none",
     "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
     "workbench.colorCustomizations": {},
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Dracula",
+    "workbench.commandPalette.experimental.useSemanticSimilarity": true,
     "workbench.commandPalette.history": 10,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.limit.perEditorGroup": true,
@@ -186,16 +265,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.multiSelectModifier": "ctrlCmd",
     "workbench.list.openMode": "doubleClick",
-    "workbench.productIconTheme": "material-product-icons",
     "workbench.startupEditor": "welcomePageInEmptyWorkbench",
     "workbench.tree.indent": 16,
-    "markdownExtended.pdfDisplayHeaderFooter": false,
-    "markdown.preview.breaks": true,
-    "markdown.extension.toc.orderedList": true,
-    "markdownExtended.exportOutDirName": "PDFs",
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "editor.snippetSuggestions": "top",
-    "window.menuBarVisibility": "toggle",
-    "editor.suggest.snippetsPreventQuickSuggestions": true,
-    "editor.suggest.matchOnWordStartOnly": false,
 }

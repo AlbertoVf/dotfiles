@@ -1,4 +1,4 @@
-# Generated on 2023-06-19 10:56
+# Generated on 2023-06-23 11:32
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
@@ -69,6 +69,8 @@ super KP_Enter
 	gnome-calculator
 super Return
 	kitty
+super + ctrl Return
+	thunar
 super + shift Escape
 	xkill
 super + shift 1
