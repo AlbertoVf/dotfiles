@@ -9,7 +9,7 @@ convert_image(){
         name=$(basename "$f")
         folder=$(dirname "$f")
         name="${name%.*}"
-        convert "$f" "$folder/$name.png"
+        convert "$f" -background white "$folder/$name.png"
         echo "Imagen convertida: $name -> $name.png"
     done
 }
@@ -38,6 +38,7 @@ create_sxhkdrc() {
     sed -i 's/^ //g' "$output_file"
     sed -i 's/\t/\n\t/g' "$output_file"
 
+    sed -i "1i #!/bin/sh" "$output_file"
     sed -i "1i # Generated on $(date +'%Y-%m-%d %H:%M')" "$output_file"
 }
 
@@ -74,33 +75,28 @@ get_shortcuts() {
 }
 
 image_to_pdf() {
-    files=()
-    for parametro in "$@"; do
-        files+=("$parametro")
-    done
-    for image_file in "${files[@]}"; do
+    for image_file in "$@"; do
         pdf_file="${image_file%.*}.pdf"
         convert "$image_file" "$pdf_file"
     done
 }
 
 init_repo () {
-    files=('LICENSE.md' 'README.md' '.gitignore' '.editorconfig' '.env' 'Makefile')
-    while getopts ":n:l:i:" opt; do
-    case $opt in
-        n)
-            name="$(echo $OPTARG | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')"
-            mkdir $name && cd $name && git init
+    files=('LICENSE.md' 'README.md' '.gitignore' '.editorconfig' '.env' 'Makefile' '.vscode/settings.json' '.vscode/code.code-snippets' '.vscode/tasks.json')
 
+    folder=$(basename "$(pwd)")
+    name="$(echo $folder | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')"
+
+    mkdir -p src test assets/{data,img,docs} .github/{ISSUE_TEMPLATE,workflows} .vscode && git init
+    echo "# $name" | sed 's/-/ /g' | tr '[:upper:]' '[:lower:]' | sed 's/\b[a-z]/\u&/g' >> README.md
+
+    while getopts ":l:i:" opt; do
+    case $opt in
+        i)
             alias_properties=$(awk '/^\[alias\]/ {p=1; next} /^\[.*\]/ {p=0} p' ~/.gitconfig)
             echo -e "\n[alias]\n$alias_properties" >> .git/config
 
-            mkdir -p src test assets/{data,img,docs} .github/{ISSUE_TEMPLATE,workflows}
-            echo "# $name" | sed 's/-/ /g' | tr '[:upper:]' '[:lower:]' | sed 's/\b[a-z]/\u&/g' >> README.md
-            xdg-open . &
-        ;;
-        i)
-            ignore="$OPTARG,visualstudiocode,$(uname -s)"
+            ignore="$OPTARG"
             if [ $ignore ]; then
                 gitignores="${ignore//" "/","}"
                 curl -fLw '\n' https://www.gitignore.io/api/$gitignores >>.gitignore
@@ -129,7 +125,7 @@ init_repo () {
     done
 
     git commit -m "🎉 init(build): Set project environment."
-    code . #//&& exit
+    code .
 }
 
 mount_disk() {

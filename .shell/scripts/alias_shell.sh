@@ -49,14 +49,16 @@ alias dotf="/usr/bin/git --git-dir=$(xdg-user-dir DOTFILES) --work-tree=$HOME"
 # yt="youtube-dl"
 yt="yt-dlp"
 download="$(xdg-user-dir DOWNLOAD)/"
+audio_extension="mp3" # wav, mp3
+video_extension="mp4" # avi, mp4
 extract="-i --write-thumbnail --add-metadata --no-post-overwrites --audio-quality 0 -f bestaudio -x --audio-format"
-alias yt-audio="$yt $extract mp3 -o $download'%(title)s.%(ext)s' --no-playlist"
-alias yt-video="$yt --add-metadata -f mp4 -o $download'%(title)s.%(ext)s' --no-playlist"
+alias yt-audio="$yt $extract $audio_extension -o $download'%(title)s.%(ext)s' --no-playlist"
+alias yt-audio-list="$yt -w $extract $audio_extension -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yt-audio-file="yt-audio --batch-file"
 # alias yt-best="$yt --add-metadata -f 'bestvideo,bestaudio' -o $download'%(title)s.%(ext)s' --no-playlist"
-alias yt-list-audio="$yt -w $extract mp3 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-alias yt-list-video="$yt -w --add-metadata -f mp4 -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-alias yt-file-audio="yt-audio --batch-file"
-alias yt-file-video="yt-video --batch-file"
+alias yt-video="$yt --add-metadata -f $video_extension -o $download'%(title)s.%(ext)s' --no-playlist"
+alias yt-video-list="$yt -w --add-metadata -f $video_extension -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yt-video-file="yt-video --batch-file"
 # }
 
 # files-scripts {

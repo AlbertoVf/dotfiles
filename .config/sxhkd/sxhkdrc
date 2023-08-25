@@ -1,4 +1,5 @@
-# Generated on 2023-06-23 11:32
+#!/bin/sh
+# Generated on 2023-07-23 20:59
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
@@ -13,12 +14,12 @@ alt Escape
 	xfce4-taskmanager
 alt {F1,F2,F3,F4,F5}
 	rofi -show {file-browser-extended,drun,window,ssh,emoji}
-alt {h,j,k,l}
-	rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}
 alt Print
 	xfce4-screenshooter
 alt {Left,Right}
 	variety -{p,n}
+alt + shift {h,j,k,l}
+	rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}
 super F1
 	brave
 super F2
