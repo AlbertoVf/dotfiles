@@ -39,10 +39,6 @@ sudo pacman -S zsh neofetch ranger
 sudo pacman -S thunar rofi qtile
 sudo pacman -S kitty
 sudo pacman -S archlinux-logout archlinux-betterlockscreen
-curl -sLf https://spacevim.org/install.sh | bash
-
-# Install fonts:
-wget -qO- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip | bsdtar -xvf- && mv *.ttf /usr/share/fonts/TTF/
 ```
 
 ## Install your dotfiles onto a new system
@@ -64,4 +60,6 @@ git clone --bare https://github.com/AlbertoVf/dotfiles $HOME/.dotfiles
 dotf config --local status.showUntrackedFiles no
 dotf reset --hard
 dotf submodule update --init
+dotf submodule init
+dotf submodule update
 ```
