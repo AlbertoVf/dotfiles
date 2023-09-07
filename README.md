@@ -16,7 +16,6 @@
 git init --bare $HOME/.dotfiles
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotf config --local status.showUntrackedFiles no
-echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 ```
 
@@ -44,7 +43,6 @@ sudo pacman -S archlinux-logout archlinux-betterlockscreen
 ## Install your dotfiles onto a new system
 
 ```bash
-echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 echo ".dotfiles" >> .gitignore
 git clone --bare <git-repo-url> $HOME/.dotfiles
@@ -55,7 +53,6 @@ dotf config --local status.showUntrackedFiles no
 
 ```bash
 echo "alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
-echo ".dotfiles" >> .gitignore
 git clone --bare https://github.com/AlbertoVf/dotfiles $HOME/.dotfiles
 dotf config --local status.showUntrackedFiles no
 dotf reset --hard
