@@ -1,19 +1,23 @@
-- clean: ['~']
+- clean: ["~"]
 
 - defaults:
-    link:
-      create: true
-      force: true
+      link:
+          create: true
+          force: true
 
 - create:
-    - $DOTFILES_PATH/shell/bash/completions
-    - $DOTFILES_PATH/shell/bash/themes
+      - $DOTFILES_PATH/shell/bash/completions
+      - $DOTFILES_PATH/shell/bash/themes
 
 - link:
-    ~/.bash_profile: shell/bash/.bash_profile
-    ~/.bashrc: shell/bash/.bashrc
-    ~/.zimrc: shell/zsh/.zimrc
-    ~/.zlogin: shell/zsh/.zlogin
-    ~/.zshenv: shell/zsh/.zshenv
-    ~/.zshrc: shell/zsh/.zshrc
-    ~/.inputrc: shell/.inputrc
+      ~/.bash_profile: shell/bash/.bash_profile
+      ~/.bashrc: shell/bash/.bashrc
+      ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yml
+      ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
+      ~/.gitconfig: git/.gitconfig
+      ~/.gitignore_global: git/.gitignore_global
+      ~/.profile: shell/.profile
+      ~/.zimrc: shell/zsh/.zimrc
+      ~/.zlogin: shell/zsh/.zlogin
+      ~/.zshenv: shell/zsh/.zshenv
+      ~/.zshrc: shell/zsh/.zshrc

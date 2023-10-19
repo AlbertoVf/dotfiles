@@ -1,0 +1,68 @@
+[alias]
+	a       = add
+	aa      = add --all
+	au      = add -u
+	c       = commit -m
+	ca      = commit --amend
+	qc      = commit -am
+	can     = commit --amend --no-edit
+	d       = difftool
+	l       = log --oneline --decorate --all --graph
+	hist    = "log --pretty=format:'%ad - %an - %H - %s'"
+	pf      = push --force
+	reb     = rebase -i
+	remotes = remote -v
+	res     = restore
+	ress    = restore --staged
+	rm      = rm --cached
+	st      = status
+	t       = tag -a
+	cbr     = branch -b
+	setup   = "branch --set-upstream-to=origin/main main"
+	chp     = "cherry-pick"
+[credential]
+	helper = store
+[color]
+	ui = true
+[color "status"]
+	added     = green
+	changed   = yellow
+	untracked = red
+[core]
+	autocrlf     = input
+	editor       = code --wait --profile GIT
+	eol          = lf
+	filemode     = false
+	symlinks     = false
+	whitespace   = trailing-space
+	excludesfile = ~/.gitignore_global
+[diff]
+	colorMoved = default
+	tool       = code
+[difftool]
+	prompt = false
+[difftool "code"]
+	cmd = code --profile GIT --wait --diff --reuse-window $LOCAL $REMOTE
+[filter "lfs"]
+	clean    = git-lfs clean -- %f
+	process  = git-lfs filter-process
+	required = true
+	smudge   = git-lfs smudge -- %f
+[gui]
+	editor = code
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = diff3
+	tool          = code
+[mergetool]
+	keepBackup = false
+[mergetool "code"]
+	cmd = code --profile GIT --wait --reuse-window $MERGED
+[push]
+	default = current
+[sequence]
+	editor = code --profile GIT --wait --reuse-window
+[user]
+	name  = AlbertoVf
+	email = avf.git-repos@protonmail.com

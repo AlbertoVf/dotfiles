@@ -1,9 +1,9 @@
-- clean: ['~']
+- clean: ["~"]
 
 - defaults:
-    link:
-      create: true
-      force: true
+      link:
+          create: true
+          force: true
 
 - link:
-    ~/.dotly: os/linux/.dotly
+      ~/.screenlayout: os/linux/.screenlayout

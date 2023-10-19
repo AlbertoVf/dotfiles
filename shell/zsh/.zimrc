@@ -1,7 +1,26 @@
+#!/bin/sh
 # If you modify this execute `zimfw uninstall & zimfw install`
-zmodule zimfw/environment
-zmodule zimfw/git-info
-zmodule zimfw/input
+
+## zmodule
+
 zmodule zimfw/completion
-zmodule zsh-users/zsh-syntax-highlighting
+
+## plugins in repository
+
+zmodule marlonrichert/zsh-autocomplete
 zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+zmodule zdharma-continuum/fast-syntax-highlighting
+zmodule zsh-users/zsh-completions
+
+## Oh my zsh default plugins
+
+zmodule ohmyzsh/ohmyzsh --root plugins/aliases
+zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
+zmodule ohmyzsh/ohmyzsh --root plugins/gitignore
+zmodule ohmyzsh/ohmyzsh --root plugins/safe-paste
+zmodule ohmyzsh/ohmyzsh --root plugins/sudo
+zmodule ohmyzsh/ohmyzsh --root plugins/themes
+zmodule ohmyzsh/ohmyzsh --root plugins/zoxide
+zmodule ohmyzsh/ohmyzsh --root plugins/zsh-interactive-cd
