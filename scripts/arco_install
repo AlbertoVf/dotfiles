@@ -1,0 +1,6 @@
+#!/bin/sh
+
+git clone https://github.com/AlbertoVf/arco-install.sh
+
+cd arco-install
+sh arco-install.sh --total
