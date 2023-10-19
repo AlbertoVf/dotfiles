@@ -1,6 +1,4 @@
-<h1 align="center">
-  .dotfiles created using <a href="https://github.com/CodelyTV/dotly">🌚 dotly</a>
-</h1>
+# .dotfiles created using [🌚 dotly](https://github.com/CodelyTV/dotly)
 
 ## Restore your Dotfiles manually
 
@@ -15,11 +13,13 @@
 ## Restore your Dotfiles with script
 
 Using wget
+
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/restorer)
 ```
 
 Using curl
+
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/restorer)
 ```
