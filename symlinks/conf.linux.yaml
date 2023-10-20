@@ -9,11 +9,20 @@
       ~/.config/archlinux-logout: os/linux/archlinux-logout
       ~/.config/gtk-3.0/settings.ini: os/linux/gtk-3.0/settings.ini
       ~/.config/Kvantum/kvantum.kvconfig: os/linux/Kvantum/kvantum.kvconfig
+      ~/.config/openbox: os/linux/openbox
       ~/.config/picom/picom.conf: os/linux/picom/picom.conf
+      ~/.config/qtile: os/linux/qtile
       ~/.config/sxhkd/sxhkdrc: os/linux/sxhkd/sxhkdrc
       ~/.config/Thunar/accels.scm: os/linux/Thunar/accels.scm
       ~/.config/Thunar/uca.xml: os/linux/Thunar/uca.xml
+      ~/.config/tint2: os/linux/tint2
       ~/.config/user-dirs.dirs: os/linux/user-dirs.dirs
       ~/.config/variety/variety.conf: os/linux/variety/variety.conf
+      ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+      ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-appfinder.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xfce4-appfinder.xml
+      ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+      ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+      ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+      ~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
       ~/.gtkrc-2.0: os/linux/.gtkrc-2.0
       ~/.screenlayout: os/linux/.screenlayout
