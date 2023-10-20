@@ -23,3 +23,5 @@
       ~/.zlogin: shell/zsh/.zlogin
       ~/.zshenv: shell/zsh/.zshenv
       ~/.zshrc: shell/zsh/.zshrc
+      ~/.config/rofi/config.rasi: finder/rofi/config.rasi
+      ~/.config/rofi/powermenu.sh: finder/rofi/powermenu.sh

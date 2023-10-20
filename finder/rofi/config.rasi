@@ -1,4 +1,4 @@
-@theme "./rofi/files/launchers/type-6/style-6.rasi"
+@theme "./launchers/type-6/style-6.rasi"
 
 configuration {
     modi                          : "file-browser-extended,drun,window,ssh,emoji";
