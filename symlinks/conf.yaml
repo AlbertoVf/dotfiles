@@ -20,7 +20,7 @@
       ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
       ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
       ~/.config/rofi/config.rasi: finder/rofi/config.rasi
-      ~/.config/rofi/powermenu.sh: finder/rofi/powermenu.sh
+      ~/.config/rofi/scripts: finder/rofi/scripts
       ~/.gitconfig: git/.gitconfig
       ~/.gitignore_global: git/.gitignore_global
       ~/.profile: shell/.profile
