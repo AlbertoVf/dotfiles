@@ -11,8 +11,8 @@
 ## style-6   style-7   style-8   style-9   style-10
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-2'
+dir="$HOME/.config/rofi/powermenu/type-6"
+theme='style-6'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -26,13 +26,13 @@ suspend=''
 logout=''
 yes=''
 no=''
-
+date="$(date +"%a %d %b %H:%M")"
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "Uptime: $uptime" \
-		-mesg "Uptime: $uptime" \
+		-p "[$USER] $date" \
 		-theme ${dir}/${theme}.rasi
+		# -mesg "Uptime: $uptime" \
 }
 
 # Confirmation CMD
@@ -55,13 +55,13 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$shutdown\n$logout\n$lock\n$reboot\n" | rofi_cmd
 }
 
 # Execute Command
 run_cmd() {
-	selected="$(confirm_exit)"
-	if [[ "$selected" == "$yes" ]]; then
+	# selected="$(confirm_exit)"
+	# if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
@@ -83,31 +83,31 @@ run_cmd() {
 				qtile cmd-obj -o cmd -f shutdown
 			fi
 		fi
-	else
-		exit 0
-	fi
+	# else
+	# 	exit 0
+	# fi
 }
 
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $shutdown)
+	$shutdown)
 		run_cmd --shutdown
-        ;;
-    $reboot)
+		;;
+	$reboot)
 		run_cmd --reboot
-        ;;
-    $lock)
+		;;
+	$lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
 		fi
-        ;;
-    $suspend)
+		;;
+	$suspend)
 		run_cmd --suspend
-        ;;
-    $logout)
+		;;
+	$logout)
 		run_cmd --logout
-        ;;
+		;;
 esac

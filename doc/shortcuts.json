@@ -13,7 +13,8 @@
 		"{Left, Right}": "variety -{p,n}"
 	},
 	"alt + shift": {
-		"{h, j, k, l}": "rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}"
+		"{h, j, k, l}": "rofi -show file-browser-extended -file-browser-dir {~/.config,'~/Proyectos/Git y Workspaces', ~/.screenlayout,~/Proyectos}",
+		"v": "xfce4-clipman-history"
 	},
 	"super": {
 		"a": "xfce4-appfinder",
