@@ -7,3 +7,5 @@ shell/zsh/.zim
 
 shell/zsh/**/**.zwc
 shell/zsh/**/**.zwc.old
+
+doc/bookmarks.html

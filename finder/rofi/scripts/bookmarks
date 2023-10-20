@@ -1,0 +1,22 @@
+#!/bin/bash
+
+rofi_bookmarks() {
+	# Archivo HTML que deseas leer
+	html_file="$DOTFILES_PATH/doc/bookmarks.html"
+
+	# Utiliza grep para extraer los enlaces del archivo HTML
+	links=$(grep -o 'href="[^"]*"' "$html_file" | sed 's/href="//;s/"//')
+
+	# Convierte los enlaces en un formato adecuado para rofi
+	rofi_input=$(echo "$links" | sed 's/\n/\n/g')
+
+	# Utiliza rofi para mostrar los enlaces y seleccionar uno
+	selected_link=$(echo "$rofi_input" | rofi -dmenu -p "Selecciona un enlace:")
+
+	# Abre el enlace seleccionado en Firefox
+	if [ -n "$selected_link" ]; then
+		$BROWSER "$selected_link" &
+	fi
+}
+
+rofi_bookmarks

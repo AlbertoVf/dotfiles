@@ -38,6 +38,7 @@
 		"s": "pamac-manager",
 		"v": "vlc --video-on-top",
 		"x": "~/.config/rofi/scripts/powermenu",
+		"z": "~/.config/rofi/scripts/bookmarks",
 		"{c, f, F1}": "{chromium,firefox,brave}"
 	},
 	"super + ctrl": {
