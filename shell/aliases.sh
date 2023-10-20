@@ -42,7 +42,7 @@ alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirror
 
 # git alias {
 alias g="/usr/bin/git"
-alias dotf="code $DOTFILES_PATH"
+alias dotf="code $DOTFILES_PATH && exit"
 # }
 
 # Youtube-dl alias {

@@ -63,11 +63,10 @@ create_playlist() {
 }
 
 create_sxhkdrc() {
-	folder="$HOME/.config/sxhkd"
-	input_file="$folder/shortcuts.json"
+	input_file="$HOME/.dotfiles/doc/shortcuts.json"
 	output_file="$HOME/.dotfiles/os/linux/sxhkd/sxhkdrc"
 
-	cp -f $output_file $folder/sxhkdrc.old
+	cp -f $output_file $HOME/.config/sxhkd/sxhkdrc.old
 	jq -r 'keys[] as $k | "\($k) \(.[$k] | to_entries[] | [.key, .value] | @tsv)"' "$input_file" >"$output_file"
 
 	sed -i 's/^ //g' "$output_file"

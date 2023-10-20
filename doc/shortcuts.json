@@ -1,0 +1,53 @@
+{
+	"": {
+		"Print": "scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'",
+		"XF86AudioMute": "amixer -D pulse set Master 1+ toggle",
+		"{XF86AudioLowerVolume, XF86AudioRaiseVolume}": "amixer set Master {5%-,5%+}",
+		"{XF86AudioNext, XF86AudioPlay, XF86AudioPrev, XF86AudioStop}": "playerctl {next,play-pause,previous,stop}",
+		"{XF86MonBrightnessDown, XF86MonBrightnessUp}": "xbacklight {-dec,-inc} 5"
+	},
+	"alt": {
+		"Escape": "xfce4-taskmanager",
+		"Print": "xfce4-screenshooter",
+		"{F1, F2, F3, F4, F5}": "rofi -show {file-browser-extended,drun,window,ssh,emoji}",
+		"{Left, Right}": "variety -{p,n}"
+	},
+	"alt + shift": {
+		"{h, j, k, l}": "rofi -show file-browser-extended -file-browser-dir {~/.config,~/Proyectos/Git, ~/.screenlayout,~/Proyectos}"
+	},
+	"super": {
+		"a": "xfce4-appfinder",
+		"b": "bitwarden-desktop",
+		"e": "code",
+		"F10": "spotify",
+		"F11": "kodi",
+		"F2": "code",
+		"F3": "gimp",
+		"F4": "timeshift-launcher",
+		"F5": "notion-app",
+		"F6": "ferdium",
+		"F7": "virtualbox",
+		"F8": "thunar",
+		"F9": "thunderbird",
+		"g": "github-desktop",
+		"KP_Enter": "gnome-calculator",
+		"m": "pragha",
+		"n": "notion-app",
+		"r": "retroarch",
+		"Return": "kitty",
+		"s": "pamac-manager",
+		"v": "vlc --video-on-top",
+		"x": "~/.config/rofi/scripts/powermenu",
+		"{c, f, F1}": "{chromium,firefox,brave}"
+	},
+	"super + ctrl": {
+		"Return": "thunar"
+	},
+	"super + shift": {
+		"1": "kitty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --off --output HDMI2 --off",
+		"2": "kitty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal",
+		"Escape": "xkill",
+		"o": "picom ~/.config/picom/picom-toggle.sh",
+		"s": "pkill -USR1 -x sxhkd"
+	}
+}

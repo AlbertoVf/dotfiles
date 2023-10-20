@@ -1,5 +1,5 @@
 #!/bin/sh
-# Generated on 2023-10-20 00:14
+# Generated on 2023-10-20 14:03
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 XF86AudioMute
@@ -63,7 +63,9 @@ super s
 super v
 	vlc --video-on-top
 super x
-	sh ~/.config/rofi/powermenu
+	~/.config/rofi/scripts/powermenu
+super z
+	~/.config/rofi/scripts/bookmarks
 super {c, f, F1}
 	{chromium,firefox,brave}
 super + ctrl Return
