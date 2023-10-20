@@ -6,4 +6,11 @@
           force: true
 
 - link:
+      ~/.config/archlinux-logout: os/linux/archlinux-logout
+      ~/.config/gtk-3.0/settings.ini: os/linux/gtk-3.0/settings.ini
+      ~/.config/Kvantum/kvantum.kvconfig: os/linux/Kvantum/kvantum.kvconfig
+      ~/.config/picom/picom.conf: os/linux/picom/picom.conf
+      ~/.config/user-dirs.dirs: os/linux/user-dirs.dirs
+      ~/.config/variety/variety.conf: os/linux/variety/variety.conf
+      ~/.gtkrc-2.0: os/linux/.gtkrc-2.0
       ~/.screenlayout: os/linux/.screenlayout

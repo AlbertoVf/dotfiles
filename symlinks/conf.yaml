@@ -13,10 +13,12 @@
       ~/.bash_profile: shell/bash/.bash_profile
       ~/.bashrc: shell/bash/.bashrc
       ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yml
+      ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
       ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
       ~/.gitconfig: git/.gitconfig
       ~/.gitignore_global: git/.gitignore_global
       ~/.profile: shell/.profile
+      ~/.wallpapers: modules/wallpapers
       ~/.zimrc: shell/zsh/.zimrc
       ~/.zlogin: shell/zsh/.zlogin
       ~/.zshenv: shell/zsh/.zshenv
