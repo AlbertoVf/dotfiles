@@ -1,0 +1,23 @@
+{
+	"Create function fragment": {
+		"prefix": "@function",
+		"description": "Build a function fragment",
+		"body": [
+			"$1 (){",
+			"\t$0",
+			"}",
+			"$1"
+		],
+	},
+	"For loop": {
+		"prefix": "@for",
+		"description": "For loop. ",
+		"body": [
+			"${1:my_array}=(\"elemento1\" \"elemento2\")",
+			"for element in \"${${1:my_array}[@]}\";do",
+			"\techo \"\\$element\"",
+			"done",
+			"$0"
+		],
+	},
+}

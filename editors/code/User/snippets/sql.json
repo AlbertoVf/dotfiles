@@ -1,0 +1,31 @@
+{
+	"Create table": {
+		"prefix": "@table",
+		"description": "Build table script",
+		"body": [
+			"CREATE TABLE `$1`(",
+			"id int NOT NULL PRIMARY KEY AUTO_INCREMENT,",
+			"$2,",
+			");"
+		],
+	},
+	"Insert value": {
+		"prefix": "@insert",
+		"description": "Build insert script",
+		"body": [
+			"INSERT INTO `${1:nombre de tabla}` (${2:campos})",
+			"VALUES",
+			"\t(${3:valores de elemento}),"
+		],
+	},
+	"Create trigger": {
+		"prefix": "@trigger",
+		"description": "Build trigger script",
+		"body": [
+			" CREATE FUNCTION `$1`($2) RETURNS int(11)",
+			"BEGIN",
+			"$0",
+			"END"
+		],
+	},
+}

@@ -1,0 +1,41 @@
+{
+	"Create front matter": {
+		"prefix": "@matter",
+		"description": "Create front matter. ",
+		"body": [
+			"---",
+			"date: @date-long",
+			"title: @title",
+			"author: ${1:AlbertoVf}",
+			"tags:",
+			"resume: ${2:descripcion}",
+			"footer: \\${title} - [\\${pageNo}]"
+			"---"
+		],
+	},
+	"Create marp front matter": {
+		"prefix": "@marp",
+		"description": "Create marp front-matter.",
+		"body": [
+			"---",
+			"marp: true",
+			"size: 16:9",
+			"paginate: true",
+			"theme: uncover",
+			"transition: fade-out",
+			"math: mathjax",
+			"---",
+			"<style>",
+			"\th1 +h2{ font-style: italic; font-size: 95%; }",
+			"\tp{ text-align:justify; letter-spacing: 0.4px; font-size: 70%; }",
+			"\tblockquote{ font-style: italic; font-size:100%; }",
+			"</style>",
+			"${0}"
+		],
+	},
+	"Tabla": {
+	"prefix": "@table",
+	"description": "Tabla. ",
+	"body": ["| $1 | $2 | $3 |", "| -- | -- | -- |", "| $4 | $5 | $6 |"],
+	},
+}

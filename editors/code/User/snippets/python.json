@@ -1,0 +1,26 @@
+{
+	"Create a class": {
+		"prefix": "@class",
+		"description": "Build a class who the name is the filename",
+		"body": [
+			"class ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}:",
+			"\tdef __init__(self,$2,$3):",
+			"\t\tself.$2 = $2",
+			"\t\tself.$3 = $3",
+			"\tdef __str__(self):",
+			"\t\treturn f'{self.$2}',{self.$3}",
+			"\tdef __dict__(self):",
+			"\t\treturn{'$2':f'{self.$2}','$3':f'{self.$3}'}",
+			"$0",
+			"c = ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}()"
+		],
+	},
+	"main": {
+		"prefix": "@main",
+		"description": "Code snippet for a `if __name__ == \"__main__\": ...` block",
+		"body": [
+			"if __name__ == \"__main__\":",
+			"\t${1:pass}"
+		],
+	},
+}

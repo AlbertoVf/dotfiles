@@ -1,0 +1,17 @@
+{
+	"Imprime": {
+		"prefix": "@sout",
+		"description": "Imprime. ",
+		"body": ["System.out.println(\"$1\");"]
+	},
+	"Main":{
+		"prefix":"@main",
+		"description": "Main class",
+		"body":[
+			"public class $TM_FILENAME_BASE {",
+			"\tpublic static void main(String[] args) {",
+			"\t}"
+			"}"
+		]
+	}
+}

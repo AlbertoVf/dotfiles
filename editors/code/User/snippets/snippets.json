@@ -1,0 +1,15 @@
+{
+	// https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
+
+	"Fragmendo de codigo": {
+		"prefix": "@fragment",
+		"description": "Build snippet",
+		"body": [
+			"\"$1\": {",
+			"\"prefix\": \"@$2\",",
+			"\"description\": \"$1. $4\",",
+			"\"body\": [\"$3\"],",
+			"},"
+		],
+	}
+}

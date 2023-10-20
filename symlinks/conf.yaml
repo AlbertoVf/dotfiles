@@ -13,16 +13,20 @@
       ~/.bash_profile: shell/bash/.bash_profile
       ~/.bashrc: shell/bash/.bashrc
       ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yml
+      ~/.config/Code/User/keybindings.json: editors/code/User/keybindings.json
+      ~/.config/Code/User/profiles: editors/code/User/profiles
+      editors/code/User/settings.json: ~/.config/Code/User/settings.json
+      ~/.config/Code/User/snippets: editors/code/User/snippets
       ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
       ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
+      ~/.config/rofi/config.rasi: finder/rofi/config.rasi
+      ~/.config/rofi/powermenu.sh: finder/rofi/powermenu.sh
       ~/.gitconfig: git/.gitconfig
       ~/.gitignore_global: git/.gitignore_global
       ~/.profile: shell/.profile
+      ~/.vimrc: editors/vim/.vimrc
       ~/.wallpapers: modules/wallpapers
       ~/.zimrc: shell/zsh/.zimrc
       ~/.zlogin: shell/zsh/.zlogin
       ~/.zshenv: shell/zsh/.zshenv
       ~/.zshrc: shell/zsh/.zshrc
-      ~/.config/rofi/config.rasi: finder/rofi/config.rasi
-      ~/.config/rofi/powermenu.sh: finder/rofi/powermenu.sh
-      ~/.vimrc : editors/vim/.vimrc

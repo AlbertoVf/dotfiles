@@ -1,0 +1,68 @@
+{
+	"Create anonymous function": {
+		"scope": "javascript,typescript",
+		"prefix": "@anon",
+		"description": "Build an anonymous function in javascript,typescript",
+		"body": [
+			"const $1 = ($2) => {",
+			"  $0;",
+			"};",
+			""
+		],
+	},
+	"Create function": {
+		"scope": "javascript,typescript",
+		"prefix": "@function",
+		"description": "Build function",
+		"body": [
+			"function $1 (${2:}){",
+			"$0",
+			"}"
+		]
+	},
+	"Create test class": {
+		"prefix": "@test-class",
+		"scope": "typescript",
+		"description": "Create a test class",
+		"body": [
+			"import ${1/(^.)/${1:/upcase}/} from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
+			"describe('${2:description of test class}', () => {",
+			"$0",
+			"});"
+		],
+	},
+	"Create test": {
+		"prefix": "@test",
+		"scope": "typescript",
+		"description": "Create a test implementation",
+		"body": [
+			"test('${1: description of test}', () => {",
+			"\tlet actual= ${2:function}($3)",
+			"\tlet expected= ${4:'expected value'}",
+			"\texpect(actual).toBe(expected)",
+			"});",
+		],
+	},
+	"jQuery": {
+		"prefix": "@jquery",
+		"scope": "javascript",
+		"description": "Build jquery function",
+		"body": [
+			"$(() => {",
+			"  $0;",
+			"});",
+			""
+		],
+	},
+	"JS": {
+		"prefix": "@ready",
+		"scope": "javascript",
+		"description": "Build ready function",
+		"body": [
+			"$(document).ready(function () {",
+			"  $0;",
+			"});",
+			""
+		],
+	},
+}

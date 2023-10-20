@@ -1,0 +1,22 @@
+{
+	"create esqueleton": {
+		"prefix": "@main",
+		"description": "Create an esqueleton",
+		"body": [
+			"body {",
+			"\t$1",
+			"\theader { $2 }",
+			"\tmain { $3 }",
+			"\tfooter { $4 }",
+			"}",
+			"{$0}"
+		],
+	},
+	"create font": {
+		"prefix": "@font",
+		"description": "Create an esqueleton",
+		"body": [
+			"font: ${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:font-family};"
+		],
+	}
+}

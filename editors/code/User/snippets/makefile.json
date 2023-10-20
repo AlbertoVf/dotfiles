@@ -1,0 +1,66 @@
+{
+	"Prepare": {
+		"prefix": "@var",
+		"description": "Create vars. ",
+		"body": [
+			".PHONY: install build start test lint format",
+			"LANG = ${1:language name}",
+			"PACKAGE_MANAGE = ${2:package manager}",
+			"PROJECT_MANAGE = ${3:framework manager}"
+		],
+	},
+	"init project": {
+		"prefix": "@install",
+		"description": "Install dependencies",
+		"body": [
+			"install:",
+			"\t@echo '🏗️ Instalando dependencias del proyecto'",
+			"\t${0}"
+		]
+	},
+	"Run project": {
+		"prefix": "@build",
+		"description": "Build project, prepare to export. build dependencies file",
+		"body": [
+			"build:",
+			"\t@echo '📦 Exportando proyecto'",
+			"\t${0}"
+		]
+	},
+	"start project": {
+		"prefix": "@start",
+		"description": "start project. ",
+		"body": [
+			"start:",
+			"\t@echo '🏃 Ejecutando el proyecto'",
+			"\t${0}"
+		],
+	},
+	"Run test": {
+		"prefix": "@test",
+		"description": "Run tests",
+		"body": [
+			"test:",
+			"\t@echo '🧪 Ejecutando test'",
+			"\t${0}"
+		]
+	},
+	"linter": {
+		"prefix": "@linter",
+		"description": "linter. Comprobar estilo de codigo",
+		"body": [
+			"linter:",
+			"\t@echo '🪛 Comprobando estilo de codigo'",
+			"\t${0}"
+		],
+	},
+	"format": {
+		"prefix": "@format",
+		"description": "formatear codigo",
+		"body": [
+			"format:",
+			"\t@echo '🖊️ Aplicando formato al codigo'",
+			"\t${0}"
+		],
+	},
+}

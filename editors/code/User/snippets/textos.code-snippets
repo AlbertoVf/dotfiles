@@ -1,0 +1,80 @@
+{
+	// https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
+	"Write shebang": {
+		"prefix": "@bang",
+		"description": "Create a sheebang in linux",
+		"body": "#!/bin/$1\n\n$0",
+	},
+	"lorem ipsum": {
+		"prefix": "@lorem",
+		"description": "Write lorem ipsum",
+		"body": [
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius necessitatibus reprehenderit doloribus magnam aliquid in molestiae, ullam perspiciatis aspernatur ad, fuga rem tempore asperiores eligendi dolores. Id dolore nulla veniam?",
+			"Inventore dolor exercitationem dignissimos magni eveniet, provident eum nihil beatae architecto fugiat sit necessitatibus sint molestias, amet accusantium quae, dolores earum pariatur! Deserunt quod consectetur impedit laudantium molestiae ratione fugiat.",
+		],
+	},
+	"Create title": {
+		"prefix": "@title",
+		"scope": "yaml,markdown",
+		"description": "Create title.",
+		"body": [
+			"${TM_FILENAME_BASE/[^0-9^a-z]/ /gi}",
+		],
+	},
+
+	// TRANSFORMACION DE TEXTO
+
+	"Eliminar guiones": {
+		"body": [
+			"${TM_SELECTED_TEXT/[-\\.+_]/ /g}"
+		],
+		"description": "ELimina separadores de palabras"
+	},
+	"Eliminar caracteres no alfabeticos": {
+		"body": [
+			"${TM_SELECTED_TEXT/[^a-zA-Z]/ /g}"
+		],
+		"description": "Elimina caracteres no alfanuméricos"
+	},
+	"Transformar espacios": {
+		"body": [
+			"${TM_SELECTED_TEXT/ /-/g}"
+		],
+		"description": "Transforma ' ' en '-'"
+	},
+	"Transformar espacios a HTML": {
+		"body": [
+			"${TM_SELECTED_TEXT/ /%20/g}"
+		],
+		"description": "Transforma ' ' en su codigo '%20'"
+	},
+	"Eliminar espacios duplicados": {
+		"body": [
+			"${TM_SELECTED_TEXT/ +/ /g}"
+		],
+		"description": "Elimina los espacios duplicados"
+	},
+	"Transformar a titulo": {
+		"description": "Transformar a Titulo. Transforma la primera letra en mayusculas",
+		"body": [
+			"${TM_SELECTED_TEXT/(^.)(.*)/${1:/upcase}${2:/downcase}/}",
+		],
+	},
+
+	// FECHAS
+
+	"Date short": {
+		"prefix": "@date-short",
+		"description": "Write date in short mode yyyy-mm-dd T hh:mm.ss+ZZ",
+		"body": [
+			"$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE.${CURRENT_SECOND}$CURRENT_TIMEZONE_OFFSET"
+		],
+	},
+	"Date long": {
+		"prefix": "@date-long",
+		"description": "Write date in long mode: day number month year",
+		"body": [
+			"$CURRENT_DAY_NAME $CURRENT_DATE de $CURRENT_MONTH_NAME de $CURRENT_YEAR",
+		],
+	},
+}
