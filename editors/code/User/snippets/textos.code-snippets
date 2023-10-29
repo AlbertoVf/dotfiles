@@ -1,80 +1,55 @@
 {
 	// https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
-	"Write shebang": {
-		"prefix": "@bang",
-		"description": "Create a sheebang in linux",
-		"body": "#!/bin/$1\n\n$0",
+	"Escribe un shebang con env": {
+		"prefix": "bang",
+		"description": "Escribe un shebang con env. en linux",
+		"body": "#!/usr/bin/env $1"
 	},
-	"lorem ipsum": {
-		"prefix": "@lorem",
-		"description": "Write lorem ipsum",
+	"Escribe un shebang": {
+		"prefix": "bang",
+		"description": "Escribe un shebang. en linux",
+		"body": "#!/bin/sh $1"
+	},
+	"Escribe texto de muestra": {
+		"prefix": "lorem",
+		"description": "Escribe texto de muestra. Lineas de <lorem ipsum>",
 		"body": [
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius necessitatibus reprehenderit doloribus magnam aliquid in molestiae, ullam perspiciatis aspernatur ad, fuga rem tempore asperiores eligendi dolores. Id dolore nulla veniam?",
 			"Inventore dolor exercitationem dignissimos magni eveniet, provident eum nihil beatae architecto fugiat sit necessitatibus sint molestias, amet accusantium quae, dolores earum pariatur! Deserunt quod consectetur impedit laudantium molestiae ratione fugiat.",
-		],
+		]
 	},
-	"Create title": {
-		"prefix": "@title",
+	"Crea un titulo para el fichero": {
+		"prefix": "title",
 		"scope": "yaml,markdown",
-		"description": "Create title.",
-		"body": [
-			"${TM_FILENAME_BASE/[^0-9^a-z]/ /gi}",
-		],
+		"description": "Crea un titulo para el fichero. A partir del nombre del fichero elimina caracteres no alfanumericos",
+		"body": "${TM_FILENAME_BASE/[^0-9^a-z]/ /gi}"
 	},
-
 	// TRANSFORMACION DE TEXTO
-
 	"Eliminar guiones": {
-		"body": [
-			"${TM_SELECTED_TEXT/[-\\.+_]/ /g}"
-		],
-		"description": "ELimina separadores de palabras"
-	},
-	"Eliminar caracteres no alfabeticos": {
-		"body": [
-			"${TM_SELECTED_TEXT/[^a-zA-Z]/ /g}"
-		],
-		"description": "Elimina caracteres no alfanuméricos"
+		"description": "Eliminar guiones. Elimina cualquier tipo de separador entre palabras y lo substituye por ' '",
+		"body": "${TM_SELECTED_TEXT/[-\\.+_]/ /g}"
 	},
 	"Transformar espacios": {
-		"body": [
-			"${TM_SELECTED_TEXT/ /-/g}"
-		],
-		"description": "Transforma ' ' en '-'"
+		"description": "Transforma ' ' en '-'",
+		"body": "${TM_SELECTED_TEXT/ /-/g}"
 	},
 	"Transformar espacios a HTML": {
-		"body": [
-			"${TM_SELECTED_TEXT/ /%20/g}"
-		],
-		"description": "Transforma ' ' en su codigo '%20'"
+		"description": "Transforma ' ' en su codigo '%20'",
+		"body": "${TM_SELECTED_TEXT/ /%20/g}"
 	},
 	"Eliminar espacios duplicados": {
-		"body": [
-			"${TM_SELECTED_TEXT/ +/ /g}"
-		],
-		"description": "Elimina los espacios duplicados"
+		"description": "Elimina espacios duplicados",
+		"body": "${TM_SELECTED_TEXT/ +/ /g}"
 	},
-	"Transformar a titulo": {
-		"description": "Transformar a Titulo. Transforma la primera letra en mayusculas",
-		"body": [
-			"${TM_SELECTED_TEXT/(^.)(.*)/${1:/upcase}${2:/downcase}/}",
-		],
-	},
-
 	// FECHAS
-
-	"Date short": {
-		"prefix": "@date-short",
-		"description": "Write date in short mode yyyy-mm-dd T hh:mm.ss+ZZ",
-		"body": [
-			"$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE.${CURRENT_SECOND}$CURRENT_TIMEZONE_OFFSET"
-		],
+	"Fecha corta": {
+		"prefix": "date",
+		"description": "Escribe la fecha con formato yyyy-mm-dd T hh:mm.ss+ZZ",
+		"body": "$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE.${CURRENT_SECOND}$CURRENT_TIMEZONE_OFFSET"
 	},
-	"Date long": {
-		"prefix": "@date-long",
-		"description": "Write date in long mode: day number month year",
-		"body": [
-			"$CURRENT_DAY_NAME $CURRENT_DATE de $CURRENT_MONTH_NAME de $CURRENT_YEAR",
-		],
-	},
+	"Fecha larga": {
+		"prefix": "date",
+		"description": "Escribe la fecha con formato 'dia numero de mes de año'",
+		"body": "$CURRENT_DAY_NAME $CURRENT_DATE de $CURRENT_MONTH_NAME de $CURRENT_YEAR"
+	}
 }

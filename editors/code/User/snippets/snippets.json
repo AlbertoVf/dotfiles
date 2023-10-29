@@ -1,15 +1,25 @@
 {
 	// https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
-
 	"Fragmendo de codigo": {
-		"prefix": "@fragment",
-		"description": "Build snippet",
+		"prefix": "fragment",
+		"description": "Crea un fragmento de codigo",
 		"body": [
 			"\"$1\": {",
 			"\"prefix\": \"@$2\",",
 			"\"description\": \"$1. $4\",",
-			"\"body\": [\"$3\"],",
+			"\"body\": [\n\"$0\"\n],",
 			"},"
 		],
-	}
+	},
+	"Plantilla": {
+		"prefix": "template",
+		"description": "Crea una plantilla",
+		"body": [
+			"\"$1\": {",
+			"\"isFileTemplate\": \"true\",",
+			"\"description\": \"$1. $4\",",
+			"\"body\": [\n\"$0\"\n],",
+			"},"
+		],
+	},
 }

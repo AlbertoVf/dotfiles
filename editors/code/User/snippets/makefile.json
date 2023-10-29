@@ -1,7 +1,7 @@
 {
-	"Prepare": {
-		"prefix": "@var",
-		"description": "Create vars. ",
+	"Agrega variables de uso": {
+		"prefix": "var",
+		"description": "Agrega variables de uso.",
 		"body": [
 			".PHONY: install build start test lint format",
 			"LANG = ${1:language name}",
@@ -9,36 +9,36 @@
 			"PROJECT_MANAGE = ${3:framework manager}"
 		],
 	},
-	"init project": {
-		"prefix": "@install",
-		"description": "Install dependencies",
+	"install": {
+		"prefix": "install",
+		"description": "Script para la instalacion de dependencias",
 		"body": [
 			"install:",
 			"\t@echo '🏗️ Instalando dependencias del proyecto'",
 			"\t${0}"
 		]
 	},
-	"Run project": {
+	"Export": {
 		"prefix": "@build",
-		"description": "Build project, prepare to export. build dependencies file",
+		"description": "Script para exportar el proyecto",
 		"body": [
 			"build:",
 			"\t@echo '📦 Exportando proyecto'",
 			"\t${0}"
 		]
 	},
-	"start project": {
-		"prefix": "@start",
-		"description": "start project. ",
+	"Start": {
+		"prefix": "start",
+		"description": "Ejecuta el proyecto.",
 		"body": [
 			"start:",
 			"\t@echo '🏃 Ejecutando el proyecto'",
 			"\t${0}"
-		],
+		]
 	},
-	"Run test": {
-		"prefix": "@test",
-		"description": "Run tests",
+	"Test": {
+		"prefix": "test",
+		"description": "Ejecuta los test",
 		"body": [
 			"test:",
 			"\t@echo '🧪 Ejecutando test'",
@@ -46,21 +46,28 @@
 		]
 	},
 	"linter": {
-		"prefix": "@linter",
-		"description": "linter. Comprobar estilo de codigo",
+		"prefix": "lint",
+		"description": "Comprobar estilo de codigo",
 		"body": [
 			"linter:",
 			"\t@echo '🪛 Comprobando estilo de codigo'",
 			"\t${0}"
-		],
+		]
 	},
 	"format": {
-		"prefix": "@format",
-		"description": "formatear codigo",
+		"prefix": "format",
+		"description": "Formatear codigo",
 		"body": [
 			"format:",
 			"\t@echo '🖊️ Aplicando formato al codigo'",
 			"\t${0}"
-		],
+		]
+	},
+	"Build makefile": {
+		"isFileTemplate": "true",
+		"description": "Build makefile.",
+		"body": [
+			"var", "install", "build", "start", "test", "lint", "format",
+		]
 	},
 }

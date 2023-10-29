@@ -1,21 +1,21 @@
 {
-	"Create front matter": {
-		"prefix": "@matter",
-		"description": "Create front matter. ",
+	"Crea front matter": {
+		"prefix": "matter",
+		"description": "Crea front matter para un documento",
 		"body": [
 			"---",
-			"date: @date-long",
-			"title: @title",
+			"date: date",
+			"title: title",
 			"author: ${1:AlbertoVf}",
 			"tags:",
 			"resume: ${2:descripcion}",
-			"footer: \\${title} - [\\${pageNo}]"
+			// "footer: \\${title} - [\\${pageNo}]",
 			"---"
-		],
+		]
 	},
-	"Create marp front matter": {
-		"prefix": "@marp",
-		"description": "Create marp front-matter.",
+	"Crea front matter presentacion": {
+		"prefix": "matter",
+		"description": "Crea un front matter para una presentacion con marp",
 		"body": [
 			"---",
 			"marp: true",
@@ -31,11 +31,15 @@
 			"\tblockquote{ font-style: italic; font-size:100%; }",
 			"</style>",
 			"${0}"
-		],
+		]
 	},
 	"Tabla": {
-	"prefix": "@table",
-	"description": "Tabla. ",
-	"body": ["| $1 | $2 | $3 |", "| -- | -- | -- |", "| $4 | $5 | $6 |"],
+		"prefix": "table",
+		"description": "Crea una tabla",
+		"body": [
+			"| $1 | $2 | $3 |",
+			"| -- | -- | -- |",
+			"| $4 | $5 | $6 |"
+		]
 	},
 }

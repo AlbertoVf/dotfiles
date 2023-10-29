@@ -1,7 +1,7 @@
 {
-	"create esqueleton": {
-		"prefix": "@main",
-		"description": "Create an esqueleton",
+	"Crea una plantilla": {
+		"isFileTemplate":"true",
+		"description": "Crea una plantilla generica con los componentes basicos",
 		"body": [
 			"body {",
 			"\t$1",
@@ -10,13 +10,13 @@
 			"\tfooter { $4 }",
 			"}",
 			"{$0}"
-		],
+		]
 	},
-	"create font": {
-		"prefix": "@font",
-		"description": "Create an esqueleton",
+	"Crea propiedad font": {
+		"prefix": "font",
+		"description": "Crea la propiedad font",
 		"body": [
 			"font: ${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:font-family};"
-		],
+		]
 	}
 }

@@ -1,7 +1,7 @@
 {
-	"puppeteer": {
-		"prefix": "@print",
-		"description": "Yaml format to print with puppeteer ",
+	"puppeteer - extended": {
+		"prefix": "print",
+		"description": "puppeteer.Yaml para exportar pdf con markdown-extended",
 		"body": [
 			"puppeteer:",
 			"\tpdf:"
@@ -16,8 +16,8 @@
 		],
 	},
 	"puppeteer - markdown preview": {
-		"prefix": "@puppeteer",
-		"description": "Yaml format to print with puppeteer ",
+		"prefix": "print",
+		"description": "puppeteer - markdown preview. Configuracion Yaml para exportar a pdf con markdown preview",
 		"body": [
 			"puppeteer:",
 			"\tformat: A4",

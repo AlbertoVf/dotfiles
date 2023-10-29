@@ -1,29 +1,29 @@
 {
-	"Create anonymous function": {
+	"Funcion anonima": {
 		"scope": "javascript,typescript",
-		"prefix": "@anon",
-		"description": "Build an anonymous function in javascript,typescript",
+		"prefix": "function",
+		"description": "Crea una funcion anonima y la asigna a una variable",
 		"body": [
 			"const $1 = ($2) => {",
-			"  $0;",
-			"};",
+			"$0",
+			"}",
 			""
-		],
+		]
 	},
-	"Create function": {
+	"Funcion": {
 		"scope": "javascript,typescript",
-		"prefix": "@function",
-		"description": "Build function",
+		"prefix": "function",
+		"description": "Crea una funcion basica",
 		"body": [
-			"function $1 (${2:}){",
+			"function $1 ($2){",
 			"$0",
 			"}"
 		]
 	},
-	"Create test class": {
-		"prefix": "@test-class",
-		"scope": "typescript",
-		"description": "Create a test class",
+	"Test file": {
+		"isFileTemplate": "true",
+		"scope": "typescript,javascript",
+		"description": "Crea una clase para realizar los tests.",
 		"body": [
 			"import ${1/(^.)/${1:/upcase}/} from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
 			"describe('${2:description of test class}', () => {",
@@ -31,33 +31,33 @@
 			"});"
 		],
 	},
-	"Create test": {
-		"prefix": "@test",
-		"scope": "typescript",
-		"description": "Create a test implementation",
+	"test": {
+		"prefix": "test",
+		"scope": "typescript,javascript",
+		"description": "Crea un test",
 		"body": [
 			"test('${1: description of test}', () => {",
-			"\tlet actual= ${2:function}($3)",
-			"\tlet expected= ${4:'expected value'}",
+			"\tlet actual = ${2:function}($3)",
+			"\tlet expected = ${4:'expected value'}",
 			"\texpect(actual).toBe(expected)",
 			"});",
 		],
 	},
 	"jQuery": {
-		"prefix": "@jquery",
+		"isFileTemplate": "true",
 		"scope": "javascript",
-		"description": "Build jquery function",
+		"description": "Crea un fichero con la declaracion de jquery",
 		"body": [
 			"$(() => {",
-			"  $0;",
+			"\t$0;",
 			"});",
 			""
 		],
 	},
-	"JS": {
-		"prefix": "@ready",
+	"Javascript": {
+		"isFileTemplate": "true",
 		"scope": "javascript",
-		"description": "Build ready function",
+		"description": "Inicia un script js que espera a su ejecucion",
 		"body": [
 			"$(document).ready(function () {",
 			"  $0;",

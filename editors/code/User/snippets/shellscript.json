@@ -1,23 +1,37 @@
 {
-	"Create function fragment": {
-		"prefix": "@function",
-		"description": "Build a function fragment",
+	"Crea una funcion": {
+		"prefix": "function",
+		"description": "Crea una funcion",
 		"body": [
-			"$1 (){",
+			"$1() {",
 			"\t$0",
 			"}",
 			"$1"
-		],
+		]
 	},
 	"For loop": {
-		"prefix": "@for",
-		"description": "For loop. ",
+		"prefix": "for",
+		"description": "Crea un bucle for que imprime los elementos de un array",
 		"body": [
 			"${1:my_array}=(\"elemento1\" \"elemento2\")",
 			"for element in \"${${1:my_array}[@]}\";do",
 			"\techo \"\\$element\"",
 			"done",
 			"$0"
-		],
+		]
+	},
+	"Helper": {
+		"prefix": "@help",
+		"description": "Crea un helper para describir la funcion y el uso",
+		"body": [
+			"##? Help : $0.",
+			"##? Usage:",
+			"##?\t$1 ${2:<file>}"
+		]
+	},
+	"Date": {
+		"prefix": "date",
+		"description": "Date. Imprime fecha",
+		"body": "echo \$(date +'%Y%m%d_%H%M%S')"
 	},
 }
