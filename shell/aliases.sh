@@ -45,21 +45,6 @@ alias g="/usr/bin/git"
 alias dotf="code $DOTFILES_PATH && exit"
 # }
 
-# Youtube-dl alias {
-# yt="youtube-dl"
-yt="yt-dlp"
-download="$(xdg-user-dir DOWNLOAD)/"
-audio_extension="mp3" # wav, mp3
-video_extension="mp4" # avi, mp4
-extract="-i -q --progress --embed-metadata --embed-thumbnail --audio-quality 0 -f bestaudio -x --audio-format $audio_extension"
-alias yt-audio="$yt $extract -o $download'%(title)s.%(ext)s' --no-playlist"
-alias yt-audio-list="$yt -w $extract -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-alias yt-audio-file="yt-audio --batch-file"
-alias yt-video="$yt --embed-metadata -f $video_extension -o $download'%(title)s.%(ext)s' --no-playlist"
-alias yt-video-list="$yt -w --embed-metadataa -f $video_extension -o $download'%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
-alias yt-video-file="yt-video --batch-file"
-# }
-
 # kitty + kitten {
 alias kitten="kitty +kitten"
 alias icat="kitten icat"
