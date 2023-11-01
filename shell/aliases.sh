@@ -11,12 +11,13 @@ alias man="batman"
 # }
 
 # Folders alias{
-alias l="exa -lh -s type --octal-permissions --time-style long-iso"   # long format, sorted by type, view octal permissions
-alias ls="exa --icons -tR -s type"                                    # Show files and dirs: sorted by type, icons, readable
-alias la="exa -alh -s type --octal-permissions --time-style long-iso" # long format, sorted by type, view octal permissions
-alias lsa="exa --icons -a -s type"                                    # all files and dirs, sorted by type
-alias lt="exa -aT --icons"                                            # tree listing
-alias lg="exa -lhaTI .git --icons --no-user --no-permissions --octal-permissions --git-ignore --git --no-time"
+alias l="exa -lh -s type --octal-permissions --time-style long-iso"                 # List files: view octal|permissions|size|usee|long format date|Name, sorted by type
+alias la="l -a"                                                                     # include hidden files
+alias ls="exa --icons -s type"                                                      # Show files and dirs: sorted by type with icons
+alias lsa="ls -a"                                                                   # include hidden
+alias lt="exa -T --icons --octal-permissions"                                       # tree listing
+alias lta="lt -a"                                                                   # include hidden
+alias ltg="lta -lh -I=.git --no-user --no-permissions --git-ignore --git --no-time" # view git structure: |octal|size|git status| name
 alias md="mkdir -p"
 alias cp="cp -i"
 alias mv="mv -i"
