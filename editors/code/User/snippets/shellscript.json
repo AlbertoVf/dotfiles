@@ -21,17 +21,24 @@
 		]
 	},
 	"Helper": {
-		"prefix": "@help",
+		"prefix": "help",
 		"description": "Crea un helper para describir la funcion y el uso",
 		"body": [
-			"##? Help : $0.",
-			"##? Usage:",
-			"##?\t$1 ${2:<file>}"
+			"##? usage  : ${TM_FILENAME} [${1:none}]\n",
+			"##? help   : $0.",
+			"##? options: "
 		]
 	},
-	"Date": {
+	"Echo fecha": {
 		"prefix": "date",
-		"description": "Date. Imprime fecha",
-		"body": "echo \$(date +'%Y%m%d_%H%M%S')"
+		"description": "Echo fecha. Imprime fecha yyy-mm-dd hh.mm.ss",
+		"body": "echo $(date +'%Y-%m-%d %H.%M.%S')"
+	},
+	"X args": {
+		"prefix": "xargs",
+		"description": "X args. ",
+		"body": [
+			"| xargs -I {}"
+		],
 	},
 }
