@@ -5,11 +5,11 @@
 		"description": "Escribe un shebang con env. en linux",
 		"body": "#!/usr/bin/env $1"
 	},
-	"Escribe un shebang": {
-		"prefix": "bang",
-		"description": "Escribe un shebang. en linux",
-		"body": "#!/bin/sh $1"
-	},
+	// "Escribe un shebang": {
+	// 	"prefix": "bang",
+	// 	"description": "Escribe un shebang. en linux",
+	// 	"body": "#!/bin/sh $1"
+	// },
 	"Escribe texto de muestra": {
 		"prefix": "lorem",
 		"description": "Escribe texto de muestra. Lineas de <lorem ipsum>",

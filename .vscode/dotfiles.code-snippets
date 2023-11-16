@@ -1,0 +1,18 @@
+{
+	"Build json theme for qtile": {
+		"prefix": "theme",
+		"description": "theme. Build theme",
+		"body": [
+			"\"$1\":{"
+			"\t\"background\": \"\",",
+			"\t\"foreground\": \"\",",
+			"\t\"active\": \"\",",
+			"\t\"inactive\": \"\",",
+			"\t\"color1\": \"\",",
+			"\t\"color2\": \"\",",
+			"\t\"color3\": \"\",",
+			"\t\"color4\": \"\"",
+			"}"
+		],
+	},
+}

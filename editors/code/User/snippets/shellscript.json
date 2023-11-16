@@ -24,7 +24,7 @@
 		"prefix": "help",
 		"description": "Crea un helper para describir la funcion y el uso",
 		"body": [
-			"##? usage  : ${TM_FILENAME} [${1:none}]\n",
+			"##? usage  : ${TM_FILENAME} [${1:none}]",
 			"##? help   : $0.",
 			"##? options: "
 		]
