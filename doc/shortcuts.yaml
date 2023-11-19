@@ -1,0 +1,69 @@
+# media keyS
+Print                 : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+XF86AudioMute         : amixer -D pulse set Master 1+ toggle
+XF86AudioLowerVolume  : amixer set Master 5%-
+XF86AudioRaiseVolume  : amixer set Master 5%+
+XF86AudioNext         : playerctl next
+XF86AudioPlay         : playerctl play-pause
+XF86AudioPrev         : playerctl previous
+XF86AudioStop         : playerctl stop
+XF86MonBrightnessDown : xbacklight -dec 5
+XF86MonBrightnessUp   : xbacklight -inc 5
+
+# alt + key
+alt:
+  Escape : xfce4-taskmanager
+  Print  : xfce4-screenshooter
+  F1     : rofi -show file-browser-extended
+  F2     : rofi -show drun
+  F3     : rofi -show window
+  F4     : rofi -show ssh
+  F5     : rofi -show emoji
+  Left   : variety -p
+  Right  : variety -n
+
+# alt + shift + key
+alt + shift:
+  v : xfce4-clipman-history
+  h : rofi -show file-browser-extended -file-browser-dir ~/.config
+  j : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+  l : rofi -show file-browser-extended -file-browser-dir ~/Proyectos
+
+# super + key
+super:
+  F10      : spotify
+  F11      : kodi
+  F2       : code
+  F3       : gimp
+  F4       : timeshift-launcher
+  F5       : notion-app
+  F6       : ferdium
+  F7       : virtualbox
+  F8       : thunar
+  F9       : thunderbird
+  KP_Enter : gnome-calculator
+  Return   : kitty
+  a        : xfce4-appfinder
+  b        : bitwarden-desktop
+  e        : code
+  g        : github-desktop
+  m        : pragha
+  n        : notion-app
+  r        : retroarch
+  s        : pamac-manager
+  v        : vlc --video-on-top
+  x        : ~/.config/rofi/scripts/powermenu
+  z        : ~/.config/rofi/scripts/bookmarks
+  c        : chromium
+  f        : firefox
+  F1       : brave
+
+# super + control + key
+super + ctrl:
+  Return : thunar
+
+# super + shift + key
+super + shift:
+  Escape : xkill
+  o      : picom ~/.config/picom/picom-toggle.sh
+  s      : pkill -USR1 -x sxhkd

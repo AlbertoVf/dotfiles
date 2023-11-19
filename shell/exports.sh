@@ -7,6 +7,7 @@ path=(
 	"$DOTFILES_PATH/bin"
 	"$DOTFILES_PATH/scripts"
 	"$HOME/.config/rofi/scripts"
+	"$HOME/.config/qtile/scripts"
 	"$HOME/.cargo/bin"
 	"/usr/local/bin"
 	"/usr/local/sbin"

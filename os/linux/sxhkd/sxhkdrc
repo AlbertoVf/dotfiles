@@ -1,84 +1,109 @@
-#!/bin/sh
-# Generated on 2023-10-20 20:37
+#!/usr/bin/env bash
+#Generated on 2023-11-19 23:28
+
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 XF86AudioMute
 	amixer -D pulse set Master 1+ toggle
-{XF86AudioLowerVolume, XF86AudioRaiseVolume}
-	amixer set Master {5%-,5%+}
-{XF86AudioNext, XF86AudioPlay, XF86AudioPrev, XF86AudioStop}
-	playerctl {next,play-pause,previous,stop}
-{XF86MonBrightnessDown, XF86MonBrightnessUp}
-	xbacklight {-dec,-inc} 5
-alt Escape
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioNext
+	playerctl next
+XF86AudioPlay
+	playerctl play-pause
+XF86AudioPrev
+	playerctl previous
+XF86AudioStop
+	playerctl stop
+XF86MonBrightnessDown
+	xbacklight -dec 5
+XF86MonBrightnessUp
+	xbacklight -inc 5
+alt + Escape
 	xfce4-taskmanager
-alt Print
+alt + Print
 	xfce4-screenshooter
-alt {F1, F2, F3, F4, F5}
-	rofi -show {file-browser-extended,drun,window,ssh,emoji}
-alt {Left, Right}
-	variety -{p,n}
-alt + shift {h, j, k, l}
-	rofi -show file-browser-extended -file-browser-dir {~/.config,'~/Proyectos/Git y Workspaces', ~/.screenlayout,~/Proyectos}
-alt + shift v
+alt + F1
+	rofi -show file-browser-extended
+alt + F2
+	rofi -show drun
+alt + F3
+	rofi -show window
+alt + F4
+	rofi -show ssh
+alt + F5
+	rofi -show emoji
+alt + Left
+	variety -p
+alt + Right
+	variety -n
+alt + shift + v
 	xfce4-clipman-history
-super a
-	xfce4-appfinder
-super b
-	bitwarden-desktop
-super e
-	code
-super F10
+alt + shift + h
+	rofi -show file-browser-extended -file-browser-dir ~/.config
+alt + shift + j
+	rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+alt + shift + l
+	rofi -show file-browser-extended -file-browser-dir ~/Proyectos
+super + F10
 	spotify
-super F11
+super + F11
 	kodi
-super F2
+super + F2
 	code
-super F3
+super + F3
 	gimp
-super F4
+super + F4
 	timeshift-launcher
-super F5
+super + F5
 	notion-app
-super F6
+super + F6
 	ferdium
-super F7
+super + F7
 	virtualbox
-super F8
+super + F8
 	thunar
-super F9
+super + F9
 	thunderbird
-super g
-	github-desktop
-super KP_Enter
+super + KP_Enter
 	gnome-calculator
-super m
-	pragha
-super n
-	notion-app
-super r
-	retroarch
-super Return
+super + Return
 	kitty
-super s
+super + a
+	xfce4-appfinder
+super + b
+	bitwarden-desktop
+super + e
+	code
+super + g
+	github-desktop
+super + m
+	pragha
+super + n
+	notion-app
+super + r
+	retroarch
+super + s
 	pamac-manager
-super v
+super + v
 	vlc --video-on-top
-super x
+super + x
 	~/.config/rofi/scripts/powermenu
-super z
+super + z
 	~/.config/rofi/scripts/bookmarks
-super {c, f, F1}
-	{chromium,firefox,brave}
-super + ctrl Return
+super + c
+	chromium
+super + f
+	firefox
+super + F1
+	brave
+super + ctrl + Return
 	thunar
-super + shift 1
-	kitty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --off --output HDMI2 --off
-super + shift 2
-	kitty -e xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal
-super + shift Escape
+super + shift + Escape
 	xkill
-super + shift o
+super + shift + o
 	picom ~/.config/picom/picom-toggle.sh
-super + shift s
+super + shift + s
 	pkill -USR1 -x sxhkd
