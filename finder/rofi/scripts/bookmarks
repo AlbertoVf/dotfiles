@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 rofi_bookmarks() {
 	# Archivo HTML que deseas leer

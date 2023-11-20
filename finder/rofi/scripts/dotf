@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Current Theme
+dir="$HOME/.config/rofi/powermenu/type-6"
+theme='style-6'
+
+# Options
+editor='󰈮'
+git=''
+manager=''
+terminal=''
+update='󰑓'
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "Dotfiles" \
+		-theme ${dir}/${theme}.rasi
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$editor\n$terminal\n$manager\n$update" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+	$editor) #? open dotfiles in editor code
+		code $DOTFILES_PATH
+		;;
+	$manager) #? open dotfiles in file manager
+		thunar $DOTFILES_PATH
+		;;
+	$terminal) #? open dotfiles in terminal
+		kitty --directory $DOTFILES_PATH
+		;;
+	$update) #? update links
+		dot symlinks apply
+		;;
+esac

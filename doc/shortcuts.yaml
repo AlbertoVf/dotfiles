@@ -54,6 +54,7 @@ super:
   v        : vlc --video-on-top
   x        : ~/.config/rofi/scripts/powermenu
   z        : ~/.config/rofi/scripts/bookmarks
+  d        : ~/.config/rofi/scripts/dotf
   c        : chromium
   f        : firefox
   F1       : brave

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Generated on 2023-11-19 23:28
+#Generated on 2023-11-20 15:45
 
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
@@ -93,6 +93,8 @@ super + x
 	~/.config/rofi/scripts/powermenu
 super + z
 	~/.config/rofi/scripts/bookmarks
+super + d
+	~/.config/rofi/scripts/dotf
 super + c
 	chromium
 super + f
