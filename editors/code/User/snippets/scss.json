@@ -1,8 +1,8 @@
 {
 	"Crea una plantilla": {
-		"isFileTemplate":"true",
-		"description": "Crea una plantilla generica con los componentes basicos",
-		"body": [
+		"isFileTemplate" : "true",
+		"description"    : "Crea una plantilla generica con los componentes basicos",
+		"body"           : [
 			"body {",
 			"\t$1",
 			"\theader { $2 }",
@@ -13,10 +13,8 @@
 		]
 	},
 	"Crea propiedad font": {
-		"prefix": "font",
-		"description": "Crea la propiedad font",
-		"body": [
-			"font: ${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:font-family};"
-		]
+		"prefix"      : "font",
+		"description" : "Crea la propiedad font",
+		"body"        : "font: ${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:font-family};"
 	}
 }

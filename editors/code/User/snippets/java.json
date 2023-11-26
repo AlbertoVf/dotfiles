@@ -29,7 +29,7 @@
 		"body": [
 			"private $2 $1;",
 			"public $2 get${1/(^.)/${1:/upcase}/}(){ return this.$1 }",
-			"public set${1/(^.)/${1:/upcase}/}($2 $1){ this.$1 = $1 }",
+			"public set${1/(^.)/${1:/upcase}/}($2 $1){ this.$1 = $1 }"
 		]
 	}
 }

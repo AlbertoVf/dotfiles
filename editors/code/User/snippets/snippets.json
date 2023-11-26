@@ -1,25 +1,44 @@
 {
 	// https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
 	"Fragmendo de codigo": {
-		"prefix": "fragment",
-		"description": "Crea un fragmento de codigo",
-		"body": [
+		"prefix"      : "fragment",
+		"description" : "Crea un fragmento de codigo",
+		"body"        : [
 			"\"$1\": {",
-			"\"prefix\": \"$2\",",
-			"\"description\": \"$1. $4\",",
-			"\"body\": [\n\"$0\"\n],",
+			"\t\"prefix\": \"$2\",",
+			"\t\"description\": \"$1. $4\",",
+			"\t\"body\": [\n\t\"$0\"\n\t],",
 			"},"
+		]
+	},
+	"Fragmento de codigo para multiples lenguages": {
+		"prefix"      : "fragment",
+		"description" : "Fragmento de codigo para multiples lenguages. ",
+		"body"        : [
+			"\"$1\": {"
+			"\t\"scope\": \"$3\","
+			"\t\"prefix\": \"$2\","
+			"\t\"description\": \"$1\","
+			"\t\"body\":["
+				"\t\t\"\""
+			"\t]"
+			"}"
 		],
 	},
+
+	"Rodear con\" y escapar las existentes": {
+		"description" : "Escapa \"",
+		"body"        : "\"${TM_SELECTED_TEXT/\"/\\\"/g}\""
+	},
 	"Plantilla": {
-		"prefix": "template",
-		"description": "Crea una plantilla",
-		"body": [
+		"prefix"      : "template",
+		"description" : "Crea una plantilla",
+		"body"        : [
 			"\"$1\": {",
 			"\"isFileTemplate\": \"true\",",
 			"\"description\": \"$1. $4\",",
 			"\"body\": [\n\"$0\"\n],",
 			"},"
-		],
-	},
+		]
+	}
 }

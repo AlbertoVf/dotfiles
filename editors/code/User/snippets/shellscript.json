@@ -1,15 +1,5 @@
 {
-	"Crea una funcion": {
-		"prefix": "function",
-		"description": "Crea una funcion",
-		"body": [
-			"$1() {",
-			"\t$0",
-			"}",
-			"$1"
-		]
-	},
-	"For loop": {
+	"Array for": {
 		"prefix": "for",
 		"description": "Crea un bucle for que imprime los elementos de un array",
 		"body": [
@@ -20,25 +10,71 @@
 			"$0"
 		]
 	},
-	"Helper": {
-		"prefix": "help",
-		"description": "Crea un helper para describir la funcion y el uso",
-		"body": [
-			"##? usage  : ${TM_FILENAME} [${1:none}]",
-			"##? help   : $0.",
-			"##? options: "
+	"Crea una funcion": {
+		"prefix"      : "function",
+		"description" : "Crea una funcion",
+		"body"        : [
+			"$1() {",
+			"\t$0",
+			"}",
+			"$1"
 		]
 	},
 	"Echo fecha": {
-		"prefix": "date",
-		"description": "Echo fecha. Imprime fecha yyy-mm-dd hh.mm.ss",
-		"body": "echo $(date +'%Y-%m-%d %H.%M.%S')"
+		"prefix"      : "date",
+		"body"        : "echo $(date +'%Y-%m-%d %H.%M.%S')",
+		"description" : "Echo fecha. Imprime fecha yyy-mm-dd hh.mm.ss"
+	},
+	"For loop": {
+		"description" : "For loop",
+		"prefix"      : "for",
+		"body"        : [
+			"for ((i = 0; i < $1; i++)); do",
+			"\t$2",
+			"done"
+		]
+	},
+	"Helper": {
+		"description" : "Crea un helper para describir la funcion y el uso",
+		"prefix"      : "help",
+		"body"        : [
+			"##? usage : ${TM_FILENAME} [${1:none}]",
+			"##? help  : $1."
+			// "##? options: "
+		]
+	},
+	"If statement": {
+		"prefix"      : "if",
+		"description" : "If statement",
+		"body"        : [
+			"if [[ $1 ]]; then",
+			"\t$2",
+			"fi"
+		]
+	},
+	"If-else statement": {
+		"description" : "If-else statement",
+		"prefix"      : "if",
+		"body"        : [
+			"if [[ $1 ]]; then",
+			"\t$2",
+			"else",
+			"\t$3",
+			"fi"
+		]
+	},
+	"While loop": {
+		"prefix"      : "while",
+		"description" : "While loop",
+		"body"        : [
+			"while [[ $1 ]]; do",
+			"\t$2",
+			"done"
+		]
 	},
 	"X args": {
-		"prefix": "xargs",
-		"description": "X args. ",
-		"body": [
-			"| xargs -I {}"
-		],
-	},
+		"prefix"      : "xargs",
+		"description" : "X args. ",
+		"body"        : "| xargs -I {}"
+	}
 }

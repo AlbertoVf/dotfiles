@@ -1,8 +1,8 @@
 {
 	"Crea una tabla": {
-		"prefix": "table",
-		"description": "Crea una tabla con un campo id",
-		"body": [
+		"prefix"      : "table",
+		"description" : "Crea una tabla con un campo id",
+		"body"        : [
 			"CREATE TABLE `$1`(",
 			"id int NOT NULL PRIMARY KEY AUTO_INCREMENT,",
 			"$2,",
@@ -10,22 +10,22 @@
 		]
 	},
 	"Insertar": {
-		"prefix": "insert",
-		"description": "Script para insertar valores",
-		"body": [
+		"prefix"      : "insert",
+		"description" : "Script para insertar valores",
+		"body"        : [
 			"INSERT INTO `${1:nombre de tabla}` (${2:campos})",
 			"VALUES",
 			"\t(${3:valores de elemento}),"
 		]
 	},
 	"Crear trigger": {
-		"prefix": "function",
-		"description": "Crea un triger",
-		"body": [
+		"prefix"      : "function",
+		"description" : "Crea un triger",
+		"body"        : [
 			"CREATE FUNCTION `$1`($2) RETURNS int(11)",
 			"BEGIN",
 			"$0",
 			"END"
 		]
-	},
+	}
 }

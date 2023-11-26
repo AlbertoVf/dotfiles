@@ -1,18 +1,35 @@
 {
 	"Build json theme for qtile": {
+		"scope": "json",
 		"prefix": "theme",
 		"description": "theme. Build theme",
 		"body": [
 			"\"$1\":{"
 			"\t\"background\": \"\",",
 			"\t\"foreground\": \"\",",
-			"\t\"active\": \"\",",
-			"\t\"inactive\": \"\",",
-			"\t\"color1\": \"\",",
-			"\t\"color2\": \"\",",
-			"\t\"color3\": \"\",",
-			"\t\"color4\": \"\"",
+			"\t\"active\":     \"\",",
+			"\t\"inactive\":   \"\",",
+			"\t\"color1\":     \"\",",
+			"\t\"color2\":     \"\",",
+			"\t\"color3\":     \"\",",
+			"\t\"color4\":     \"\"",
 			"}"
+		],
+	},
+	"Build yaml theme for qtile": {
+		"scope": "yaml",
+		"prefix": "theme",
+		"description": "theme. Build theme",
+		"body": [
+			"$1:"
+			"\tbackground :''",
+			"\tforeground :''",
+			"\tactive     :''",
+			"\tinactive   :''",
+			"\tcolor1     :''",
+			"\tcolor2     :''",
+			"\tcolor3     :''",
+			"\tcolor4     :''",
 		],
 	},
 }

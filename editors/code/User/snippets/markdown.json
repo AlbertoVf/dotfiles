@@ -1,8 +1,8 @@
 {
 	"Crea front matter": {
-		"prefix": "matter",
-		"description": "Crea front matter para un documento",
-		"body": [
+		"prefix"      : "matter",
+		"description" : "Crea front matter para un documento",
+		"body"        : [
 			"---",
 			"date: date",
 			"title: title",
@@ -14,9 +14,9 @@
 		]
 	},
 	"Crea front matter presentacion": {
-		"prefix": "matter",
-		"description": "Crea un front matter para una presentacion con marp",
-		"body": [
+		"prefix"      : "matter",
+		"description" : "Crea un front matter para una presentacion con marp",
+		"body"        : [
 			"---",
 			"marp: true",
 			"size: 16:9",
@@ -34,12 +34,12 @@
 		]
 	},
 	"Tabla": {
-		"prefix": "table",
-		"description": "Crea una tabla",
-		"body": [
+		"prefix"      : "table",
+		"description" : "Crea una tabla",
+		"body"        : [
 			"| $1 | $2 | $3 |",
 			"| -- | -- | -- |",
 			"| $4 | $5 | $6 |"
 		]
-	},
+	}
 }

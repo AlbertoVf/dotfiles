@@ -1,10 +1,10 @@
 {
 	"puppeteer - extended": {
-		"prefix": "print",
-		"description": "puppeteer.Yaml para exportar pdf con markdown-extended",
-		"body": [
+		"prefix"      : "print",
+		"description" : "puppeteer.Yaml para exportar pdf con markdown-extended",
+		"body"        : [
 			"puppeteer:",
-			"\tpdf:"
+			"\tpdf:",
 			"\t\tformat: A4",
 			"\t\tlandscape: ${3|false,true|}",
 			"\t\tdisplayHeaderFooter: ${4|true,false|}",
@@ -13,12 +13,12 @@
 			"\t\t\tright: ${2:1.5}cm",
 			"\t\t\tbottom: ${1:2.0}cm",
 			"\t\t\tleft: ${2:1.5}cm"
-		],
+		]
 	},
 	"puppeteer - markdown preview": {
-		"prefix": "print",
-		"description": "puppeteer - markdown preview. Configuracion Yaml para exportar a pdf con markdown preview",
-		"body": [
+		"prefix"      : "print",
+		"description" : "puppeteer - markdown preview. Configuracion Yaml para exportar a pdf con markdown preview",
+		"body"        : [
 			"puppeteer:",
 			"\tformat: A4",
 			"\tlandscape: ${1|false,true|}",
@@ -30,6 +30,6 @@
 			"\t\tright: :1.5cm",
 			"\t\tbottom: 2.0cm",
 			"\t\tleft: 1.5cm"
-		],
+		]
 	}
 }
