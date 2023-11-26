@@ -6,15 +6,15 @@ source "$ZIM_HOME/init.zsh"
 
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_FCNTL_LOCK
-setopt +o nomatch
-setopt autopushd
+# setopt HIST_FCNTL_LOCK
+# setopt +o nomatch
+# setopt autopushd
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 
 # Async mode for autocompletion
-ZSH_AUTOSUGGEST_USE_ASYNC=true
+# ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300
 
 

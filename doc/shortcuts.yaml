@@ -1,8 +1,8 @@
-# media keyS
+# media keys
 Print                 : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-XF86AudioMute         : amixer -D pulse set Master 1+ toggle
 XF86AudioLowerVolume  : amixer set Master 5%-
 XF86AudioRaiseVolume  : amixer set Master 5%+
+XF86AudioMute         : amixer -D pulse set Master 1+ toggle
 XF86AudioNext         : playerctl next
 XF86AudioPlay         : playerctl play-pause
 XF86AudioPrev         : playerctl previous
@@ -14,25 +14,22 @@ XF86MonBrightnessUp   : xbacklight -inc 5
 alt:
   Escape : xfce4-taskmanager
   Print  : xfce4-screenshooter
+  Left   : variety -p
+  Right  : variety -n
   F1     : rofi -show file-browser-extended
   F2     : rofi -show drun
   F3     : rofi -show window
   F4     : rofi -show ssh
   F5     : rofi -show emoji
-  Left   : variety -p
-  Right  : variety -n
 
 # alt + shift + key
 alt + shift:
-  v : xfce4-clipman-history
-  h : rofi -show file-browser-extended -file-browser-dir ~/.config
-  j : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-  l : rofi -show file-browser-extended -file-browser-dir ~/Proyectos
+  Return : thunar
+  v      : xfce4-clipman-history
 
 # super + key
 super:
-  F10      : spotify
-  F11      : kodi
+  F1       : brave
   F2       : code
   F3       : gimp
   F4       : timeshift-launcher
@@ -41,30 +38,36 @@ super:
   F7       : virtualbox
   F8       : thunar
   F9       : thunderbird
+  F10      : spotify
+  F11      : kodi
   KP_Enter : gnome-calculator
   Return   : kitty
   a        : xfce4-appfinder
   b        : bitwarden-desktop
+  c        : chromium
   e        : code
+  f        : firefox
   g        : github-desktop
   m        : pragha
   n        : notion-app
   r        : retroarch
   s        : pamac-manager
   v        : vlc --video-on-top
+  h        : rofi -show file-browser-extended -file-browser-dir ~/.config/
+  j        : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+  l        : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
+  d        : ~/.config/rofi/scripts/dotf
   x        : ~/.config/rofi/scripts/powermenu
   z        : ~/.config/rofi/scripts/bookmarks
-  d        : ~/.config/rofi/scripts/dotf
-  c        : chromium
-  f        : firefox
-  F1       : brave
 
 # super + control + key
-super + ctrl:
-  Return : thunar
+# super + ctrl:
+  # cerrar ventana
+  # cerrar forzosamente ventana
+  # reiniciar sesion
 
 # super + shift + key
 super + shift:
   Escape : xkill
-  o      : picom ~/.config/picom/picom-toggle.sh
+  o      : sh ~/.config/picom/picom-toogle.sh
   s      : pkill -USR1 -x sxhkd

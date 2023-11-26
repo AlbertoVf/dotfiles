@@ -10,7 +10,7 @@
     ~/.config/gtk-3.0/settings.ini: os/linux/gtk-3.0/settings.ini
     ~/.config/Kvantum/kvantum.kvconfig: os/linux/Kvantum/kvantum.kvconfig
     ~/.config/openbox: os/linux/openbox
-    ~/.config/picom/picom.conf: os/linux/picom/picom.conf
+    ~/.config/picom: os/linux/picom
     ~/.config/qtile: os/linux/qtile
     ~/.config/sxhkd/sxhkdrc: os/linux/sxhkd/sxhkdrc
     ~/.config/Thunar/accels.scm: os/linux/Thunar/accels.scm
