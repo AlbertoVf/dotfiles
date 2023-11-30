@@ -31,4 +31,5 @@
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
+    ~/.bin: bin
     editors/code/User/settings.json: ~/.config/Code/User/settings.json

@@ -8,6 +8,6 @@
 [submodule "modules/wallpapers"]
 	path = modules/wallpapers
 	url = https://github.com/AlbertoVf/wallpapers.git
-[submodule "scripts"]
-	path = scripts
+[submodule "bin"]
+	path = bin
 	url = https://github.com/AlbertoVf/shell-scripts
