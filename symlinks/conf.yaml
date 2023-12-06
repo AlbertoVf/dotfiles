@@ -26,10 +26,8 @@
     ~/.gitignore_global: git/.gitignore_global
     ~/.profile: shell/.profile
     ~/.vimrc: editors/vim/.vimrc
-    ~/.wallpapers: modules/wallpapers
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
-    ~/.bin: bin
     editors/code/User/settings.json: ~/.config/Code/User/settings.json

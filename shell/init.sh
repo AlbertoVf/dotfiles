@@ -2,5 +2,5 @@
 
 source "$DOTFILES_PATH/shell/aliases.sh"
 source "$DOTFILES_PATH/shell/exports.sh"
-source "$DOTFILES_PATH/bin/exports.sh"
+source "$HOME/.bin/exports.sh"
 source "$DOTFILES_PATH/shell/functions.sh"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+##? usage : my_repos [none]
+##? help  : Clone my repos with specific configuration.
+
+git clone https://github.com/AlbertoVf/qtile.git ~/.config/qtile
+git clone https://github.com/AlbertoVf/shell-scripts ~/.bin
+git clone https://github.com/AlbertoVf/wallpapers.git ~/.wallpapers

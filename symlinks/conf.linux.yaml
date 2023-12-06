@@ -11,7 +11,6 @@
     ~/.config/Kvantum/kvantum.kvconfig: os/linux/Kvantum/kvantum.kvconfig
     ~/.config/openbox: os/linux/openbox
     ~/.config/picom: os/linux/picom
-    ~/.config/qtile: os/linux/qtile
     ~/.config/sxhkd/sxhkdrc: os/linux/sxhkd/sxhkdrc
     ~/.config/Thunar/accels.scm: os/linux/Thunar/accels.scm
     ~/.config/Thunar/uca.xml: os/linux/Thunar/uca.xml
