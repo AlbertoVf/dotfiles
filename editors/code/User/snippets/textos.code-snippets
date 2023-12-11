@@ -44,5 +44,26 @@
 		"prefix"      : "date",
 		"description" : "Escribe la fecha con formato 'dia numero de mes de año'",
 		"body"        : "$CURRENT_DAY_NAME $CURRENT_DATE de $CURRENT_MONTH_NAME de $CURRENT_YEAR"
+	},
+	// COMENTARIOS
+	"todo": {
+		"description" : "New feature, function ...",
+		"body"        : "${LINE_COMMENT} + ${TM_CURRENT_LINE}"
+	},
+	"error": {
+		"description" : "error in code or section",
+		"body"        : "${LINE_COMMENT} ! ${TM_SELECTED_TEXT}"
+	},
+	"help": {
+		"description" : "how to use, command use, code example",
+		"body"        : "${LINE_COMMENT} ? ${TM_SELECTED_TEXT}"
+	},
+	"note": {
+		"description" : "refactor code, extract method, method relations",
+		"body"        : "${LINE_COMMENT} ; ${TM_SELECTED_TEXT}"
+	},
+	"delete": {
+		"description" : "delete line, delete methos, use to comment and check if refactor works",
+		"body"        : "${LINE_COMMENT} _ ${TM_SELECTED_TEXT}"
 	}
 }
