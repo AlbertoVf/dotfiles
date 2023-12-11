@@ -15,10 +15,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Async mode for autocompletion
 # ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_HIGHLIGHT_MAXLENGTH=300
+# ZSH_HIGHLIGHT_MAXLENGTH=300
 
 
-fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
+# fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 # autoload -Uz promptinit && promptinit
 # prompt ${DOTLY_THEME:-codely}

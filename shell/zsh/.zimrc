@@ -7,7 +7,7 @@ zmodule zimfw/completion
 
 ## plugins in repository
 
-zmodule marlonrichert/zsh-autocomplete
+# zmodule marlonrichert/zsh-autocomplete
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
@@ -24,3 +24,4 @@ zmodule ohmyzsh/ohmyzsh --root plugins/sudo
 zmodule ohmyzsh/ohmyzsh --root plugins/themes
 zmodule ohmyzsh/ohmyzsh --root plugins/zoxide
 zmodule ohmyzsh/ohmyzsh --root plugins/zsh-interactive-cd
+zmodule ohmyzsh/ohmyzsh --root plugins/zsh-navigation-tools

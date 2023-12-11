@@ -26,6 +26,9 @@ alt:
 alt + shift:
   Return : thunar
   v      : xfce4-clipman-history
+  h      : rofi -show file-browser-extended -file-browser-dir ~/.config/
+  j      : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+  l      : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
 
 # super + key
 super:
@@ -53,15 +56,12 @@ super:
   r        : retroarch
   s        : pamac-manager
   v        : vlc --video-on-top
-  h        : rofi -show file-browser-extended -file-browser-dir ~/.config/
-  j        : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-  l        : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
   d        : ~/.config/rofi/scripts/dotf
   x        : ~/.config/rofi/scripts/powermenu
   z        : ~/.config/rofi/scripts/bookmarks
 
 # super + control + key
-# super + ctrl:
+super + ctrl:
   # cerrar ventana
   # cerrar forzosamente ventana
   # reiniciar sesion

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Generated on 2023-11-21 17:56
+#Generated on 2023-12-08 17:57
 
 Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
@@ -43,6 +43,12 @@ alt + shift + Return
 	thunar
 alt + shift + v
 	xfce4-clipman-history
+alt + shift + h
+	rofi -show file-browser-extended -file-browser-dir ~/.config/
+alt + shift + j
+	rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+alt + shift + l
+	rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
 super + F1
 	brave
 super + F2
@@ -91,18 +97,14 @@ super + s
 	pamac-manager
 super + v
 	vlc --video-on-top
-super + h
-	rofi -show file-browser-extended -file-browser-dir ~/.config/
-super + j
-	rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-super + l
-	rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
 super + d
 	~/.config/rofi/scripts/dotf
 super + x
 	~/.config/rofi/scripts/powermenu
 super + z
 	~/.config/rofi/scripts/bookmarks
+super + ctrl
+	None
 super + shift + Escape
 	xkill
 super + shift + o
