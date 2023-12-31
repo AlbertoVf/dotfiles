@@ -1,0 +1,10 @@
+* {
+	font           : "FantasqueSansM Nerd Font 13";
+	background     : #D0D0D0;
+	background-alt : #E9E9E9;
+	foreground     : #161616;
+	selected       : #BEBEBE;
+	active         : #999999;
+	urgent         : #808080;
+	image          : url("~/.config/rofi/images/f.png", height);
+}
