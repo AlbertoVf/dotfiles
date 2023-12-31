@@ -38,7 +38,7 @@
 	"Fecha corta": {
 		"prefix"      : "date",
 		"description" : "Escribe la fecha con formato yyyy-mm-dd T hh:mm.ss+ZZ",
-		"body"        : "$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE.${CURRENT_SECOND}$CURRENT_TIMEZONE_OFFSET"
+		"body"        : "$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE"
 	},
 	"Fecha larga": {
 		"prefix"      : "date",

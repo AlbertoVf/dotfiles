@@ -38,8 +38,8 @@
 		"description" : "Crea un helper para describir la funcion y el uso",
 		"prefix"      : "help",
 		"body"        : [
-			"##? usage : ${TM_FILENAME} ${1:[none]}",
 			"##? help  : $2."
+			"##? usage : ${TM_FILENAME} ${1:[none]}",
 			// "##? options: "
 		]
 	},
