@@ -13,31 +13,27 @@ conky.config = {
     imlib_cache_size = 0,
 
     --Placement
-    alignment = 'middle_middle',
+    alignment = 'middle_right',
 
     --Arch Duoscreen
-    gap_x = 0,
+    gap_x = 60,
     gap_y = 0,
-    minimum_height = 256,
-    maximum_height = 256,
-    minimum_width = 1024,
-    maximum_width = 1024,
 
     --Graphical
-    border_inner_margin = 0,
+    border_inner_margin = 20,
     border_outer_margin = 0,
-    border_width = 0,
+    border_width = 2,
     default_bar_width = 280,
     default_bar_height = 10,
     default_gauge_height = 25,
     default_gauge_width =40,
     default_graph_height = 40,
     default_graph_width = 153,
-    default_shade_color = '#000000',
-    default_outline_color = '#000000',
+    -- default_shade_color = '#000000',
+    -- default_outline_color = '#000000',
     draw_borders = false,
     draw_graph_borders = false,
-    draw_shades = true,
+    draw_shades = false,
     draw_outline = false,
     stippled_borders = 0,
 
@@ -58,31 +54,28 @@ conky.config = {
 
     --Windows
     own_window = true,
-    own_window_argb_value = 0,
+    own_window_argb_value = 100,
     own_window_argb_visual = true,
     own_window_class = 'Conky',
     own_window_colour = '#000000',
     own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
-    own_window_transparent = true,
+    own_window_transparent = false,
     own_window_title = 'system_conky',
     own_window_type = 'override',
 
     --Colours
-    default_color = '#000000',
-    color1 = '#292d3e',
-    color2 = '#f1f1f1',
+    color1 = '#0AA8AC',
+    color2 = '#62848B',
     color3 = '#f1f1f1',
-    color4 = '#5af78d',
-    color5 = '#ffb86c',
-    color6 = '#ff5454',
 };
 
 conky.text = [[
-${alignc}${color4}${font CaskaydiaCove Nerd Font:size=66:bold}\
-${time %H:%M %d.%m.%Y}
-${alignc}${color4}${font CaskaydiaCove Nerd Font:size=30:bold}\
-Cpu:${cpu cpu0}% | Ram:$mem | Bat:${battery_percent BAT0}% | Temp:${hwmon 1 temp 1}˚C
-
-${alignc}${color4}\
-Ip: ${addr enp3s0f1}  ${exec wget http://ipinfo.io/ip -qO-}
+${alignc}${color2} \
+${font Monaspace Radon:size=60:Bold}${time %H:%M} \
+${color1}
+${alignc} \
+${font Monaspace Radon:size=40}${time %A} \
+${color2}${font Monaspace Radon:size=48:Bold}${time %d}\
+${color1}${font Monaspace Radon:size=40}${time %B %Y}
+${color3}${loadgraph 30,900 -l}
 ]];
