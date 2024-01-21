@@ -8,6 +8,7 @@ alias cat="bat"
 alias find="fd"
 alias cd="z"
 alias man="batman"
+alias npm="pnpm"
 # }
 
 # Folders alias{

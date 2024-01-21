@@ -1,5 +1,5 @@
 # media keys
-Print                 : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+Print                 : xfce4-screenshooter
 XF86AudioLowerVolume  : amixer set Master 5%-
 XF86AudioRaiseVolume  : amixer set Master 5%+
 XF86AudioMute         : amixer -D pulse set Master 1+ toggle
@@ -13,7 +13,7 @@ XF86MonBrightnessUp   : xbacklight -inc 5
 # alt + key
 alt:
   Escape : xfce4-taskmanager
-  Print  : xfce4-screenshooter
+  Print  : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
   Left   : variety -p
   Right  : variety -n
   F1     : rofi -show file-browser-extended
@@ -35,13 +35,13 @@ super:
   F1       : brave
   F2       : code
   F3       : gimp
-  F4       : timeshift-launcher
-  F5       : notion-app
+  F4       : rofi-bluetooth # blueberry
+  F5       : archlinux-tweak-tool
   F6       : ferdium
   F7       : virtualbox
   F8       : thunar
   F9       : thunderbird
-  F10      : spotify
+  F10      : spotube
   F11      : kodi
   KP_Enter : gnome-calculator
   Return   : kitty
@@ -52,7 +52,6 @@ super:
   f        : firefox
   g        : github-desktop
   m        : pragha
-  n        : notion-app
   r        : retroarch
   s        : pamac-manager
   v        : vlc --video-on-top

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-#Generated on 2023-12-08 17:57
+#Generated on 2024-01-20 10:59
 
 Print
-	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+	xfce4-screenshooter
 XF86AudioLowerVolume
 	amixer set Master 5%-
 XF86AudioRaiseVolume
@@ -24,7 +24,7 @@ XF86MonBrightnessUp
 alt + Escape
 	xfce4-taskmanager
 alt + Print
-	xfce4-screenshooter
+	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 alt + Left
 	variety -p
 alt + Right
@@ -56,9 +56,9 @@ super + F2
 super + F3
 	gimp
 super + F4
-	timeshift-launcher
+	rofi-bluetooth
 super + F5
-	notion-app
+	archlinux-tweak-tool
 super + F6
 	ferdium
 super + F7
@@ -68,7 +68,7 @@ super + F8
 super + F9
 	thunderbird
 super + F10
-	spotify
+	spotube
 super + F11
 	kodi
 super + KP_Enter
@@ -89,8 +89,6 @@ super + g
 	github-desktop
 super + m
 	pragha
-super + n
-	notion-app
 super + r
 	retroarch
 super + s
