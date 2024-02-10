@@ -6,7 +6,6 @@
       force: true
 
 - link:
-    ~/.config/archlinux-logout: os/linux/archlinux-logout
     ~/.config/gtk-3.0/settings.ini: os/linux/gtk-3.0/settings.ini
     ~/.config/Kvantum/kvantum.kvconfig: os/linux/Kvantum/kvantum.kvconfig
     ~/.config/openbox: os/linux/openbox
@@ -24,4 +23,3 @@
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     ~/.gtkrc-2.0: os/linux/.gtkrc-2.0
-    ~/.screenlayout: os/linux/.screenlayout

@@ -12,22 +12,24 @@
 - link:
     ~/.bash_profile: shell/bash/.bash_profile
     ~/.bashrc: shell/bash/.bashrc
-    ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yaml
-    ~/.config/Code/User/keybindings.json: editors/code/User/keybindings.json
-    ~/.config/Code/User/profiles: editors/code/User/profiles
-    ~/.config/Code/User/snippets: editors/code/User/snippets
-    ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
-    ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
-    ~/.config/rofi/config.rasi: finder/rofi/config.rasi
-    ~/.config/rofi/powermenu/type-6/style-6.rasi: finder/rofi/style-6.rasi
-    ~/.config/rofi/scripts: finder/rofi/scripts
     ~/.fonts: fonts
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
     ~/.profile: shell/.profile
+    ~/.screenlayout: os/linux/.screenlayout
     ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
-    editors/code/User/settings.json: ~/.config/Code/User/settings.json
+    ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yaml
+    ~/.config/Code - OSS/User/keybindings.json: editors/code/User/keybindings.json
+    ~/.config/Code - OSS/User/profiles: editors/code/User/profiles
+    ~/.config/Code - OSS/User/snippets: editors/code/User/snippets
+    ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
+    ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
+    ~/.config/neofetch: os/linux/neofetch
+    ~/.config/rofi/config.rasi: finder/rofi/config.rasi
+    ~/.config/rofi/powermenu/type-6/style-6.rasi: finder/rofi/style-6.rasi
+    ~/.config/rofi/scripts: finder/rofi/scripts
+    editors/code/User/settings.json: ~/.config/Code - OSS/User/settings.json
