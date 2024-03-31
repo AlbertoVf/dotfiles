@@ -1,8 +1,8 @@
 {
 	"Crea una clase": {
-		"isFileTemplate" : "true",
-		"description"    : "Crea una clase con un constructor y metodos de print",
-		"body"           : [
+		"isFileTemplate": true,
+		"description": "Crea una clase con un constructor y metodos de print",
+		"body": [
 			"class ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}:",
 			"\tdef __init__(self):",
 			"\t\tpass",
@@ -13,32 +13,32 @@
 		]
 	},
 	"Class from json": {
-		"isFileTemplate": "true",
-		"description" : "Class from json. Crea una clase a partir de un objeto json",
-		"body"        : [
+		"isFileTemplate": true,
+		"description": "Class from json. Crea una clase a partir de un objeto json",
+		"body": [
 			"from dataclasses import dataclass",
 			"@dataclass",
 			"class ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}:",
-			"\t$1: str"
-			"\t@staticmethod"
-			"\tdef from_dict(obj:dict)->'${TM_FILENAME_BASE/(^.)/${1:/upcase}/}':"
-			"\t\t_$1 = str(obj.get('$1'))"
-			"\t\treturn ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}(_$1)"
+			"\t$1: str",
+			"\t@staticmethod",
+			"\tdef from_dict(obj:dict)->'${TM_FILENAME_BASE/(^.)/${1:/upcase}/}':",
+			"\t\t_$1 = str(obj.get('$1'))",
+			"\t\treturn ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}(_$1)",
 			"$0"
 		]
 	},
 	"Main": {
-		"prefix"      : "main",
-		"description" : "Code snippet for a `if __name__ == \"__main__\": ...` block",
-		"body"        : [
+		"prefix": "main",
+		"description": "Code snippet for a `if __name__ == \"__main__\": ...` block",
+		"body": [
 			"if __name__ == \"__main__\":",
 			"\t${1:pass}"
 		]
 	},
 	"Main Cli": {
-		"prefix"      : "main",
-		"description" : "Cli. Crea un main que reciba parametros.",
-		"body"        : [
+		"prefix": "main",
+		"description": "Cli. Crea un main que reciba parametros.",
+		"body": [
 			"import argparse,subprocess",
 			"def main():",
 			"\tparser = argparse.ArgumentParser(description='$1')",
@@ -48,27 +48,40 @@
 		]
 	},
 	"Crea una funcion lambda": {
-		"prefix"      : "lambda",
-		"description" : "Crea una funcion lambda. ",
-		"body"        : [
-			"$1 = lambda: $2()"
+		"prefix": "lambda",
+		"description": "Crea una funcion lambda. ",
+		"body": [
+			"$1 = lambda: $2"
 		]
 	},
 	"Argument with param": {
-		"prefix"      : "argument",
-		"description" : "argument. Añade un argumento a un parser",
-		"body"        : [
+		"prefix": "argument",
+		"description": "argument. Añade un argumento a un parser",
+		"body": [
 			"parser.add_argument('-$1', '--$2', help='$3')",
 			"if args.$2: $2()"
 		]
 	},
 	"Argument without param": {
-		"prefix"      : "argument",
-		"description" : "argument. Añade un argumento a un parser",
-		"body"        : [
-			"def $2(): pass"
+		"prefix": "argument",
+		"description": "argument. Añade un argumento a un parser",
+		"body": [
+			"def $2(): pass",
 			"parser.add_argument('-$1', '--$2', action='store_true', help='$3')",
 			"if args.$2: $2()"
 		]
+	},
+	"docstring": {
+		"prefix": "docstring",
+		"description": "docstring. ",
+		"body": [
+			"\"\"\"",
+			"$1",
+			"Args:",
+			"$2",
+			"Returns:",
+			"$3",
+			"\"\"\""
+		],
 	},
 }

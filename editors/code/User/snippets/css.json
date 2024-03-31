@@ -1,0 +1,42 @@
+{
+	"Crea propiedad font": {
+		"prefix": "font",
+		"description": "Crea la propiedad font",
+		"body": "font: ${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:font-family};"
+	},
+	"Centrar el contenido": {
+		"prefix": "align",
+		"description": "Centra el contenido",
+		"body": [
+			"$1{",
+			"\talign-content: center;",
+			"\t${2:*} {",
+			"\t\tmargin-inline: auto;",
+			"\t}",
+			"}"
+		]
+	},
+	"root colores": {
+		"prefix": "colors",
+		"description": "Crea un :root con colores",
+		"body": [
+			":root {",
+			"\t--primary-color: $1;",
+			"\t--secondary-color: $2;",
+			"\t--accent-color: $3;",
+			"\t--primary-background: $4;",
+			"\t--secondary-background: $5;",
+			"\t--accent-background: $6;",
+			"}",
+		]
+	},
+	"Esquema de colores": {
+		"prefix": "color-scheme",
+		"description": "Establece modo claro/oscuro y sus colores",
+		"body": [
+			":root{ color-scheme: light dark;}",
+			"@media (prefers-color-scheme: light) {$1}",
+			"@media (prefers-color-scheme: dark) {$2}"
+		]
+	}
+}

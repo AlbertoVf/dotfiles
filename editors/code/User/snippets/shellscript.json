@@ -11,9 +11,9 @@
 		]
 	},
 	"Crea una funcion": {
-		"prefix"      : "function",
-		"description" : "Crea una funcion",
-		"body"        : [
+		"prefix": "function",
+		"description": "Crea una funcion",
+		"body": [
 			"$1() {",
 			"\t$0",
 			"}",
@@ -21,41 +21,41 @@
 		]
 	},
 	"Echo fecha": {
-		"prefix"      : "date",
-		"body"        : "echo $(date +'%Y-%m-%d %H.%M.%S')",
-		"description" : "Echo fecha. Imprime fecha yyy-mm-dd hh.mm.ss"
+		"prefix": "date",
+		"body": "echo $(date +'%Y-%m-%d %H.%M.%S')",
+		"description": "Echo fecha. Imprime fecha yyy-mm-dd hh.mm.ss"
 	},
 	"For loop": {
-		"description" : "For loop",
-		"prefix"      : "for",
-		"body"        : [
+		"description": "For loop",
+		"prefix": "for",
+		"body": [
 			"for ((i = 0; i < $1; i++)); do",
 			"\t$2",
 			"done"
 		]
 	},
 	"Helper": {
-		"description" : "Crea un helper para describir la funcion y el uso",
-		"prefix"      : "help",
-		"body"        : [
-			"##? help  : $2."
+		"description": "Crea un helper para describir la funcion y el uso",
+		"prefix": "help",
+		"body": [
+			"##? help  : $2.",
 			"##? usage : ${TM_FILENAME} ${1:[none]}",
 			// "##? options: "
 		]
 	},
 	"If statement": {
-		"prefix"      : "if",
-		"description" : "If statement",
-		"body"        : [
+		"prefix": "if",
+		"description": "If statement",
+		"body": [
 			"if [[ $1 ]]; then",
 			"\t$2",
 			"fi"
 		]
 	},
 	"If-else statement": {
-		"description" : "If-else statement",
-		"prefix"      : "if",
-		"body"        : [
+		"description": "If-else statement",
+		"prefix": "if",
+		"body": [
 			"if [[ $1 ]]; then",
 			"\t$2",
 			"else",
@@ -64,17 +64,17 @@
 		]
 	},
 	"While loop": {
-		"prefix"      : "while",
-		"description" : "While loop",
-		"body"        : [
+		"prefix": "while",
+		"description": "While loop",
+		"body": [
 			"while [[ $1 ]]; do",
 			"\t$2",
 			"done"
 		]
 	},
 	"X args": {
-		"prefix"      : "xargs",
-		"description" : "X args. ",
-		"body"        : "| xargs -I {}"
+		"prefix": "xargs",
+		"description": "X args. ",
+		"body": "| xargs -I {}"
 	}
 }
