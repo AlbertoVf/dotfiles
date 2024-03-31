@@ -1,27 +1,13 @@
 #!/usr/bin/env zsh
-# Uncomment for debuf with `zprof`
-# zmodload zsh/zprof
-# Start Zim
+
 source "$ZIM_HOME/init.zsh"
 
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
-# setopt HIST_FCNTL_LOCK
-# setopt +o nomatch
-# setopt autopushd
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-
-# Async mode for autocompletion
-# ZSH_AUTOSUGGEST_USE_ASYNC=true
-# ZSH_HIGHLIGHT_MAXLENGTH=300
-
-
-# fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
-
-# autoload -Uz promptinit && promptinit
-# prompt ${DOTLY_THEME:-codely}
+fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 ZSH_THEME="gozilla"
 CASE_SENSITIVE="false"

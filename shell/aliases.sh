@@ -3,12 +3,9 @@ alias grep="grep --color"
 alias cf="xclip -sel clip" # copy file content to clipboard
 
 # modern commands {
-alias du="ncdu2"
 alias cat="bat"
-alias find="fd"
 alias cd="z"
 alias man="batman"
-alias npm="pnpm"
 # }
 
 # Folders alias{
@@ -32,7 +29,7 @@ alias pacsyu="sudo pacman -Syyu"              # update only standard pkgs
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
 alias parsua="paru -Sua"                      # update aur packages
 alias parsyu="paru -Syu"                      # update standar packages and aur
-alias paru="paru --limit 20 --searchby name"  # shearch packages by name and limited to 20 results
+alias paru="paru --limit 20"                  # --searchby name shearch packages by name and limited to 20 results
 # }
 
 # get fastest mirrors {
@@ -51,4 +48,25 @@ alias kitten="kitty +kitten"
 alias icat="kitten icat"
 alias icon="kitten unicode_input"
 alias themesK="kitten themes"
+# }
+
+# python {
+alias pip_freeze="pip freeze > requirements.txt"
+alias pip_install="pip install -r requirements.txt"
+# }
+
+# node {
+alias npm="pnpm"
+alias npm_install="pnpm install"
+# }
+
+# php {
+alias laravel="composer create-project laravel/laravel"
+alias artisan="php artisan"
+alias composer_install="composer install"
+# }
+
+# docker {
+alias docker_build="docker-compose up -d"
+alias docker_run="docker-compose up"
 # }
