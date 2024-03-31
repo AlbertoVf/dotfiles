@@ -1,23 +1,26 @@
-@theme "./launchers/type-6/style-6.rasi"
+@theme "./launchers/type-5/style-4.rasi"
 
 configuration {
-	modi                          : "file-browser-extended,drun,window,ssh,emoji";
-	display-window                : "🪟";
-	display-run                   : "🧑‍💻";
-	display-ssh                   : "💻";
-	display-drun                  : "🔎";
-	display-file-browser-extended : "📂";
-	display-keys                  : "🔑";
-	display-emoji                 : "✏️";
-	display-clipboard             : "📎";
-	display-format                : "{icon} {name}";
-	drun-display-format           : "{name}";
-	font                          : "CaskaydiaCove Nerd Font Bold 16";
-	show-icons                    : true;
-	icon-theme                    : "Tela-circle-nord-dark";
-	terminal                      : "kitty";
+	modi: "file-browser-extended,drun,window,ssh,emoji";
+	display-window: "󰽙";
+	display-run: "󱓟";
+	display-ssh: "󰩠";
+	display-drun: "󱓟";
+	display-file-browser-extended: "";
+	display-keys: "󰌋";
+	display-emoji: "󱈔";
+	display-clipboard: "󱓦";
+	display-format : "{icon} {name}";
+	drun-display-format : "{name}";
+	show-icons: true;
+	icon-theme: "Tela-circle-nord-dark";
+	terminal: "kitty";
+}
+
+* {
+	font: "GeistMono Nerd Font Bold 13";
 }
 
 textbox-prompt-colon {
-	str: "🔎";
+	str: "󰗁";
 }

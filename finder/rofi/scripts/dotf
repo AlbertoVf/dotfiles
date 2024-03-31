@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-6"
-theme='style-6'
+theme="$HOME/.config/rofi/applets/type-2/style-2"
 
 # Options
-editor='󰈮'
-git=''
-manager=''
-terminal=''
-update='󰑓'
+editor='󰨞'
+manager=''
+terminal=''
+update=''
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
 		-p "Dotfiles" \
-		-theme ${dir}/${theme}.rasi
+		-theme ${theme}.rasi
 }
 
 # Pass variables to rofi dmenu
@@ -26,16 +24,16 @@ run_rofi() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-	$editor) #? open dotfiles in editor code
-		code $DOTFILES_PATH
-		;;
-	$manager) #? open dotfiles in file manager
-		thunar $DOTFILES_PATH
-		;;
-	$terminal) #? open dotfiles in terminal
-		kitty --directory $DOTFILES_PATH
-		;;
-	$update) #? update links
-		dot symlinks apply
-		;;
+$editor) #? open dotfiles in editor code
+	code $DOTFILES_PATH
+	;;
+$manager) #? open dotfiles in file manager
+	thunar $DOTFILES_PATH
+	;;
+$terminal) #? open dotfiles in terminal
+	kitty --directory $DOTFILES_PATH
+	;;
+$update) #? update links
+	dot symlinks apply
+	;;
 esac

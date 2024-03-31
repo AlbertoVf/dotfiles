@@ -57,7 +57,6 @@ super:
   v        : vlc --video-on-top
   d        : ~/.config/rofi/scripts/dotf
   x        : ~/.config/rofi/scripts/powermenu
-  z        : ~/.config/rofi/scripts/bookmarks
 
 # super + control + key
 super + ctrl:
