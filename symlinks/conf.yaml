@@ -23,13 +23,15 @@
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
     ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yaml
-    ~/.config/Code - OSS/User/keybindings.json: editors/code/User/keybindings.json
-    ~/.config/Code - OSS/User/profiles: editors/code/User/profiles
-    ~/.config/Code - OSS/User/snippets: editors/code/User/snippets
+    ~/.config/warp-terminal/user_preferences.json: terminal/warp/user_preferences.json
+    ~/.local/share/warp-terminal/themes: terminal/warp/themes
+    ~/.config/Code/User/keybindings.json: editors/code/User/keybindings.json
+    ~/.config/Code/User/profiles: editors/code/User/profiles
+    ~/.config/Code/User/snippets: editors/code/User/snippets
     ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
     ~/.config/neofetch: os/linux/neofetch
     ~/.config/rofi/config.rasi: finder/rofi/config.rasi
     ~/.config/rofi/powermenu/type-6/style-6.rasi: finder/rofi/style-6.rasi
     ~/.config/rofi/scripts: finder/rofi/scripts
-    editors/code/User/settings.json: ~/.config/Code - OSS/User/settings.json
+    editors/code/User/settings.json: ~/.config/Code/User/settings.json
