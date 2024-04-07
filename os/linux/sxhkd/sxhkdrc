@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Generated on 2024-01-20 10:59
+#Generated on 2024-04-07 19:29
 
 Print
 	xfce4-screenshooter
@@ -99,10 +99,8 @@ super + d
 	~/.config/rofi/scripts/dotf
 super + x
 	~/.config/rofi/scripts/powermenu
-super + z
-	~/.config/rofi/scripts/bookmarks
-super + ctrl
-	None
+super + p
+	~/.config/rofi/scripts/ports
 super + shift + Escape
 	xkill
 super + shift + o

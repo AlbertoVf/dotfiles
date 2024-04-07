@@ -1,71 +1,76 @@
-# media keys
-Print                 : xfce4-screenshooter
-XF86AudioLowerVolume  : amixer set Master 5%-
-XF86AudioRaiseVolume  : amixer set Master 5%+
-XF86AudioMute         : amixer -D pulse set Master 1+ toggle
-XF86AudioNext         : playerctl next
-XF86AudioPlay         : playerctl play-pause
-XF86AudioPrev         : playerctl previous
-XF86AudioStop         : playerctl stop
-XF86MonBrightnessDown : xbacklight -dec 5
-XF86MonBrightnessUp   : xbacklight -inc 5
+sxhkdrc:
+  # media keys
+  Print                 : xfce4-screenshooter
+  XF86AudioLowerVolume  : amixer set Master 5%-
+  XF86AudioRaiseVolume  : amixer set Master 5%+
+  XF86AudioMute         : amixer -D pulse set Master 1+ toggle
+  XF86AudioNext         : playerctl next
+  XF86AudioPlay         : playerctl play-pause
+  XF86AudioPrev         : playerctl previous
+  XF86AudioStop         : playerctl stop
+  XF86MonBrightnessDown : xbacklight -dec 5
+  XF86MonBrightnessUp   : xbacklight -inc 5
 
-# alt + key
-alt:
-  Escape : xfce4-taskmanager
-  Print  : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-  Left   : variety -p
-  Right  : variety -n
-  F1     : rofi -show file-browser-extended
-  F2     : rofi -show drun
-  F3     : rofi -show window
-  F4     : rofi -show ssh
-  F5     : rofi -show emoji
+  # alt + key
+  alt:
+    Escape : xfce4-taskmanager
+    Print  : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+    Left   : variety -p
+    Right  : variety -n
+    F1     : rofi -show file-browser-extended
+    F2     : rofi -show drun
+    F3     : rofi -show window
+    F4     : rofi -show ssh
+    F5     : rofi -show emoji
 
-# alt + shift + key
-alt + shift:
-  Return : thunar
-  v      : xfce4-clipman-history
-  h      : rofi -show file-browser-extended -file-browser-dir ~/.config/
-  j      : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-  l      : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
+  # alt + shift + key
+  alt + shift:
+    Return : thunar
+    v      : xfce4-clipman-history
+    h      : rofi -show file-browser-extended -file-browser-dir ~/.config/
+    j      : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+    l      : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
 
-# super + key
-super:
-  F1       : brave
-  F2       : code
-  F3       : gimp
-  F4       : rofi-bluetooth # blueberry
-  F5       : archlinux-tweak-tool
-  F6       : ferdium
-  F7       : virtualbox
-  F8       : thunar
-  F9       : thunderbird
-  F10      : spotube
-  F11      : kodi
-  KP_Enter : gnome-calculator
-  Return   : kitty
-  a        : xfce4-appfinder
-  b        : bitwarden-desktop
-  c        : chromium
-  e        : code
-  f        : firefox
-  g        : github-desktop
-  m        : pragha
-  r        : retroarch
-  s        : pamac-manager
-  v        : vlc --video-on-top
-  d        : ~/.config/rofi/scripts/dotf
-  x        : ~/.config/rofi/scripts/powermenu
+  # super + key
+  super:
+    F1       : brave
+    F2       : code
+    F3       : gimp
+    F4       : rofi-bluetooth # blueberry
+    F5       : archlinux-tweak-tool
+    F6       : ferdium
+    F7       : virtualbox
+    F8       : thunar
+    F9       : thunderbird
+    F10      : spotube
+    F11      : kodi
+    KP_Enter : gnome-calculator
+    Return   : kitty
+    a        : xfce4-appfinder
+    b        : bitwarden-desktop
+    c        : chromium
+    e        : code
+    f        : firefox
+    g        : github-desktop
+    m        : pragha
+    r        : retroarch
+    s        : pamac-manager
+    v        : vlc --video-on-top
+    d        : ~/.config/rofi/scripts/dotf
+    x        : ~/.config/rofi/scripts/powermenu
+    p        : ~/.config/rofi/scripts/ports
 
-# super + control + key
-super + ctrl:
-  # cerrar ventana
-  # cerrar forzosamente ventana
-  # reiniciar sesion
+  # super + shift + key
+  super + shift:
+    Escape : xkill
+    o      : sh ~/.config/picom/picom-toogle.sh
+    s      : pkill -USR1 -x sxhkd
 
-# super + shift + key
-super + shift:
-  Escape : xkill
-  o      : sh ~/.config/picom/picom-toogle.sh
-  s      : pkill -USR1 -x sxhkd
+rofi_ports:
+  80   : [Laravel, Wordpress]
+  631  : Impresora
+  1313 : Hugo
+  3000 : React
+  4200 : Angular
+  5000 : Flask
+  8000 : [Symfony, Django]

@@ -32,6 +32,5 @@
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
     ~/.config/neofetch: os/linux/neofetch
     ~/.config/rofi/config.rasi: finder/rofi/config.rasi
-    ~/.config/rofi/powermenu/type-6/style-6.rasi: finder/rofi/style-6.rasi
     ~/.config/rofi/scripts: finder/rofi/scripts
     editors/code/User/settings.json: ~/.config/Code/User/settings.json

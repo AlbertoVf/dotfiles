@@ -1,0 +1,11 @@
+#!/bin/bash
+
+file="$DOTFILES_PATH/doc/shortcuts.yaml"
+
+readarray -t ports < <(yq -r '.rofi_ports | to_entries[] | "\(.key) : \(.value)"' $file)
+selected=$(printf '%s\n' "${ports[@]}" | rofi -dmenu -p "Selecciona un puerto:")
+
+if [ -n "$selected" ]; then
+	puerto=$(echo "$selected" | awk '{print $1}')
+	xdg-open "http://localhost:$puerto" &
+fi
