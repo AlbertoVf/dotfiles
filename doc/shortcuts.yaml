@@ -1,4 +1,4 @@
-sxhkdrc:
+sxhkdrc: # shortcodes to sxhkd
   # media keys
   Print                 : xfce4-screenshooter
   XF86AudioLowerVolume  : amixer set Master 5%-
@@ -27,9 +27,15 @@ sxhkdrc:
   alt + shift:
     Return : thunar
     v      : xfce4-clipman-history
-    h      : rofi -show file-browser-extended -file-browser-dir ~/.config/
-    j      : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-    l      : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
+
+  ctrl + super:
+    h : rofi -show file-browser-extended -file-browser-dir ~/.config/
+    j : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
+    k : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
+    b : ~/.config/rofi/scripts/bookmarks
+    d : ~/.config/rofi/scripts/dotf
+    p : ~/.config/rofi/scripts/ports
+    a : ~/.config/rofi/scripts/apps
 
   # super + key
   super:
@@ -56,9 +62,7 @@ sxhkdrc:
     r        : retroarch
     s        : pamac-manager
     v        : vlc --video-on-top
-    d        : ~/.config/rofi/scripts/dotf
     x        : ~/.config/rofi/scripts/powermenu
-    p        : ~/.config/rofi/scripts/ports
 
   # super + shift + key
   super + shift:
@@ -66,11 +70,36 @@ sxhkdrc:
     o      : sh ~/.config/picom/picom-toogle.sh
     s      : pkill -USR1 -x sxhkd
 
-rofi_ports:
-  80   : [Laravel, Wordpress]
-  631  : Impresora
-  1313 : Hugo
-  3000 : React
-  4200 : Angular
-  5000 : Flask
-  8000 : [Symfony, Django]
+rofi:
+  ports: # ports used in `rofi ports` script
+    80   : HTTP, Laravel, Wordpress
+    631  : Impresora
+    1313 : Hugo
+    3000 : React
+    4200 : Angular
+    4321 : Astro
+    5000 : Flask
+    8000 : Symfony, Django
+    8080 : NodeJS, Spring, Apache
+
+  bookmarks: # weblinks used in `rofi bookmarks` script
+    '󱜙 Chat gpt'  : 'https://chat.openai.com/chat'
+    ' github'     : 'https://github.com/login'
+    '󰗃 youtube'   : 'https://www.youtube.com/'
+    '󰎚 notion'    : 'https://www.notion.so/'
+    '󰑑 regex'     : 'https://regex101.com/'
+    '󱤤 crontab'   : 'https://crontab.guru/'
+    ' nerd fonts' : 'https://www.nerdfonts.com/'
+    '󰫑 mastodon'  : 'https://social.linux.pizza/home'
+    ' youcode'    : 'https://you.com/code'
+
+  apps:
+    '󰥥 ' : 'qbittorrent'
+    '󱎓 ' : 'retroarch'
+    '󱉟 ' : 'calibre'
+    ' '  : 'chromium'
+    '󰻞 ' : 'ferdium'
+    ' '  : 'github-desktop'
+    ' '  : 'spotube'
+    '󰥠'  : 'gparted'
+    ''   : 'stacer'

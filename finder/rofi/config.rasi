@@ -1,4 +1,4 @@
-@theme "./launchers/type-5/style-4.rasi"
+@theme "./launchers/type-1/style-6.rasi"
 
 configuration {
 	modi: "file-browser-extended,drun,window,ssh,emoji";
@@ -22,5 +22,5 @@ configuration {
 }
 
 textbox-prompt-colon {
-	str: "󰗁";
+	str: "[ 󰗁 ]";
 }

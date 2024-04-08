@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Generated on 2024-04-07 19:29
+#Generated on 2024-04-08 20:56
 
 Print
 	xfce4-screenshooter
@@ -43,12 +43,20 @@ alt + shift + Return
 	thunar
 alt + shift + v
 	xfce4-clipman-history
-alt + shift + h
+ctrl + super + h
 	rofi -show file-browser-extended -file-browser-dir ~/.config/
-alt + shift + j
+ctrl + super + j
 	rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-alt + shift + l
+ctrl + super + k
 	rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
+ctrl + super + b
+	~/.config/rofi/scripts/bookmarks
+ctrl + super + d
+	~/.config/rofi/scripts/dotf
+ctrl + super + p
+	~/.config/rofi/scripts/ports
+ctrl + super + a
+	~/.config/rofi/scripts/apps
 super + F1
 	brave
 super + F2
@@ -95,12 +103,8 @@ super + s
 	pamac-manager
 super + v
 	vlc --video-on-top
-super + d
-	~/.config/rofi/scripts/dotf
 super + x
 	~/.config/rofi/scripts/powermenu
-super + p
-	~/.config/rofi/scripts/ports
 super + shift + Escape
 	xkill
 super + shift + o
