@@ -15,6 +15,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 alias ag="als"
+alias cd="z"
 alias reload="clear && . ~/.zshrc"
 
 source $DOTLY_PATH/shell/zsh/bindings/dot.zsh

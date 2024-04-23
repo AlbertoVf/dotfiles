@@ -4,7 +4,6 @@ alias cf="xclip -sel clip" # copy file content to clipboard
 
 # modern commands {
 alias cat="bat"
-alias cd="z"
 alias man="batman"
 # }
 
