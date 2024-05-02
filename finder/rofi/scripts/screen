@@ -1,0 +1,14 @@
+#!/bin/bash
+
+file="$HOME/.screenlayout/"
+
+rofi_cmd(){
+	rofi -dmenu -mesg "Selecciona Tipo de pantala" # -theme $HOME/.config/rofi/launchers/type-2/style-2.rasi
+}
+
+# screen=$(find $file -type f -executable)
+screen=$(ls $file)
+selected=$(printf '%s\n' "${screen[@]}" | rofi_cmd)
+if [ -n "$selected" ]; then
+	sh "$file/$selected"
+fi
