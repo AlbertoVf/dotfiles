@@ -8,8 +8,8 @@ sxhkdrc: # shortcodes to sxhkd
   XF86AudioPlay         : playerctl play-pause
   XF86AudioPrev         : playerctl previous
   XF86AudioStop         : playerctl stop
-  XF86MonBrightnessDown : xbacklight -dec 5
-  XF86MonBrightnessUp   : xbacklight -inc 5
+  XF86MonBrightnessDown : brightnessctl s 10%-
+  XF86MonBrightnessUp   : brightnessctl s +10%
 
   # alt + key
   alt:
@@ -36,6 +36,7 @@ sxhkdrc: # shortcodes to sxhkd
     d : ~/.config/rofi/scripts/dotf
     p : ~/.config/rofi/scripts/ports
     a : ~/.config/rofi/scripts/apps
+    s : ~/.config/rofi/scripts/screen
 
   # super + key
   super:
@@ -67,20 +68,20 @@ sxhkdrc: # shortcodes to sxhkd
   # super + shift + key
   super + shift:
     Escape : xkill
-    o      : sh ~/.config/picom/picom-toogle.sh
+    p      : sh ~/.config/picom/picom-toogle.sh
     s      : pkill -USR1 -x sxhkd
 
 rofi:
-  ports: # ports used in `rofi ports` script
-    80   : HTTP, Laravel, Wordpress
+  ports : # ports used in `rofi ports` script
+    80   : HTTP / Laravel / Wordpress
     631  : Impresora
     1313 : Hugo
     3000 : React
     4200 : Angular
     4321 : Astro
     5000 : Flask
-    8000 : Symfony, Django
-    8080 : NodeJS, Spring, Apache
+    8000 : Symfony / Django
+    8080 : Apache / NodeJS / Spring
 
   bookmarks: # weblinks used in `rofi bookmarks` script
     '󱜙 Chat gpt'  : 'https://chat.openai.com/chat'

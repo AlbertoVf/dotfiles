@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Generated on 2024-04-08 20:56
+#Generated on 2024-05-02 15:43
 
 Print
 	xfce4-screenshooter
@@ -18,9 +18,9 @@ XF86AudioPrev
 XF86AudioStop
 	playerctl stop
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	brightnessctl s 10%-
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	brightnessctl s +10%
 alt + Escape
 	xfce4-taskmanager
 alt + Print
@@ -57,6 +57,8 @@ ctrl + super + p
 	~/.config/rofi/scripts/ports
 ctrl + super + a
 	~/.config/rofi/scripts/apps
+ctrl + super + s
+	~/.config/rofi/scripts/screen
 super + F1
 	brave
 super + F2
@@ -107,7 +109,7 @@ super + x
 	~/.config/rofi/scripts/powermenu
 super + shift + Escape
 	xkill
-super + shift + o
+super + shift + p
 	sh ~/.config/picom/picom-toogle.sh
 super + shift + s
 	pkill -USR1 -x sxhkd
