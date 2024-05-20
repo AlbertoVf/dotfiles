@@ -25,13 +25,13 @@ sxhkdrc: # shortcodes to sxhkd
 
   # alt + shift + key
   alt + shift:
-    Return : thunar
-    v      : xfce4-clipman-history
+    Return   : thunar
+    v        : xfce4-clipman-history
+    space    : gnome-calculator
+    ~button4 : amixer set Master 5%+ # mouse wheel up
+    ~button5 : amixer set Master 5%- # mouse wheel down
 
   ctrl + super:
-    h : rofi -show file-browser-extended -file-browser-dir ~/.config/
-    j : rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-    k : rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
     b : ~/.config/rofi/scripts/bookmarks
     d : ~/.config/rofi/scripts/dotf
     p : ~/.config/rofi/scripts/ports
@@ -40,30 +40,29 @@ sxhkdrc: # shortcodes to sxhkd
 
   # super + key
   super:
-    F1       : brave
-    F2       : code
-    F3       : gimp
-    F4       : rofi-bluetooth # blueberry
-    F5       : archlinux-tweak-tool
-    F6       : ferdium
-    F7       : virtualbox
-    F8       : thunar
-    F9       : thunderbird
-    F10      : spotube
-    F11      : kodi
-    KP_Enter : gnome-calculator
-    Return   : kitty
-    a        : xfce4-appfinder
-    b        : bitwarden-desktop
-    c        : chromium
-    e        : code
-    f        : firefox
-    g        : github-desktop
-    m        : pragha
-    r        : retroarch
-    s        : pamac-manager
-    v        : vlc --video-on-top
-    x        : ~/.config/rofi/scripts/powermenu
+    F1     : brave
+    F2     : code
+    F3     : gimp
+    F4     : rofi-bluetooth # blueberry
+    F5     : archlinux-tweak-tool
+    F6     : ferdium
+    F7     : virtualbox
+    F8     : thunar
+    F9     : thunderbird
+    F10    : spotube
+    F11    : kodi
+    Return : kitty
+    a      : xfce4-appfinder
+    b      : bitwarden-desktop
+    c      : chromium
+    e      : code
+    f      : firefox
+    g      : github-desktop
+    m      : pragha
+    r      : retroarch
+    s      : pamac-manager
+    v      : vlc --video-on-top
+    x      : ~/.config/rofi/scripts/powermenu
 
   # super + shift + key
   super + shift:
@@ -72,7 +71,7 @@ sxhkdrc: # shortcodes to sxhkd
     s      : pkill -USR1 -x sxhkd
 
 rofi:
-  ports : # ports used in `rofi ports` script
+  ports: # ports used in `rofi ports` script
     80   : HTTP / Laravel / Wordpress
     631  : Impresora
     1313 : Hugo
@@ -85,13 +84,13 @@ rofi:
 
   bookmarks: # weblinks used in `rofi bookmarks` script
     '󱜙 Chat gpt'  : 'https://chat.openai.com/chat'
-    ' github'     : 'https://github.com/login'
     '󰗃 youtube'   : 'https://www.youtube.com/'
     '󰎚 notion'    : 'https://www.notion.so/'
     '󰑑 regex'     : 'https://regex101.com/'
     '󱤤 crontab'   : 'https://crontab.guru/'
-    ' nerd fonts' : 'https://www.nerdfonts.com/'
     '󰫑 mastodon'  : 'https://social.linux.pizza/home'
+    ' github'     : 'https://github.com/login'
+    ' nerd fonts' : 'https://www.nerdfonts.com/'
     ' youcode'    : 'https://you.com/code'
 
   apps:

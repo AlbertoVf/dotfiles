@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Generated on 2024-05-02 15:43
+# Generated on 2024-05-20 19:06
 
 Print
 	xfce4-screenshooter
@@ -43,12 +43,12 @@ alt + shift + Return
 	thunar
 alt + shift + v
 	xfce4-clipman-history
-ctrl + super + h
-	rofi -show file-browser-extended -file-browser-dir ~/.config/
-ctrl + super + j
-	rofi -show file-browser-extended -file-browser-dir '~/Proyectos/Git y Workspaces'
-ctrl + super + k
-	rofi -show file-browser-extended -file-browser-dir ~/Proyectos/
+alt + shift + space
+	gnome-calculator
+alt + shift + ~button4
+	amixer set Master 5%+
+alt + shift + ~button5
+	amixer set Master 5%-
 ctrl + super + b
 	~/.config/rofi/scripts/bookmarks
 ctrl + super + d
@@ -81,8 +81,6 @@ super + F10
 	spotube
 super + F11
 	kodi
-super + KP_Enter
-	gnome-calculator
 super + Return
 	kitty
 super + a
