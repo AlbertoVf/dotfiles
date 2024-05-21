@@ -15,7 +15,7 @@
     ~/.fonts: fonts
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
-    ~/.profile: shell/.profile
+    # ~/.profile: shell/.profile
     ~/.screenlayout: os/linux/.screenlayout
     ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
@@ -31,6 +31,6 @@
     ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
     ~/.config/neofetch: os/linux/neofetch
-    ~/.config/rofi/config.rasi: finder/rofi/config.rasi
-    ~/.config/rofi/scripts: finder/rofi/scripts
-    editors/code/User/settings.json: ~/.config/Code/User/settings.json
+    ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
+    ~/.config/rofi/scripts: launchers/rofi/scripts
+    ~/.config/Code/User/settings.json: editors/code/User/settings.json
