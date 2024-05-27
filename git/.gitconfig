@@ -4,6 +4,7 @@
 	au      = add -u
 	c       = commit -m
 	ca      = commit --amend
+	cd      = clone --depth 1
 	qc      = commit -am
 	can     = commit --amend --no-edit
 	d       = difftool

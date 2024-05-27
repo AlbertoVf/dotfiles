@@ -14,10 +14,10 @@ sxhkdrc: # shortcodes to sxhkd
   # alt + key
   alt:
     Escape : xfce4-taskmanager
-    Print  : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+    Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
     Left   : variety -p
     Right  : variety -n
-    F1     : rofi -show file-browser-extended
+    F1     : rofi -show filebrowser¡
     F2     : rofi -show drun
     F3     : rofi -show window
     F4     : rofi -show ssh

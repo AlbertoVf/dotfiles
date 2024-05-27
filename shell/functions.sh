@@ -17,3 +17,8 @@ add_submodule() {
 
 	git submodule add $module $name
 }
+
+export_packages(){
+	echo "# Packages installed on $(uname -n) on $(date +'%Y-%m-%d %H.%M.%S')"> ~/packages-installes.txt
+	pacman -Qq >> ~/packages-installes.txt
+}

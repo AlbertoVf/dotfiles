@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-05-20 19:06
+# Generated on 2024-05-20 19:27
 
 Print
 	xfce4-screenshooter
@@ -30,7 +30,7 @@ alt + Left
 alt + Right
 	variety -n
 alt + F1
-	rofi -show file-browser-extended
+	rofi -show filebrowser¡
 alt + F2
 	rofi -show drun
 alt + F3
