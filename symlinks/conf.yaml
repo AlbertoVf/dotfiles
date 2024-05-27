@@ -30,7 +30,7 @@
     ~/.config/Code/User/snippets: editors/code/User/snippets
     ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
-    ~/.config/neofetch: os/linux/neofetch
+    ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     ~/.config/rofi/scripts: launchers/rofi/scripts
     ~/.config/Code/User/settings.json: editors/code/User/settings.json
