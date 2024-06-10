@@ -1,0 +1,83 @@
+<code_scheme name="Default" version="173">
+	<option name="OTHER_INDENT_OPTIONS">
+		<value>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</value>
+	</option>
+	<HTMLCodeStyleSettings>
+		<option name="HTML_UNIFORM_INDENT" value="true" />
+		<option name="HTML_ALIGN_TEXT" value="true" />
+		<option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+	</HTMLCodeStyleSettings>
+	<JSON>
+		<option name="PROPERTY_ALIGNMENT" value="2" />
+		<option name="OBJECT_WRAPPING" value="0" />
+	</JSON>
+	<Properties>
+		<option name="SPACES_AROUND_KEY_VALUE_DELIMITER" value="true" />
+	</Properties>
+	<Python>
+		<option name="OPTIMIZE_IMPORTS_SORT_NAMES_IN_FROM_IMPORTS" value="true" />
+		<option name="OPTIMIZE_IMPORTS_JOIN_FROM_IMPORTS_WITH_SAME_SOURCE" value="true" />
+	</Python>
+	<Shell_Script>
+		<option name="SWITCH_CASES_INDENTED" value="true" />
+		<option name="REDIRECT_FOLLOWED_BY_SPACE" value="true" />
+	</Shell_Script>
+	<codeStyleSettings language="EditorConfig">
+		<option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
+	</codeStyleSettings>
+	<codeStyleSettings language="Groovy">
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="HTML">
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="JAVA">
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="JSON">
+		<option name="WRAP_ON_TYPING" value="1" />
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="Properties">
+		<option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
+	</codeStyleSettings>
+	<codeStyleSettings language="Shell Script">
+		<indentOptions>
+			<option name="INDENT_SIZE" value="4" />
+			<option name="TAB_SIZE" value="4" />
+			<option name="USE_TAB_CHARACTER" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="TOML">
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="XML">
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+	<codeStyleSettings language="kotlin">
+		<indentOptions>
+			<option name="USE_TAB_CHARACTER" value="true" />
+			<option name="SMART_TABS" value="true" />
+		</indentOptions>
+	</codeStyleSettings>
+</code_scheme>
