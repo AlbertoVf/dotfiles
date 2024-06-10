@@ -15,7 +15,6 @@
     ~/.fonts: fonts
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
-    # ~/.profile: shell/.profile
     ~/.screenlayout: os/linux/.screenlayout
     ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
@@ -23,14 +22,14 @@
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
     ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
-    ~/.config/warp-terminal/user_preferences.json: terminal/warp/user_preferences.json
-    ~/.local/share/warp-terminal/themes: terminal/warp/themes
+    # ~/.config/warp-terminal/user_preferences.json: terminal/warp/user_preferences.json
     ~/.config/Code/User/keybindings.json: editors/code/User/keybindings.json
     ~/.config/Code/User/profiles: editors/code/User/profiles
     ~/.config/Code/User/snippets: editors/code/User/snippets
-    ~/.config/conky/.conkyrc: os/linux/conky/.conkyrc
+    ~/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     ~/.config/rofi/scripts: launchers/rofi/scripts
     ~/.config/Code/User/settings.json: editors/code/User/settings.json
+    ~/.config/autostart/autostart.sh: os/linux/autostart/autostart.sh

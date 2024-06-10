@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-05-20 19:27
+# Generated on 2024-06-10 17:13
 
 Print
 	xfce4-screenshooter
@@ -8,7 +8,7 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
 	amixer set Master 5%+
 XF86AudioMute
-	amixer -D pulse set Master 1+ toggle
+	amixer -D pulse set Master toggle
 XF86AudioNext
 	playerctl next
 XF86AudioPlay
@@ -18,19 +18,35 @@ XF86AudioPrev
 XF86AudioStop
 	playerctl stop
 XF86MonBrightnessDown
-	brightnessctl s 10%-
+	ddcutil setvcp 10 10 --display 1
 XF86MonBrightnessUp
-	brightnessctl s +10%
+	ddcutil setvcp 10 100 --display 1
+ctrl + super + b
+	~/.config/rofi/scripts/bookmarks
+ctrl + super + d
+	~/.config/rofi/scripts/dotf
+ctrl + super + p
+	~/.config/rofi/scripts/ports
+ctrl + super + a
+	~/.config/rofi/scripts/apps
+ctrl + super + s
+	~/.config/rofi/scripts/screen
+ctrl + shift + button2
+	amixer -D pulse set Master toggle
+ctrl + shift + button4
+	amixer set Master 5%+
+ctrl + shift + button5
+	amixer set Master 5%-
 alt + Escape
 	xfce4-taskmanager
 alt + Print
-	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+	scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
 alt + Left
 	variety -p
 alt + Right
 	variety -n
 alt + F1
-	rofi -show filebrowser¡
+	rofi -show filebrowser
 alt + F2
 	rofi -show drun
 alt + F3
@@ -45,20 +61,6 @@ alt + shift + v
 	xfce4-clipman-history
 alt + shift + space
 	gnome-calculator
-alt + shift + ~button4
-	amixer set Master 5%+
-alt + shift + ~button5
-	amixer set Master 5%-
-ctrl + super + b
-	~/.config/rofi/scripts/bookmarks
-ctrl + super + d
-	~/.config/rofi/scripts/dotf
-ctrl + super + p
-	~/.config/rofi/scripts/ports
-ctrl + super + a
-	~/.config/rofi/scripts/apps
-ctrl + super + s
-	~/.config/rofi/scripts/screen
 super + F1
 	brave
 super + F2
@@ -94,7 +96,7 @@ super + e
 super + f
 	firefox
 super + g
-	github-desktop
+	gitkraken
 super + m
 	pragha
 super + r
