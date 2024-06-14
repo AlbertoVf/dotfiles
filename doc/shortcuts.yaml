@@ -12,74 +12,57 @@ sxhkdrc: # shortcodes to sxhkd
   XF86MonBrightnessDown : ddcutil setvcp 10 10 --display 1
   XF86MonBrightnessUp   : ddcutil setvcp 10 100 --display 1
 
-  # ctrl:
-  #   # NOT SHORTCUTS
-  ctrl + super:
-    b : ~/.config/rofi/scripts/bookmarks
-    d : ~/.config/rofi/scripts/dotf
-    p : ~/.config/rofi/scripts/ports
-    a : ~/.config/rofi/scripts/apps
-    s : ~/.config/rofi/scripts/screen
-
-  ctrl + shift:
-    button2 : amixer -D pulse set Master toggle # wheel clicked
-    button4 : amixer set Master 5%+ # wheel up
-    button5 : amixer set Master 5%- # wheel down
-
-  # ctrl + alt:
-  #   # NOT SHORTCUTS
-
-  alt:
-    Escape : xfce4-taskmanager
-    Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-    Left   : variety -p
-    Right  : variety -n
-    F1     : rofi -show filebrowser
-    F2     : rofi -show drun
-    F3     : rofi -show window
-    F4     : rofi -show ssh
-    F5     : rofi -show emoji
-
-  alt + shift:
-    Return : thunar
-    v      : xfce4-clipman-history
-    space  : gnome-calculator
-
-  super:
+  super :
     F1     : brave
     F2     : code
-    F3     : gimp
-    F4     : rofi-bluetooth # blueberry
-    F5     : archlinux-tweak-tool
-    F6     : ferdium
-    F7     : virtualbox
-    F8     : thunar
-    F9     : thunderbird
-    F10    : spotube
-    F11    : kodi
-    Return : kitty
+    F3     : thunar
+    F4     : virtualbox
+    F5     : ferdium
+    F6     : thunderbird
+    F7     : spotube
+    F8     : kodi
     a      : xfce4-appfinder
     b      : bitwarden-desktop
     c      : chromium
     e      : code
     f      : firefox
-    g      : gitkraken
+    g      : github-desktop
     m      : pragha
     r      : retroarch
     s      : pamac-manager
     v      : vlc --video-on-top
     x      : ~/.config/rofi/scripts/powermenu
+    Return : kitty
+    shift  :
+      p       : sh ~/.config/picom/picom-toogle.sh
+      s       : pkill -USR1 -x sxhkd
+      Escape  : xkill
+      button5 : amixer set Master 5%- # wheel down
+      button2 : amixer -D pulse set Master toggle # wheel clicked
+      button4 : amixer set Master 5%+ # wheel up
 
-  super + shift:
-    Escape : xkill
-    p      : sh ~/.config/picom/picom-toogle.sh
-    s      : pkill -USR1 -x sxhkd
+    ctrl:
+        b : ~/.config/rofi/scripts/bookmarks
+        d : ~/.config/rofi/scripts/dotf
+        p : ~/.config/rofi/scripts/ports
+        a : ~/.config/rofi/scripts/apps
+        s : ~/.config/rofi/scripts/screen
 
-  # super + alt:
-  #   # NOT SHORTCUTS
+  alt:
+      Escape : xfce4-taskmanager
+      Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+      Left   : variety -p
+      Right  : variety -n
+      F1     : rofi -show drun
+      F2     : rofi -show window
+      F3     : rofi -show ssh
+      F4     : rofi-bluetooth
+      F5     : rofi -show emoji
+      shift  :
+        Return : thunar
+        v      : xfce4-clipman-history
+        space  : gnome-calculator
 
-  # shift:
-  # NOT SHOORTCUTS
 rofi:
   ports: # ports used in `rofi ports` script
     80   : HTTP / Laravel / Wordpress

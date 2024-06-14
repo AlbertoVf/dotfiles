@@ -7,7 +7,6 @@ theme="$HOME/.config/rofi/applets/type-2/style-2"
 editor='󰨞'
 manager=''
 terminal=''
-update=''
 
 # Rofi CMD
 rofi_cmd() {
@@ -18,7 +17,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$editor\n$terminal\n$manager\n$update" | rofi_cmd
+	echo -e "$editor\n$terminal\n$manager" | rofi_cmd
 }
 
 # Actions
@@ -32,8 +31,5 @@ $manager) #? open dotfiles in file manager
 	;;
 $terminal) #? open dotfiles in terminal
 	kitty --directory $DOTFILES_PATH
-	;;
-$update) #? update links
-	dot symlinks apply
 	;;
 esac

@@ -1,7 +1,7 @@
 @theme "./launchers/type-1/style-6.rasi"
 
 configuration {
-	modi: "filebrowser,drun,window,ssh,emoji";
+	modi: "drun,window,ssh,emoji";
 	display-window: "󰽙";
 	display-run: "󱓟";
 	display-ssh: "󰩠";
