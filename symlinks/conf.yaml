@@ -32,4 +32,7 @@
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     ~/.config/rofi/scripts: launchers/rofi/scripts
     ~/.config/Code/User/settings.json: editors/code/User/settings.json
-    ~/.config/autostart/autostart.sh: os/linux/autostart/autostart.sh
+- shell:
+    - [ git clone https://github.com/AlbertoVf/qtile.git --depth 1 ~/.config/qtile ]
+    - [ git clone https://github.com/AlbertoVf/wallpapers.git --depth 1 ~/.wallpapers ]
+    - [ git clone https://github.com/AlbertoVf/shell-scripts --depth 1 ~/.bin ]
