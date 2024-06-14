@@ -30,6 +30,8 @@
 	added     = green
 	changed   = yellow
 	untracked = red
+[commit]
+	gpgsign = true
 [core]
 	autocrlf     = input
 	editor       = code --wait --profile GIT
@@ -65,6 +67,11 @@
 	default = current
 [sequence]
 	editor = code --profile GIT --wait --reuse-window
+[tag]
+	gpgsign = true
+[gpg]
+	program = /bin/gpg
 [user]
-	name  = AlbertoVf
-	email = avf.git-repos@protonmail.com
+	name      = AlbertoVf
+	email     = avf.git-repos@protonmail.com
+	signedkey = 52055A6966DB6766
