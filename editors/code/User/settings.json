@@ -124,13 +124,13 @@
 		"*.scss": "$(capture).css.map, $(capture).*.css, $(capture).scss, $(capture).less, $(capture).sass",
 		"*.ts": "$(capture).d.ts.map, $(capture).*.ts, $(capture)*.js, $(capture)*.ts",
 		"*.tsx": "$(capture)*.ts, $(capture)*.tsx, $(capture).*, $(capture).module.*",
-		".env": "*.env, .editorconfig, .gitignore,.env*",
+		".env": "*.env, .editorconfig, .gitignore",
 		".gitignore": ".gitattributes, .gitmodules",
 		"composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
 		"Dockerfile": ".dockerignore, docker-compose.*, dockerfile*, entrypoint.sh, .env",
-		"Makefile": ".env, Dockerfile, package*, composer*,requirements.txt",
+		"Makefile": ".env, Dockerfile, package*, composer*",
 		"package.json": ".commitlint*, .eslint*, .huskyrc*, .lintstagedrc*, .nodemon*, .npm*, .pnpm*, .prettier*, .stylelint*, .yarnrc*, commitlint*, eslint*, lint-staged*, nodemon*, package-lock.json, stylelint*, tslint*, vercel*, webpack*, workspace.json,  yarn*, tsconfig*, jest.*",
-		"README*": "authors*, changelog*, code_of_conduct*, contributors*, LICENSE*,_config.yml"
+		"README*": "authors*, changelog*, code_of_conduct*, contributors*, license*"
 	},
 	"explorer.incrementalNaming": "smart",
 	"files.associations": {
@@ -204,10 +204,5 @@
 	"workbench.tree.expandMode": "doubleClick",
 	"workbench.tree.indent": 32,
 	"yaml.format.bracketSpacing": false,
-	"yaml.format.singleQuote": true,
-	"projectManager.git.baseFolders": [
-		"/home/alberto/Proyectos/"
-	],
-	"projectManager.git.maxDepthRecursion": 3,
-	"python.terminal.activateEnvironment": false
+	"yaml.format.singleQuote": true
 }
