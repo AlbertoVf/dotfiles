@@ -15,12 +15,12 @@ sxhkdrc: # shortcodes to sxhkd
   super :
     F1     : brave
     F2     : code
-    F3     : thunar
-    F4     : virtualbox
-    F5     : ferdium
-    F6     : thunderbird
-    F7     : spotube
-    F8     : kodi
+    F6     : ferdium
+    F7     : virtualbox
+    F8     : thunar
+    F9     : thunderbird
+    F10    : spotube
+    F11    : kodi
     a      : xfce4-appfinder
     b      : bitwarden-desktop
     c      : chromium
@@ -34,6 +34,7 @@ sxhkdrc: # shortcodes to sxhkd
     x      : ~/.config/rofi/scripts/powermenu
     Return : kitty
     shift  :
+      F1      : brave --tor
       p       : sh ~/.config/picom/picom-toogle.sh
       s       : pkill -USR1 -x sxhkd
       Escape  : xkill
@@ -53,11 +54,10 @@ sxhkdrc: # shortcodes to sxhkd
       Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
       Left   : variety -p
       Right  : variety -n
-      F1     : rofi -show drun
-      F2     : rofi -show window
-      F3     : rofi -show ssh
+      F1     : rofi -show ssh
+      F2     : rofi -show combi
+      F3     : rofi -show emoji
       F4     : rofi-bluetooth
-      F5     : rofi -show emoji
       shift  :
         Return : thunar
         v      : xfce4-clipman-history
@@ -65,15 +65,15 @@ sxhkdrc: # shortcodes to sxhkd
 
 rofi:
   ports: # ports used in `rofi ports` script
-    80   : HTTP / Laravel / Wordpress
+    80   : HTTP / Laravel / Local Wordpress
+    8000 : Symfony / Django
+    8080 : Apache / NodeJS / Spring / Docker Wordpress
     631  : Impresora
     1313 : Hugo
     3000 : React
     4200 : Angular
     4321 : Astro
     5000 : Flask
-    8000 : Symfony / Django
-    8080 : Apache / NodeJS / Spring
 
   bookmarks: # weblinks used in `rofi bookmarks` script
     '󱜙 Chat gpt'  : 'https://chat.openai.com/chat'

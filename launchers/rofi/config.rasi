@@ -1,26 +1,26 @@
 @theme "./launchers/type-1/style-6.rasi"
 
 configuration {
-	modi: "drun,window,ssh,emoji";
-	display-window: "󰽙";
-	display-run: "󱓟";
-	display-ssh: "󰩠";
-	display-drun: "󱓟";
-	display-filebrowser: "";
-	display-keys: "󰌋";
-	display-emoji: "󱈔";
-	display-clipboard: "󱓦";
-	display-format : "{icon} {name}";
+	modi                : "ssh,combi,emoji";
+	combi-modi          : "window,drun";
+	display-combi       : "󱓟 + 󰽙";
+	display-ssh         : "󰌚";
+	display-window      : "󰽙";
+	display-run         : "󱓟";
+	display-drun        : "󱓟";
+	display-filebrowser : "";
+	display-emoji       : "󱈔";
+	display-format      : "{icon} {name}";
 	drun-display-format : "{name}";
-	show-icons: true;
-	icon-theme: "Tela-circle-nord-dark";
-	terminal: "kitty";
+	show-icons          : true;
+	icon-theme          : "Tela-circle-nord-dark";
+	terminal            : "kitty";
 }
 
 * {
-	font: "GeistMono Nerd Font Bold 13";
+	font : "GeistMono Nerd Font Bold 13";
 }
 
 textbox-prompt-colon {
-	str: "[ 󰗁 ]";
+	str : "[ 󰗁 ]";
 }

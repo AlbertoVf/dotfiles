@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-06-14 16:40
+# Generated on 2024-06-16 17:35
 
 Print
 	xfce4-screenshooter
@@ -25,17 +25,17 @@ super + F1
 	brave
 super + F2
 	code
-super + F3
-	thunar
-super + F4
-	virtualbox
-super + F5
-	ferdium
 super + F6
-	thunderbird
+	ferdium
 super + F7
-	spotube
+	virtualbox
 super + F8
+	thunar
+super + F9
+	thunderbird
+super + F10
+	spotube
+super + F11
 	kodi
 super + a
 	xfce4-appfinder
@@ -61,6 +61,8 @@ super + x
 	~/.config/rofi/scripts/powermenu
 super + Return
 	kitty
+super + shift + F1
+	brave --tor
 super + shift + p
 	sh ~/.config/picom/picom-toogle.sh
 super + shift + s
@@ -92,15 +94,13 @@ alt + Left
 alt + Right
 	variety -n
 alt + F1
-	rofi -show drun
-alt + F2
-	rofi -show window
-alt + F3
 	rofi -show ssh
+alt + F2
+	rofi -show combi
+alt + F3
+	rofi -show emoji
 alt + F4
 	rofi-bluetooth
-alt + F5
-	rofi -show emoji
 alt + shift + Return
 	thunar
 alt + shift + v

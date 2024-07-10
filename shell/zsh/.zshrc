@@ -23,3 +23,4 @@ source $DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 source $DOTFILES_PATH/shell/zsh/.zim/modules/ohmyzsh/oh-my-zsh.sh
 source $DOTFILES_PATH/shell/init.sh
+
