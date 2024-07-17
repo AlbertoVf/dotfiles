@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+file="$DOTFILES_PATH/doc/shortcuts.yaml"
+
+rofi_cmd() {
+	rofi -dmenu -mesg "$1" #-theme $HOME/.config/rofi/launchers/type-2/style-2.rasi
+}
+
+apps() {
+	readarray -t apps < <(yq -r '.rofi.apps | to_entries[] | " \(.key) : \(.value)"' $file)
+	selected=$(printf '%s\n' "${apps[@]}" | rofi_cmd "Selecciona una aplicacion")
+	if [ -n "$selected" ]; then
+		app=$(echo "$selected" | awk '{print $NF}')
+		$app
+	fi
+}
+
+bookmarks() {
+	readarray -t bookmarks < <(yq -r '.rofi.bookmarks | to_entries[] | " \(.key) : \(.value)"' $file)
+	selected=$(printf '%s\n' "${bookmarks[@]}" | rofi_cmd "Selecciona una web")
+	if [ -n "$selected" ]; then
+		web=$(echo "$selected" | awk '{print $NF}')
+		xdg-open $web &
+	fi
+}
+
+ports() {
+	readarray -t ports < <(yq -r '.rofi.ports | to_entries[] | " \(.key) : \(.value)"' $file)
+	selected=$(printf '%s\n' "${ports[@]}" | rofi_cmd "Selecciona un puerto")
+	if [ -n "$selected" ]; then
+		puerto=$(echo "$selected" | awk '{print $1}')
+		xdg-open "http://localhost:$puerto" &
+	fi
+}
+
+screen() {
+	file="$HOME/.screenlayout/"
+	screen=$(ls $file)
+	selected=$(printf '%s\n' "${screen[@]}" | rofi_cmd "Selecciona Tipo de pantalla")
+	if [ -n "$selected" ]; then
+		sh "$file/$selected"
+	fi
+}
+
+dotf() {
+	theme="$HOME/.config/rofi/applets/type-2/style-2"
+	# Options
+	editor='󰨞'
+	manager=''
+	terminal=''
+	rofi_cmd() {
+		rofi -dmenu -p "Dotfiles" -theme ${theme}.rasi
+	}
+	chosen=$(echo -e "$editor\n$terminal\n$manager" | rofi_cmd)
+	case ${chosen} in
+	$editor) code $DOTFILES_PATH ;;
+	$manager) thunar $DOTFILES_PATH ;;
+	$terminal) kitty --directory $DOTFILES_PATH ;;
+	esac
+}
+
+case $1 in
+--apps) apps ;;
+--bookmarks) bookmarks ;;
+--ports) ports ;;
+--screen) screen ;;
+--dotf) dotf ;;
+esac

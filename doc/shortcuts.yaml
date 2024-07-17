@@ -43,11 +43,11 @@ sxhkdrc: # shortcodes to sxhkd
       button4 : amixer set Master 5%+ # wheel up
 
     ctrl:
-        b : ~/.config/rofi/scripts/bookmarks
-        d : ~/.config/rofi/scripts/dotf
-        p : ~/.config/rofi/scripts/ports
-        a : ~/.config/rofi/scripts/apps
-        s : ~/.config/rofi/scripts/screen
+        a : ~/.config/rofi/scripts/rofi-scripts --apps
+        b : ~/.config/rofi/scripts/rofi-scripts --bookmarks
+        d : ~/.config/rofi/scripts/rofi-scripts --dotf
+        p : ~/.config/rofi/scripts/rofi-scripts --ports
+        s : ~/.config/rofi/scripts/rofi-scripts --screen
 
   alt:
       Escape : xfce4-taskmanager

@@ -11,9 +11,7 @@ date="$(date +"%a %d %b %H:%M")"
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
-		-p "[$USER] $date" \
-		-theme ${theme}.rasi
+	rofi -dmenu -p "$date" -theme ${theme}.rasi
 }
 
 # Pass variables to rofi dmenu
