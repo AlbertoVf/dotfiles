@@ -1,0 +1,53 @@
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+// @border-color: #2A8EAC;
+@border-color: #42b983;
+@monospace: GeistMono Nerd Font, monospace;
+@default: MonaspiceRn Nerd Font, monospace;
+
+.markdown-preview.markdown-preview {
+	font-family: @default;
+	font-size: 11px;
+
+	@media print {
+		h1:not(:first-of-type) {
+			page-break-before: always;
+			margin-top: 0;
+		}
+
+		pre,
+		blockquote,
+		tr,
+		td {
+			page-break-inside: avoid;
+		}
+
+		// td {
+		// 	white-space: nowrap;
+		// 	width: auto;
+		// 	padding: 4px
+		// }
+	}
+
+	blockquote {
+		border-left: 3px solid @border-color;
+		font-style: italic;
+		margin-top: 1rem;
+		padding: .4rem;
+	}
+
+	pre {
+		border: 1px solid @border-color;
+		border-radius: 5px;
+		margin-inline: 2rem;
+
+		code {
+			display: block;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			font-family: @monospace;
+			font-size: 90%;
+		}
+	}
+}

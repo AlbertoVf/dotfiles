@@ -1,20 +1,4 @@
 {
-	"puppeteer - extended": {
-		"prefix": "print",
-		"description": "puppeteer.Yaml para exportar pdf con markdown-extended",
-		"body": [
-			"puppeteer:",
-			"\tpdf:",
-			"\t\tformat: A4",
-			"\t\tlandscape: ${3|false,true|}",
-			"\t\tdisplayHeaderFooter: ${4|true,false|}",
-			"\t\tmargin:",
-			"\t\t\ttop: ${1:1.5}cm",
-			"\t\t\tright: ${2:1.5}cm",
-			"\t\t\tbottom: ${1:2.0}cm",
-			"\t\t\tleft: ${2:1.5}cm"
-		]
-	},
 	"puppeteer - markdown preview": {
 		"prefix": "print",
 		"description": "puppeteer - markdown preview. Configuracion Yaml para exportar a pdf con markdown preview",
@@ -23,13 +7,13 @@
 			"\tformat: A4",
 			"\tlandscape: ${1|false,true|}",
 			"\tdisplayHeaderFooter: ${2|true,false|}",
-			"\tfooterTemplate: \"<div style='font-size: 9px; font-family: monospace; margin: 0.5cm auto;'><span class='title'></span> - [<span class='pageNumber'></span>]</span></div>\"",
-			"\theaderTemplate: \"<div/>\"",
+			"\tfooterTemplate: \"<div style='width:100%; text-transform:uppercase; text-align:center; font: normal bold normal 11px Courier;'>[ <span class='title'></span> - <span class='pageNumber'></span> ]</span></div>\"",
+			"\theaderTemplate: None",
 			"\tmargin:",
-			"\t\ttop: 1.5cm",
-			"\t\tright: :1.5cm",
-			"\t\tbottom: 2.0cm",
-			"\t\tleft: 1.5cm"
+			"\t\tbottom: 2cm",
+			"\t\ttop: 2cm",
+			"\t\tright: 2cm",
+			"\t\tleft: 2cm"
 		]
 	}
 }

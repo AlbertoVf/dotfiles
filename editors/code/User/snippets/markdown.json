@@ -7,7 +7,7 @@
 			"date: date",
 			"title: title",
 			"author: ${1:AlbertoVf}",
-			"tags:",
+			"tags: []",
 			"resume: ${2:descripcion}",
 			// "footer: \\${title} - [\\${pageNo}]",
 			"---"
