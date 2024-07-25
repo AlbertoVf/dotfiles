@@ -15,6 +15,7 @@
     ~/.fonts: fonts
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
+    ~/.config/gh/config.yml: git/gh/config.yml
     ~/.screenlayout: os/linux/.screenlayout
     ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
@@ -22,17 +23,16 @@
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
     ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
-    # ~/.config/warp-terminal/user_preferences.json: terminal/warp/user_preferences.json
-    ~/.config/Code/User/keybindings.json: editors/code/User/keybindings.json
-    ~/.config/Code/User/profiles: editors/code/User/profiles
-    ~/.config/Code/User/snippets: editors/code/User/snippets
+    ~/.config/warp-terminal/user_preferences.json: terminal/warp/user_preferences.json
     ~/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     ~/.config/rofi/scripts: launchers/rofi/scripts
-    ~/.config/Code/User/settings.json: editors/code/User/settings.json
-- shell:
-    - [ git clone https://github.com/AlbertoVf/qtile.git --depth 1 ~/.config/qtile ]
-    - [ git clone https://github.com/AlbertoVf/wallpapers.git --depth 1 ~/.wallpapers ]
-    - [ git clone https://github.com/AlbertoVf/shell-scripts --depth 1 ~/.bin ]
+    ~/.config/mpv: os/linux/mpv
+    # vscode extensions configuration
+    ~/.config/Code/User/profiles: editors/code/User/profiles
+    ~/.config/Code/User/snippets: editors/code/User/snippets
+    ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
+    ~/.config/Code/User/settings.json: editors/code/settings.json
+    ~/.local/state/crossnote/style.less: editors/code/extensions-config/markdown-preview-enhanced-customize-global-css.less
