@@ -39,6 +39,7 @@ screen() {
 	selected=$(printf '%s\n' "${screen[@]}" | rofi_cmd "Selecciona Tipo de pantalla")
 	if [ -n "$selected" ]; then
 		sh "$file/$selected"
+		pkill conky && (conky -c ~/.conkyrc) &
 	fi
 }
 
@@ -59,10 +60,20 @@ dotf() {
 	esac
 }
 
+lofi(){
+	readarray -t lofi < <(yq -r '.rofi.lofi | to_entries[] | " \(.key) : \(.value)"' $file)
+	selected=$(printf '%s\n' "${lofi[@]}" | rofi_cmd "Selecciona una radio")
+	if [ -n "$selected" ]; then
+		radio=$(echo "$selected" | awk '{print $NF}')
+		mpv --geometry=95%:95% --autofit=30%x30% --no-border $radio
+	fi
+}
+
 case $1 in
 --apps) apps ;;
 --bookmarks) bookmarks ;;
 --ports) ports ;;
 --screen) screen ;;
 --dotf) dotf ;;
+--lofi) lofi;;
 esac

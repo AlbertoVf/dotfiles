@@ -1,5 +1,4 @@
 sxhkdrc: # shortcodes to sxhkd
-
   # FN FUNCTIONS
   Print                 : xfce4-screenshooter
   XF86AudioLowerVolume  : amixer set Master 5%-
@@ -12,7 +11,7 @@ sxhkdrc: # shortcodes to sxhkd
   XF86MonBrightnessDown : ddcutil setvcp 10 10 --display 1
   XF86MonBrightnessUp   : ddcutil setvcp 10 100 --display 1
 
-  super :
+  super:
     F1     : brave
     F2     : code
     F6     : ferdium
@@ -43,25 +42,27 @@ sxhkdrc: # shortcodes to sxhkd
       button4 : amixer set Master 5%+ # wheel up
 
     ctrl:
-        a : ~/.config/rofi/scripts/rofi-scripts --apps
-        b : ~/.config/rofi/scripts/rofi-scripts --bookmarks
-        d : ~/.config/rofi/scripts/rofi-scripts --dotf
-        p : ~/.config/rofi/scripts/rofi-scripts --ports
-        s : ~/.config/rofi/scripts/rofi-scripts --screen
+      a : ~/.config/rofi/scripts/rofi-scripts --apps
+      b : ~/.config/rofi/scripts/rofi-scripts --bookmarks
+      d : ~/.config/rofi/scripts/rofi-scripts --dotf
+      p : ~/.config/rofi/scripts/rofi-scripts --ports
+      s : ~/.config/rofi/scripts/rofi-scripts --screen
+      l : ~/.config/rofi/scripts/rofi-scripts --lofi
+      k : ~/.config/rofi/scripts/shortcuts
 
   alt:
-      Escape : xfce4-taskmanager
-      Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-      Left   : variety -p
-      Right  : variety -n
-      F1     : rofi -show ssh
-      F2     : rofi -show combi
-      F3     : rofi -show emoji
-      F4     : rofi-bluetooth
-      shift  :
-        Return : thunar
-        v      : xfce4-clipman-history
-        space  : gnome-calculator
+    Escape : xfce4-taskmanager
+    Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+    Left   : variety -p
+    Right  : variety -n
+    F1     : rofi -show ssh
+    F2     : rofi -show combi
+    F3     : rofi -show emoji
+    F4     : rofi-bluetooth
+    shift  :
+      Return : thunar
+      v      : xfce4-clipman-history
+      space  : gnome-calculator
 
 rofi:
   ports: # ports used in `rofi ports` script
@@ -97,3 +98,10 @@ rofi:
     ''  : 'spotube'
     ''  : 'stacer'
     ''  : 'font-manager'
+
+  lofi:
+    'Lofi hip hop radio'  : 'https://youtu.be/jfKfPfyJRdk'
+    'medieval lofi radio' : 'https://youtu.be/_uMuuHk_KkQ'
+    'synthwave radio'     : "https://youtu.be/4xDzrJKXOOY"
+    'asian lofi radio'    : "https://youtu.be/Na0w3Mz46GA"
+    'raining in tokio'    : "https://youtu.be/0ba7dl40tSQ"
