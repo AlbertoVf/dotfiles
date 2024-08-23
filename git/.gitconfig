@@ -71,7 +71,11 @@
 	gpgsign = true
 [gpg]
 	program = /bin/gpg
+	format = openpgp
+[gpg "openpgp"]
+	program = /bin/gpg
 [user]
 	name      = AlbertoVf
 	email     = avf.git-repos@protonmail.com
 	signedkey = 52055A6966DB6766
+	signingkey = 52055A6966DB6766
