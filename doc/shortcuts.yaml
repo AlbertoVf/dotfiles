@@ -1,15 +1,14 @@
-sxhkdrc: # shortcodes to sxhkd
+# shortcodes to sxhkd
+sxhkdrc:
   # FN FUNCTIONS
-  Print                 : xfce4-screenshooter
-  XF86AudioLowerVolume  : amixer set Master 5%-
-  XF86AudioRaiseVolume  : amixer set Master 5%+
-  XF86AudioMute         : amixer -D pulse set Master toggle
-  XF86AudioNext         : playerctl next
-  XF86AudioPlay         : playerctl play-pause
-  XF86AudioPrev         : playerctl previous
-  XF86AudioStop         : playerctl stop
-  XF86MonBrightnessDown : ddcutil setvcp 10 10 --display 1
-  XF86MonBrightnessUp   : ddcutil setvcp 10 100 --display 1
+  Print                : flameshot gui
+  XF86AudioLowerVolume : amixer set Master 5%-
+  XF86AudioRaiseVolume : amixer set Master 5%+
+  XF86AudioMute        : amixer -D pulse set Master toggle
+  XF86AudioNext        : playerctl next
+  XF86AudioPlay        : playerctl play-pause
+  XF86AudioPrev        : playerctl previous
+  XF86AudioStop        : playerctl stop
 
   super:
     F1     : brave
@@ -19,89 +18,68 @@ sxhkdrc: # shortcodes to sxhkd
     F8     : thunar
     F9     : thunderbird
     F10    : spotube
-    F11    : kodi
-    a      : xfce4-appfinder
+    a      : rofi -show combi
     b      : bitwarden-desktop
     c      : chromium
     e      : code
     f      : firefox
-    g      : github-desktop
+    g      : sourcegit
     m      : pragha
     r      : retroarch
     s      : pamac-manager
     v      : vlc --video-on-top
     x      : ~/.config/rofi/scripts/powermenu
+    less   : qalculate-gtk
     Return : kitty
-    shift  :
-      F1      : brave --tor
-      p       : sh ~/.config/picom/picom-toogle.sh
-      s       : pkill -USR1 -x sxhkd
-      Escape  : xkill
-      button5 : amixer set Master 5%- # wheel down
-      button2 : amixer -D pulse set Master toggle # wheel clicked
-      button4 : amixer set Master 5%+ # wheel up
-
-    ctrl:
-      a : ~/.config/rofi/scripts/rofi-scripts --apps
-      b : ~/.config/rofi/scripts/rofi-scripts --bookmarks
-      d : ~/.config/rofi/scripts/rofi-scripts --dotf
-      p : ~/.config/rofi/scripts/rofi-scripts --ports
-      s : ~/.config/rofi/scripts/rofi-scripts --screen
-      l : ~/.config/rofi/scripts/rofi-scripts --lofi
-      k : ~/.config/rofi/scripts/shortcuts
+    ctrl   :
+      a     : ~/.config/rofi/scripts/rofi-scripts --apps
+      c     : ~/.config/rofi/scripts/rofi-scripts --preconfiguration
+      d     : ~/.config/rofi/scripts/rofi-scripts --dotf
+      k     : ~/.config/rofi/scripts/shortcuts
+      p     : sh ~/.config/picom/picom-toogle.sh
+      s     : ~/.config/rofi/scripts/rofi-scripts --screen
+      w     : ~/.config/rofi/scripts/rofi-scripts --windows
+      x     : pkill -USR1 -x sxhkd
+      Print : xfce4-screenshooter
+    shift:
+      F1     : brave --tor
+      a     : ~/.config/rofi/scripts/rofi-scripts --ports
+      Escape : xfce4-taskmanager
 
   alt:
-    Escape : xfce4-taskmanager
-    Print  : scrot 'screenshot-%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-    Left   : variety -p
-    Right  : variety -n
-    F1     : rofi -show ssh
-    F2     : rofi -show combi
-    F3     : rofi -show emoji
-    F4     : rofi-bluetooth
-    shift  :
-      Return : thunar
-      v      : xfce4-clipman-history
-      space  : gnome-calculator
+    Escape   : xkill
+    Print    : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+    Left     : variety -p
+    Right    : variety -n
+    F1       : rofi -show ssh
+    F2       : rofi -show combi
+    F3       : rofi -show emoji
+    F4       : rofi-bluetooth
+    ccedilla : xfce4-clipman-history
 
+# ROFI APPS
 rofi:
-  ports: # ports used in `rofi ports` script
-    80   : HTTP / Laravel / Local Wordpress
-    8000 : Symfony / Django
-    8080 : Apache / NodeJS / Spring / Docker Wordpress
-    631  : Impresora
-    1313 : Hugo
-    3000 : React
-    4200 : Angular
-    4321 : Astro
-    5000 : Flask
-
-  bookmarks: # weblinks used in `rofi bookmarks` script
-    '󱜙 Chat gpt'  : 'https://chat.openai.com/chat'
-    '󰗃 youtube'   : 'https://www.youtube.com/'
-    '󰎚 notion'    : 'https://www.notion.so/'
-    '󰑑 regex'     : 'https://regex101.com/'
-    '󱤤 crontab'   : 'https://crontab.guru/'
-    '󰫑 mastodon'  : 'https://social.linux.pizza/home'
-    ' github'     : 'https://github.com/login'
-    ' nerd fonts' : 'https://www.nerdfonts.com/'
-    ' youcode'    : 'https://you.com/code'
-
   apps: # apps used in `rofi apps` script
-    '󰍈' : 'transmission-gtk'
-    '󰍳' : 'retroarch'
-    '󱉟' : 'calibre'
-    '󰘊' : 'ferdium'
-    '󰥠' : 'gparted'
-    ''  : 'chromium'
-    ''  : 'github-desktop'
-    ''  : 'spotube'
-    ''  : 'stacer'
-    ''  : 'font-manager'
+    'Chat Gpt'                : 'https://chat.openai.com/chat'
+    'YouTube'                 : 'https://www.youtube.com'
+    'Notion'                  : 'https://www.notion.so'
+    'Regex'                   : 'https://regex101.com'
+    'IT tools'                : 'https://it-tools.tech'
+    'Nerd Font'               : 'https://www.nerdfonts.com'
+    'Lofi - hip hop radio'    : 'https://youtu.be/jfKfPfyJRdk'
+    'Lofi - medieval radio'   : 'https://youtu.be/_uMuuHk_KkQ'
+    'Lofi - synthwave radio'  : 'https://youtu.be/4xDzrJKXOOY'
+    'Lofi - asian radio'      : 'https://youtu.be/Na0w3Mz46GA'
+    'Lofi - raining in tokio' : 'https://youtu.be/0ba7dl40tSQ'
 
-  lofi:
-    'Lofi hip hop radio'  : 'https://youtu.be/jfKfPfyJRdk'
-    'medieval lofi radio' : 'https://youtu.be/_uMuuHk_KkQ'
-    'synthwave radio'     : "https://youtu.be/4xDzrJKXOOY"
-    'asian lofi radio'    : "https://youtu.be/Na0w3Mz46GA"
-    'raining in tokio'    : "https://youtu.be/0ba7dl40tSQ"
+  ports:
+    80   : 'HTTP'
+    443  : 'HTTPS'
+    631  : 'Impresora'
+    1313 : 'Hugo'
+    4321 : 'Astro'
+    5000 : 'Flask'
+    5173 : 'Vite'
+    4200 : 'Angular'
+    8000 : 'Laravel Django'
+    8080 : 'Symfony'

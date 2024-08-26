@@ -1,4 +1,4 @@
-; thunar GtkAccelMap rc-file         -*- scheme -*-
+; Thunar GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
 (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-type" "<Shift><Alt>t")
@@ -70,7 +70,7 @@
 ; (gtk_accel_path "<Actions>/ThunarStatusBar/toggle-display-name" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/sendto-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/go-menu" "")
-; (gtk_accel_path "<Actions>/ThunarWindow/remove-from-recent" "")
+(gtk_accel_path "<Actions>/ThunarWindow/remove-from-recent" "<Primary>Escape")
 (gtk_accel_path "<Actions>/ThunarActionManager/open-with-other" "<Primary><Alt>o")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/28227b3427d12b05348a8a8891582a8c" "")
 (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "<Primary><Shift>a")
@@ -107,7 +107,7 @@
 ; (gtk_accel_path "<Actions>/ThunarActionManager/redo" "<Primary><Shift>z")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/open-in-new-window" "<Primary><Shift>o")
-; (gtk_accel_path "<Actions>/ThunarWindow/view-statusbar" "")
+(gtk_accel_path "<Actions>/ThunarWindow/view-statusbar" "<Primary>space")
 (gtk_accel_path "<Actions>/ThunarActionManager/open-location" "<Primary><Shift>Return")
 (gtk_accel_path "<Actions>/ThunarStandardView/duplicate" "<Primary><Shift>v")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/trash-delete-2" "KP_Delete")
@@ -117,7 +117,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-home" "<Alt>Home")
 ; (gtk_accel_path "<Actions>/ThunarWindow/show-hidden" "<Primary>h")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/set-default-app" "")
-; (gtk_accel_path "<Actions>/ThunarWindow/empty-trash" "")
+(gtk_accel_path "<Actions>/ThunarWindow/empty-trash" "<Shift>Escape")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/back-alt" "BackSpace")
 (gtk_accel_path "<Actions>/ThunarWindow/preferences" "<Primary>comma")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/delete" "")

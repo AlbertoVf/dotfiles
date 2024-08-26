@@ -6,7 +6,6 @@ alias cf="xclip -sel clip" # copy file content to clipboard
 alias cat="bat"
 alias man="batman"
 alias neofetch="fastfetch"
-
 #* Folders alias
 alias l="exa -lh -s type --octal-permissions --time-style long-iso"                 # List files: view octal|permissions|size|usee|long format date|Name, sorted by type
 alias la="l -a"                                                                     # include hidden files
