@@ -1,17 +1,9 @@
 {
 	"[html]": { "editor.defaultFormatter": "vscode.html-language-features" },
-	"[json]": {
-		"editor.defaultFormatter": "vscode.json-language-features",
-		"files.insertFinalNewline": false
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "vscode.json-language-features",
-		"files.insertFinalNewline": false
-	},
-	"[markdown]": {
-		"editor.defaultFormatter": "yzhang.markdown-all-in-one",
-		"editor.trimAutoWhitespace": false
-	},
+	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"[json]": { "editor.defaultFormatter": "vscode.json-language-features", "files.insertFinalNewline": false },
+	"[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features", "files.insertFinalNewline": false },
+	"[markdown]": { "editor.defaultFormatter": "yzhang.markdown-all-in-one", "editor.trimAutoWhitespace": false },
 	"[python]": { "editor.defaultFormatter": "ms-python.black-formatter" },
 	"[scss]": { "editor.defaultFormatter": "vscode.css-language-features" },
 	"[shellscript]": {
@@ -19,6 +11,7 @@
 			"assignment": [ -1, -1 ],
 			"comment": 2
 		},
+		"editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
 		"files.eol": "\n"
 	},
 	"[svg]": { "editor.defaultFormatter": "jock.svg" },
@@ -32,18 +25,20 @@
 		"editor.insertSpaces": true
 	},
 	"better-comments.tags": [
-		//+ todo - [!TODO]
-		{ "bold": true, "color": "#FFE6FF", "italic": true, "strikethrough": false, "tag": "+" },
 		//* important - [!IMPORTAT]
-		{ "bold": true, "color": "#FF00E9", "italic": true, "strikethrough": false, "tag": "*" },
-		//_ delete - [!WARNING]
-		{ "bold": false, "color": "#393939", "italic": true, "strikethrough": true, "tag": "_" },
-		//! error - [!CAUTION]
-		{ "bold": true, "color": "#FF4473", "italic": true, "strikethrough": false, "tag": "!" },
+		{ "bold": true, "color": "#8957e5", "italic": true, "strikethrough": false, "tag": "*" },
+		//! warning - [!WARNING]
+		{ "bold": false, "color": "#9e6a03", "italic": true, "strikethrough": false, "tag": "!" },
+		//: error - [!CAUTION]
+		{ "bold": true, "color": "#c73230", "italic": true, "strikethrough": false, "tag": ":" },
 		//? help - [!TIP]
-		{ "bold": false, "color": "#00A899", "italic": false, "strikethrough": false, "tag": "?" },
+		{ "bold": false, "color": "#217b33", "italic": false, "strikethrough": false, "tag": "?" },
 		//; note - [!NOTE]
-		{ "bold": false, "color": "#52A2FF", "italic": true, "strikethrough": false, "tag": ";" },
+		{ "bold": false, "color": "#1f6feb", "italic": true, "strikethrough": false, "tag": ";" },
+		//+ todo
+		{ "bold": true, "color": "#818cf8", "italic": true, "strikethrough": false, "tag": "+" },
+		//_ delete
+		{ "bold": false, "color": "#64748b", "italic": true, "strikethrough": true, "tag": "_" }
 	],
 	"betterAlign.indentBase": "dontchange",
 	"betterAlign.surroundSpace": {
@@ -52,27 +47,28 @@
 		"colon": [ 1, 1 ],
 		"comment": 4
 	},
-	"breadcrumbs.enabled": false,
+	"cSpell.caseSensitive": true,
+	"cSpell.enabled": true,
+	"cSpell.language": "en,es-ES",
+	"code-runner.clearPreviousOutput": true,
 	"code-runner.executorMap": {
 		"csharp": "dotnet run --project $dir",
 		"java": "java $fileName",
 		"typescript": "deno run $dir$fileName"
+		// "python": "${workspaceFolder}/venv/bin/python -u"
 	},
+	"code-runner.runInTerminal": true,
 	"code-runner.saveFileBeforeRun": true,
 	"codesnap.containerPadding": "2px",
 	"codesnap.transparentBackground": true,
 	"conventionalCommits.autoCommit": false,
 	"conventionalCommits.emojiFormat": "emoji",
 	"conventionalCommits.gitmoji": false,
-	"cSpell.caseSensitive": true,
-	"cSpell.enabled": true,
-	"cSpell.language": "en,es-ES",
 	"css.lint.duplicateProperties": "warning",
 	"database-client.highlightSQLBlock": true,
 	"debug.terminal.clearBeforeReusing": true,
 	"diffEditor.codeLens": true,
 	"diffEditor.experimental.showMoves": true,
-	"diffEditor.ignoreTrimWhitespace": false,
 	"editor.autoClosingDelete": "always",
 	"editor.bracketPairColorization.enabled": true,
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -82,11 +78,11 @@
 		"source.convertImportFormat": "explicit",
 		"source.fixAll": "always",
 		"source.organizeImports": "explicit",
-		"source.unusedImports": "explicit"
+		"source.unusedImports": "never"
 	},
 	"editor.copyWithSyntaxHighlighting": false,
 	"editor.cursorBlinking": "expand",
-	"editor.fontFamily": "GeistMono Nerd Font, Monas1piceRn Nerd Font, CaskaydiaCove Nerd Font, monaspace",
+	"editor.fontFamily": "GeistMono Nerd Font, MonaspiceRn Nerd Font, CaskaydiaCove Nerd Font, monaspace",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 13.5,
 	"editor.guides.bracketPairs": true,
@@ -98,6 +94,7 @@
 	"editor.lineHeight": 2.3,
 	"editor.linkedEditing": true,
 	"editor.minimap.enabled": false,
+	"editor.mouseWheelZoom": true,
 	"editor.parameterHints.cycle": true,
 	"editor.renderWhitespace": "all",
 	"editor.scrollbar.scrollByPage": true,
@@ -128,13 +125,14 @@
 		"*.scss": "$(capture).css.map, $(capture).*.css, $(capture).scss, $(capture).less, $(capture).sass",
 		"*.ts": "$(capture).d.ts.map, $(capture).*.ts, $(capture)*.js, $(capture)*.ts",
 		"*.tsx": "$(capture)*.ts, $(capture)*.tsx, $(capture).*, $(capture).module.*",
+		".editorconfig": "_config.*,cspell.*,.markdownlint.*,.gitignore",
 		".env": "*.env,.env*",
 		".gitignore": ".gitattributes, .gitmodules",
-		"composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
 		"Dockerfile": ".dockerignore, docker-compose.*, dockerfile*, entrypoint.sh, .env",
-		"Makefile": ".env, Dockerfile, package*, composer*,requirements.txt, .editorconfig, .gitignore",
-		"package.json": ".commitlint*, .eslint*, .huskyrc*, .lintstagedrc*, .nodemon*, .npm*, .pnpm*, .prettier*, .stylelint*, .yarnrc*, commitlint*, eslint*, lint-staged*, nodemon*, package-lock.json,pnpm-lock.json, tslint*, vercel*, webpack*, workspace.json,  yarn*, tsconfig*, jest.*",
-		"README*": "authors*, changelog*, code_of_conduct*, contributors*, LICENSE*"
+		"Makefile": ".env, Dockerfile, package*, composer*,requirements.txt",
+		"README*": "authors*, changelog*, code_of_conduct*, contributors*, LICENSE*, .editorconfig",
+		"composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
+		"package.json": ".commitlint*, .eslint*, .huskyrc*, .lintstagedrc*, .nodemon*, .npm*, .pnpm*, .prettier*, .stylelint*, .yarnrc*, commitlint*, eslint*, lint-staged*, nodemon*, package-lock.json,pnpm-lock.json, tslint*, vercel*, webpack*, workspace.json,  yarn*, tsconfig*, jest.*"
 	},
 	"explorer.incrementalNaming": "smart",
 	"files.associations": {
@@ -146,8 +144,8 @@
 	"files.autoSaveDelay": 60000,
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
-	"git.autofetch": true,
 	"git.autoStash": true,
+	"git.autofetch": true,
 	"git.closeDiffOnOperation": true,
 	"git.detectSubmodules": true,
 	"git.followTagsWhenSync": true,
@@ -164,13 +162,14 @@
 		{ "label": "Waiting For My Review", "query": "is:open review-requested:${user}" }
 	],
 	"gitlens.graph.layout": "editor",
+	"gitlens.graph.minimap.enabled": false,
 	"hediet.vscode-drawio.theme": "Kennedy",
 	"html.format.indentHandlebars": true,
 	"html.format.indentInnerHtml": true,
 	"html.format.templating": true,
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"markdown-preview-enhanced.enableExtendedTableSyntax": true,
-	"markdown-preview-enhanced.previewTheme": "vue.css",
+	"markdown-preview-enhanced.previewTheme": "medium.css",
 	"markdown-preview-enhanced.printBackground": true,
 	"markdown.experimental.updateLinksOnPaste": true,
 	"markdown.extension.tableFormatter.normalizeIndentation": true,
@@ -185,7 +184,10 @@
 	"merge-conflict.autoNavigateNextConflict.enabled": true,
 	"mergeEditor.diffAlgorithm": "advanced",
 	"projectManager.supportSymlinksOnBaseFolders": true,
-	"scm.defaultViewMode": "tree",
+	"python.analysis.autoFormatStrings": true,
+	"python.analysis.autoImportCompletions": true,
+	"python.terminal.activateEnvInCurrentTerminal": true,
+	"python.terminal.executeInFileDir": true,
 	"scm.experimental.showSyncView": true,
 	"search.mode": "newEditor",
 	"search.searchEditor.doubleClickBehaviour": "openLocationToSide",
@@ -200,24 +202,24 @@
 	"testExplorer.useNativeTesting": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"window.closeWhenEmpty": true,
-	"window.commandCenter": false,
 	"window.customMenuBarAltFocus": false,
-	"window.customTitleBarVisibility": "auto",
 	"window.openFilesInNewWindow": "default",
 	"window.restoreWindows": "none",
 	"window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
-	"window.titleBarStyle": "custom",
 	"workbench.colorCustomizations": {},
-	"workbench.colorTheme": "Panda Syntax",
+	"workbench.colorTheme": "Ayu Mirage Bordered",
 	"workbench.editor.customLabels.patterns": {
-		"**/*.test.*": "🧪 ${dirname}",
-		"docs/**": "🗃️ ${filename}"
+		// laravel
+		"*/app/**/Controllers/**": "${filename}",
+		"*/app/Models/**": "${dirname} - ${filename}",
+		"*/resources/views/**": "${dirname}.${filename}",
+		"*/tests/**/*": "${dirname(1)}.${dirname} - ${filename}"
 	},
 	"workbench.editor.highlightModifiedTabs": true,
 	"workbench.editor.splitInGroupLayout": "vertical",
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.iconTheme": "symbols",
-	"workbench.productIconTheme": "fluent-icons",
+	"workbench.startupEditor": "welcomePageInEmptyWorkbench",
 	"workbench.tree.expandMode": "doubleClick",
 	"workbench.tree.indent": 32,
 	"yaml.format.bracketSpacing": false,
