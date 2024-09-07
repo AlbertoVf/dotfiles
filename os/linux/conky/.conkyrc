@@ -13,11 +13,11 @@ conky.config = {
 	imlib_cache_size   = 0,
 
 	--Placement
-	alignment = 'middle_right',
+	alignment = 'middle_middle',
 
 	--Arch Duoscreen
-	gap_x = 60,
-	gap_y = 0,
+	gap_x = 0,
+	gap_y = 60,
 
 	--Graphical
 
@@ -39,7 +39,6 @@ conky.config = {
 	--Textual
 	extra_newline         = false,
 	format_human_readable = true,
-	font                  = 'CaskaydiaCove Nerd Font:size=22:bold',
 	max_text_width        = 0,
 	max_user_text         = 16384,
 	override_utf8_locale  = true,
@@ -63,18 +62,18 @@ conky.config = {
 	own_window_type        = 'override',
 
 	--Colours
-	color1 = '#0AA8AC',
-	color2 = '#62848B',
-	color3 = '#f1f1f1',
+	color1 = '#f43f5e',
+	color2 = '#fecdd3',
+	color3 = '#be123c',
 };
 
 conky.text = [[
-${alignc}${color2} \
-${font MonaspiceRn Nerd Font:size=60:Bold}${time %H:%M} \
-${color1}
-${alignc} \
-${font MonaspiceRn Nerd Font:size=40}${time %A} \
-${color2}${font MonaspiceRn Nerd Font:size=48:Bold}${time %d}\
-${color1}${font MonaspiceRn Nerd Font:size=40}${time %B %Y}
-${color3}${loadgraph 30,900 -l}
+${color3}${alignc}${font MonaspiceRn Nerd Font:size=64:Bold}\
+${time %H:%M} \
+
+${color1}${font MonaspiceRn Nerd Font:size=48:Bold}\
+${time %a, %d %b %Y }\
+
+${color2}\
+${downspeedgraph enp3s0f1 20,630 be123c f43f5e 37500 -t -l}
 ]];
