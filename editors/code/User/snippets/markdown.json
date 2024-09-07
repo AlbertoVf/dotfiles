@@ -1,5 +1,5 @@
 {
-	"Crea front matter": {
+	"Front matter": {
 		"prefix": "matter",
 		"description": "Crea front matter para un documento",
 		"body": [
@@ -13,7 +13,7 @@
 			"---"
 		]
 	},
-	"Crea front matter presentacion": {
+	"Marp front matter": {
 		"prefix": "matter",
 		"description": "Crea un front matter para una presentacion con marp",
 		"body": [
@@ -41,5 +41,31 @@
 			"| -- | -- | -- |",
 			"| $4 | $5 | $6 |"
 		]
-	}
+	},
+	"Wikilinks": {
+		"prefix": "wiki",
+		"description": "Wikilinks. Crea wikilinks",
+		"body": [
+			"![[./$1.md]]",
+			"$0"
+		],
+	},
+	"Code block": {
+		"prefix": "codeblock",
+		"description": "Code block. ",
+		"body": [
+			"```$1",
+			"$0",
+			"```"
+		],
+	},
+	"Markdown Task List": {
+		"prefix": "task",
+		"body": [
+			"- [ ] $1",
+			"- [ ] $2",
+			"- [ ] $3"
+		],
+		"description": "Insertar una lista de tareas en Markdown"
+	},
 }

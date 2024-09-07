@@ -1,83 +1,18 @@
 [
-	// * Generacion de documentos
-	{
-		"command": "EditorConfig.generate",
-		"key": "ctrl+alt+e"
-	},
-	{
-		"command": "gitignore.addgitignore",
-		"key": "ctrl+alt+i"
-	},
-	// * Formateo y documentacion
-	{
-		"command": "editor.action.joinLines",
-		"key": "alt+j"
-	},
-	{
-		"command": "rainbow-csv.Align",
-		"key": "ctrl+alt+l",
-		"when": "editorLangId =^csv$"
-	},
-	{
-		"command": "editor.action.formatDocument",
-		"key": "ctrl+alt+l",
-		"when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-	},
-	{
-		"command": "editor.action.blockComment",
-		"key": "ctrl+alt+7",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"command": "editor.action.indentationToSpaces",
-		"key": "ctrl+shift+alt+s"
-	},
-	{
-		"command": "editor.action.indentationToTabs",
-		"key": "ctrl+shift+alt+t"
-	},
-	// * Previsualizaciones y exportaciones
-	{
-		"command": "workbench.action.tasks.runTask",
-		"key": "ctrl+alt+t"
-	},
-	{
-		"command": "workbench.view.extension.project-manager",
-		"key": "shift+alt+p"
-	},
-	{
-		"command": "workbench.action.toggleScreencastMode",
-		"key": "alt+f12"
-	},
-	{
-		"command": "workbench.action.moveEditorToAboveGroup",
-		"key": "ctrl+alt+up"
-	},
-	{
-		"command": "workbench.action.moveEditorToBelowGroup",
-		"key": "ctrl+alt+down"
-	},
-	{
-		"command": "emojisense.quickEmoji",
-		"key": "ctrl+alt+i",
-		"when": "editorTextFocus"
-	},
-	{
-		"command": "markdownExtended.formateTable",
-		"key": "ctrl+alt+[Comma]",
-		"when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-	},
-	{
-		"command": "markdown.extension.toc.create",
-		"key": "ctrl+shift+t ctrl+shift+t"
-	},
-	{
-		"command": "hediet.vscode-drawio.export",
-		"key": "ctrl+alt+p"
-	},
-	{
-		"key": "ctrl+alt+i",
-		"command": "-emojisense.quickEmojiTerminal",
-		"when": "terminalFocus"
-	}
+	{ "command": "editor.action.joinLines", "key": "alt+j" },
+	{ "command": "editor.action.joinLines", "key": "alt+space" },
+	{ "command": "rainbow-csv.Align", "key": "ctrl+alt+l", "when": "editorLangId =^csv$" },
+	{ "command": "editor.action.formatDocument", "key": "ctrl+alt+l", "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor" },
+	{ "command": "editor.action.blockComment", "key": "ctrl+alt+7", "when": "editorTextFocus && !editorReadonly" },
+	{ "command": "editor.action.indentationToSpaces", "key": "ctrl+shift+alt+s" },
+	{ "command": "editor.action.indentationToTabs", "key": "ctrl+shift+alt+t" },
+	{ "command": "workbench.action.tasks.runTask", "key": "ctrl+alt+t" },
+	{ "command": "workbench.action.toggleScreencastMode", "key": "alt+f12" },
+	{ "command": "workbench.action.moveEditorToAboveGroup", "key": "ctrl+alt+up" },
+	{ "command": "workbench.action.moveEditorToBelowGroup", "key": "ctrl+alt+down" },
+	{ "command": "emojisense.quickEmoji", "key": "ctrl+alt+i", "when": "editorTextFocus" },
+	{ "command": "markdownExtended.formateTable", "key": "ctrl+alt+[Comma]", "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/" },
+	{ "command": "hediet.vscode-drawio.export", "key": "ctrl+alt+p" },
+	{ "command": "docs.write", "key": "ctrl+[Backslash]", "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/" },
+	{ "command": "-docs.write", "key": "alt+[Period]", "when": "editorTextFocus && config.docwriter.hotkey.window == 'Alt + .' && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/" }
 ]

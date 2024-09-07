@@ -1,0 +1,32 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Iniciar Proyecto",
+			"type": "shell",
+			"command": "mkdir -p .devcontainer .vscode; touch README.md LICENSE.md"
+		},
+		// * PYTHON
+		{
+			"label": "Pip install",
+			"type": "process",
+			"command": ".venv/bin/pip",
+			"args": [ "install", "-r", "requirements.txt" ],
+			"problemMatcher": []
+		},
+		// * MAKEFILES
+		{
+			"label": "Run Server",
+			"type": "process",
+			"command": "make",
+			"args": [ "server" ]
+		},
+		{
+			"label": "Prettier Code",
+			"type": "process",
+			"command": "make",
+			"args": [ "format" ]
+		}
+	]
+}

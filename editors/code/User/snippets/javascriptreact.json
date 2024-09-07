@@ -1,0 +1,18 @@
+{
+	"component": {
+		"prefix": "component",
+		"description": "component. Build react component with style",
+		"body": [
+			"import './${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.css';",
+			"",
+			"const ${TM_FILENAME_BASE} = () => {",
+			"\treturn (",
+			"\t\t<div className='${TM_FILENAME_BASE/(.*)/${1:/downcase}/}'>",
+			"\t\t\t<h1>${TM_FILENAME_BASE}</h1>",
+			"\t\t</div>",
+			"\t)",
+			"}",
+			"export default ${TM_FILENAME_BASE};"
+		],
+	},
+}
