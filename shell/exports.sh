@@ -8,6 +8,7 @@ path=(
 	"$HOME/.config/rofi/scripts"
 	"$HOME/.config/qtile/scripts"
 	"$HOME/.cargo/bin"
+	"$HOME/.local/share/pnpm"
 	"/usr/local/bin"
 	"/usr/local/sbin"
 	"/bin"

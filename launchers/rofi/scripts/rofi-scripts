@@ -56,7 +56,8 @@ windows() {
 
 # ? load preconfigure environments.
 preconfiguration() {
-	files=$(ls -p "$HOME/.bin/.workspaces/" | grep -v /)
+	folder="$HOME/.bin/.workspaces/"
+	files=$(ls -p $folder | grep -v /)
 	selected_file=$(echo "$files" | rofi_cmd "Selecciona una configuracion")
 	if [ -n "$selected_file" ]; then
 		sh "$folder/$selected_file"
@@ -77,8 +78,18 @@ apps() {
 	fi
 }
 
+ports() {
+	readarray -t ports < <(yq -r '.rofi.ports | to_entries[] | " \(.key) : \(.value)"' $file)
+	selected=$(printf '%s\n' "${ports[@]}" | rofi_cmd "Selecciona un puerto")
+	if [ -n "$selected" ]; then
+		puerto=$(echo "$selected" | awk '{print $1}')
+		echo $puerto
+		xdg-open "http://localhost:$puerto" &
+	fi
+}
 case $1 in
 --apps) apps ;;
+--ports) ports ;;
 --dotf) dotf ;;
 --preconfiguration) preconfiguration ;;
 --screen) screen ;;
