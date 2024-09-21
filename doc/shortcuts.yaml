@@ -1,6 +1,5 @@
-# shortcodes to sxhkd
-sxhkdrc:
-  # FN FUNCTIONS
+sxhkdrc: # shortcodes to sxhkd
+
   Print                : flameshot gui
   XF86AudioLowerVolume : amixer set Master 5%-
   XF86AudioRaiseVolume : amixer set Master 5%+
@@ -43,7 +42,7 @@ sxhkdrc:
       Print : xfce4-screenshooter
     shift:
       F1     : brave --tor
-      a     : ~/.config/rofi/scripts/rofi-scripts --ports
+      p      : ~/.config/rofi/scripts/rofi-scripts --ports
       Escape : xfce4-taskmanager
 
   alt:
@@ -57,9 +56,20 @@ sxhkdrc:
     F4       : rofi-bluetooth
     ccedilla : xfce4-clipman-history
 
-# ROFI APPS
-rofi:
-  apps: # apps used in `rofi apps` script
+  # * MOUSE KEYS
+  shift :
+    button2 : amixer -D pulse set Master toggle
+    button4 : amixer set Master 5%+
+    button5 : amixer set Master 5%-
+  ctrl :
+    button8 : playerctl previous
+    button9 : playerctl next
+    shift   :
+      button2 : playerctl play-pause
+
+rofi: # ROFI APPS
+
+  apps:
     'Chat Gpt'                : 'https://chat.openai.com/chat'
     'YouTube'                 : 'https://www.youtube.com'
     'Notion'                  : 'https://www.notion.so'

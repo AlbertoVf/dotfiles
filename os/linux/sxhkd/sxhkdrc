@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-09-03 13:17
+# Generated on 2024-09-18 17:00
 
 Print
 	flameshot gui
@@ -77,7 +77,7 @@ super + ctrl + Print
 	xfce4-screenshooter
 super + shift + F1
 	brave --tor
-super + shift + a
+super + shift + p
 	~/.config/rofi/scripts/rofi-scripts --ports
 super + shift + Escape
 	xfce4-taskmanager
@@ -99,3 +99,15 @@ alt + F4
 	rofi-bluetooth
 alt + ccedilla
 	xfce4-clipman-history
+shift + button2
+	amixer -D pulse set Master toggle
+shift + button4
+	amixer set Master 5%+
+shift + button5
+	amixer set Master 5%-
+ctrl + button8
+	playerctl previous
+ctrl + button9
+	playerctl next
+ctrl + shift + button2
+	playerctl play-pause
