@@ -1,0 +1,14 @@
+{
+	"theme": "dark",
+	"editor.fontFamily": "GeistMono Nerd Font",
+	"editor.softWrapEnabled": true,
+	"editor.lineSpacing": 1.8,
+	"fus.sendAllowed": false,
+	"showShortcuts": true,
+	"editor.indentStyle": "Tabs",
+	"editor.formatOnSave": true,
+	"editor.honorCamelHumps": true,
+	"editor.renderWhitespace": "All",
+	"editor.fontSize": 14.0,
+	"keymap": "vscode"
+}
