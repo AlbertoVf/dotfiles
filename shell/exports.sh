@@ -1,10 +1,9 @@
 export EDITOR=vim
-export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
+# export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 
 path=(
 	"$HOME/.bin"
 	"$DOTLY_PATH/bin"
-	# "$DOTFILES_PATH/bin"
 	"$HOME/.config/rofi/scripts"
 	"$HOME/.config/qtile/scripts"
 	"$HOME/.cargo/bin"

@@ -6,6 +6,7 @@ alias cf="xclip -sel clip" # copy file content to clipboard
 alias cat="bat"
 alias man="batman"
 alias neofetch="fastfetch"
+
 #* Folders alias
 alias l="exa -lh -s type --octal-permissions --time-style long-iso"                 # List files: view octal|permissions|size|usee|long format date|Name, sorted by type
 alias la="l -a"                                                                     # include hidden files
@@ -20,13 +21,11 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 #* packages alias
-alias pacin="sudo pacman -S"                  # install package
-alias pacrem="sudo pacman -Rns"               # remove package and dependencies
-alias pacsyu="sudo pacman -Syyu"              # update only standard pkgs
+alias pacin="aura -S"                         # install package
+alias pacrem="aura -Rns"                       # remove package and dependencies
+alias pacsyu="aura -Syyu"                     # update all pkgs and database
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-alias parsua="paru -Sua"                      # update aur packages
-alias parsyu="paru -Syu"                      # update standar packages and aur
-alias paru="paru --limit 20"                  # --searchby name shearch packages by name and limited to 20 results
+alias paru="paru --limit 20"                  # shearch packages by name and limited to 20 results
 
 #* get fastest mirrors
 alias mirror="sudo reflector --verbose -f 20 -l 15 -n 10 --save /etc/pacman.d/mirrorlist"
@@ -45,16 +44,14 @@ alias themesK="kitten themes"
 
 #* python
 alias pip_freeze="pip freeze > requirements.txt"
-alias pip_install="pip install -r requirements.txt"
+alias activate="source .venv/bin/activate || python -m venv .venv && source .venv/bin/activate"
 
 #* node
 alias npm="pnpm"
-alias npm_install="pnpm install"
 
 #* php
 alias laravel="composer create-project laravel/laravel"
 alias artisan="php artisan"
-alias composer_install="composer install"
 
 #* docker
 alias docker_build="docker-compose up -d"

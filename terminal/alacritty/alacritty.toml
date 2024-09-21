@@ -1,40 +1,38 @@
 live_config_reload = true
-import = [
-    "~/.config/alacritty/tokyo-night.toml"
-]
+import             = ["~/.config/alacritty/tokyo-night.toml"]
 [cursor]
-blink_interval = 750
-blink_timeout = 5
-thickness = 0.15
+blink_interval   = 750
+blink_timeout    = 5
+thickness        = 0.15
 unfocused_hollow = true
 
 [cursor.style]
 blinking = "On"
-shape = "Beam"
+shape    = "Beam"
 
 [font]
 builtin_box_drawing = true
-size = 13.0
+size                = 13.0
 
 [font.bold]
-family = "CaskaydiaCove Nerd Font"
-style = "Bold"
+family = "GeistMono Nerd Font"
+style  = "Bold"
 
 [font.bold_italic]
-family = "CaskaydiaCove Nerd Font"
-style = "Bold Italic"
+family = "GeistMono Nerd Font"
+style  = "Bold Italic"
 
 [font.glyph_offset]
 x = 1
 y = 1
 
 [font.italic]
-family = "CaskaydiaCove Nerd Font"
-style = "Italic"
+family = "GeistMono Nerd Font"
+style  = "Italic"
 
 [font.normal]
-family = "CaskaydiaCove Nerd Font"
-style = "Regular"
+family = "GeistMono Nerd Font"
+style  = "Regular"
 
 [font.offset]
 x = 0
@@ -42,26 +40,26 @@ y = 0
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
-key = "F11"
+key    = "F11"
 
 [scrolling]
-history = 2000
+history    = 2000
 multiplier = 3
 
 [selection]
-save_to_clipboard = false
+save_to_clipboard     = false
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [window]
-decorations = "full"
-decorations_theme_variant = "None"
-dynamic_padding = true
-dynamic_title = true
-# opacity = 1
-resize_increments = false
+  decorations               = "full"
+  decorations_theme_variant = "None"
+  dynamic_padding           = true
+  dynamic_title             = true
+# opacity                   = 1
+  resize_increments         = false
 
 [window.class]
-general = "Alacritty"
+general  = "Alacritty"
 instance = "Alacritty"
 
 [window.padding]
