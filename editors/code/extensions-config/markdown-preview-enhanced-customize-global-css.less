@@ -8,7 +8,7 @@
 @default: MonaspiceRn Nerd Font, monospace;
 
 .markdown-preview.markdown-preview {
-	font-family: @monospace;
+	font-family: @default;
 	font-size: 11px;
 
 	@media print {
@@ -31,12 +31,12 @@
 				list-style: none;
 				margin-top: 0.8rem;
 
-				&::before,
 				&::before {
 					content: '';
 				}
 			}
 		}
+
 		pre,
 		blockquote,
 		tr,
@@ -45,7 +45,12 @@
 		}
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		text-transform: capitalize;
 
 		code {
@@ -76,5 +81,9 @@
 			word-wrap: break-word;
 			font-size: 90%;
 		}
+	}
+
+	h2 {
+		color: @color2;
 	}
 }

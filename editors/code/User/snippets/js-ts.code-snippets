@@ -1,0 +1,65 @@
+{
+	"Funcion": {
+		"body": [
+			"function $1 ($2){",
+			"\t$0",
+			"}"
+		],
+		"description": "Crea una funcion basica",
+		"prefix": "function",
+		"scope": "javascript,typescript"
+	},
+	"Funcion anonima": {
+		"body": [
+			"const $1 = ($2) => {",
+			"\t$0",
+			"}"
+		],
+		"description": "Crea una funcion anonima y la asigna a una variable",
+		"prefix": "function",
+		"scope": "javascript,typescript"
+	},
+	"JQuery": {
+		"body": [
+			"$(() => {",
+			"\t$0;",
+			"});"
+		],
+		"description": "Crea un fichero con la declaracion de jquery",
+		"isFileTemplate": true,
+		"scope": "javascript"
+	},
+	"Javascript": {
+		"body": [
+			"$(document).ready(function () {",
+			"\t$0;",
+			"});"
+		],
+		"description": "Inicia un script js que espera a su ejecucion",
+		"isFileTemplate": true,
+		"scope": "javascript"
+	},
+	"Test": {
+		"body": [
+			"test('${1: description of test}', () => {",
+			"\tlet actual = ${2:function}($3)",
+			"\tlet expected = ${4:'expected value'}",
+			"\texpect(actual).toBe(expected)",
+			"});"
+		],
+		"description": "Crea un test",
+		"prefix": "test",
+		"scope": "typescript,javascript"
+	},
+	"Test file": {
+		"body": [
+			"import ${1/(^.)/${1:/upcase}/} from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
+			"describe('${2:description of test class}', () => {",
+			"\t$0",
+			"});"
+		],
+		"description": "Crea una clase para realizar los tests.",
+		"isFileTemplate": true,
+		"scope": "typescript,javascript"
+	}
+}

@@ -1,7 +1,6 @@
 aaron-bond.better-comments
 adpyke.codesnap
 alefragnani.project-manager
-asciidoctor.asciidoctor-vscode
 bierner.emojisense
 castrogusttavo.symbols
 chouzz.vscode-better-align
@@ -17,7 +16,6 @@ github.codespaces
 github.remotehub
 github.vscode-github-actions
 github.vscode-pull-request-github
-hbenl.test-adapter-converter
 hbenl.vscode-test-explorer
 hediet.vscode-drawio
 humao.rest-client
@@ -29,12 +27,11 @@ mechatroner.rainbow-csv
 miguelsolorio.fluent-icons
 mintlify.document
 ms-azuretools.vscode-docker
-ms-dotnettools.csdevkit
-ms-dotnettools.csharp
-ms-dotnettools.vscode-dotnet-runtime
-ms-python.autopep8
+ms-ceintl.vscode-language-pack-es
+ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
+ms-python.vscode-pylance
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
@@ -56,6 +53,7 @@ streetsidesoftware.code-spell-checker-spanish
 tamasfe.even-better-toml
 teabyii.ayu
 tomoki1207.pdf
+usernamehw.errorlens
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode
 vivaxy.vscode-conventional-commits

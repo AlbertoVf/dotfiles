@@ -1,0 +1,68 @@
+{
+	"Crea un titulo para el fichero": {
+		"body": "${TM_FILENAME_BASE/[^0-9^a-z]/ /gi}",
+		"description": "Crea un titulo para el fichero. A partir del nombre del fichero elimina caracteres no alfanumericos",
+		"prefix": "title",
+		"scope": "yaml,markdown"
+	},
+	"Eliminar espacios duplicados": {
+		"body": "${TM_SELECTED_TEXT/ +/ /g}",
+		"description": "Elimina espacios duplicados"
+	},
+	// TRANSFORMACION DE TEXTO
+	"Eliminar guiones": {
+		"body": "${TM_SELECTED_TEXT/[-\\.+_]/ /g}",
+		"description": "Eliminar guiones. Elimina cualquier tipo de separador entre palabras y lo substituye por ' '"
+	},
+	"Escribe texto de muestra": {
+		"body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius necessitatibus reprehenderit doloribus magnam aliquid in molestiae, ullam perspiciatis aspernatur ad, fuga rem tempore asperiores eligendi dolores. Id dolore nulla veniam?\nInventore dolor exercitationem dignissimos magni eveniet, provident eum nihil beatae architecto fugiat sit necessitatibus sint molestias, amet accusantium quae, dolores earum pariatur! Deserunt quod consectetur impedit laudantium molestiae ratione fugiat.",
+		"description": "Escribe texto de muestra. Lineas de <lorem ipsum>",
+		"prefix": "lorem"
+	},
+	// https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
+	"Escribe un shebang con env": {
+		"body": "#!/usr/bin/env $1",
+		"description": "Escribe un shebang con env. en linux",
+		"prefix": "env"
+	},
+	// FECHAS
+	"Fecha corta": {
+		"body": "$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE",
+		"description": "Escribe la fecha con formato yyyy-mm-dd T hh:mm.ss+ZZ",
+		"prefix": "date"
+	},
+	"Fecha larga": {
+		"body": "$CURRENT_DAY_NAME $CURRENT_DATE de $CURRENT_MONTH_NAME de $CURRENT_YEAR",
+		"description": "Escribe la fecha con formato 'dia numero de mes de año'",
+		"prefix": "date"
+	},
+	"Transformar espacios": {
+		"body": "${TM_SELECTED_TEXT/ /-/g}",
+		"description": "Transforma ' ' en '-'"
+	},
+	"Transformar espacios a HTML": {
+		"body": "${TM_SELECTED_TEXT/ /%20/g}",
+		"description": "Transforma ' ' en su codigo '%20'"
+	},
+	"delete": {
+		"body": "${LINE_COMMENT} _ ${TM_SELECTED_TEXT}",
+		"description": "delete line, delete methos, use to comment and check if refactor works"
+	},
+	"error": {
+		"body": "${LINE_COMMENT} ! ${TM_SELECTED_TEXT}",
+		"description": "error in code or section"
+	},
+	"help": {
+		"body": "${LINE_COMMENT} ? ${TM_SELECTED_TEXT}",
+		"description": "how to use, command use, code example"
+	},
+	"note": {
+		"body": "${LINE_COMMENT} ; ${TM_SELECTED_TEXT}",
+		"description": "refactor code, extract method, method relations"
+	},
+	// COMENTARIOS
+	"todo": {
+		"body": "${LINE_COMMENT} + ${TM_CURRENT_LINE}",
+		"description": "New feature, function ..."
+	}
+}
