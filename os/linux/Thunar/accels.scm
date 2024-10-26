@@ -1,6 +1,7 @@
 ; thunar GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
+; (gtk_accel_path "<Actions>/ThunarBookmarks/827726e2adff8299d4cca0ed13c3d487" "")
 (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-type" "<Shift><Alt>t")
 ; (gtk_accel_path "<Actions>/ThunarStatusBar/toggle-last-modified" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/96588eb35d52341545822906f920baf0" "")

@@ -22,7 +22,8 @@ alias rm="rm -i"
 
 #* packages alias
 alias pacin="aura -S"                         # install package
-alias pacrem="aura -Rns"                       # remove package and dependencies
+alias pacum="aura -A"                         # update package
+alias pacrem="aura -Rns"                      # remove package and dependencies
 alias pacsyu="aura -Syyu"                     # update all pkgs and database
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
 alias paru="paru --limit 20"                  # shearch packages by name and limited to 20 results

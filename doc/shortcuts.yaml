@@ -1,5 +1,4 @@
 sxhkdrc: # shortcodes to sxhkd
-
   Print                : flameshot gui
   XF86AudioLowerVolume : amixer set Master 5%-
   XF86AudioRaiseVolume : amixer set Master 5%+
@@ -17,12 +16,14 @@ sxhkdrc: # shortcodes to sxhkd
     F8     : thunar
     F9     : thunderbird
     F10    : spotube
+    F11    : kodi
     a      : rofi -show combi
-    b      : bitwarden-desktop
+    b      : blueman-manager
     c      : chromium
     e      : code
     f      : firefox
     g      : sourcegit
+    k      : keepassxc
     m      : pragha
     r      : retroarch
     s      : pamac-manager
@@ -31,44 +32,27 @@ sxhkdrc: # shortcodes to sxhkd
     less   : qalculate-gtk
     Return : kitty
     ctrl   :
-      a     : ~/.config/rofi/scripts/rofi-scripts --apps
-      c     : ~/.config/rofi/scripts/rofi-scripts --preconfiguration
-      d     : ~/.config/rofi/scripts/rofi-scripts --dotf
-      k     : ~/.config/rofi/scripts/shortcuts
-      p     : sh ~/.config/picom/picom-toogle.sh
-      s     : ~/.config/rofi/scripts/rofi-scripts --screen
-      w     : ~/.config/rofi/scripts/rofi-scripts --windows
-      x     : pkill -USR1 -x sxhkd
-      Print : xfce4-screenshooter
-    shift:
-      F1     : brave --tor
-      p      : ~/.config/rofi/scripts/rofi-scripts --ports
+      p      : sh ~/.config/picom/picom-toogle.sh
+      x      : pkill -USR1 -x sxhkd
+      Print  : xfce4-screenshooter
       Escape : xfce4-taskmanager
+      F1     : brave --tor
 
   alt:
     Escape   : xkill
     Print    : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
     Left     : variety -p
     Right    : variety -n
-    F1       : rofi -show ssh
-    F2       : rofi -show combi
-    F3       : rofi -show emoji
-    F4       : rofi-bluetooth
+    F1       : ~/.config/rofi/scripts/rofi-scripts --dotf
+    F2       : ~/.config/rofi/scripts/rofi-scripts --ports
+    F3       : ~/.config/rofi/scripts/rofi-scripts --screen
+    F4       : ~/.config/rofi/scripts/rofi-scripts --preconfiguration
+    F5       : ~/.config/rofi/scripts/rofi-scripts --windows
+    F6       : ~/.config/rofi/scripts/rofi-scripts --apps
+    F7       : ~/.config/rofi/scripts/shortcuts
     ccedilla : xfce4-clipman-history
 
-  # * MOUSE KEYS
-  shift :
-    button2 : amixer -D pulse set Master toggle
-    button4 : amixer set Master 5%+
-    button5 : amixer set Master 5%-
-  ctrl :
-    button8 : playerctl previous
-    button9 : playerctl next
-    shift   :
-      button2 : playerctl play-pause
-
 rofi: # ROFI APPS
-
   apps:
     'Chat Gpt'                : 'https://chat.openai.com/chat'
     'YouTube'                 : 'https://www.youtube.com'

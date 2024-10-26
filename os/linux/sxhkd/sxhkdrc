@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-09-18 17:00
+# Generated on 2024-10-25 17:16
 
 Print
 	flameshot gui
@@ -31,10 +31,12 @@ super + F9
 	thunderbird
 super + F10
 	spotube
+super + F11
+	kodi
 super + a
 	rofi -show combi
 super + b
-	bitwarden-desktop
+	blueman-manager
 super + c
 	chromium
 super + e
@@ -43,6 +45,8 @@ super + f
 	firefox
 super + g
 	sourcegit
+super + k
+	keepassxc
 super + m
 	pragha
 super + r
@@ -57,30 +61,16 @@ super + less
 	qalculate-gtk
 super + Return
 	kitty
-super + ctrl + a
-	~/.config/rofi/scripts/rofi-scripts --apps
-super + ctrl + c
-	~/.config/rofi/scripts/rofi-scripts --preconfiguration
-super + ctrl + d
-	~/.config/rofi/scripts/rofi-scripts --dotf
-super + ctrl + k
-	~/.config/rofi/scripts/shortcuts
 super + ctrl + p
 	sh ~/.config/picom/picom-toogle.sh
-super + ctrl + s
-	~/.config/rofi/scripts/rofi-scripts --screen
-super + ctrl + w
-	~/.config/rofi/scripts/rofi-scripts --windows
 super + ctrl + x
 	pkill -USR1 -x sxhkd
 super + ctrl + Print
 	xfce4-screenshooter
-super + shift + F1
-	brave --tor
-super + shift + p
-	~/.config/rofi/scripts/rofi-scripts --ports
-super + shift + Escape
+super + ctrl + Escape
 	xfce4-taskmanager
+super + ctrl + F1
+	brave --tor
 alt + Escape
 	xkill
 alt + Print
@@ -90,24 +80,18 @@ alt + Left
 alt + Right
 	variety -n
 alt + F1
-	rofi -show ssh
+	~/.config/rofi/scripts/rofi-scripts --dotf
 alt + F2
-	rofi -show combi
+	~/.config/rofi/scripts/rofi-scripts --ports
 alt + F3
-	rofi -show emoji
+	~/.config/rofi/scripts/rofi-scripts --screen
 alt + F4
-	rofi-bluetooth
+	~/.config/rofi/scripts/rofi-scripts --preconfiguration
+alt + F5
+	~/.config/rofi/scripts/rofi-scripts --windows
+alt + F6
+	~/.config/rofi/scripts/rofi-scripts --apps
+alt + F7
+	~/.config/rofi/scripts/shortcuts
 alt + ccedilla
 	xfce4-clipman-history
-shift + button2
-	amixer -D pulse set Master toggle
-shift + button4
-	amixer set Master 5%+
-shift + button5
-	amixer set Master 5%-
-ctrl + button8
-	playerctl previous
-ctrl + button9
-	playerctl next
-ctrl + shift + button2
-	playerctl play-pause

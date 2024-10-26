@@ -14,6 +14,9 @@ screen() {
 	if [ -n "$selected" ]; then
 		sh "$file/$selected"
 		pkill conky && (conky -c ~/.conkyrc) &
+		if [ ! -z "$(pgrep qtile)" ]; then
+			qtile_manager -r
+		fi
 	fi
 }
 
