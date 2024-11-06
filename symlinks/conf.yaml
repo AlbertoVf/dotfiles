@@ -36,4 +36,5 @@
     ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
     ~/.config/Code/User/settings.json: editors/code/settings.json
     ~/.config/Code/User/tasks.json: editors/code/tasks.json
-    ~/.local/state/crossnote/style.less: editors/code/extensions-config/markdown-preview-enhanced-customize-global-css.less
+    ~/.config/zed/settings.json: editors/zed/settings.json
+    ~/.config/zed/keybindings.json: editors/code/keybindings.json

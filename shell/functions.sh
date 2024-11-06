@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 python_environment() {
 	# build python environment and activate.
 	echo '🏗️ Build environment'
 	python -m venv .venv
 	echo '🏃 run environment'
-	source .venv/bin/activate
+	. .venv/bin/activate
 	# Install linter, formatter and test
 	.venv/bin/pip install pylint black pytest
 	# Install required packages
@@ -26,19 +26,6 @@ export_packages() {
 	echo "# Packages installed on $(uname -n) on $(date +'%Y-%m-%d %H.%M.%S')" >~/packages-installes.txt
 	pacman -Qq >>~/packages-installes.txt
 }
-
-window_title() {
-	# get the window title and save on clipboard
-	xdotool getwindowname $(xdotool selectwindow) | xsel -bi
-	notify-send "Titulo de ventana copiado a portapapeles: $(xclip -o -selection clipboard)"
-}
-
-window_class() {
-	# get the window class and save on clipboard
-	xprop -id $(xdotool selectwindow) WM_CLASS | xsel -bi
-	notify-send "Clase de ventana copiado a portapapeles: $(xclip -o -selection clipboard)"
-}
-
 
 start_server(){
 	python3 -m http.server

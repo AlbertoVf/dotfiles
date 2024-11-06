@@ -1,3 +1,5 @@
 export DOTFILES_PATH="/home/alberto/.dotfiles"
 export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
 export ZIM_HOME="$DOTFILES_PATH/shell/zsh/.zim"
+export ZSH_CUSTOM="$DOTFILES_PATH/shell/zsh"
+alias reload="clear && . ~/.zshrc"
