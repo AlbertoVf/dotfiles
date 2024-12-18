@@ -45,10 +45,10 @@ alias   paru="paru --limit 20"                # shearch packages by name and lim
 
 
 #* get fastest mirrors
-alias  mirror="sudo reflector --verbose -f 20 -l 15 -n 10 --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector -l 15 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector -l 15 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector -l 15 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
+alias  mirror="sudo reflector -p 'https' -f 20 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector -p 'https' -l 20 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector -p 'https' -l 20 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector -p 'https' -l 20 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
 
 
 #* git alias

@@ -11,7 +11,7 @@ COMPLETION_WAITING_DOTS="true"
 fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 # source $ZSH_CUSTOM/.p10k.zsh
-ZSH_THEME="elessar"
+ZSH_THEME="spaceship"
 
 source $ZSH_CUSTOM/plugins/tldr.plugin.zsh
 source $DOTLY_PATH/shell/zsh/bindings/dot.zsh

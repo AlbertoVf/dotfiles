@@ -8,6 +8,7 @@ path=(
 	"$HOME/.config/qtile/scripts"
 	"$HOME/.cargo/bin"
 	"$HOME/.local/share/pnpm"
+	"$HOME/.local/bin"
 	"/usr/local/bin"
 	"/usr/local/sbin"
 	"/bin"

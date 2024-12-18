@@ -1,0 +1,17 @@
+---
+"workspace:toggle_ai_assistant": none
+"workspace:increase_font_size": ctrl-+
+"notebookview:increase_font_size": ctrl-+
+"editor_view:insert_autosuggestion": none
+"workspace:new_tab": ctrl-t
+"input:toggle_input_type": ctrl-space
+"editor_view:clear_buffer": ctrl-l
+"workspace:open_new_window": ctrl-W
+"editor_view:select_all": ctrl-shift-A
+"pane_group:close_current_session": none
+"editor_view:toggle_comment": ctrl-shift-/
+"editor_view:move_to_line_start": ctrl-a
+"terminal:copy": none
+"workspace:toggle_command_palette": f1
+"editor_view:move_to_line_end": ctrl-e
+"workspace:close_window": ctrl-shift-W

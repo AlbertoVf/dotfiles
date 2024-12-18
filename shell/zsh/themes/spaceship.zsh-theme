@@ -1,0 +1,1 @@
+/home/alberto/.dotfiles/shell/zsh/themes/spaceship-prompt/spaceship.zsh-theme

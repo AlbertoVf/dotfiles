@@ -23,7 +23,7 @@
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
     ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
-    ~/.config/warp-terminal/user_preferences.json: terminal/warp/user_preferences.json
+    ~/.config/warp-terminal: terminal/warp
     ~/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
     ~/.config/fastfetch: os/linux/fastfetch
