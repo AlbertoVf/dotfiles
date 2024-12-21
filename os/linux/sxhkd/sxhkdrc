@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-10-25 17:16
+# Generated on 2024-12-30 14:44
 
 Print
 	flameshot gui
@@ -34,7 +34,7 @@ super + F10
 super + F11
 	kodi
 super + a
-	rofi -show combi
+	rofi -show drun
 super + b
 	blueman-manager
 super + c
@@ -54,7 +54,7 @@ super + r
 super + s
 	pamac-manager
 super + v
-	vlc --video-on-top
+	vlc
 super + x
 	~/.config/rofi/scripts/powermenu
 super + less
@@ -71,6 +71,12 @@ super + ctrl + Escape
 	xfce4-taskmanager
 super + ctrl + F1
 	brave --tor
+super + ctrl + a
+	~/.config/rofi/scripts/rofi-scripts --apps
+super + ctrl + d
+	~/.config/rofi/scripts/rofi-scripts --dotf
+super + ctrl + s
+	~/.config/rofi/scripts/rofi-scripts --screen
 alt + Escape
 	xkill
 alt + Print
@@ -80,18 +86,14 @@ alt + Left
 alt + Right
 	variety -n
 alt + F1
-	~/.config/rofi/scripts/rofi-scripts --dotf
+	rofi -show file-browser-extended
 alt + F2
-	~/.config/rofi/scripts/rofi-scripts --ports
+	~/.config/rofi/scripts/shortcuts
 alt + F3
-	~/.config/rofi/scripts/rofi-scripts --screen
+	~/.config/rofi/scripts/rofi-scripts --windows
 alt + F4
 	~/.config/rofi/scripts/rofi-scripts --preconfiguration
-alt + F5
-	~/.config/rofi/scripts/rofi-scripts --windows
 alt + F6
-	~/.config/rofi/scripts/rofi-scripts --apps
-alt + F7
-	~/.config/rofi/scripts/shortcuts
+	~/.config/rofi/scripts/rofi-scripts --ports
 alt + ccedilla
 	xfce4-clipman-history

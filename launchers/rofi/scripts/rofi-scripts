@@ -90,6 +90,7 @@ ports() {
 		xdg-open "http://localhost:$puerto" &
 	fi
 }
+
 case $1 in
 --apps) apps ;;
 --ports) ports ;;

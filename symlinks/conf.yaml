@@ -26,6 +26,7 @@
     ~/.config/warp-terminal: terminal/warp
     ~/.conkyrc: os/linux/conky/.conkyrc
     ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
+    ~/.config/kitty/open-actions.conf: terminal/kitty/open-actions.conf
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     ~/.config/rofi/scripts: launchers/rofi/scripts

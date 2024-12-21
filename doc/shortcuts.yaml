@@ -17,7 +17,7 @@ sxhkdrc: # shortcodes to sxhkd
     F9     : thunderbird
     F10    : spotube
     F11    : kodi
-    a      : rofi -show combi
+    a      : rofi -show drun
     b      : blueman-manager
     c      : chromium
     e      : code
@@ -27,7 +27,7 @@ sxhkdrc: # shortcodes to sxhkd
     m      : pragha
     r      : retroarch
     s      : pamac-manager
-    v      : vlc --video-on-top
+    v      : vlc
     x      : ~/.config/rofi/scripts/powermenu
     less   : qalculate-gtk
     Return : kitty
@@ -37,19 +37,20 @@ sxhkdrc: # shortcodes to sxhkd
       Print  : xfce4-screenshooter
       Escape : xfce4-taskmanager
       F1     : brave --tor
+      a      : ~/.config/rofi/scripts/rofi-scripts --apps
+      d      : ~/.config/rofi/scripts/rofi-scripts --dotf
+      s      : ~/.config/rofi/scripts/rofi-scripts --screen
 
   alt:
     Escape   : xkill
     Print    : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
     Left     : variety -p
     Right    : variety -n
-    F1       : ~/.config/rofi/scripts/rofi-scripts --dotf
-    F2       : ~/.config/rofi/scripts/rofi-scripts --ports
-    F3       : ~/.config/rofi/scripts/rofi-scripts --screen
+    F1       : rofi -show file-browser-extended
+    F2       : ~/.config/rofi/scripts/shortcuts
+    F3       : ~/.config/rofi/scripts/rofi-scripts --windows
     F4       : ~/.config/rofi/scripts/rofi-scripts --preconfiguration
-    F5       : ~/.config/rofi/scripts/rofi-scripts --windows
-    F6       : ~/.config/rofi/scripts/rofi-scripts --apps
-    F7       : ~/.config/rofi/scripts/shortcuts
+    F6       : ~/.config/rofi/scripts/rofi-scripts --ports
     ccedilla : xfce4-clipman-history
 
 rofi: # ROFI APPS
