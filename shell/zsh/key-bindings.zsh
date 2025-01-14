@@ -2,5 +2,3 @@
 
 # Defined shortcut keys: º º
 bindkey -M emacs 'ºº' tldr-command-line
-bindkey -M vicmd 'ºº' tldr-command-line
-bindkey -M viins 'ºº' tldr-command-line

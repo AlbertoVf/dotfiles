@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-##? usage : rofi [none]
-##? help  : Clone and install rofi extra files.
-
-git clone --depth=1 https://github.com/adi1090x/rofi.git --depth 1
-sh rofi/setup.sh

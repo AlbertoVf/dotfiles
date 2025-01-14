@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-##? usage : arco_install [none]
-##? help  : Clone arco-install and install all software.
-
-git clone https://github.com/AlbertoVf/arco-install --depth 1
