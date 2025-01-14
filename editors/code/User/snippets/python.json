@@ -1,20 +1,22 @@
 {
-	"Crea una clase": {
-		"isFileTemplate": true,
-		"description": "Crea una clase con un constructor y metodos de print",
+	"Argument with param": {
 		"body": [
-			"class ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}:",
-			"\tdef __init__(self):",
-			"\t\tpass",
-			"\tdef __str__(self):",
-			"\t\treturn f''",
-			"\tdef __dict__(self):",
-			"\t\treturn {}"
-		]
+			"parser.add_argument('-$1', '--$2', help='$3')",
+			"if args.$2: $2()"
+		],
+		"description": "argument. Añade un argumento a un parser",
+		"prefix": "argument"
+	},
+	"Argument without param": {
+		"body": [
+			"def $2(): pass",
+			"parser.add_argument('-$1', '--$2', action='store_true', help='$3')",
+			"if args.$2: $2()"
+		],
+		"description": "argument. Añade un argumento a un parser",
+		"prefix": "argument"
 	},
 	"Class from json": {
-		"isFileTemplate": true,
-		"description": "Class from json. Crea una clase a partir de un objeto json",
 		"body": [
 			"from dataclasses import dataclass",
 			"@dataclass",
@@ -25,19 +27,78 @@
 			"\t\t_$1 = str(obj.get('$1'))",
 			"\t\treturn ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}(_$1)",
 			"$0"
-		]
+		],
+		"description": "Class from json. Crea una clase a partir de un objeto json",
+		"isFileTemplate": true
 	},
-	"Main": {
-		"prefix": "main",
-		"description": "Code snippet for a `if __name__ == \"__main__\": ...` block",
+	"Crea una clase": {
 		"body": [
-			"if __name__ == \"__main__\":",
-			"\t${1:pass}"
-		]
+			"class ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}:",
+			"\tdef __init__(self):",
+			"\t\tpass",
+			"\tdef __str__(self):",
+			"\t\treturn f''",
+			"\tdef __dict__(self):",
+			"\t\treturn {}"
+		],
+		"description": "Crea una clase con un constructor y metodos de print",
+		"isFileTemplate": true
+	},
+	"Crea una funcion lambda": {
+		"body": [
+			"$1 = lambda: $2"
+		],
+		"description": "Crea una funcion lambda. ",
+		"prefix": "lambda"
+	},
+	"Dictionary comprehension": {
+		"body": "{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:iterable}}$0",
+		"description": "Handy and faster way to create dictionaries based on existing dictionaries.",
+		"prefix": "dc"
+	},
+	"Dictionary comprehension if filter": {
+		"body": "{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:iterable} if ${6:condition}}$0",
+		"description": "Handy and faster way to create dictionaries based on existing dictionaries, with conditional if statement.",
+		"prefix": "dci"
+	},
+	"Fail (a test)": {
+		"body": "self.fail('${1:message}')$0",
+		"prefix": "fail"
+	},
+	"Function w/ return type": {
+		"body": [
+			"def ${1:fname}($2) -> ${3:None}:",
+			"\t${4:pass}"
+		],
+		"description": "Function definition with return type",
+		"prefix": "def"
+	},
+	"Generator comprehension": {
+		"body": "(${1:key} for ${2:value} in ${3:iterable})$0",
+		"description": "Create a generator based on existing iterables.",
+		"prefix": "gc"
+	},
+	"Generator comprehension if filter": {
+		"body": "(${1:key} for ${2:value} in ${3:iterable} if ${4:condition})$0",
+		"description": "Create a generator based on existing iterables, with condition if statement.",
+		"prefix": "gci"
+	},
+	"List comprehension": {
+		"body": "[${1:value} for ${2:value} in ${3:iterable}]$0",
+		"description": "List comprehension for creating a list based on existing lists.",
+		"prefix": "lc"
+	},
+	"List comprehension if else": {
+		"body": "[${1:value} if ${2:condition} else ${3:condition} for ${4:value} in ${5:iterable}]$0",
+		"description": "List comprehension for creating a list based on existing lists, with conditional if-else statement.",
+		"prefix": "lcie"
+	},
+	"List comprehension if filter": {
+		"body": "[${1:value} for ${2:value} in ${3:iterable} if ${4:condition}$0]",
+		"description": "List comprehension for creating a list based on existing lists, with conditional if statement.",
+		"prefix": "lci"
 	},
 	"Main Cli": {
-		"prefix": "main",
-		"description": "Cli. Crea un main que reciba parametros.",
 		"body": [
 			"import argparse,subprocess",
 			"def main():",
@@ -45,43 +106,135 @@
 			"\targs = parser.parse_args()",
 			"\targument",
 			"main()"
-		]
+		],
+		"description": "Cli. Crea un main que reciba parametros.",
+		"prefix": "main"
 	},
-	"Crea una funcion lambda": {
-		"prefix": "lambda",
-		"description": "Crea una funcion lambda. ",
+	"Multiline string": {
 		"body": [
-			"$1 = lambda: $2"
-		]
-	},
-	"Argument with param": {
-		"prefix": "argument",
-		"description": "argument. Añade un argumento a un parser",
-		"body": [
-			"parser.add_argument('-$1', '--$2', help='$3')",
-			"if args.$2: $2()"
-		]
-	},
-	"Argument without param": {
-		"prefix": "argument",
-		"description": "argument. Añade un argumento a un parser",
-		"body": [
-			"def $2(): pass",
-			"parser.add_argument('-$1', '--$2', action='store_true', help='$3')",
-			"if args.$2: $2()"
-		]
-	},
-	"docstring": {
-		"prefix": "docstring",
-		"description": "docstring. ",
-		"body": [
-			"\"\"\"",
-			"$1",
-			"Args:",
-			"$2",
-			"Returns:",
-			"$3",
+			"\"\"\"$0",
 			"\"\"\""
 		],
+		"description": "Snippet to avoid autopair plugin annoyances when typing multiple \"",
+		"prefix": "#"
 	},
+	"Set Comprehension if filter": {
+		"body": "{${1:value} for ${2:value} in ${3:iterable} if ${4:condition}}$0",
+		"description": "Create a set based on existing iterables, with condition if statement.",
+		"prefix": "sci"
+	},
+	"Set comprehension": {
+		"body": "{${1:value} for ${2:value} in ${3:iterable}}$0",
+		"description": "Create a set based on existing iterables.",
+		"prefix": "sc"
+	},
+	"__magic__": {
+		"body": "__${1:init}__$0",
+		"description": "Create magic method",
+		"prefix": "__"
+	},
+	"for": {
+		"body": [
+			"for ${1:value} in ${2:iterable}:",
+			"\t${3:pass}"
+		],
+		"description": "for loop",
+		"prefix": "for"
+	},
+	"for w/ range": {
+		"body": [
+			"for ${1:value} in range($2):",
+			"\t${3:pass}"
+		],
+		"description": "for loop that iterates over range of integers",
+		"prefix": "forr"
+	},
+	"from ... import ...": {
+		"body": "from ${1:pathlib} import ${2:Path}",
+		"description": "Import individual objects directly into the caller’s symbol table",
+		"prefix": "fromim"
+	},
+	"if __name__ == __main__": {
+		"body": [
+			"if __name__ == \"__main__\":",
+			"\t${1:main()}"
+		],
+		"description": "Execute code if the file is executed directly",
+		"prefix": "ifmain"
+	},
+	"import": {
+		"body": "import ${1:datetime}",
+		"description": "Import a package or module",
+		"prefix": "import"
+	},
+	"lambda": {
+		"body": [
+			"lambda ${1:parameter_list}: ${2:expression}"
+		],
+		"description": "lambda statement",
+		"prefix": "lambda"
+	},
+	"match/case": {
+		"body": [
+			"match ${1:expression}:",
+			"\tcase ${2:pattern}:",
+			"\t\t${3:pass}"
+		],
+		"description": "match/case statements",
+		"prefix": "match"
+	},
+	"property template": {
+		"body": [
+			"@property",
+			"def ${1:pname}(self):",
+			"\t\"\"\"${2:The $1 property.}\"\"\"",
+			"\t${3:return self._$1}",
+			"",
+			"@${4:$1}.setter",
+			"def ${5:$1}(self, value):",
+			"\t${6:self._$1} = value"
+		],
+		"description": "New property: get and set via decorator",
+		"prefix": "property"
+	},
+	"try/except": {
+		"body": [
+			"try:",
+			"\t${1:pass}",
+			"except ${2:Exception} as ${3:e}:",
+			"\t${4:raise $3}"
+		],
+		"description": "try/except blocks",
+		"prefix": "try"
+	},
+	"try/except/finally": {
+		"body": [
+			"try:",
+			"\t${1:pass}",
+			"except ${2:Exception} as ${3:e}:",
+			"\t${4:raise $3}",
+			"finally:",
+			"\t${5:pass}"
+		],
+		"description": "try/except/finally blocks",
+		"prefix": "tryf"
+	},
+	"with": {
+		"body": [
+			"with ${1:expression} as ${2:target}:",
+			"\t${3:pass}"
+		],
+		"description": "'with' statement",
+		"prefix": "with"
+	},
+	"read json": {
+		"body": [
+			"def read_json(file)->dict:",
+			"\twith open(file, 'r', encoding='utf-8') as f:",
+			"\t\tdata = json.load(f)",
+			"\treturn data"
+		],
+		"description": "read json file and return",
+		"prefix": "load"
+	}
 }

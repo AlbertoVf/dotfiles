@@ -1,79 +1,47 @@
 {
+	"Build makefile": {
+		"body": [ "var", "install", "build", "start", "test", "lint", "format", ],
+		"description": "Build makefile.",
+		"isFileTemplate": true
+	},
+	"Export": {
+		"body": "build:\n\t@echo '📦 Export project'\n\t${0}",
+		"description": "Export project",
+		"prefix": "build"
+	},
+	"Format": {
+		"body": "format:\n\t@echo '🖊️ Format code'\n\t${0}",
+		"description": "Format code",
+		"prefix": "format"
+	},
+	"Install": {
+		"body": "install:\n\t@echo '🏗️ Install dependencies'\n\t${0}",
+		"description": "Install dependencies",
+		"prefix": "install"
+	},
+	"Linter": {
+		"body": "linter:\n\t@echo '🪛 Lint code'\n\t${0}",
+		"description": "Lint code",
+		"prefix": "lint"
+	},
+	"Start": {
+		"body": "start:\n\t@echo '🏃 Run project'\n\t${0}",
+		"description": "Run project.",
+		"prefix": "start"
+	},
+	"Test": {
+		"body": "test:\n\t@echo '🧪 Run test'\n\t${0}",
+		"description": "Runtest",
+		"prefix": "test"
+	},
 	"Vars": {
-		"prefix": "var",
-		"description": "Agrega variables de uso.",
 		"body": [
 			".PHONY: install build start test lint format",
 			"LANG = ${1:language name}",
 			"PACKAGE_MANAGE = ${2:package manager}",
 			"PROJECT_MANAGE = ${3:framework manager}"
-		]
-	},
-	"Install": {
-		"prefix": "install",
-		"description": "Script para la instalacion de dependencias",
-		"body": [
-			"install:",
-			"\t@echo '🏗️ Instalando dependencias del proyecto'",
-			"\t${0}"
-		]
-	},
-	"Export": {
-		"prefix": "build",
-		"description": "Script para exportar el proyecto",
-		"body": [
-			"build:",
-			"\t@echo '📦 Exportando proyecto'",
-			"\t${0}"
-		]
-	},
-	"Start": {
-		"prefix": "start",
-		"description": "Ejecuta el proyecto.",
-		"body": [
-			"start:",
-			"\t@echo '🏃 Ejecutando el proyecto'",
-			"\t${0}"
-		]
-	},
-	"Test": {
-		"prefix": "test",
-		"description": "Ejecuta los test",
-		"body": [
-			"test:",
-			"\t@echo '🧪 Ejecutando test'",
-			"\t${0}"
-		]
-	},
-	"Linter": {
-		"prefix": "lint",
-		"description": "Comprobar estilo de codigo",
-		"body": [
-			"linter:",
-			"\t@echo '🪛 Comprobando estilo de codigo'",
-			"\t${0}"
-		]
-	},
-	"Format": {
-		"prefix": "format",
-		"description": "Formatear codigo",
-		"body": [
-			"format:",
-			"\t@echo '🖊️ Aplicando formato al codigo'",
-			"\t${0}"
-		]
-	},
-	"Build makefile": {
-		"isFileTemplate": true,
-		"description": "Build makefile.",
-		"body": [
-			"var",
-			"install",
-			"build",
-			"start",
-			"test",
-			"lint",
-			"format",
-		]
+		],
+		"description": "Configure vars.",
+		"prefix": "var"
 	}
 }

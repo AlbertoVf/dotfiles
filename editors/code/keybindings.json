@@ -14,5 +14,6 @@
 	{ "command": "markdownExtended.formateTable", "key": "ctrl+alt+[Comma]", "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/" },
 	{ "command": "hediet.vscode-drawio.export", "key": "ctrl+alt+p" },
 	{ "command": "docs.write", "key": "ctrl+[Backslash]", "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/" },
-	{ "command": "-docs.write", "key": "alt+[Period]", "when": "editorTextFocus && config.docwriter.hotkey.window == 'Alt + .' && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/" }
+	{ "command": "-docs.write", "key": "alt+[Period]", "when": "editorTextFocus && config.docwriter.hotkey.window == 'Alt + .' && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/" },
+	{ "command": "-github.copilot.generate", "key": "ctrl+enter", "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused" }
 ]

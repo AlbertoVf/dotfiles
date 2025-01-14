@@ -1,7 +1,5 @@
 {
 	"Front matter": {
-		"prefix": "matter",
-		"description": "Crea front matter para un documento",
 		"body": [
 			"---",
 			"date: date",
@@ -11,11 +9,11 @@
 			"resume: ${2:descripcion}",
 			// "footer: \\${title} - [\\${pageNo}]",
 			"---"
-		]
+		],
+		"description": "front matter for document",
+		"prefix": "matter"
 	},
-	"Marp front matter": {
-		"prefix": "matter",
-		"description": "Crea un front matter para una presentacion con marp",
+	"Front matter - marp ": {
 		"body": [
 			"---",
 			"marp: true",
@@ -31,41 +29,404 @@
 			"\tblockquote{ font-style: italic; font-size:100%; }",
 			"</style>",
 			"${0}"
-		]
-	},
-	"Tabla": {
-		"prefix": "table",
-		"description": "Crea una tabla",
-		"body": [
-			"| $1 | $2 | $3 |",
-			"| -- | -- | -- |",
-			"| $4 | $5 | $6 |"
-		]
-	},
-	"Wikilinks": {
-		"prefix": "wiki",
-		"description": "Wikilinks. Crea wikilinks",
-		"body": [
-			"![[./$1.md]]",
-			"$0"
 		],
+		"description": "Front matter to use marp",
+		"prefix": "matter"
 	},
-	"Code block": {
-		"prefix": "codeblock",
-		"description": "Code block. ",
+	"Images": {
+		"body": "![${1:alt text}](${2:path}) ${0}",
+		"description": "Add images",
+		"prefix": "img"
+	},
+	"Insert Caution": {
+		"body": "> [!CAUTION]\n> ",
+		"description": "Insert Caution",
+		"prefix": "caution"
+	},
+	"Insert Important": {
+		"body": "> [!IMPORTANT]\n> ",
+		"description": "Insert Important",
+		"prefix": "important"
+	},
+	"Insert Note": {
+		"body": "> [!NOTE]\n> ",
+		"description": "Insert Note",
+		"prefix": "note"
+	},
+	"Insert Tip": {
+		"body": "> [!TIP]\n> ",
+		"description": "Insert Tip",
+		"prefix": "tip"
+	},
+	"Insert Warning": {
+		"body": "> [!WARNING]\n> ",
+		"description": "Insert Warning",
+		"prefix": "warning"
+	},
+	"Insert code": {
+		"body": "`${1}` $0",
+		"description": "Insert code",
+		"prefix": "code"
+	},
+	"Insert code block": {
 		"body": [
-			"```$1",
+			"```${1:language}",
 			"$0",
 			"```"
 		],
+		"description": "Insert fenced code block",
+		"prefix": "codeblock"
 	},
-	"Markdown Task List": {
-		"prefix": "task",
+	"Insert subscript": {
+		"body": "${1}<sub>${0}",
+		"description": "Create a subscript.",
+		"prefix": "sub"
+	},
+	"Insert superscript": {
+		"body": "${1}<sup>${0}",
+		"description": "Create a superscript.",
+		"prefix": "sup"
+	},
+	"Insert table": {
 		"body": [
-			"- [ ] $1",
-			"- [ ] $2",
-			"- [ ] $3"
+			"| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+			"| ------------ | ------------ | ------------ |",
+			"| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+			"| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
+			"${0}"
 		],
-		"description": "Insertar una lista de tareas en Markdown"
+		"description": "Insert table with 3 rows and 3 columns. First row is heading.",
+		"prefix": "table"
 	},
+	"Insert task list": {
+		"body": [
+			"- [${1| ,x|}] ${2:text}",
+			"- [${3| ,x|}] ${4:text}",
+			"- [${5| ,x|}] ${6:text}",
+			"${0}"
+		],
+		"description": "Insert task list with 3 tasks",
+		"prefix": "task"
+	},
+	"LICENSE - AGPL": {
+		"body": [
+			"The AGPL License (AGPL)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.",
+			"This program  is free software: you can redistribute it and/or modify",
+			"it under the terms of the GNU Affero General Public License as",
+			"published by the Free Software Foundation, either version 3 of the",
+			"License, or (at your option) any later version.\n\n",
+
+			"This program is distributed in the hope that it will be useful,",
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+			"GNU Affero General Public License for more details.\n\n",
+			"You should have received a copy of the GNU Affero General Public License",
+			"along with this program. If not, see <http://www.gnu.org/licenses/>."
+		],
+		"description": "AGPL License",
+		"prefix": "AGPL"
+	},
+	"LICENSE - AGPL3": {
+		"body": [
+			"The AGPLv3 License (AGPLv3)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}\n\n",
+			"This program is free software: you can redistribute it and/or modify",
+			"it under the terms of the GNU Affero General Public License as",
+			"published by the Free Software Foundation, either version 3 of the",
+			"License, or (at your option) any later version.\n\n",
+			"This program is distributed in the hope that it will be useful,",
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+			"GNU Affero General Public License for more details.\n\n",
+			"You should have received a copy of the GNU Affero General Public License",
+			"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+		],
+		"description": "AGPLv3 License",
+		"prefix": "AGPL3"
+	},
+	"LICENSE - APACHE": {
+		"body": [
+			"The APACHE License (APACHE)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Licensed under the Apache License, Version 2.0 (the \"License\");",
+			"you may not use this file except in compliance with the License.",
+			"You may obtain a copy of the License at\n\n",
+			"\thttp://www.apache.org/licenses/LICENSE-2.0\n\n",
+			"Unless required by applicable law or agreed to in writing, software",
+			"distributed under the License is distributed on an \"AS IS\" BASIS,",
+			"WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
+			"See the License for the specific language governing permissions and",
+			"limitations under the License."
+		],
+		"description": "APACHE License",
+		"prefix": "APACHE"
+	},
+	"LICENSE - BEERWARE": {
+		"body": [
+			"The BEERWARE License (BEERWARE)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Licensed under the \"THE BEER-WARE LICENSE\" (Revision 42):",
+			"$1 wrote this file. As long as you retain this notice you",
+			"can do whatever you want with this stuff. If we meet some day, and you think",
+			"this stuff is worth it, you can buy me a beer or coffee in return"
+		],
+		"description": "BEERWARE License",
+		"prefix": "BEERWARE"
+	},
+	"LICENSE - BSD2": {
+		"body": [
+			"The BSD2 License (BSD2)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Redistribution and use in source and binary forms, with or without",
+			"modification, are permitted provided that the following conditions are met:",
+			"1. Redistributions of source code must retain the above copyright",
+			"notice, this list of conditions and the following disclaimer.",
+			"2. Redistributions in binary form must reproduce the above copyright",
+			"notice, this list of conditions and the following disclaimer in the",
+			"documentation and/or other materials provided with the distribution.\n\n",
+			"THIS SOFTWARE IS PROVIDED BY $1 ''AS IS'' AND ANY",
+			"EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED",
+			"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE",
+			"DISCLAIMED. IN NO EVENT SHALL $1 BE LIABLE FOR ANY",
+			"DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES",
+			"(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;",
+			"LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND",
+			"ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT",
+			"(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS",
+			"SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n",
+			"The views and conclusions contained in the software and documentation",
+			"are those of the authors and should not be interpreted as representing",
+			"official policies, either expressed or implied, of $1."
+		],
+		"description": "BSD2 License",
+		"prefix": "BSD2"
+	},
+	"LICENSE - BSD3": {
+		"body": [
+			"The BSD3 License (BSD3)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Redistribution and use in source and binary forms, with or without",
+			"modification, are permitted provided that the following conditions are met:",
+			"1. Redistributions of source code must retain the above copyright",
+			"notice, this list of conditions and the following disclaimer.",
+			"2. Redistributions in binary form must reproduce the above copyright",
+			"notice, this list of conditions and the following disclaimer in the",
+			"documentation and/or other materials provided with the distribution.",
+			"3. Neither the name of the nor the",
+			"names of its contributors may be used to endorse or promote products",
+			"derived from this software without specific prior written permission.\n\n",
+			"THIS SOFTWARE IS PROVIDED BY $1 ''AS IS'' AND ANY",
+			"EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED",
+			"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE",
+			"DISCLAIMED. IN NO EVENT SHALL $1 BE LIABLE FOR ANY",
+			"DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES",
+			"(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;",
+			"LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND",
+			"ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT",
+			"(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS",
+			"SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+		],
+		"description": "BSD3 License",
+		"prefix": "BSD3"
+	},
+	"LICENSE - BSD4": {
+		"body": [
+			"The BSD4 License (BSD4)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Redistribution and use in source and binary forms, with or without",
+			"modification, are permitted provided that the following conditions are met:",
+			"1. Redistributions of source code must retain the above copyright",
+			"notice, this list of conditions and the following disclaimer.",
+			"2. Redistributions in binary form must reproduce the above copyright",
+			"notice, this list of conditions and the following disclaimer in the",
+			"documentation and/or other materials provided with the distribution.",
+			"3. All advertising materials mentioning features or use of this software",
+			"must display the following acknowledgement:",
+			"This product includes software developed by the .",
+			"4. Neither the name of the $3 nor the",
+			"names of its contributors may be used to endorse or promote products",
+			"derived from this software without specific prior written permission.\n\n",
+			"THIS SOFTWARE IS PROVIDED BY $1 ''AS IS'' AND ANY",
+			"EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED",
+			"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE",
+			"DISCLAIMED. IN NO EVENT SHALL $1 BE LIABLE FOR ANY",
+			"DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES",
+			"(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;",
+			"LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND",
+			"ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT",
+			"(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS",
+			"SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+		],
+		"description": "BSD4 License",
+		"prefix": "BSD4"
+	},
+	"LICENSE - EUPL": {
+		"body": [
+			"The EUPL License (EUPL)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}",
+			"Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the ''Licence'');",
+			"You may not use this work except in compliance with the Licence.",
+			"You may obtain a copy of the Licence at:\n\n",
+			"<https://joinup.ec.europa.eu/software/page/eupl>\n\n",
+			"Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an ''AS IS'' basis,",
+			"WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
+			"See the Licence for the specific language governing permissions and limitations under the Licence."
+		],
+		"description": "EUPL License",
+		"prefix": "EUPL"
+	},
+	"LICENSE - GPL2": {
+		"body": [
+			"The GPLv2 License (GPLv2)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}\n\n",
+			"This program is free software: you can redistribute it and/or modify",
+			"it under the terms of the GNU General Public License as published by",
+			"the Free Software Foundation; either version 2 of the License, or",
+			"(at your option) any later version.\n\n",
+			"This program is distributed in the hope that it will be useful,",
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+			"GNU General Public License for more details.\n\n",
+			"You should have received a copy of the GNU General Public License",
+			"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+		],
+		"description": "GPLv2 License",
+		"prefix": "GPL2"
+	},
+	"LICENSE - GPL3": {
+		"body": [
+			"The GPLv3 License (GPLv3)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}\n\n",
+			"This program is free software: you can redistribute it and/or modify",
+			"it under the terms of the GNU General Public License as published by",
+			"the Free Software Foundation, either version 3 of the License, or",
+			"(at your option) any later version.\n\n",
+			"This program is distributed in the hope that it will be useful,",
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+			"GNU General Public License for more details.\n\n",
+			"You should have received a copy of the GNU General Public License",
+			"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+		],
+		"description": "GPLv3 License",
+		"prefix": "GPL3"
+	},
+	"LICENSE - ISC": {
+		"body": [
+			"The ISC License (ISC)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.\n\n",
+			"THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+		],
+		"description": "ISC License",
+		"prefix": "ISCL"
+	},
+	"LICENSE - LGPL2": {
+		"body": [
+			"The GPLv2 License (GPLv2)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}\n\n",
+			"This library is free software; you can redistribute it and/or modify",
+			"it under the terms of the GNU Lesser General Public License as published",
+			"by the Free Software Foundation; either version 2.1 of the License, or",
+			"(at your option) any later version.\n\n",
+			"This library is distributed in the hope that it will be useful,",
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+			"GNU Lesser General Public License for more details.\n\n",
+			"You should have received a copy of the GNU Lesser General Public License",
+			"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+		],
+		"description": "GPLv2 License",
+		"prefix": "LGPL2"
+	},
+	"LICENSE - LGPL3": {
+		"body": [
+			"The GPLv3 License (GPLv3)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}\n\n",
+			"This program is free software: you can redistribute it and/or modify",
+			"it under the terms of the GNU Lesser General Public License as published",
+			"the Free Software Foundation, either version 3 of the License, or",
+			"(at your option) any later version.\n\n",
+			"This library is distributed in the hope that it will be useful,",
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of",
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+			"GNU Lesser General Public License for more details.\n\n",
+			"You should have received a copy of the GNU General Public License",
+			"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+		],
+		"description": "LGPLv3 License",
+		"prefix": "LGPL3"
+	},
+	"LICENSE - MIT": {
+		"body": [
+			"The MIT License (MIT)\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}\n\n",
+			"Permission is hereby granted, free of charge, to any person obtaining a copy",
+			"of this software and associated documentation files (the \"Software\"), to deal",
+			"in the Software without restriction, including without limitation the rights",
+			"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+			"copies of the Software, and to permit persons to whom the Software is",
+			"furnished to do so, subject to the following conditions:\n\n",
+			"The above copyright notice and this permission notice shall be included in all",
+			"copies or substantial portions of the Software.\n\n",
+			"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+			"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+			"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+			"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+			"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+			"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
+			"SOFTWARE."
+		],
+		"description": "MIT License",
+		"prefix": "mitl"
+	},
+	"LICENSE - MPL2": {
+		"body": [
+			"This Source Code Form is subject to the terms of the Mozilla Public",
+			"License, v. 2.0. If a copy of the MPL was not distributed with this",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.",
+			"file, You can obtain one at http://mozilla.org/MPL/2.0/."
+		],
+		"description": "MPL2 License",
+		"prefix": "MPL2"
+	},
+	"LICENSE - SPDX": {
+		"body": [
+			"SPDX-License-Identifier: ${1:Id}",
+			"SPDX-FileCopyrightText: ${CURRENT_YEAR} ${2:Author}"
+		],
+		"description": "SPDX-style license header",
+		"prefix": "spdx"
+	},
+	"LICENSE - WTFPL": {
+		"body": [
+			"\tDO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE\n\n",
+			"Copyright (c) ${CURRENT_YEAR} ${0:Author}. All rights reserved.\n\n",
+			"Licensed under the \"THE BEER-WARE LICENSE\" (Revision 42):",
+			"Everyone is permitted to copy and distribute verbatim or modified",
+			"copies of this license document, and changing it is allowed as long",
+			"as the name is changed.\n\n",
+			"\tDO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE",
+			"TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION",
+			"\t0. You just DO WHAT THE FUCK YOU WANT TO."
+		],
+		"description": "WTFPL License",
+		"prefix": "WTFPL"
+	},
+	"Links": {
+		"body": "[${1:text}](${2:url}) ${0}",
+		"description": "Add links",
+		"prefix": [
+			"l",
+			"link",
+			"a"
+		]
+	},
+	"Wikilinks": {
+		"body":
+			"![[./$1.md]]",
+		"description": "Wikilinks. Crea wikilinks",
+		"prefix": "wiki"
+	}
 }

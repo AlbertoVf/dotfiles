@@ -1,12 +1,9 @@
 {
-	"Crea propiedad font": {
-		"prefix": "font",
-		"description": "Crea la propiedad font",
-		"body": "font: ${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:font-family};"
+	"@import": {
+		"body": "@import '${0:filename}';",
+		"prefix": "imp"
 	},
-	"Centrar el contenido": {
-		"prefix": "align",
-		"description": "Centra el contenido",
+	"Center content": {
 		"body": [
 			"$1{",
 			"\talign-content: center;",
@@ -14,11 +11,78 @@
 			"\t\tmargin-inline: auto;",
 			"\t}",
 			"}"
-		]
+		],
+		"description": "Center content",
+		"prefix": "align"
 	},
-	"root colores": {
-		"prefix": "colors",
-		"description": "Crea un :root con colores",
+	"align-items": {
+		"body": "align-items: ${1|flex-start,flex-end,center,baseline,stretch,start,end,self-start,self-end|};",
+		"description": "initial value: stretch",
+		"prefix": "ai"
+	},
+	"color-scheme": {
+		"body": [
+			":root{ color-scheme: light dark;}",
+			"@media (prefers-color-scheme: light) {$1}",
+			"@media (prefers-color-scheme: dark) {$2}"
+		],
+		"description": "color scheme with dark/light",
+		"prefix": "color-scheme"
+	},
+	"display": {
+		"body": "display: ${1|none,block,inline,inline-block,flex,inline-flex,list-item,table,inline-table,table-caption,table-cell,table-row,table-row-group,table-column|};",
+		"prefix": "dis"
+	},
+	"flex-direction": {
+		"body": "flex-direction: ${1|row,row-reverse,column,column-reverse|};",
+		"description": "initial value: row",
+		"prefix": "fld"
+	},
+	"flex-direction: column": {
+		"body": "flex-direction: column;",
+		"prefix": "fldc"
+	},
+	"flex-direction: row": {
+		"body": "flex-direction: row;",
+		"prefix": "fldr"
+	},
+	"flex-flow": {
+		"body": "flex-flow: ${1|row,row-reverse,column,column-reverse|} ${2|wrap,wrap-reverse,nowrap|};",
+		"prefix": "flf"
+	},
+	"flex-wrap": {
+		"body": "flex-wrap: ${1|wrap,wrap-reverse,nowrap|};",
+		"description": "initial value: nowrap",
+		"prefix": "flw"
+	},
+	"font": {
+		"body": "font: ${0:12px/1.5};",
+		"description": "font: [weight style variant stretch] size/line-height family",
+		"prefix": "ft"
+	},
+	"justify-content": {
+		"body": "justify-content: ${1|flex-start,flex-end,center,space-between,space-around|};",
+		"description": "initial value: flex-start",
+		"prefix": "jc"
+	},
+	"letter-spacing": {
+		"body": "letter-spacing: ${0:2px};",
+		"prefix": "ls"
+	},
+	"list-style": {
+		"body": "list-style: ${1|disc,circle,square,decimal,lower-roman,upper-roman,lower-alpha,upper-alpha,none,armenian,cjk-ideographic,georgian,lower-greek,hebrew,hiragana,hiragana-iroha,katakana,katakana-iroha,lower-latin,upper-latin|} ${2|outside,inside|};",
+		"description": "list-style: type position image",
+		"prefix": "lis"
+	},
+	"overflow": {
+		"body": "overflow: ${1|visible,hidden,scroll,auto,clip|};",
+		"prefix": "ov"
+	},
+	"position": {
+		"body": "position: ${1|relative,absolute,fixed,sticky,static|};",
+		"prefix": "position"
+	},
+	"root colors": {
 		"body": [
 			":root {",
 			"\t--primary-color: $1;",
@@ -28,15 +92,45 @@
 			"\t--secondary-background: $5;",
 			"\t--accent-background: $6;",
 			"}",
-		]
+		],
+		"description": "Create :root with colors",
+		"prefix": "colors"
 	},
-	"Esquema de colores": {
-		"prefix": "color-scheme",
-		"description": "Establece modo claro/oscuro y sus colores",
-		"body": [
-			":root{ color-scheme: light dark;}",
-			"@media (prefers-color-scheme: light) {$1}",
-			"@media (prefers-color-scheme: dark) {$2}"
-		]
+	"text-align": {
+		"body": "text-align: ${1|center,left,right,justify,start,end|};",
+		"prefix": "ta"
+	},
+	"text-decoration": {
+		"body": "text-decoration: ${1|none,underline,overline,line-through|};",
+		"prefix": "td"
+	},
+	"text-shadow": {
+		"body": "text-shadow: ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${0:rgba(0, 0, 0, .5)};",
+		"description": "text-shadow: x-offset y-offset blur spread color",
+		"prefix": "ts"
+	},
+	"text-transform": {
+		"body": "text-transform: ${1|capitalize,uppercase,lowercase,full-width,none|};",
+		"prefix": "tt"
+	},
+	"vertical-align": {
+		"body": "vertical-align: ${1|baseline,middle,top,bottom,sub,super,text-top,text-bottom|};",
+		"prefix": "va"
+	},
+	"visibility": {
+		"body": "visibility: ${1|visible,hidden,collapse|};",
+		"prefix": "vis"
+	},
+	"white-space": {
+		"body": "white-space: ${1|nowrap,pre,pre-wrap,pre-line,normal|};",
+		"prefix": "ws"
+	},
+	"word-break": {
+		"body": "word-break: ${1|break-all,keep-all,break-word,normal|};",
+		"prefix": "wb"
+	},
+	"word-wrap": {
+		"body": "word-wrap: ${1|break-word,break-spaces,normal|};",
+		"prefix": "ww"
 	}
 }

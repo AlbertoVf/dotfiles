@@ -1,47 +1,152 @@
 {
-	"Java Class": {
-		"isFileTemplate": true,
-		"description": "Crea una clase java con su constructor",
+	"Do-While Statement": {
 		"body": [
-			"public class $TM_FILENAME_BASE {",
-			"\t$TM_FILENAME_BASE() {}",
+			"do {",
 			"\t$0",
-			"}"
-		]
-	},
-	"Java Class Template": {
-		"prefix": "class",
-		"body": [
-			"${1|public,private,protected|} class ${2:ClassName} {",
-			"\t$3",
-			"}"
+			"} while (${1:condition});"
 		],
-		"description": "Java Class Template"
-	},
-	"Java Main file": {
-		"isFileTemplate": true,
-		"description": "Crea la clase principal Main de un proyecto",
-		"body": [
-			"public class $TM_FILENAME_BASE {",
-			"\tpublic static void main(String[] args) {$0}",
-			"}"
-		]
-	},
-	"Imprime": {
-		"prefix": "sout",
-		"description": "Imprime con salto de linea en java.",
-		"body": [
-			"System.out.println(\"$1\");"
-		]
+		"description": "Do-While Statement",
+		"prefix": "dowhile"
 	},
 	"Getter & setter": {
-		"prefix": "gs",
-		"description": "Crea una variable con su getter y setter",
 		"body": [
 			"${3|private,protected|} $2 $1;",
 			"public $2 get${1/(^.)/${1:/upcase}/}(){ return this.$1 }",
 			"public set${1/(^.)/${1:/upcase}/}($2 $1){ this.$1 = $1 }",
 			"$0"
-		]
+		],
+		"description": "Crea una variable con su getter y setter",
+		"prefix": "gs"
+	},
+	"Java Class Template": {
+		"body": [
+			"${1|public,private,protected|} class ${2:ClassName} {",
+			"\t$TM_FILENAME_BASE() {}",
+			"\t$3",
+			"}"
+		],
+		"description": "Java Class Template",
+		"isFileTemplate": true,
+		"prefix": "class"
+	},
+	"Public constructor": {
+		"body": [
+			"public ${1:${TM_FILENAME_BASE}}($2) {",
+			"\t${0:super();}",
+			"}"
+		],
+		"description": "Public constructor",
+		"prefix": "ctor"
+	},
+	"Switch Statement": {
+		"body": [
+			"switch (${1:key}) {",
+			"\tcase ${2:value}:",
+			"\t\t$0",
+			"\t\tbreak;",
+			"",
+			"\tdefault:",
+			"\t\tbreak;",
+			"}"
+		],
+		"description": "Switch Statement",
+		"prefix": "switch"
+	},
+	"While Statement": {
+		"body": [
+			"while (${1:condition}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "While Statement",
+		"prefix": "while"
+	},
+	"field": {
+		"body": [
+			"${1|public,private,protected|}${4| static , |}${2:String} ${3:name};"
+		],
+		"description": "field",
+		"prefix": "field"
+	},
+	"foreach": {
+		"body": [
+			"for (${1:type} ${2:var} : ${3:iterable}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Enhanced for loop",
+		"prefix": "foreach"
+	},
+	"fori": {
+		"body": [
+			"for (${1:int} ${2:i} = ${3:0}; $2 < ${4:max}; $2++) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Indexed for loop",
+		"prefix": "fori"
+	},
+	"if": {
+		"body": [
+			"if (${1:condition}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "if statement",
+		"prefix": "if"
+	},
+	"ifelse": {
+		"body": [
+			"if (${1:condition}) {",
+			"\t$2",
+			"} else {",
+			"\t$0",
+			"}"
+		],
+		"description": "if/else statement",
+		"prefix": "ifelse"
+	},
+	"main": {
+		"body": [
+			"public static void main(String[] args) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Public static main method",
+		"prefix": "main"
+	},
+	"method": {
+		"body": [
+			"${1|public,private,protected|}${5| static , |}${2:void} ${3:name}(${4}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "public static method",
+		"prefix": "method"
+	},
+	"newObject": {
+		"body": [
+			"${1:Object} ${2:foo} = new ${1:Object}();"
+		],
+		"description": "Create new Object",
+		"prefix": "new"
+	},
+	"sysout": {
+		"body": [
+			"System.out.println($0);"
+		],
+		"description": "Print to standard out",
+		"prefix": "sysout"
+	},
+	"trycatch": {
+		"body": [
+			"try {",
+			"\t$1",
+			"} catch (${2:Exception} ${3:e}) {",
+			"\t$4//${0:TODO}: handle exception",
+			"}"
+		],
+		"description": "try/catch block",
+		"prefix": "try_catch"
 	}
 }

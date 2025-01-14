@@ -1,80 +1,82 @@
 {
-	"Array for": {
-		"prefix": "for",
-		"description": "Crea un bucle for que imprime los elementos de un array",
-		"body": [
-			"${1:my_array}=(\"elemento1\" \"elemento2\")",
-			"for element in \"${${1:my_array}[@]}\";do",
-			"\techo \"\\$element\"",
-			"done",
-			"$0"
-		]
-	},
-	"Crea una funcion": {
-		"prefix": "function",
-		"description": "Crea una funcion",
-		"body": [
-			"$1() {",
-			"\t$0",
-			"}",
-			"$1"
-		]
-	},
-	"Echo fecha": {
-		"prefix": "date",
+	"Echo date": {
 		"body": "echo $(date +'%Y-%m-%d %H.%M.%S')",
-		"description": "Echo fecha. Imprime fecha yyy-mm-dd hh.mm.ss"
-	},
-	"For loop": {
-		"description": "For loop",
-		"prefix": "for",
-		"body": [
-			"for ((i = 0; i < $1; i++)); do",
-			"\t$2",
-			"done"
-		]
+		"description": "Echo date. Print date yyyy-mm-dd hh.mm.ss",
+		"prefix": "date"
 	},
 	"Helper": {
-		"description": "Crea un helper para describir la funcion y el uso",
-		"prefix": "help",
 		"body": [
 			"##? help  : $2.",
 			"##? usage : ${TM_FILENAME} ${1:[none]}",
 			// "##? options: "
-		]
-	},
-	"If statement": {
-		"prefix": "if",
-		"description": "If statement",
-		"body": [
-			"if [[ $1 ]]; then",
-			"\t$2",
-			"fi"
-		]
-	},
-	"If-else statement": {
-		"description": "If-else statement",
-		"prefix": "if",
-		"body": [
-			"if [[ $1 ]]; then",
-			"\t$2",
-			"else",
-			"\t$3",
-			"fi"
-		]
-	},
-	"While loop": {
-		"prefix": "while",
-		"description": "While loop",
-		"body": [
-			"while [[ $1 ]]; do",
-			"\t$2",
-			"done"
-		]
+		],
+		"description": "Print script usage",
+		"prefix": "help"
 	},
 	"X args": {
-		"prefix": "xargs",
+		"body": "| xargs -I {}",
 		"description": "X args. ",
-		"body": "| xargs -I {}"
+		"prefix": "xargs"
+	},
+	"break": {
+		"body": "break ${0}",
+		"description": [
+			"The break command tells Bash to leave the loop straight away.\n",
+			"Enter the break or break (n) where n=number of loops."
+		],
+		"prefix": "break"
+	},
+	"case": {
+		"body": "case \"\\$${1:VAR}\" in\n\t${2:1}) echo 1\n\t;;\n\t${3:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n",
+		"description": [
+			"case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac\n",
+			"A case command first expands word, and tries to match it against each pattern in turn."
+		],
+		"prefix": "case"
+	},
+	"else": {
+		"body": "else\n\t${0:command}",
+		"description": "else",
+		"prefix": "else"
+	},
+	"elseif": {
+		"body": "elif [[ ${1:condition} ]]; then\n\t${0}",
+		"description": "Add an elseif to an if statement.",
+		"prefix": "elseif"
+	},
+	"expr": {
+		"body": "expr ${0:1 + 1}",
+		"description": "Calculate numbers with Bash.",
+		"prefix": "expr"
+	},
+	"for_i": {
+		"body": "for ((${1:i} = 0; ${1:i} < ${0:10}; ${1:i}++)); do\n\techo \"\\$${1:i}\"\ndone\n",
+		"description": "An index-based iteration for loop.",
+		"prefix": "for_i"
+	},
+	"for_in": {
+		"body": "for ${1:VAR} in ${0:LIST}\ndo\n\techo \"\\$${1:VAR}\"\ndone\n",
+		"description": "for loop in list",
+		"prefix": "for_in"
+	},
+	"if": {
+		"body": "if [[ ${1:condition} ]]; then\n\t${0}\nfi",
+		"description": "An IF statement.",
+		"prefix": "if"
+	},
+	"read": {
+		"body": "read -r ${0:VAR}",
+		"description": "Read input of ${VAR}.",
+		"prefix": "read"
+	},
+	"until": {
+		"body": "until [[ ${1:condition} ]]; do\n\t${0}\ndone\n",
+		"description": "until loop by condition",
+		"prefix": "until"
+	},
+	"while": {
+		"body": "while [[ ${1:condition} ]]; do\n\t${0}\ndone\n",
+		"description": "A while loop by condition.",
+		"prefix": "while"
 	}
 }
