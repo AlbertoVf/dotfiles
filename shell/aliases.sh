@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-alias grep="grep --color"
 alias   ag="als"
 alias   cf="xclip -sel clip" # copy file content to clipboard
 alias ping="ping -c 1"
@@ -10,17 +9,18 @@ alias ping="ping -c 1"
 alias      cat="bat"
 alias      man="batman"
 alias neofetch="fastfetch"
-alias        s="sudo"
+alias     sudo="doas"
 alias       cd="z"
 alias       du="dust"
-
+alias     find="fd"
+alias     grep="rg"
 
 #* Folders alias
-alias   l="exa -lh -s type --octal-permissions --time-style long-iso"               # List files: view octal|permissions|size|usee|long format date|Name, sorted by type
+alias   l="exa -lh -s type --octal-permissions --time-style long-iso --hyperlink"   # List files: view octal|permissions|size|usee|long format date|Name, sorted by type
 alias  la="l -a"                                                                    # include hidden files
-alias  ls="exa --icons -s type"                                                     # Show files and dirs: sorted by type with icons
+alias  ls="exa --icons -s type --hyperlink"                                         # Show files and dirs: sorted by type with icons
 alias lsa="ls -a"                                                                   # include hidden
-alias  lt="exa -T --icons --octal-permissions"                                      # tree listing
+alias  lt="exa -T --icons --octal-permissions --hyperlink"                          # tree listing
 alias lta="lt -a"                                                                   # include hidden
 alias ltg="lta -lh -I=.git --no-user --no-permissions --git-ignore --git --no-time" # view git structure: |octal|size|git status| name
 
@@ -45,11 +45,7 @@ alias   paru="paru --limit 20"                # shearch packages by name and lim
 
 
 #* get fastest mirrors
-alias  mirror="sudo reflector -p 'https' -f 20 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector -p 'https' -l 20 -n 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector -p 'https' -l 20 -n 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector -p 'https' -l 20 -n 10 --sort age --save /etc/pacman.d/mirrorlist"
-
+alias  mirror="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
 
 #* git alias
 alias g="/usr/bin/git"
@@ -57,7 +53,6 @@ alias g="/usr/bin/git"
 
 #* kitty + kitten
 alias  kitten="kitty +kitten"
-alias    icat="kitten icat"
 alias    icon="kitten unicode_input"
 alias themesK="kitten themes"
 
