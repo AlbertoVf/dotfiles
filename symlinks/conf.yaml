@@ -1,4 +1,4 @@
-- clean: ["~"]
+- clean: ['~']
 
 - defaults:
     link:
@@ -10,31 +10,12 @@
     - $DOTFILES_PATH/shell/bash/themes
 
 - link:
-    ~/.bash_profile: shell/bash/.bash_profile
-    ~/.bashrc: shell/bash/.bashrc
+    ~/.conkyrc: os/linux/conky/.conkyrc
     ~/.fonts: fonts
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
-    ~/.config/gh/config.yml: git/gh/config.yml
     ~/.screenlayout: os/linux/.screenlayout
     ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
-    ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
-    ~/.config/warp-terminal: terminal/warp
-    ~/.conkyrc: os/linux/conky/.conkyrc
-    ~/.config/kitty/kitty.conf: terminal/kitty/kitty.conf
-    ~/.config/kitty/open-actions.conf: terminal/kitty/open-actions.conf
-    ~/.config/fastfetch: os/linux/fastfetch
-    ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
-    ~/.config/rofi/scripts: launchers/rofi/scripts
-    ~/.config/mpv: os/linux/mpv
-    ~/.config/zed/settings.json: editors/zed/settings.json
-    # vscode extensions configuration
-    ~/.config/Code/User/profiles: editors/code/User/profiles
-    ~/.config/Code/User/snippets: editors/code/User/snippets
-    ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
-    ~/.config/Code/User/settings.json: editors/code/settings.json
-    ~/.config/Code/User/tasks.json: editors/code/tasks.json
-    ~/.config/zed/keybindings.json: editors/code/keybindings.json
