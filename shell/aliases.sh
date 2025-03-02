@@ -1,18 +1,15 @@
 #!/usr/bin/env sh
 
-alias   ag="als"
-alias   cf="xclip -sel clip" # copy file content to clipboard
-alias ping="ping -c 1"
+#* copy file content to clipboard
+alias cf="xclip -sel clip"
+#* get fastest mirrors
+alias mirror="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
 
-
-#* modern commands
-alias      cat="bat"
-alias      man="batman"
-alias neofetch="fastfetch"
-alias       cd="z"
-alias       du="dust"
-alias     find="fd"
-alias     grep="rg"
+#* permissions
+alias   x="chmod +x"
+alias   r="chmod +r"
+alias   w="chmod +w"
+alias 775="chmod 755"
 
 #* Folders alias
 alias   l="exa -lh -s type --octal-permissions --time-style long-iso --hyperlink"   # List files: view octal|permissions|size|usee|long format date|Name, sorted by type
@@ -22,12 +19,6 @@ alias lsa="ls -a"                                                               
 alias  lt="exa -T --icons --octal-permissions --hyperlink"                          # tree listing
 alias lta="lt -a"                                                                   # include hidden
 alias ltg="lta -lh -I=.git --no-user --no-permissions --git-ignore --git --no-time" # view git structure: |octal|size|git status| name
-
-alias mkdir="mkdir -vp"
-alias    cp="cp -vi"
-alias    mv="mv -vi"
-alias    rm="rm -i"
-
 
 #* packages alias
 alias pacin="aura -S"                         # install package
@@ -43,43 +34,21 @@ alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
 alias   paru="paru --limit 20"                # shearch packages by name and limited to 20 results
 
 
-#* get fastest mirrors
-alias  mirror="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
-
-#* git alias
-alias g="/usr/bin/git"
-
-
-#* kitty + kitten
-alias  kitten="kitty +kitten"
-alias    icon="kitten unicode_input"
-alias themesK="kitten themes"
-
-
-#* python
-alias pip_freeze="pip freeze > requirements.txt"
-alias   activate="source .venv/bin/activate || python -m venv .venv && source .venv/bin/activate"
-
-
-#* node
-alias npm="pnpm"
-
+# python
+alias activate="source .venv/bin/activate"
 
 #* php
 alias laravel="composer create-project laravel/laravel"
 alias artisan="php artisan"
 
-
 #* docker
 alias docker_build="docker-compose up -d"
 alias   docker_run="docker-compose up"
 
+#* git alias
+alias g="/usr/bin/git"
 
-#* permissions
-alias chmod="chmod -v"
-alias     x="chmod +x"
-alias     r="chmod +r"
-alias     w="chmod +w"
-alias   775="chmod 755"
-
-alias chown="chown -c"
+#* kitty + kitten
+alias  kitten="kitty +kitten"
+alias    icon="kitten unicode_input"
+alias themesK="kitten themes"

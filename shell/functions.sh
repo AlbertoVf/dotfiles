@@ -1,17 +1,5 @@
 #!/usr/bin/env sh
 
-python_environment() {
-	# build python environment and activate.
-	echo '🏗️ Build environment'
-	python -m venv .venv
-	echo '🏃 run environment'
-	. .venv/bin/activate
-	# Install linter, formatter and test
-	.venv/bin/pip install pylint black pytest
-	# Install required packages
-	.venv/bin/pip install -r requirements.txt
-}
-
 add_submodule() {
 	# add submodule with github url.
 	# Submodule dest folder is the submodule name
@@ -28,5 +16,12 @@ export_packages() {
 }
 
 start_server(){
-	python3 -m http.server
+	IP="$(ip -4 addr show enp3s0f1 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
+	PORT=8000
+
+	URL="http://$IP:$PORT"
+	echo "Server started at http://$URL"
+	curl -s "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$URL" | kitten icat
+
+	python3 -m http.server $PORT --bind $IP
 }

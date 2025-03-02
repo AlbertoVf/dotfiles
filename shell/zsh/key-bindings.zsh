@@ -2,3 +2,4 @@
 
 # Defined shortcut keys: º º
 bindkey -M emacs 'ºº' tldr-command-line
+bindkey '^r' fzf-history-widget
