@@ -10,9 +10,16 @@ add_submodule() {
 }
 
 export_packages() {
-	# export archlinux packages to file
-	echo "# Packages installed on $(uname -n) on $(date +'%Y-%m-%d %H.%M.%S')" >~/packages-installes.txt
-	pacman -Qq >>~/packages-installes.txt
+	aur="aur-installes.txt" # paquetes de AUR
+	oficial="packages-installes.txt" # explicitamente instalados (paquetes oficiales)
+
+	echo "# Packages installed on $(uname -n) at $(date +'%Y-%m-%d %H.%M.%S')" | tee $oficial $aur
+
+	echo "# sudo pacman -S --needed - < $oficial" > $oficial
+	pacman -Qqent >> "$oficial"
+
+	echo "# aura -A --needed - < $aur" > $aur
+	pacman -Qqm >> "$aur"
 }
 
 start_server(){
@@ -24,4 +31,16 @@ start_server(){
 	curl -s "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$URL" | kitten icat
 
 	python3 -m http.server $PORT --bind $IP
+}
+
+clean(){
+	bleachbit --clean --preset
+	# Remove orphans
+	sudo aura -Oj
+	sudo pacman -Rns "$(pacman -Qdtq)"
+	# Clean out old and unused caches and packages
+	sudo aura -Sc
+	paru -Scc
+	sudo journalctl --vacuum-time=1weeks
+	rm -rf ~/.cache/*
 }

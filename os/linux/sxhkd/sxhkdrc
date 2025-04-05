@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2024-12-30 14:44
+# Generated on 2025-04-05 13:18
 
 Print
 	flameshot gui
@@ -20,9 +20,7 @@ XF86AudioStop
 super + F1
 	brave
 super + F2
-	code
-super + F6
-	ferdium
+	sourcegit
 super + F7
 	virtualbox
 super + F8
@@ -37,24 +35,18 @@ super + a
 	rofi -show drun
 super + b
 	blueman-manager
-super + c
-	chromium
 super + e
 	code
 super + f
 	firefox
-super + g
-	sourcegit
 super + k
 	keepassxc
 super + m
-	pragha
+	deadbeef
 super + r
 	retroarch
 super + s
 	pamac-manager
-super + v
-	vlc
 super + x
 	~/.config/rofi/scripts/powermenu
 super + less
