@@ -1,7 +1,10 @@
 {
 	"[javascript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
-	"[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features", "editor.formatOnSave": false },
-	"[markdown]": { "editor.defaultFormatter": "yzhang.markdown-all-in-one" },
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features",
+		"editor.formatOnSave": false
+	},
+	"[markdown]": { "editor.defaultFormatter": "DavidAnson.vscode-markdownlint" },
 	"[python]": { "editor.defaultFormatter": "ms-python.black-formatter" },
 	"[shellscript]": { "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode" },
 	"[svg]": { "editor.defaultFormatter": "jock.svg" },
@@ -16,7 +19,7 @@
 	"bashIde.shfmt.simplifyCode": true,
 	"bashIde.shfmt.spaceRedirects": true,
 	"better-comments.tags": [
-		//* important - [!IMPORTAT]
+		//* important - [!IMPORTANT]
 		{ "bold": true, "color": "#8957e5", "italic": true, "strikethrough": false, "tag": "*" },
 		//! warning - [!WARNING]
 		{ "bold": false, "color": "#9e6a03", "italic": true, "strikethrough": false, "tag": "!" },
@@ -46,6 +49,7 @@
 		"typescript": "deno run $dir$fileName"
 		// "python": "${workspaceFolder}/.venv/bin/python -u"
 	},
+	"code-runner.fileDirectoryAsCwd": true,
 	"code-runner.runInTerminal": true,
 	"code-runner.saveFileBeforeRun": true,
 	"codesnap.containerPadding": "2px",
@@ -104,18 +108,18 @@
 	"errorLens.fontWeight": "900",
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
+		".editorconfig": "_config.*,cspell.*,.markdownlint.*,.gitignore, .gitmodules",
+		".env": ".env, .env.example",
 		"*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js",
 		"*.jsx": "$(capture)*.js, $(capture)*.jsx, $(capture).*, $(capture).module.*",
 		"*.md": "$(capture)*.pdf, $(capture)*.png, $(capture)*.svg, $(capture)*.jpg, $(capture)_*.md",
 		"*.scss": "$(capture).css.map, $(capture).*.css, $(capture).scss, $(capture).less, $(capture).sass",
 		"*.ts": "$(capture).d.ts.map, $(capture).*.ts, $(capture)*.js, $(capture)*.ts",
 		"*.tsx": "$(capture)*.ts, $(capture)*.tsx, $(capture).*, $(capture).module.*",
-		".editorconfig": "_config.*,cspell.*,.markdownlint.*,.gitignore, .gitmodules",
-		".env": ".env, .env.example",
-		"Dockerfile": ".dockerignore, docker-compose.*, dockerfile*, entrypoint.sh",
-		"README*": "authors*, changelog*, code_of_conduct*, contributors*, LICENSE*, .editorconfig",
 		"composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
-		"package.json": ".commitlint*, .eslint*, .huskyrc*, .lintstagedrc*, .nodemon*, .npm*, .pnpm*, .prettier*, .stylelint*, .yarnrc*, commitlint*, eslint*, lint-staged*, nodemon*, package-lock.json,pnpm-lock.json, tslint*, vercel*, webpack*, workspace.json,  yarn*, tsconfig*, jest.*"
+		"Dockerfile": ".dockerignore, docker-compose.*, dockerfile*, entrypoint.sh",
+		"package.json": ".commitlint*, .eslint*, .huskyrc*, .lintstagedrc*, .nodemon*, .npm*, .pnpm*, .prettier*, .stylelint*, .yarnrc*, commitlint*, eslint*, lint-staged*, nodemon*, package-lock.json,pnpm-lock.json, tslint*, vercel*, webpack*, workspace.json,  yarn*, tsconfig*, jest.*",
+		"README*": "authors*, changelog*, code_of_conduct*, contributors*, LICENSE*, .editorconfig"
 	},
 	"explorer.incrementalNaming": "smart",
 	"files.associations": {
@@ -125,6 +129,7 @@
 		"*.dat": "csv (pipe)",
 		"*.json": "jsonc",
 		"*.mdx": "astro",
+		"*.mjs": "javascript",
 		"LICENSE": "markdown"
 	},
 	"files.autoSave": "afterDelay",
@@ -132,8 +137,8 @@
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
-	"git.autoStash": true,
 	"git.autofetch": true,
+	"git.autoStash": true,
 	"git.closeDiffOnOperation": true,
 	"git.enableCommitSigning": true,
 	"git.followTagsWhenSync": true,
@@ -145,20 +150,21 @@
 	],
 	"githubPullRequests.defaultMergeMethod": "squash",
 	"githubPullRequests.queries": [
-		{ "label": "Assigned To Me", "query": "is:open assignee:${user}" },
-		{ "label": "Created By Me", "query": "is:open author:${user}" },
-		{ "label": "Waiting For My Review", "query": "is:open review-requested:${user}" }
+		{ "label": "Assigned To Me", "query": "repo:${owner}/${repository} is:open assignee:${user}" },
+		{ "label": "Created By Me", "query": "repo:${owner}/${repository} is:open author:${user}" },
+		{ "label": "Waiting For My Review", "query": "repo:${owner}/${repository} is:open review-requested:${user}" }
 	],
+	"gitlens.graph.layout": "editor",
 	"hediet.vscode-drawio.codeLinkActivated": false,
 	"hediet.vscode-drawio.resizeImages": null,
-	"hediet.vscode-drawio.theme": "Kennedy",
 	"html.format.indentHandlebars": true,
 	"html.format.indentInnerHtml": true,
 	"html.format.templating": true,
+	"markdown-preview-enhanced.chromePath": "/bin/brave",
 	"markdown-preview-enhanced.codeBlockTheme": "default.css",
 	"markdown-preview-enhanced.enableExtendedTableSyntax": true,
 	"markdown-preview-enhanced.enablePreviewZenMode": false,
-	"markdown-preview-enhanced.previewTheme": "gothic.css",
+	"markdown-preview-enhanced.previewTheme": "vue.css",
 	"markdown.extension.tableFormatter.normalizeIndentation": true,
 	"markdown.extension.toc.levels": "2..6",
 	"markdown.marp.pdf.noteAnnotations": true,
@@ -187,16 +193,19 @@
 	"svg.preview.mode": "img",
 	"symbols.hidesExplorerArrows": false,
 	"telemetry.telemetryLevel": "off",
+	"terminal.integrated.persistentSessionReviveProcess": "never",
+	"terminal.integrated.suggest.enabled": true,
 	"testExplorer.mergeSuites": true,
 	"testExplorer.useNativeTesting": true,
 	"window.closeWhenEmpty": true,
 	"window.openFilesInNewWindow": "default",
 	"window.restoreWindows": "none",
 	"window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
-	"workbench.colorCustomizations": {},
 	"workbench.colorTheme": "Tokyo Night Storm",
 	"workbench.editor.highlightModifiedTabs": true,
 	"workbench.iconTheme": "symbols",
+	"workbench.layoutControl.enabled": false,
+	"workbench.navigationControl.enabled": false,
 	"workbench.productIconTheme": "feather-vscode",
 	"workbench.startupEditor": "welcomePageInEmptyWorkbench",
 	"workbench.tree.indent": 16,
