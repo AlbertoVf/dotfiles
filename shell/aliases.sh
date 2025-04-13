@@ -29,7 +29,7 @@ alias pacsyu="aura -Syyu"    # update all pkgs and database
 alias pacrem="aura -Rns"     # remove package and dependencies
 
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-alias   paru="paru --limit 20"                # shearch packages by name and limited to 20 results
+# alias   paru="paru --limit 20"                # shearch packages by name and limited to 20 results
 
 #* python
 alias activate="source .venv/bin/activate"

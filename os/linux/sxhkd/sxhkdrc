@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2025-04-05 13:18
+# Generated on 2025-04-13 22:30
 
 Print
 	flameshot gui
@@ -22,7 +22,7 @@ super + F1
 super + F2
 	sourcegit
 super + F7
-	virtualbox
+	virt-manager
 super + F8
 	thunar
 super + F9
@@ -38,7 +38,7 @@ super + b
 super + e
 	code
 super + f
-	firefox
+	librewolf
 super + k
 	keepassxc
 super + m

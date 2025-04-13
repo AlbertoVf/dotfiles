@@ -10,24 +10,20 @@ sxhkdrc: # shortcodes to sxhkd
 
   super:
     F1     : brave
-    F2     : code
-    F6     : ferdium
-    F7     : virtualbox
+    F2     : sourcegit
+    F7     : virt-manager
     F8     : thunar
     F9     : thunderbird
     F10    : spotube
     F11    : kodi
     a      : rofi -show drun
     b      : blueman-manager
-    c      : chromium
     e      : code
-    f      : firefox
-    g      : sourcegit
+    f      : librewolf
     k      : keepassxc
-    m      : pragha
+    m      : deadbeef
     r      : retroarch
     s      : pamac-manager
-    v      : vlc
     x      : ~/.config/rofi/scripts/powermenu
     less   : qalculate-gtk
     Return : kitty
@@ -52,6 +48,12 @@ sxhkdrc: # shortcodes to sxhkd
     F4       : ~/.config/rofi/scripts/rofi-scripts --preconfiguration
     F6       : ~/.config/rofi/scripts/rofi-scripts --ports
     ccedilla : xfce4-clipman-history
+
+  # Caps_Lock:
+  #   Left:
+  #   Right:
+  #   Up:
+  #   Down:
 
 rofi: # ROFI APPS
   apps:

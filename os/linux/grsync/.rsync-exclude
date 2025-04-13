@@ -1,0 +1,29 @@
+# Trash
+.Trash-1000/
+.trash/
+Trash/
+
+# Crash reports and logs
+*.log
+crash*
+
+# SO files
+*.swp
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Package manager
+node_modules/
+venv/
+.venv/
+
+# Cache
+pnpm/
+.cache/
+pipx/
+.npm/
+
+# Exclude files
+.ssh/
