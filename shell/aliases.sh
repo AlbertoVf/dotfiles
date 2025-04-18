@@ -16,10 +16,10 @@ alias 775="chmod 755"
 alias   l="eza -lh --hyperlink --octal-permissions -s=type --total-size --time-style=long-iso"
 alias  la="l -a"
 # Show permissions|user| icon+name
-alias  ls="eza -lh --hyperlink -X -s=type --icons --no-time --no-filesize"
+alias  ls="eza -lhX --icons --hyperlink -s=type --no-time --no-filesize"
 alias lsa="ls -a"
 # Show tree view
-alias  lt="eza --hyperlink -X -TL 2 --icons"
+alias  lt="eza -lhXT --icons --hyperlink -L2 --no-time --no-filesize --no-user"
 alias lta="lt -a"
 
 #* packages alias
