@@ -1,5 +1,4 @@
 [
-	{ "command": "editor.action.joinLines", "key": "alt+j" },
 	{ "command": "editor.action.joinLines", "key": "alt+space" },
 	{ "command": "editor.action.blockComment", "key": "ctrl+alt+7", "when": "editorTextFocus && !editorReadonly" },
 	{ "command": "editor.action.indentationToSpaces", "key": "ctrl+shift+alt+s" },
@@ -10,9 +9,9 @@
 	{ "command": "workbench.action.moveEditorToAboveGroup", "key": "ctrl+alt+up" },
 	{ "command": "workbench.action.moveEditorToBelowGroup", "key": "ctrl+alt+down" },
 	{ "command": "markdownExtended.formateTable", "key": "ctrl+alt+[Comma]", "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/" },
-	{ "command": "rainbow-csv.VirtualAlign", "key": "ctrl+alt+l" },
+	{ "command": "rainbow-csv.VirtualAlign", "key": "ctrl+alt+l", "when": "editorLangId == 'csv'" },
 	{ "command": "hediet.vscode-drawio.export", "key": "ctrl+alt+p" },
 	{ "command": "workbench.action.terminal.toggleTerminal", "key": "ctrl+[Comma]", "when": "terminal.active" },
 	{ "command": "workbench.action.openSettings", "key": "ctrl+`" },
 	{ "command": "-github.copilot.generate", "key": "ctrl+enter", "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused" }
-	]
+]

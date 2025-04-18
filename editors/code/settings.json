@@ -1,9 +1,6 @@
 {
 	"[javascript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
-	"[jsonc]": {
-		"editor.defaultFormatter": "vscode.json-language-features",
-		"editor.formatOnSave": false
-	},
+	"[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features", "editor.formatOnSave": false },
 	"[markdown]": { "editor.defaultFormatter": "DavidAnson.vscode-markdownlint" },
 	"[python]": { "editor.defaultFormatter": "ms-python.black-formatter" },
 	"[shellscript]": { "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode" },
@@ -41,13 +38,13 @@
 		"colon": [ 1, 1 ],
 		"comment": 2
 	},
+	"chat.commandCenter.enabled": false,
 	"code-runner.clearPreviousOutput": true,
 	"code-runner.enableAppInsights": false,
 	"code-runner.executorMap": {
 		"csharp": "dotnet run --project $dir",
 		"java": "java $fileName",
 		"typescript": "deno run $dir$fileName"
-		// "python": "${workspaceFolder}/.venv/bin/python -u"
 	},
 	"code-runner.fileDirectoryAsCwd": true,
 	"code-runner.runInTerminal": true,
@@ -74,7 +71,7 @@
 		"source.unusedImports": "never"
 	},
 	"editor.cursorBlinking": "expand",
-	"editor.fontFamily": "GeistMono Nerd Font, monaspace",
+	"editor.fontFamily": "MonaspiceRn Nerd Font, GeistMono Nerd Font, monaspace",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 13.5,
 	"editor.guides.bracketPairs": true,
@@ -125,7 +122,6 @@
 	"files.associations": {
 		"*.blade.php": "html",
 		"*.css": "scss",
-		"*.csv": "csv (semicolon)",
 		"*.dat": "csv (pipe)",
 		"*.json": "jsonc",
 		"*.mdx": "astro",
@@ -164,7 +160,7 @@
 	"markdown-preview-enhanced.codeBlockTheme": "default.css",
 	"markdown-preview-enhanced.enableExtendedTableSyntax": true,
 	"markdown-preview-enhanced.enablePreviewZenMode": false,
-	"markdown-preview-enhanced.previewTheme": "vue.css",
+	"markdown-preview-enhanced.previewTheme": "medium.css",
 	"markdown.extension.tableFormatter.normalizeIndentation": true,
 	"markdown.extension.toc.levels": "2..6",
 	"markdown.marp.pdf.noteAnnotations": true,
@@ -201,7 +197,8 @@
 	"window.openFilesInNewWindow": "default",
 	"window.restoreWindows": "none",
 	"window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
-	"workbench.colorTheme": "Tokyo Night Storm",
+	"workbench.colorTheme": "Kanagawa",
+	"workbench.editor.editorActionsLocation": "hidden",
 	"workbench.editor.highlightModifiedTabs": true,
 	"workbench.iconTheme": "symbols",
 	"workbench.layoutControl.enabled": false,
