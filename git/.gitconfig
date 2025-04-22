@@ -13,7 +13,7 @@
 	pf      = push --force
 	reb     = rebase -i
 	remotes = remote -v
-	res     = restore
+	res     = restore :/
 	ress    = restore --staged
 	rm      = rm --cached
 	st      = status
