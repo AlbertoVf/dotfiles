@@ -1,0 +1,39 @@
+# default options
+display_on=0
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+blur_level=0.6
+pixel_scale=10,1000
+solid_color=#333333
+wallpaper_cmd='/usr/share/backgrounds/archlinux-backgrounds/att-06.jpg'
+quiet=false
+font="Liberation Mono"
+
+loginbox=#333333
+loginshadow=#4b4a54
+
+locktext="Escribe la contraseña"
+greetercolor=#fbfbfb
+
+# Formato hora
+time_format="%H.%M.%S"
+timecolor=#0081cf
+
+# Anillo al escribit contraseña
+ringcolor=#fbfbfb
+keyhlcolor=#0081cf
+
+# Anillo al borrar
+ringwrongcolor=#d23c3d
+insidevercolor=#333333
+
+# comprobar contraseñaa
+veriftext="Comprobando..."
+ringvercolor=#ffcf48
+verifcolor=#ffcf48
+
+# Introducir contraseña incorrecta
+wrongtext="Error!"
+wrongcolor=#bf1500
+insidewrongcolor=#ff5858

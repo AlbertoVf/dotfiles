@@ -32,3 +32,4 @@
     ~/.config/xfce4/xfconf/xfce-perchannel-xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/*.xml
     # ~/.config/zed: editors/code/*.json
     ~/.config/grsync/.rsync-exclude: os/linux/grsync/.rsync-exclude
+    ~/.config/betterlockscreen: os/linux/betterlockscreen
