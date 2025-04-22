@@ -9,25 +9,26 @@
       glob: true
 
 - link:
-    ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
+    # ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
     ~/.config/Code/User: editors/code/*.json
     ~/.config/Code/User/snippets: editors/code/User/snippets
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/gh/config.yml: git/gh/config.yml
-    ~/.config/gtk-3.0/settings.ini: os/linux/gtk-3.0/settings.ini
+    ~/.config/gtk-3.0/settings.ini: os/linux/gtk/settings-30.ini
+    ~/.config/gtk-4.0/settings.ini: os/linux/gtk/settings-40.ini
     ~/.config/kitty: terminal/kitty/*.conf
-    ~/.config/Kvantum/: os/linux/Kvantum/*.kvconfig
+    # ~/.config/Kvantum/: os/linux/Kvantum/*.kvconfig
     ~/.config/mpv: os/linux/mpv
-    ~/.config/openbox: os/linux/openbox
+    # ~/.config/openbox: os/linux/openbox
     ~/.config/picom: os/linux/picom
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     ~/.config/rofi/scripts: launchers/rofi/scripts
     ~/.config/sxhkd/sxhkdrc: os/linux/sxhkd/sxhkdrc
-    ~/.config/Thunar/accels.scm: os/linux/Thunar/accels.scm
-    ~/.config/Thunar/uca.xml: os/linux/Thunar/uca.xml
-    ~/.config/tint2: launchers/tint2
+    ~/.config/Thunar: os/linux/Thunar
+    # ~/.config/tint2: launchers/tint2
     ~/.config/user-dirs.dirs: os/linux/user-dirs.dirs
     ~/.config/variety/variety.conf: os/linux/variety/variety.conf
-    ~/.config/warp-terminal: terminal/warp
+    # ~/.config/warp-terminal: terminal/warp
     ~/.config/xfce4/xfconf/xfce-perchannel-xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/*.xml
-    ~/.config/zed: editors/code/*.json
+    # ~/.config/zed: editors/code/*.json
+    ~/.config/grsync/.rsync-exclude: os/linux/grsync/.rsync-exclude
