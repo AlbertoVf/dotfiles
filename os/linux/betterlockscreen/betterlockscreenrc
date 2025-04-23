@@ -2,11 +2,10 @@
 display_on=0
 span_image=false
 lock_timeout=300
-fx_list=(dim blur dimblur pixel dimpixel color)
+fx_list=(blur dim dimblur pixel dimpixel color)
 blur_level=0.6
 pixel_scale=10,1000
 solid_color=#333333
-wallpaper_cmd='/usr/share/backgrounds/archlinux-backgrounds/att-06.jpg'
 quiet=false
 font="Liberation Mono"
 
