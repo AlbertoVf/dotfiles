@@ -5,34 +5,34 @@ lock_timeout=300
 fx_list=(blur dim dimblur pixel dimpixel color)
 blur_level=0.6
 pixel_scale=10,1000
-solid_color=#333333
+solid_color=333333
 quiet=false
 font="Liberation Mono"
 
-loginbox=#333333
-loginshadow=#4b4a54
+loginbox=333333
+loginshadow=4b4a54
 
 locktext="Escribe la contraseña"
-greetercolor=#fbfbfb
+greetercolor=fbfbfb
 
 # Formato hora
 time_format="%H.%M.%S"
-timecolor=#0081cf
+timecolor=0081cf
 
 # Anillo al escribit contraseña
-ringcolor=#fbfbfb
-keyhlcolor=#0081cf
+ringcolor=fbfbfb
+keyhlcolor=0081cf
 
 # Anillo al borrar
-ringwrongcolor=#d23c3d
-insidevercolor=#333333
+ringwrongcolor=d23c3d
+insidevercolor=333333
 
 # comprobar contraseñaa
 veriftext="Comprobando..."
-ringvercolor=#ffcf48
-verifcolor=#ffcf48
+ringvercolor=ffcf48
+verifcolor=ffcf48
 
 # Introducir contraseña incorrecta
 wrongtext="Error!"
-wrongcolor=#bf1500
-insidewrongcolor=#ff5858
+wrongcolor=bf1500
+insidewrongcolor=ff5858
