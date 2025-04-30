@@ -11,7 +11,6 @@
 
 - link:
     ~/.conkyrc: os/linux/conky/.conkyrc
-    ~/.fonts: fonts
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
     ~/.screenlayout: os/linux/.screenlayout
