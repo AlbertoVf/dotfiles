@@ -7,7 +7,7 @@ rofi_cmd() {
 }
 
 # ? change between screenlayout files
-screen() {
+screenlayout() {
 	file="$HOME/.screenlayout/"
 	screen=$(ls "$file")
 	selected=$(printf '%s\n' "${screen[@]}" | rofi_cmd "Selecciona Tipo de pantalla")
@@ -20,8 +20,8 @@ screen() {
 	fi
 }
 
-# ? open dotfiles folder on selected program
-dotf() {
+# ? open dotfiles folder
+dotfiles() {
 	theme="$HOME/.config/rofi/applets/type-2/style-2"
 	# Options
 	editor='󰨞'
@@ -39,63 +39,44 @@ dotf() {
 }
 
 # ? select window and show information. Copy to clipboard selected info
-windows() {
+window_properties() {
 	WINDOW_ID=$(xdotool selectwindow)
 	WINDOW_NAME=$(xprop -id "$WINDOW_ID" WM_NAME | cut -d '"' -f 2)
 	WINDOW_ROLE=$(xprop -id "$WINDOW_ID" WM_WINDOW_ROLE | cut -d '"' -f 2)
 	WM_CLASS=$(xprop -id "$WINDOW_ID" WM_CLASS | cut -d '"' -f 2)
-	#* (0,0) = top-left; +?? from left/top to right/bottom ; -?? from right/bottom to left/top
-	WIDTH=$(xwininfo -id "$WINDOW_ID" | grep -E 'Width' | awk '{print $0}')
-	HEIGHT=$(xwininfo -id "$WINDOW_ID" | grep -E 'Height' | awk '{print $0}')
-	CORNERS=$(xwininfo -id "$WINDOW_ID" | grep -E "Corners" | awk '{print $0}')
 
-	OUTPUT="CLASS:$WM_CLASS\nROLE:$WINDOW_ROLE\nNAME:$WINDOW_NAME\n$WIDTH\n$HEIGHT\n$CORNERS"
+	OUTPUT="CLASS » $WM_CLASS\nROLE  » $WINDOW_ROLE\nNAME  » $WINDOW_NAME"
 	SELECTION=$(echo -e "$OUTPUT" | rofi_cmd "Informacion de ventana")
 	if [ -n "$SELECTION" ]; then
-		TO_COPY=$(echo "$SELECTION" | cut -d ':' -f 2- | sed 's/^ *//')
+		TO_COPY=$(echo "$SELECTION" | cut -d '»' -f 2- | sed 's/^ *//')
 		echo "$TO_COPY" | xclip -selection clipboard
 	fi
 }
 
-# ? load preconfigure environments.
-preconfiguration() {
-	folder="$HOME/.bin/.workspaces/"
-	files=$(ls -p $folder | grep -v /)
-	selected_file=$(echo "$files" | rofi_cmd "Selecciona una configuracion")
-	if [ -n "$selected_file" ]; then
-		sh "$folder/$selected_file"
-	fi
-}
-
-# ? open url as webapp with brave. Also open ports
-apps() {
-	readarray -t apps < <(yq -r '.rofi.apps | to_entries[] | " \(.key) : \(.value)"' $file)
-	selected=$(printf '%s\n' "${apps[@]}" | rofi_cmd "Selecciona una aplicacion")
-	if [ -n "$selected" ]; then
-		app=$(echo "$selected" | awk '{print $NF}')
-		if [[ $app =~ ^https?://[a-zA-Z0-9.-]+(:[0-9]+)?(/.*)?$ ]]; then
-			brave --app="$app"
-		else
-			brave --app="http://localhost:$app"
-		fi
-	fi
-}
-
-ports() {
+# ? open web browser with selected url
+localhost() {
 	readarray -t ports < <(yq -r '.rofi.ports | to_entries[] | " \(.key) : \(.value)"' $file)
 	selected=$(printf '%s\n' "${ports[@]}" | rofi_cmd "Selecciona un puerto")
 	if [ -n "$selected" ]; then
-		puerto=$(echo "$selected" | awk '{print $1}')
-		echo $puerto
-		xdg-open "http://localhost:$puerto" &
+		port=$(echo "$selected" | awk '{print $1}')
+		xdg-open "http://localhost:$port" &
+	fi
+}
+
+# ? run shell scripts
+scripts() {
+	readarray -t scripts < <(yq -r '.rofi.apps | to_entries[] | "\(.value)"' $file)
+	selected=$(printf '%s\n' "${scripts[@]}" | rofi_cmd "Ejecuta script")
+	if [ -n "$selected" ]; then
+		s=$(echo "$selected" | awk '{print $NF}')
+		sh "$HOME/$s" &
 	fi
 }
 
 case $1 in
---apps) apps ;;
---ports) ports ;;
---dotf) dotf ;;
---preconfiguration) preconfiguration ;;
---screen) screen ;;
---windows) windows ;;
+--apps) scripts ;;
+--dotf) dotfiles ;;
+--localhost) localhost ;;
+--screen) screenlayout ;;
+--windows) window_properties ;;
 esac

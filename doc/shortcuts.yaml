@@ -28,41 +28,27 @@ sxhkdrc: # shortcodes to sxhkd
     less   : qalculate-gtk
     Return : kitty
     ctrl   :
-      p      : sh ~/.config/picom/picom-toogle.sh
-      x      : pkill -USR1 -x sxhkd
-      Print  : xfce4-screenshooter
       Escape : xfce4-taskmanager
+      Print  : xfce4-screenshooter
       F1     : brave --tor
+      k      : betterlockscreen -l
       a      : ~/.config/rofi/scripts/rofi-scripts --apps
-      d      : ~/.config/rofi/scripts/rofi-scripts --dotf
+      l      : ~/.config/rofi/scripts/rofi-scripts --localhost
       s      : ~/.config/rofi/scripts/rofi-scripts --screen
+      w      : ~/.config/rofi/scripts/rofi-scripts --windows
+      d      : ~/.config/rofi/scripts/rofi-scripts --dotf
 
   alt:
-    Escape   : xkill
-    Print    : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-    Left     : variety -p
-    Right    : variety -n
-    F1       : rofi -show file-browser-extended
-    F2       : ~/.config/rofi/scripts/shortcuts
-    F3       : ~/.config/rofi/scripts/rofi-scripts --windows
-    F4       : ~/.config/rofi/scripts/rofi-scripts --preconfiguration
-    F6       : ~/.config/rofi/scripts/rofi-scripts --ports
-    ccedilla : xfce4-clipman-history
+    Escape    : xkill
+    Print     : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+    Left      : variety -p
+    Right     : variety -n
+    F1        : rofi -show file-browser-extended
+    F2        : $HOME/.bin/shortcuts/shortcuts
+    masculine : xfce4-clipman-history
 
-  # Caps_Lock:
-  #   Left:
-  #   Right:
-  #   Up:
-  #   Down:
-
-rofi: # ROFI APPS
-  apps:
-    'Chat Gpt'                : 'https://chat.openai.com/chat'
-    'YouTube'                 : 'https://www.youtube.com'
-    'Notion'                  : 'https://www.notion.so'
-    'Regex'                   : 'https://regex101.com'
-    'IT tools'                : 'https://it-tools.tech'
-    'Nerd Font'               : 'https://www.nerdfonts.com'
+rofi:
+  web:
     'Lofi - hip hop radio'    : 'https://youtu.be/jfKfPfyJRdk'
     'Lofi - medieval radio'   : 'https://youtu.be/_uMuuHk_KkQ'
     'Lofi - synthwave radio'  : 'https://youtu.be/4xDzrJKXOOY'
@@ -80,3 +66,9 @@ rofi: # ROFI APPS
     4200 : 'Angular'
     8000 : 'Laravel Django'
     8080 : 'Symfony'
+
+  apps: # from $HOME
+    - '.bin/time/world_time'
+    - '.bin/system/cleaner'
+    - '.bin/system/update_packages'
+    - '.config/picom/picom-toogle.sh'

@@ -10,6 +10,7 @@ alias   x="chmod +x"
 alias   r="chmod +r"
 alias   w="chmod +w"
 alias 775="chmod 755"
+alias 644="chmod 644"
 
 #* Folders alias
 # Show octal|permissions|size|user|date|name
@@ -32,8 +33,9 @@ alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
 # alias   paru="paru --limit 20"                # shearch packages by name and limited to 20 results
 
 #* python
-alias activate="source .venv/bin/activate"
-alias     venv="python -m venv .venv"
+alias     activate="source .venv/bin/activate"
+alias         venv="python -m venv .venv && source .venv/bin/activate"
+alias requirements="pip install -r requirements.txt"
 
 #* php
 alias laravel="composer create-project laravel/laravel"

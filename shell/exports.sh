@@ -6,8 +6,6 @@ export VISUAL="code --wait"
 path=(
 	"$HOME/.bin"
 	"$DOTLY_PATH/bin"
-	"$HOME/.config/rofi/scripts"
-	"$HOME/.config/qtile/scripts"
 	"$HOME/.cargo/bin"
 	"$HOME/.local/share/pnpm"
 	"$HOME/.local/bin"
