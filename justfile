@@ -1,37 +1,61 @@
+GITHUB_REPO     := "https://github.com/AlbertoVf"
+CONFIG_DIR      := "$(HOME)/.config"
+DOTFILES_PATH   := "$(shell pwd)"
+BACKGROUNDS_DIR := "/usr/share/backgrounds"
+FONTS_DIR       := "$(HOME)/.local/share/fonts"
+
 apply-symlinks:
 	dot symlinks apply
 
-extra_repos:
-	#!/bin/sh
-	git clone "https://github.com/AlbertoVf/arco-install"  --depth 1 "arco-install"
-	git clone "https://github.com/AlbertoVf/shell-scripts"  --depth 1 "$HOME/.bin"
+clone_repos:
+	git clone "{{GITHUB_REPO}}/arco-install"  --depth 1 "arco-install"
+	git clone "{{GITHUB_REPO}}/shell-scripts"  --depth 1 "$HOME/.bin"
 
-extra_configuration:
-	#!/bin/sh
-	git clone  "https://github.com/AlbertoVf/qtile.git" "$HOME/.config/qtile"
+clone_extra_repos:
+	git clone  "{{GITHUB_REPO}}/qtile.git" "{{CONFIG_DIR}}/qtile"
 
 	git clone --depth=1 https://github.com/adi1090x/rofi.git
 	sh rofi/setup.sh
 
-	git clone --depth 1 https://github.com/LazyVim/starter "$HOME/.config/nvim"
-	rm -rf $HOME/.config/nvim/.git
+	git clone --depth 1 https://github.com/LazyVim/starter "{{CONFIG_DIR}}/nvim"
+	rm -rf "{{CONFIG_DIR}}/nvim/.git"
 
-lightdm_configuration:
-	sudo install -m 644 -o root "$DOTFILES_PATH/etc/lightdm-gtk-greeter.conf" /etc/lightdm/lightdm-gtk-greeter.conf
+download_backgrounds:
+	#!/bin/sh
+	sudo tar -xzf $DOTFILES_PATH/etc/backgrounds.tar.gz -C {{BACKGROUNDS_DIR}}
+	git clone "{{GITHUB_REPO}}/wallpapers.git"  --depth 1 "$HOME/.wallpapers"
 
-icons:
-	curl -sL https://git.io/papirus-icon-theme-install | env DESTDIR="$HOME/.icons" sh
+download_user_fonts:
+	#!/bin/bash
+	FONTS="Monofur Monaspace Lilex JetBrainsMono GeistMono FiraMono FiraCode FantasqueSansMono CascadiaMono CascadiaCode AnonymousPro"
+	VERSION="v3.4.0"
+	BASE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/$VERSION"
+
+	for font in $FONTS; do
+		url="$BASE_URL/$font.zip"
+		echo "Descargando: $url"
+		curl -L -o "$font.zip" "$url"
+		echo "Descomprimiendo: $font.zip"
+		unzip -o "$font.zip" -d "{{FONTS_DIR}}/$font Nerd Font"
+		rm "$font.zip"
+	done
+
+
+lightdm:
+	sudo mkdir -p /etc/lightdm
+	sudo install -m 644 -o root "{{DOTFILES_PATH}}/etc/lightdm-gtk-greeter.conf" /etc/lightdm/lightdm-gtk-greeter.conf
+	sudo cp avatar.png /var/lib/AccountsService/icons/$USER
+	sudo  sed -i '/^Icon=/d' /var/lib/AccountsService/users/$USER
+	sudo echo "Icon=/var/lib/AccountsService/icons/$USER" >> /var/lib/AccountsService/users/$USER
 
 grub:
 	#!/bin/bash
 	sudo cp -f /etc/default/grub /etc/default/grub.bak
-	sudo install -m 644 -o root "$DOTFILES_PATH/etc/grub" /etc/default/grub
+	sudo install -m 644 -o root "{{DOTFILES_PATH}}/etc/grub" /etc/default/grub
 
-	for tarfile in $DOTFILES_PATH/etc/grub-themes/*.tar.gz; do
+	for tarfile in {{DOTFILES_PATH}}/etc/grub-themes/*.tar.gz; do
 		tar -xzf $tarfile -C /boot/grub/themes
 	done
 
-backgrounds:
-	#!/bin/sh
-	git clone "https://github.com/AlbertoVf/wallpapers.git"  --depth 1 "$HOME/.wallpapers"
-	sudo tar -xzf "$DOTFILES_PATH/etc/archlinux-backgrounds.tar.gz" /usr/share/backgrounds/archlinux-backgrounds
+betterlockscreen:
+	betterlockscreen -u {{BACKGROUNDS_DIR}}/betterlockscreen/att-06.jpg
