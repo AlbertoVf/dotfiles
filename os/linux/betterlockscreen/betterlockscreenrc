@@ -7,11 +7,11 @@ blur_level=0.6
 pixel_scale=10,1000
 solid_color=333333
 quiet=false
-font="Liberation Mono"
+font="MonaspiceRn Nerd Font Mono"
 
 loginbox=333333
 loginshadow=4b4a54
-
+inside-color=000000
 locktext="Escribe la contraseña"
 greetercolor=fbfbfb
 
