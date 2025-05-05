@@ -1,7 +1,4 @@
-export EDITOR="code --wait"
-export VISUAL="code --wait"
-
-# export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
+source "$(dirname "$0")/environment.sh"
 
 path=(
 	"$HOME/.bin"

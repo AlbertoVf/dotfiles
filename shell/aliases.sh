@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+. "$(dirname "$0")/aliases_overwrite.sh"
+
 #* copy file content to clipboard
 alias cf="xclip -sel clip"
 #* get fastest mirrors
