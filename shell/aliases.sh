@@ -1,18 +1,20 @@
 #!/usr/bin/env sh
 
-#* copy file content to clipboard
+. "$(dirname "$0")/aliases_overwrite.sh"
+
+# copy file content to clipboard
 alias cf="xclip -sel clip"
-#* get fastest mirrors
+# get fastest mirrors
 alias mirror="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
 
-#* permissions
+# permissions
 alias   x="chmod +x"
 alias   r="chmod +r"
 alias   w="chmod +w"
 alias 775="chmod 755"
 alias 644="chmod 644"
 
-#* Folders alias
+# Folders alias
 # Show octal|permissions|size|user|date|name
 alias   l="eza -lh --hyperlink --octal-permissions -s=type --total-size --time-style=long-iso"
 alias  la="l -a"
@@ -23,27 +25,24 @@ alias lsa="ls -a"
 alias  lt="eza -lhXT --icons --hyperlink -L2 --no-time --no-filesize --no-user"
 alias lta="lt -a"
 
-#* packages alias
-alias pacin="aura -S"                         # install package
-
-alias pacsyu="aura -Syyu"    # update all pkgs and database
-alias pacrem="aura -Rns"     # remove package and dependencies
-
+# packages alias
+alias  pacin="aura -S"                        # install package
+alias pacsyu="aura -Syyu"                     # update all pkgs and database
+alias pacrem="aura -Rns"                      # remove package and dependencies
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-# alias   paru="paru --limit 20"                # shearch packages by name and limited to 20 results
 
-#* python
+# python
 alias     activate="source .venv/bin/activate"
 alias         venv="python -m venv .venv && source .venv/bin/activate"
 alias requirements="pip install -r requirements.txt"
 
-#* php
+# php
 alias laravel="composer create-project laravel/laravel"
 alias artisan="php artisan"
 
-#* docker
+# docker
 alias docker_build="docker-compose up -d"
 alias   docker_run="docker-compose up"
 
-#* git alias
+# git alias
 alias g="/usr/bin/git"

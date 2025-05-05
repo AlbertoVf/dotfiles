@@ -1,8 +1,3 @@
-export EDITOR="code --wait"
-export VISUAL="code --wait"
-
-# export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
-
 path=(
 	"$HOME/.bin"
 	"$DOTLY_PATH/bin"

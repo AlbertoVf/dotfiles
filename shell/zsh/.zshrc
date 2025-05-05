@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
+# fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 # ZSH Ops
 source "$ZIM_HOME/init.zsh"
@@ -8,7 +8,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 CASE_SENSITIVE="false"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-
 
 # source $ZSH_CUSTOM/.p10k.zsh
 ZSH_THEME="spaceship"

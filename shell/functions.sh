@@ -1,5 +1,14 @@
 #!/usr/bin/env sh
 
+reload(){
+	if [ -n "$BASH_VERSION" ]; then
+    	. $HOME/.bashrc
+	elif [ -n "$ZSH_VERSION" ]; then
+		. $HOME/.zshrc
+	fi
+	clear
+}
+
 add_submodule() {
 	# add submodule with github url.
 	# Submodule dest folder is the submodule name
@@ -27,8 +36,7 @@ start_server(){
 	PORT=8000
 
 	URL="http://$IP:$PORT"
-	echo "Server started at http://$URL"
-	curl -s "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$URL" | kitten icat
+	curl -s "https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=$URL" | viu -w40 -
 
 	python3 -m http.server $PORT --bind $IP
 }
