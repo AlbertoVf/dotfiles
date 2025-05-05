@@ -14,7 +14,7 @@ configuration {
 	drun-display-format           : "{name}";
 	show-icons                    : true;
 	icon-theme                    : "Tela-circle-nord-dark";
-	terminal                      : "kitty";
+	terminal                      : "wezterm";
 }
 
 * {

@@ -47,8 +47,3 @@ alias   docker_run="docker-compose up"
 
 #* git alias
 alias g="/usr/bin/git"
-
-#* kitty + kitten
-alias  kitten="kitty +kitten"
-alias    icon="kitten unicode_input"
-alias themesK="kitten themes"

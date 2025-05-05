@@ -26,7 +26,7 @@ sxhkdrc: # shortcodes to sxhkd
     s      : pamac-manager
     x      : ~/.config/rofi/scripts/powermenu
     less   : qalculate-gtk
-    Return : kitty
+    Return : wezterm
     ctrl   :
       Escape : xfce4-taskmanager
       Print  : xfce4-screenshooter
@@ -41,8 +41,6 @@ sxhkdrc: # shortcodes to sxhkd
   alt:
     Escape    : xkill
     Print     : scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-    Left      : variety -p
-    Right     : variety -n
     F1        : rofi -show file-browser-extended
     F2        : $HOME/.bin/shortcuts/shortcuts
     masculine : xfce4-clipman-history

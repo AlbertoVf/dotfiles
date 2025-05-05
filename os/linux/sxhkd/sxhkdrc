@@ -52,7 +52,7 @@ super + x
 super + less
 	qalculate-gtk
 super + Return
-	kitty
+	wezterm
 super + ctrl + Escape
 	xfce4-taskmanager
 super + ctrl + Print
@@ -75,10 +75,6 @@ alt + Escape
 	xkill
 alt + Print
 	scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
-alt + Left
-	variety -p
-alt + Right
-	variety -n
 alt + F1
 	rofi -show file-browser-extended
 alt + F2
