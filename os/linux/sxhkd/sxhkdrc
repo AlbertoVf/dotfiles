@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generated on 2025-05-01 14:19
+# Generated on 2025-05-11 22:00
 
 Print
 	flameshot gui
@@ -52,7 +52,7 @@ super + x
 super + less
 	qalculate-gtk
 super + Return
-	wezterm
+	kitty
 super + ctrl + Escape
 	xfce4-taskmanager
 super + ctrl + Print
@@ -71,6 +71,8 @@ super + ctrl + w
 	~/.config/rofi/scripts/rofi-scripts --windows
 super + ctrl + d
 	~/.config/rofi/scripts/rofi-scripts --dotf
+super + ctrl + e
+	~/.config/rofi/scripts/rofi-scripts --projects
 alt + Escape
 	xkill
 alt + Print

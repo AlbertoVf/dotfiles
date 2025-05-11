@@ -3,7 +3,7 @@
 file="$DOTFILES_PATH/doc/shortcuts.yaml"
 
 rofi_cmd() {
-	rofi -dmenu -mesg "$1" #-theme $HOME/.config/rofi/launchers/type-2/style-2.rasi
+	rofi -dmenu -i -mesg "$1" #-theme $HOME/.config/rofi/launchers/type-2/style-2.rasi
 }
 
 # ? change between screenlayout files
@@ -73,10 +73,33 @@ scripts() {
 	fi
 }
 
+# ? list proyect folder and open with code
+projects(){
+	base_dir="$HOME/Proyectos"
+
+	mapfile -t full_paths < <(fd -td -tl --exact-depth 3 '' "$base_dir")
+
+	declare -A path_map
+	choices=()
+
+	for path in "${full_paths[@]}"; do
+		name="$(basename "$(dirname "$path")")/$(basename "$path")"
+			path_map["$name"]="$path"
+			choices+=("$name")
+	done
+
+	selected=$(printf '%s\n' "${choices[@]}" | rofi_cmd "Open folder in Code")
+
+	if [[ -n "$selected" ]]; then
+		code "${path_map[$selected]}"
+	fi
+}
+
 case $1 in
 --apps) scripts ;;
 --dotf) dotfiles ;;
 --localhost) localhost ;;
 --screen) screenlayout ;;
 --windows) window_properties ;;
+--projects) projects ;;
 esac

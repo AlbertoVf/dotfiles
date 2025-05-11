@@ -26,7 +26,7 @@ sxhkdrc: # shortcodes to sxhkd
     s      : pamac-manager
     x      : ~/.config/rofi/scripts/powermenu
     less   : qalculate-gtk
-    Return : wezterm
+    Return : kitty
     ctrl   :
       Escape : xfce4-taskmanager
       Print  : xfce4-screenshooter
@@ -37,6 +37,7 @@ sxhkdrc: # shortcodes to sxhkd
       s      : ~/.config/rofi/scripts/rofi-scripts --screen
       w      : ~/.config/rofi/scripts/rofi-scripts --windows
       d      : ~/.config/rofi/scripts/rofi-scripts --dotf
+      e      : ~/.config/rofi/scripts/rofi-scripts --projects
 
   alt:
     Escape    : xkill

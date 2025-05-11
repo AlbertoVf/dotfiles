@@ -10,7 +10,7 @@ alias     find="fd"
 alias     grep="rg"
 alias      sed="sd"
 alias  convert="magick"
-
+alias     sudo="doas"
 # add options
 alias  mkdir="mkdir -vp"
 alias     cp="cp -vi"
