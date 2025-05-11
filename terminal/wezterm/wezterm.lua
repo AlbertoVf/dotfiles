@@ -1,13 +1,16 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
-local keys = require 'keys'
+require('functions.open-uri')()
+
 config = {
 	color_scheme                 = 'Palenight (Gogh)',
 	-- Fonts
-	font                         = wezterm.font('GeistMono Nerd Font Mono'),
+	font                         = wezterm.font('GeistMono Nerd Font Mono', { weight = 'Bold', italic = false }),
 	font_size                    = 12.5,
 	-- Mouse and url
 	default_cursor_style         = "BlinkingBar",
+	hyperlink_rules              = require 'hyperlinks_rules',
+	quote_dropped_files          = "Windows",
 	-- Window
 	scrollback_lines             = 5000,
 	window_padding               = {
@@ -23,8 +26,7 @@ config = {
 	show_tab_index_in_tab_bar    = true,
 	-- Mapping
 	disable_default_key_bindings = true,
-	keys                         = keys,
-
+	keys                         = require 'keys',
 }
 
 return config
