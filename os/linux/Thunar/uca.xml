@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
-	<icon>multimedia-video-player</icon>
+	<icon>video-x-generic</icon>
 	<name>Abrir con celluloid</name>
-	<submenu></submenu>
+	<submenu>Abrir en</submenu>
 	<unique-id>1629287747170523-1</unique-id>
 	<command>celluloid %F</command>
 	<description>Open with celluloid</description>
@@ -13,9 +13,21 @@
 	<video-files/>
 </action>
 <action>
-	<icon>utilities-terminal</icon>
+	<icon>audio-x-generic</icon>
+	<name>Abrir con deadbeef</name>
+	<submenu>Abrir en</submenu>
+	<unique-id>1747820379303132-4</unique-id>
+	<command>deadbeef %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+</action>
+<action>
+	<icon>utilities-x-terminal</icon>
 	<name>Abrir en terminal</name>
-	<submenu></submenu>
+	<submenu>Abrir en</submenu>
 	<unique-id>1488955845049151-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description>Open terminal on selected directory</description>
@@ -26,7 +38,7 @@
 <action>
 	<icon>system-file-manager</icon>
 	<name>Abrir como root</name>
-	<submenu>Archivo</submenu>
+	<submenu>Abrir en</submenu>
 	<unique-id>1493475601060449-3</unique-id>
 	<command>pkexec thunar %f</command>
 	<description>Open directory as sudo</description>
@@ -37,7 +49,7 @@
 <action>
 	<icon>image-x-generic</icon>
 	<name>Imagen a png</name>
-	<submenu></submenu>
+	<submenu>Archivos</submenu>
 	<unique-id>1683970269066777-1</unique-id>
 	<command>convert %f $( basename %n | cut -d. -f1).png</command>
 	<description>Transform image to png</description>
@@ -48,67 +60,18 @@
 <action>
 	<icon>application-pdf</icon>
 	<name>Merge PDFs</name>
-	<submenu>Archivo</submenu>
+	<submenu>Archivos</submenu>
 	<unique-id>1627148699144999-1</unique-id>
-	<command>pdftk %F cat output &quot;$(zenity --entry --title=&quot;Merge pdf&quot;
-				--text=&quot;Nombre de nuevo archivo&quot; --entry-text=output)&quot;.pdf</command>
+	<command>pdftk %F cat output &quot;$(zenity --entry --title=&quot;Merge pdf&quot; --text=&quot;Nombre de nuevo archivo&quot; --entry-text=output)&quot;.pdf</command>
 	<description>Merge pdf</description>
 	<range></range>
 	<patterns>*.pdf</patterns>
 	<other-files/>
 </action>
 <action>
-	<icon>clipboard</icon>
-	<name>Copy name</name>
-	<submenu>Archivo</submenu>
-	<unique-id>1626704690182391-1</unique-id>
-	<command>notify-send &apos;Nombre copiado&apos; ; echo &quot;%N&quot; | xclip -sel c</command>
-	<description>Copy name</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
-<action>
-	<icon>clipboard</icon>
-	<name>Copy file path</name>
-	<submenu>Archivo</submenu>
-	<unique-id>1626443329564542-1</unique-id>
-	<command>notify-send &apos;Ruta copiada&apos; ; echo &quot;%F&quot; | xclip -sel c</command>
-	<description>Copy file path</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
-<action>
-	<icon>insert-link-symbolic</icon>
-	<name>Create symlink</name>
-	<submenu>Archivo</submenu>
-	<unique-id>1526631663081446-14</unique-id>
-	<command>ln -s %f %n_1</command>
-	<description>Softlink between two files or directories</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
-<action>
 	<icon>gmrun</icon>
 	<name>Make executable</name>
-	<submenu>Archivo</submenu>
+	<submenu>Archivos</submenu>
 	<unique-id>1526670239648084-2</unique-id>
 	<command>chmod +x %f</command>
 	<description>Make file executable</description>
@@ -132,7 +95,7 @@
 <action>
 	<icon>application-x-virtualbox-ova</icon>
 	<name>Extraer ova</name>
-	<submenu></submenu>
+	<submenu>Discos</submenu>
 	<unique-id>1744922704240552-2</unique-id>
 	<command>tar -xvf %f</command>
 	<description>extract ova</description>
@@ -143,12 +106,67 @@
 <action>
 	<icon>application-x-iso</icon>
 	<name>Exportar a qcow2</name>
-	<submenu></submenu>
+	<submenu>Discos</submenu>
 	<unique-id>1744922801456376-3</unique-id>
 	<command>qemu-img convert %f %f.qcow2</command>
 	<description>Convert dist to qcow2 format</description>
 	<range>*</range>
 	<patterns>*.vmdk;*.vdi</patterns>
 	<other-files/>
+</action>
+<action>
+	<icon>draw-path</icon>
+	<name>Copy name</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1626704690182391-1</unique-id>
+	<command>notify-send &apos;Nombre copiada&apos; ; echo &quot;%N&quot; | xclip -sel c</command>
+	<description>Copy name</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>draw-path</icon>
+	<name>Copy file path</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1626443329564542-1</unique-id>
+	<command>notify-send &apos;Ruta copiada&apos; ; echo &quot;%F&quot; | xclip -sel c</command>
+	<description>Copy file path</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>kbackup</icon>
+	<name>Pegar portapapeles</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1747773581815662-1</unique-id>
+	<command>xclip -selection clipboard -o &gt;&gt; %n</command>
+	<description>Pega el portapapeles en el fichero</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>kbackup</icon>
+	<name>Pegar portapapeles</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1747774207036201-2</unique-id>
+	<command>xclip -selection clipboard -o &gt;&gt; %n.txt</command>
+	<description>Pega el portapapeles en un nuevo fichero</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
 </action>
 </actions>
