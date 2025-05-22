@@ -25,6 +25,7 @@
     ~/.config/xfce4/xfconf/xfce-perchannel-xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/*.xml
     ~/.config/Thunar: os/linux/Thunar
     ~/.config/zellij: terminal/zellij
+    ~/.config/autostart: os/linux/autostart/*.sh
     #* SYSTEM
     ~/.config/grsync/.rsync-exclude: os/linux/grsync/.rsync-exclude
     ~/.config/gh/config.yml: git/gh/config.yml
