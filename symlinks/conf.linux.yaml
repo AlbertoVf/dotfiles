@@ -12,22 +12,24 @@
     #* UI
     ~/.config/betterlockscreen: os/linux/betterlockscreen
     ~/.config/variety/variety.conf: os/linux/variety/variety.conf
+    ~/.config/fastfetch: os/wsl/fastfetch
     ~/.config/picom: os/linux/picom
-    ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/gtk-3.0/settings.ini: os/linux/gtk/settings-30.ini
     ~/.config/gtk-4.0/settings.ini: os/linux/gtk/settings-40.ini
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
     #* KEYBINDINGS
-    ~/.config/user-dirs.dirs: os/linux/user-dirs.dirs
+    ~/.config/user-dirs.dirs: os/wsl/user-dirs.dirs
     ~/.config/sxhkd/sxhkdrc: os/linux/sxhkd/sxhkdrc
     ~/.config/rofi/scripts: launchers/rofi/scripts
     #* MANAGER
     ~/.config/xfce4/xfconf/xfce-perchannel-xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/*.xml
     ~/.config/Thunar: os/linux/Thunar
-    ~/.config/zellij: terminal/zellij
+    ~/.config/zellij: os/wsl/zellij
+    ~/.config/hypr: os/linux/hypr
+    ~/.config/waybar: launchers/waybar
     ~/.config/autostart: os/linux/autostart/*.sh
     #* SYSTEM
-    ~/.config/grsync/.rsync-exclude: os/linux/grsync/.rsync-exclude
+    ~/.config/grsync/.rsync-exclude: os/wsl/grsync/.rsync-exclude
     ~/.config/gh/config.yml: git/gh/config.yml
     ~/.config/mpv: os/linux/mpv
     #* EDITORS
