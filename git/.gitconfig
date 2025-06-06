@@ -40,11 +40,18 @@
 	symlinks     = false
 	whitespace   = trailing-space
 	excludesfile = ~/.gitignore_global
+
 [diff]
 	colorMoved = default
-	tool       = code
+    tool = kitty
+    guitool = kitty.gui
 [difftool]
-	prompt = false
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitten diff $LOCAL $REMOTE
 [difftool "code"]
 	cmd = code --profile GIT --wait --diff --reuse-window $LOCAL $REMOTE
 [filter "lfs"]

@@ -34,21 +34,12 @@ export_packages() {
 start_server(){
 	IP="$(ip -4 addr show enp3s0f1 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
 	PORT=8000
-
 	URL="http://$IP:$PORT"
-	curl -s "https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=$URL" | viu -w40 -
-
+	curl -s "https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=$URL" | kitten icat
 	python3 -m http.server $PORT --bind $IP
 }
 
-clean(){
-	bleachbit --clean --preset
-	# Remove orphans
-	sudo aura -Oj
-	sudo pacman -Rns "$(pacman -Qdtq)"
-	# Clean out old and unused caches and packages
-	sudo aura -Sc
-	paru -Scc
-	sudo journalctl --vacuum-time=1weeks
-	rm -rf ~/.cache/*
+github_origin(){
+	git remote remove origin
+	git remote add origin "$1"
 }

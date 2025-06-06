@@ -31,3 +31,4 @@ pipx/
 
 # Exclude files
 .ssh/
+Descargas/

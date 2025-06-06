@@ -11,7 +11,7 @@ function run {
 sh "$HOME/.screenlayout/hdmi.sh" &
 run picom --config "$CONFIG/picom/picom.conf"
 run variety
-run /usr/lib/xfce-polkit/xfce-polkit
+run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run sxhkd -c "$CONFIG/sxhkd/sxhkdrc"
 run nm-applet
 run xfce4-clipman

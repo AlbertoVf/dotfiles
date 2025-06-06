@@ -48,7 +48,7 @@ window_properties() {
 	OUTPUT="CLASS » $WM_CLASS\nROLE  » $WINDOW_ROLE\nNAME  » $WINDOW_NAME"
 	SELECTION=$(echo -e "$OUTPUT" | rofi_cmd "Informacion de ventana")
 	if [ -n "$SELECTION" ]; then
-		TO_COPY=$(echo "$SELECTION" | cut -d '»' -f 2- | sed 's/^ *//')
+		TO_COPY=$(echo "$SELECTION" | awk -F '»' '{sub(/^ */, "", $2); print $2}')
 		echo "$TO_COPY" | xclip -selection clipboard
 	fi
 }
