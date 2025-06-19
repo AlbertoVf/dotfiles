@@ -1,9 +1,9 @@
 [general]
 live_config_reload = true
-import             = ["~/.config/alacritty/tokyo-night.toml"]
+import             = ["~/.config/alacritty/current-theme.toml"]
 
-[terminal.shell]
-program = "/bin/zellij"
+# [terminal.shell]
+# program = "/bin/zellij"
 
 [cursor]
 blink_interval   = 750
@@ -21,7 +21,7 @@ size                = 12
 
 [font.normal]
 family = "GeistMono Nerd Font Mono"
-style  = "Regular"
+style  = "Bold"
 
 [font.bold]
 style  = "Bold"

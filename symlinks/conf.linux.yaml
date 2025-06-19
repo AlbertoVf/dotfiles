@@ -23,10 +23,9 @@
     ~/.config/rofi/scripts: launchers/rofi/scripts
     #* MANAGER
     ~/.config/xfce4/xfconf/xfce-perchannel-xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/*.xml
+    ~/.config/xfce4/helpers.rc: os/linux/xfce4/helpers.rc
     ~/.config/Thunar: os/linux/Thunar
     ~/.config/zellij: os/wsl/zellij
-    ~/.config/hypr: os/linux/hypr
-    ~/.config/waybar: launchers/waybar
     ~/.config/autostart: os/linux/autostart/*.sh
     #* SYSTEM
     ~/.config/grsync/.rsync-exclude: os/wsl/grsync/.rsync-exclude

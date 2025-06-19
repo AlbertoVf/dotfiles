@@ -21,7 +21,6 @@
 	cbr     = branch -b
 	setup   = "branch --set-upstream-to=origin/main main"
 	chp     = "cherry-pick"
-
 [credential]
 	helper = store
 [color]
@@ -40,20 +39,18 @@
 	symlinks     = false
 	whitespace   = trailing-space
 	excludesfile = ~/.gitignore_global
-
-[diff]
-	colorMoved = default
-    tool = kitty
-    guitool = kitty.gui
-[difftool]
-    prompt = false
-    trustExitCode = true
-[difftool "kitty"]
-    cmd = kitten diff $LOCAL $REMOTE
-[difftool "kitty.gui"]
-    cmd = kitten diff $LOCAL $REMOTE
-[difftool "code"]
-	cmd = code --profile GIT --wait --diff --reuse-window $LOCAL $REMOTE
+	pager        = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    dark = true
+	side-by-side = true
+[merge]
+    conflictstyle = zdiff3
+    tool = code
+[mergetool "code"]
+    cmd = code --wait $MERGED
 [filter "lfs"]
 	clean    = git-lfs clean -- %f
 	process  = git-lfs filter-process
@@ -63,17 +60,8 @@
 	editor = code
 [init]
 	defaultBranch = main
-[merge]
-	conflictstyle = diff3
-	tool          = code
-[mergetool]
-	keepBackup = false
-[mergetool "code"]
-	cmd = code --profile GIT --wait --reuse-window $MERGED
 [push]
 	default = current
-[sequence]
-	editor = code --profile GIT --wait --reuse-window
 [tag]
 	gpgsign = true
 [gpg]

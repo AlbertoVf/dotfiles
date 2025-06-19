@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 
-local function fn()
+return function()
 	return wezterm.action.PromptInputLine {
 		description = "Set tab title",
 		action = wezterm.action_callback(function(window, _pane, line)
@@ -10,5 +10,3 @@ local function fn()
 		end),
 	}
 end
-
-return fn

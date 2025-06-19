@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 
-local function fn()
+return function()
 	wezterm.on('open-vscode-here', function(window, pane)
 		local cwd_uri = pane:get_current_working_dir()
 
@@ -8,5 +8,3 @@ local function fn()
 		pane:send_text('code .\r')
 	end)
 end
-
-return fn

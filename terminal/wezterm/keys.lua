@@ -7,7 +7,7 @@ local set_tab_title = require 'functions.set-tab-title'
 
 return {
 	-- *DEFAULT KEYS
-	{ key = '+',          mods = MOD,     action = act.IncreaseFontSize },
+	{ key = '+',          mods = 'CTRL',     action = act.IncreaseFontSize },
 	{ key = '-',          mods = 'CTRL',     action = act.DecreaseFontSize },
 	{ key = '0',          mods = 'CTRL',     action = act.ResetFontSize },
 	{ key = 'c',          mods = MOD,        action = act.CopyTo("Clipboard") },

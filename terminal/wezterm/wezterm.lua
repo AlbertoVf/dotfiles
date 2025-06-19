@@ -1,9 +1,9 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 require('functions.open-uri')()
-
 config = {
-	color_scheme                 = 'Palenight (Gogh)',
+	-- https://wezterm.org/colorschemes/index.html
+	color_scheme                 = 'Catppuccin Frappe',
 	-- Fonts
 	font                         = wezterm.font('GeistMono Nerd Font Mono', { weight = 'Bold', italic = false }),
 	font_size                    = 12.5,
