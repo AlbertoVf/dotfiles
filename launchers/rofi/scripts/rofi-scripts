@@ -32,9 +32,9 @@ dotfiles() {
 	}
 	chosen=$(echo -e "$editor\n$terminal\n$manager" | rofi_cmd)
 	case ${chosen} in
-	"$editor") code "$DOTFILES_PATH" ;;
-	"$manager") thunar $DOTFILES_PATH ;;
-	"$terminal") kitty --directory "$DOTFILES_PATH" ;;
+	"$editor") $EDITOR "$DOTFILES_PATH" ;;
+	"$manager") $FILE_MANAGER $DOTFILES_PATH ;;
+	"$terminal") $TERMINAL "$DOTFILES_PATH" ;;
 	esac
 }
 

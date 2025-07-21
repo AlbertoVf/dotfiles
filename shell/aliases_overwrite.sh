@@ -24,8 +24,6 @@ alias chmod="chmod -v"
 alias chown="chown -c"
 alias  ping="ping -c 1"
 alias    ip="ip --color=auto"
-alias  clam="sudo freshclam"
-alias  scan="clamscan -r --follow-dir-symlinks=2 --follow-file-symlinks=2 --bell"
 
 # replace command
 alias  sqlite="sqlite3"

@@ -2,8 +2,6 @@
 
 . "$(dirname "$0")/aliases_overwrite.sh"
 
-# copy file content to clipboard
-alias cf="xclip -sel clip"
 # get fastest mirrors
 alias mirror="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
 
@@ -30,6 +28,7 @@ alias  pacin="aura -S"                        # install package
 alias pacsyu="aura -Syyu"                     # update all pkgs and database
 alias pacrem="aura -Rns"                      # remove package and dependencies
 alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
+alias parsua="paru -Sua" 					  # update AUR packages
 
 # python
 alias     activate="source .venv/bin/activate"
@@ -46,3 +45,7 @@ alias   docker_run="docker-compose up"
 
 # git alias
 alias g="/usr/bin/git"
+
+#clamscan
+alias  clam="sudo freshclam"
+alias  scan="clamscan -r --follow-dir-symlinks=2 --follow-file-symlinks=2 --bell"

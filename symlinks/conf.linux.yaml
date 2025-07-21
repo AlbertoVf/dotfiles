@@ -35,6 +35,6 @@
     ~/.config/Code/User: editors/code/*.json
     ~/.config/Code/User/snippets: editors/code/User/snippets
     #* TERMINALS
-    ~/.config/alacritty: terminal/alacritty
+    ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
     ~/.config/kitty: terminal/kitty/*.conf
     ~/.config/wezterm: terminal/wezterm

@@ -9,16 +9,16 @@ sxhkdrc: # shortcodes to sxhkd
   XF86AudioStop        : playerctl stop
 
   super:
-    F1     : brave
+    F1     : ${BROWSER}
     F2     : sourcegit
     F7     : virt-manager
-    F8     : thunar
-    F9     : thunderbird
+    F8     : ${FILE_MANAGER}
+    F9     : ${MAIL}
     F10    : spotube
     F11    : kodi
     a      : rofi -show drun
     b      : blueman-manager
-    e      : code
+    e      : ${EDITOR}
     f      : librewolf
     k      : keepassxc
     m      : deadbeef
@@ -26,7 +26,7 @@ sxhkdrc: # shortcodes to sxhkd
     s      : pamac-manager
     x      : ~/.config/rofi/scripts/powermenu
     less   : qalculate-gtk
-    Return : kitty
+    Return : ${TERMINAL}
     ctrl   :
       Escape : xfce4-taskmanager
       Print  : xfce4-screenshooter
@@ -67,7 +67,5 @@ rofi:
     8080 : 'Symfony'
 
   apps: # from $HOME
-    - '.bin/time/world_time'
-    - '.bin/system/cleaner'
-    - '.bin/system/update_packages'
-    - '.config/picom/picom-toogle.sh'
+    - '.bin/system/world_time'
+    - '.bin/system/picom-toogle.sh'

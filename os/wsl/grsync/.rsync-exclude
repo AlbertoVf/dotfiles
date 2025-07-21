@@ -28,6 +28,7 @@ pnpm/
 .cache/
 pipx/
 .npm/
+.pnpm-store/
 
 # Exclude files
 .ssh/
