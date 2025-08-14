@@ -4,15 +4,6 @@
 		"description": "Echo date. Print date yyyy-mm-dd hh.mm.ss",
 		"prefix": "date"
 	},
-	"Helper": {
-		"body": [
-			"##? help  : $2.",
-			"##? usage : ${TM_FILENAME} ${1:[none]}",
-			// "##? options: "
-		],
-		"description": "Print script usage",
-		"prefix": "help"
-	},
 	"X args": {
 		"body": "| xargs -I {}",
 		"description": "X args. ",
@@ -78,5 +69,10 @@
 		"body": "while [[ ${1:condition} ]]; do\n\t${0}\ndone\n",
 		"description": "A while loop by condition.",
 		"prefix": "while"
+	},
+	"for_@": {
+		"body": "for f in $@; then\n\t${0}\ndone\n",
+		"description": "All arguments passed to the script.",
+		"prefix": "@"
 	}
 }
