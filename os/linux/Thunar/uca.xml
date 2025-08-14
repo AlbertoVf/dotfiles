@@ -1,329 +1,329 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-	<action>
-		<icon>video-x-generic</icon>
-		<name>Abrir en celluloid</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1629287747170523-1</unique-id>
-		<command>$HOME/.bin/video_audio/open_video %F</command>
-		<description>Open with celluloid</description>
-		<range></range>
-		<patterns>*</patterns>
-		<directories />
-		<video-files />
-	</action>
-	<action>
-		<icon>multimedia-audio-player</icon>
-		<name>Abrir con deadbeef</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1747820379303132-4</unique-id>
-		<command>$HOME/.bin/video_audio/open_audio %f</command>
-		<description>Abrir con deadbeef</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-		<audio-files />
-	</action>
-	<action>
-		<icon>utilities-x-terminal</icon>
-		<name>Abrir en terminal</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1488955845049151-1</unique-id>
-		<command>$HOME/.bin/filesystem/open_terminal %f</command>
-		<description>Open terminal on selected directory</description>
-		<range></range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>krusader_root</icon>
-		<name>Abrir como root</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1493475601060449-3</unique-id>
-		<command>$HOME/.bin/system/open-as_root %f</command>
-		<description>Open directory as sudo</description>
-		<range></range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon></icon>
-		<name>---</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1750974520859687-1</unique-id>
-		<command>true</command>
-		<description></description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>image-x-generic</icon>
-		<name>Imagen a png</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1683970269066777-1</unique-id>
-		<command>$HOME/.bin/convert/image/to_png %n</command>
-		<description>Transform image to png</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<image-files />
-	</action>
-	<action>
-		<icon>application-pdf</icon>
-		<name>Merge PDFs</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1627148699144999-1</unique-id>
-		<command>$HOME/.bin/convert/merge_pdf %F</command>
-		<description>Merge pdf</description>
-		<range>*</range>
-		<patterns>*.pdf</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>gmrun</icon>
-		<name>Make executable</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1526670239648084-2</unique-id>
-		<command>$HOME/.bin/convert/make_executable %f</command>
-		<description>Make file executable</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<other-files />
-		<text-files />
-	</action>
-	<action>
-		<icon>run-build-install-root</icon>
-		<name>Ejecutar archivo</name>
-		<submenu></submenu>
-		<unique-id>1744922437303374-1</unique-id>
-		<command>$HOME/.bin/filesystem/run %n</command>
-		<description>Run shellscript</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>application-x-virtualbox-ova</icon>
-		<name>Extraer ova</name>
-		<submenu>Discos</submenu>
-		<unique-id>1744922704240552-2</unique-id>
-		<command>$HOME/.bin/virtual_machines/extract_ova %f</command>
-		<description>extract ova</description>
-		<range>1</range>
-		<patterns>*.ova</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>application-x-iso</icon>
-		<name>Exportar a qcow2</name>
-		<submenu>Discos</submenu>
-		<unique-id>1744922801456376-3</unique-id>
-		<command>$HOME/.bin/convert/disk/to_qcow2 %f</command>
-		<description>Convert dist to qcow2 format</description>
-		<range>*</range>
-		<patterns>*.vmdk;*.vdi</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>application-x-qemu-disk</icon>
-		<name>Convertir a vdi</name>
-		<submenu>Discos</submenu>
-		<unique-id>1747994295270222-1</unique-id>
-		<command>$HOME/.bin/convert/disk/to_vdi %f</command>
-		<description>Convertir qcow2 a vdi</description>
-		<range>*</range>
-		<patterns>*.qcow2</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>disk-quota-high</icon>
-		<name>Montar img</name>
-		<submenu>Discos</submenu>
-		<unique-id>1750247531953687-1</unique-id>
-		<command>$HOME/.bin/virtual_machines/mount_img %f</command>
-		<description>Monta un archivo .img como una unidad externa</description>
-		<range>*</range>
-		<patterns>*.img</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>draw-path</icon>
-		<name>Copy name</name>
-		<submenu>Portapapeles</submenu>
-		<unique-id>1626704690182391-1</unique-id>
-		<command>$HOME/.bin/clipboard/copy_filename %N</command>
-		<description>Copy name</description>
-		<range></range>
-		<patterns>*</patterns>
-		<directories />
-		<audio-files />
-		<image-files />
-		<other-files />
-		<text-files />
-		<video-files />
-	</action>
-	<action>
-		<icon>draw-path</icon>
-		<name>Copy file path</name>
-		<submenu>Portapapeles</submenu>
-		<unique-id>1626443329564542-1</unique-id>
-		<command>$HOME/.bin/clipboard/copy_filepath %F</command>
-		<description>Copy file path</description>
-		<range></range>
-		<patterns>*</patterns>
-		<directories />
-		<audio-files />
-		<image-files />
-		<other-files />
-		<text-files />
-		<video-files />
-	</action>
-	<action>
-		<icon>kbackup</icon>
-		<name>Pegar portapapeles</name>
-		<submenu>Portapapeles</submenu>
-		<unique-id>1747773581815662-1</unique-id>
-		<command>$HOME/.bin/clipboard/paste_clipboard %f</command>
-		<description>Pega el portapapeles en el fichero</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-		<other-files />
-		<text-files />
-	</action>
-	<action>
-		<icon>emblem-symbolic-link</icon>
-		<name>Crear enlace duro</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1748298962264060-1</unique-id>
-		<command>$HOME/.bin/system/build_hardlink %f</command>
-		<description>Crear enlace duro</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-		<other-files />
-		<text-files />
-	</action>
-	<action>
-		<icon>python</icon>
-		<name>Organizar por tipo</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1750878954778242-1</unique-id>
-		<command>python $HOME/.bin/filesystem/organize/organize_by_type %f</command>
-		<description>organizes files depending off their mime</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>payee-rename</icon>
-		<name>Renombrar segun carpeta</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1752658916126383-1</unique-id>
-		<command>python $HOME/.bin/filesystem/rename/rename_by_folder %F</command>
-		<description>Renombra ficheros segun el nombre de la carpeta</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>draw-number</icon>
-		<name>Renombrar archivos sequiencialmente</name>
-		<submenu>Archivos</submenu>
-		<unique-id>1752658916126383-1</unique-id>
-		<command>python $HOME/.bin/filesystem/rename/rename_sequential -n %F</command>
-		<description>Renombra ficheros con numeros desde 001 o con fecha</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>folder-blue-tar</icon>
-		<name>Descomprimir</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752147651579900-2</unique-id>
-		<command>$HOME/.bin/compress/decompress %F</command>
-		<description>Decompress file</description>
-		<range>*</range>
-		<patterns>*.zip;*.tar.*;*.7z</patterns>
-		<other-files />
-	</action>
-	<action>
-		<icon>folder-green-tar</icon>
-		<name>Comprimir</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752147446956931-1</unique-id>
-		<command>$HOME/.bin/compress/compress %F</command>
-		<description>Compress all into 1 file</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<audio-files />
-		<image-files />
-		<other-files />
-		<text-files />
-		<video-files />
-	</action>
-	<action>
-		<icon>folder-green-tar</icon>
-		<name>Comprimir separado</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752066781345913-1</unique-id>
-		<command>$HOME/.bin/compress/compress_separated %N</command>
-		<description>Compress into separated files</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>folder-carmine-tar</icon>
-		<name>Backup</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752172461652988-1</unique-id>
-		<command>$HOME/.bin/compress/backup %N</command>
-		<description>backup all into 1 file</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<audio-files />
-		<image-files />
-		<other-files />
-		<text-files />
-		<video-files />
-	</action>
-	<action>
-		<icon>folder-carmine-tar</icon>
-		<name>Backup separado</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752172461654988-1</unique-id>
-		<command>$HOME/.bin/compress/backup_separated %F</command>
-		<description>backup into separated files</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
-	<action>
-		<icon>folder-yellow-tar</icon>
-		<name>Archive</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752172461653988-1</unique-id>
-		<command>$HOME/.bin/compress/archive %N</command>
-		<description>Archive all in 1 file</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<audio-files />
-		<image-files />
-		<other-files />
-		<text-files />
-		<video-files />
-	</action>
-	<action>
-		<icon>folder-yellow-tar</icon>
-		<name>Archive separado</name>
-		<submenu>Archivador</submenu>
-		<unique-id>1752172461658988-1</unique-id>
-		<command>$HOME/.bin/compress/archive_separated %F</command>
-		<description>Archive into separated files</description>
-		<range>*</range>
-		<patterns>*</patterns>
-		<directories />
-	</action>
+<action>
+	<icon>video-x-generic</icon>
+	<name>Abrir en celluloid</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1629287747170523-1</unique-id>
+	<command>$HOME/.bin/video_audio/open_video %F</command>
+	<description>Open with celluloid</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-audio-player</icon>
+	<name>Abrir con deadbeef</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1747820379303132-4</unique-id>
+	<command>$HOME/.bin/video_audio/open_audio %f</command>
+	<description>Abrir con deadbeef</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+</action>
+<action>
+	<icon>utilities-x-terminal</icon>
+	<name>Abrir en terminal</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1488955845049151-1</unique-id>
+	<command>$HOME/.bin/filesystem/open_terminal %f</command>
+	<description>Open terminal on selected directory</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>krusader_root</icon>
+	<name>Abrir como root</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1493475601060449-3</unique-id>
+	<command>$HOME/.bin/system/open-as_root %f</command>
+	<description>Open directory as sudo</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>---</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1750974520859687-1</unique-id>
+	<command>true</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Imagen a png</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1683970269066777-1</unique-id>
+	<command>$HOME/.bin/convert/image/to_png %n</command>
+	<description>Transform image to png</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>application-pdf</icon>
+	<name>Merge PDFs</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1627148699144999-1</unique-id>
+	<command>$HOME/.bin/convert/merge_pdf %F</command>
+	<description>Merge pdf</description>
+	<range>*</range>
+	<patterns>*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>gmrun</icon>
+	<name>Make executable</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1526670239648084-2</unique-id>
+	<command>$HOME/.bin/convert/make_executable %f</command>
+	<description>Make file executable</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>run-build-install-root</icon>
+	<name>Ejecutar archivo</name>
+	<submenu></submenu>
+	<unique-id>1744922437303374-1</unique-id>
+	<command>$HOME/.bin/filesystem/run %n</command>
+	<description>Run shellscript</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>application-x-virtualbox-ova</icon>
+	<name>Extraer ova</name>
+	<submenu>Discos</submenu>
+	<unique-id>1744922704240552-2</unique-id>
+	<command>$HOME/.bin/virtual_machines/extract_ova %f</command>
+	<description>extract ova</description>
+	<range>1</range>
+	<patterns>*.ova</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>application-x-iso</icon>
+	<name>Exportar a qcow2</name>
+	<submenu>Discos</submenu>
+	<unique-id>1744922801456376-3</unique-id>
+	<command>$HOME/.bin/convert/disk/to_qcow2 %f</command>
+	<description>Convert dist to qcow2 format</description>
+	<range>*</range>
+	<patterns>*.vmdk;*.vdi</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>application-x-qemu-disk</icon>
+	<name>Convertir a vdi</name>
+	<submenu>Discos</submenu>
+	<unique-id>1747994295270222-1</unique-id>
+	<command>$HOME/.bin/convert/disk/to_vdi %f</command>
+	<description>Convertir qcow2 a vdi</description>
+	<range>*</range>
+	<patterns>*.qcow2</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>disk-quota-high</icon>
+	<name>Montar img</name>
+	<submenu>Discos</submenu>
+	<unique-id>1750247531953687-1</unique-id>
+	<command>$HOME/.bin/virtual_machines/mount_img %f</command>
+	<description>Monta un archivo .img como una unidad externa</description>
+	<range>*</range>
+	<patterns>*.img</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>draw-path</icon>
+	<name>Copy name</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1626704690182391-1</unique-id>
+	<command>$HOME/.bin/clipboard/copy_filename %N</command>
+	<description>Copy name</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>draw-path</icon>
+	<name>Copy file path</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1626443329564542-1</unique-id>
+	<command>$HOME/.bin/clipboard/copy_filepath %F</command>
+	<description>Copy file path</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>kbackup</icon>
+	<name>Pegar portapapeles</name>
+	<submenu>Portapapeles</submenu>
+	<unique-id>1747773581815662-1</unique-id>
+	<command>$HOME/.bin/clipboard/paste_clipboard %f</command>
+	<description>Pega el portapapeles en el fichero</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Crear enlace duro</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1748298962264060-1</unique-id>
+	<command>$HOME/.bin/system/build_hardlink %f</command>
+	<description>Crear enlace duro</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>python</icon>
+	<name>Organizar por tipo</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1750878954778242-1</unique-id>
+	<command>python $HOME/.bin/filesystem/organize/organize_by_type %f</command>
+	<description>organizes files depending off their mime</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>payee-rename</icon>
+	<name>Renombrar segun carpeta</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1752658916126383-1</unique-id>
+	<command>python $HOME/.bin/filesystem/rename/rename_by_folder %F</command>
+	<description>Renombra ficheros segun el nombre de la carpeta</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>draw-number</icon>
+	<name>Renombrar archivos sequencialmente</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1752658916126383-1</unique-id>
+	<command>python $HOME/.bin/filesystem/rename/rename_sequential -s %F</command>
+	<description>Renombra ficheros con numeros desde 001 o con fecha</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>folder-blue-tar</icon>
+	<name>Descomprimir</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752147651579900-2</unique-id>
+	<command>$HOME/.bin/compress/decompress %F</command>
+	<description>Decompress file</description>
+	<range>*</range>
+	<patterns>*.zip;*.tar.*;*.7z</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>folder-green-tar</icon>
+	<name>Comprimir</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752147446956931-1</unique-id>
+	<command>$HOME/.bin/compress/compress %F</command>
+	<description>Compress all into 1 file</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder-green-tar</icon>
+	<name>Comprimir separado</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752066781345913-1</unique-id>
+	<command>$HOME/.bin/compress/compress_separated %N</command>
+	<description>Compress into separated files</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>folder-carmine-tar</icon>
+	<name>Backup</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752172461652988-1</unique-id>
+	<command>$HOME/.bin/compress/backup %N</command>
+	<description>backup all into 1 file</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder-carmine-tar</icon>
+	<name>Backup separado</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752172461654988-1</unique-id>
+	<command>$HOME/.bin/compress/backup_separated %F</command>
+	<description>backup into separated files</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>folder-yellow-tar</icon>
+	<name>Archive</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752172461653988-1</unique-id>
+	<command>$HOME/.bin/compress/archive %N</command>
+	<description>Archive all in 1 file</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder-yellow-tar</icon>
+	<name>Archive separado</name>
+	<submenu>Archivador</submenu>
+	<unique-id>1752172461658988-1</unique-id>
+	<command>$HOME/.bin/compress/archive_separated %F</command>
+	<description>Archive into separated files</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
 </actions>

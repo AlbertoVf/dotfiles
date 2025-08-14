@@ -3,8 +3,8 @@
 export DOTFILES_PATH="$HOME/.dotfiles"
 export    DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
 
-export EDITOR="code"
-export VISUAL="code --wait"
+export EDITOR="cursor"
+export VISUAL="cursor --wait"
 
 export     TERMINAL="kitty"
 export FILE_MANAGER="thunar"

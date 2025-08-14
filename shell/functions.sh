@@ -43,3 +43,18 @@ github_origin(){
 	git remote remove origin
 	git remote add origin "$1"
 }
+
+img2pdf() {
+	if [[ $# -eq 0 ]]; then
+		echo "No se ha pasado ningún parámetro"
+	elif [[ $# -eq 1 ]]; then
+		filepath=$1
+		filename="${filepath##*/}"
+		name="${filename%.*}"
+		pdf=$name".pdf"
+	else
+		pdf="$(basename "$PWD").pdf"
+	fi
+	# command img2pdf -o "$pdf" "$@"
+	echo "Imagenes convertidas a PDF: $pdf"
+}

@@ -36,7 +36,6 @@ alias         venv="python -m venv .venv && source .venv/bin/activate"
 alias requirements="pip install -r requirements.txt"
 
 # php
-alias laravel="composer create-project laravel/laravel"
 alias artisan="php artisan"
 
 # docker
