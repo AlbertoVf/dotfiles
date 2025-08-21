@@ -1,18 +1,17 @@
-GITHUB_REPO     := "https://github.com/AlbertoVf"
+GITHUB_REPO     := `git remote get-url origin | cut -d/ -f1-4`
 CONFIG_DIR      := "$(HOME)/.config"
-DOTFILES_PATH   := "$(shell pwd)"
 BACKGROUNDS_DIR := "/usr/share/backgrounds"
 FONTS_DIR       := "$(HOME)/.local/share/fonts"
 
 apply-symlinks:
-	dot symlinks apply
+	$DOTLY_PATH/bin/dot symlinks apply
 
 clone_repos:
 	git clone "{{GITHUB_REPO}}/arco-install"  --depth 1 "arco-install"
 	git clone "{{GITHUB_REPO}}/shell-scripts"  --depth 1 "$HOME/.bin"
 
 clone_extra_repos:
-	git clone  "{{GITHUB_REPO}}/qtile.git" "{{CONFIG_DIR}}/qtile"
+	git clone  "{{GITHUB_REPO}}/qtile" "{{CONFIG_DIR}}/qtile"
 
 	git clone --depth=1 https://github.com/adi1090x/rofi.git
 	sh rofi/setup.sh
@@ -43,7 +42,7 @@ download_user_fonts:
 
 lightdm:
 	sudo mkdir -p /etc/lightdm
-	sudo install -m 644 -o root "{{DOTFILES_PATH}}/etc/lightdm-gtk-greeter.conf" /etc/lightdm/lightdm-gtk-greeter.conf
+	sudo install -m 644 -o root "$DOTFILES_PATH/etc/lightdm-gtk-greeter.conf" /etc/lightdm/lightdm-gtk-greeter.conf
 	sudo cp avatar.png /var/lib/AccountsService/icons/$USER
 	sudo  sed -i '/^Icon=/d' /var/lib/AccountsService/users/$USER
 	sudo echo "Icon=/var/lib/AccountsService/icons/$USER" >> /var/lib/AccountsService/users/$USER
@@ -51,9 +50,9 @@ lightdm:
 grub:
 	#!/bin/bash
 	sudo cp -f /etc/default/grub /etc/default/grub.bak
-	sudo install -m 644 -o root "{{DOTFILES_PATH}}/etc/grub" /etc/default/grub
+	sudo install -m 644 -o root "$DOTFILES_PATH/etc/grub" /etc/default/grub
 
-	for tarfile in {{DOTFILES_PATH}}/etc/grub-themes/*.tar.gz; do
+	for tarfile in $DOTFILES_PATH/etc/grub-themes/*.tar.gz; do
 		tar -xzf $tarfile -C /boot/grub/themes
 	done
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-export DOTFILES_PATH="$HOME/.dotfiles"
+export DOTFILES_PATH="$(xdg-user-dir DOTFILES)"
 export    DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
 
 export EDITOR="cursor"

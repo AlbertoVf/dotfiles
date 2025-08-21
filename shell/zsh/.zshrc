@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-# fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/completions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 # ZSH Ops
 source "$ZIM_HOME/init.zsh"
