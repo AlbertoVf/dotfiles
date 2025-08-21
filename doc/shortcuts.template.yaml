@@ -1,0 +1,38 @@
+# : rename to shortcuts.yaml to use
+sxhkdrc: # shortcodes to sxhkd
+  Print: flameshot gui
+  XF86AudioLowerVolume: amixer set Master 5%-
+  XF86AudioRaiseVolume: amixer set Master 5%+
+  XF86AudioMute: amixer -D pulse set Master toggle
+  XF86AudioNext: playerctl next
+  XF86AudioPlay: playerctl play-pause
+  XF86AudioPrev: playerctl previous
+  XF86AudioStop: playerctl stop
+
+  super:
+    F1: ${BROWSER}
+    F8: ${FILE_MANAGER}
+    F9: ${MAIL}
+    a: rofi -show drun
+    e: ${EDITOR}
+    x: ~/.config/rofi/scripts/powermenu
+    Return: ${TERMINAL}
+    ctrl:
+      a: ~/.config/rofi/scripts/rofi-scripts --apps
+      l: ~/.config/rofi/scripts/rofi-scripts --localhost
+      s: ~/.config/rofi/scripts/rofi-scripts --screen
+      w: ~/.config/rofi/scripts/rofi-scripts --windows
+      d: ~/.config/rofi/scripts/rofi-scripts --dotf
+      e: ~/.config/rofi/scripts/rofi-scripts --projects
+  alt:
+    Escape: xkill
+    Print: scrot 'screenshot_%Y%m%d_%H%M%S.jpg' -e 'mv $f $$(xdg-user-dir SCREENSHOTS)'
+    F1: rofi -show file-browser-extended
+
+rofi:
+  web:
+    'Lofi - synthwave radio': 'https://youtu.be/4xDzrJKXOOY'
+  ports:
+    631: 'Impresora'
+  apps: # from $HOME
+    - '.bin/system/picom-toogle'
