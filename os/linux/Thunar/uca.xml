@@ -326,4 +326,17 @@
 	<patterns>*</patterns>
 	<directories/>
 </action>
+<action>
+	<icon>scans2pdf</icon>
+	<name>Convert to pdf</name>
+	<submenu>Archivos</submenu>
+	<unique-id>1755598119598156-1</unique-id>
+	<command>$HOME/.bin/convert/text/to_pdf %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
 </actions>

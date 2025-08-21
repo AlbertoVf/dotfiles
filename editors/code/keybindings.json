@@ -13,5 +13,6 @@
 	{ "command": "hediet.vscode-drawio.export", "key": "ctrl+alt+p" },
 	{ "command": "workbench.action.terminal.toggleTerminal", "key": "ctrl+[Comma]", "when": "terminal.active" },
 	{ "command": "workbench.action.openSettings", "key": "ctrl+`" },
-	{ "command": "-github.copilot.generate", "key": "ctrl+enter", "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused" }
+	{ "command": "-github.copilot.generate", "key": "ctrl+enter", "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused" },
+	{ "key": "ctrl+e", "command": "composerMode.background" }
 ]
