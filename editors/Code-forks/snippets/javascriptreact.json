@@ -13,6 +13,6 @@
 			"\t)",
 			"}",
 			"export default ${TM_FILENAME_BASE};"
-		],
+		]
 	}
 }

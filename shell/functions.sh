@@ -41,7 +41,8 @@ start_server(){
 
 github_origin(){
 	git remote remove origin
-	git remote add origin "$1"
+	git remote add origin "https://github.com/$1"
+	git remote -v
 }
 
 img2pdf() {

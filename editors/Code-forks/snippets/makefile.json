@@ -1,6 +1,6 @@
 {
 	"Build makefile": {
-		"body": [ "var", "install", "build", "start", "test", "lint", "format", ],
+		"body": [ "var", "install", "build", "start", "test", "lint", "format" ],
 		"description": "Build makefile.",
 		"isFileTemplate": true
 	},

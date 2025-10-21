@@ -3,9 +3,9 @@
 CONFIG="$HOME/.config"
 
 function run {
-    if ! pgrep "$1"; then
-        "$@" &
-    fi
+	if ! pgrep "$1"; then
+		"$@" &
+	fi
 }
 
 sh "$HOME/.screenlayout/hdmi.sh" &

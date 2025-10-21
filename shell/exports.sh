@@ -3,6 +3,7 @@ path=(
 	"$HOME/.cargo/bin"
 	"$HOME/.local/share/pnpm"
 	"$HOME/.local/bin"
+	"$HOME/.composer/vendor/bin"
 	"/usr/local/bin"
 	"/usr/local/sbin"
 	"/bin"

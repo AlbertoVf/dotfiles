@@ -33,7 +33,7 @@
 	gpgsign = true
 [core]
 	autocrlf     = input
-	editor       = code --wait --profile GIT
+	editor       = cursor --wait
 	eol          = lf
 	filemode     = false
 	symlinks     = false
@@ -46,18 +46,22 @@
     navigate = true
     dark = true
 	side-by-side = true
+[diff]
+	tool = cursor
+[difftool "cursor"]
+	cmd = cursor --wait --diff "$LOCAL" "$REMOTE"
 [merge]
     conflictstyle = zdiff3
-    tool = code
-[mergetool "code"]
-    cmd = code --wait $MERGED
+    tool = cursor
+[mergetool "cursor"]
+    cmd = cursor --wait $MERGED
 [filter "lfs"]
 	clean    = git-lfs clean -- %f
 	process  = git-lfs filter-process
 	required = true
 	smudge   = git-lfs smudge -- %f
 [gui]
-	editor = code
+	editor = cursor
 [init]
 	defaultBranch = main
 [push]

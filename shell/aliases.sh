@@ -3,7 +3,7 @@
 . "$(dirname "$0")/aliases_overwrite.sh"
 
 # get fastest mirrors
-alias mirror="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo reflector --verbose --score 100 --fastest 10 --number 10 --save /etc/pacman.d/mirrorlist"
 
 # permissions
 alias   x="chmod +x"
@@ -24,11 +24,12 @@ alias  lt="eza -lhXT --icons --hyperlink -L2 --no-time --no-filesize --no-user"
 alias lta="lt -a"
 
 # packages alias
-alias  pacin="aura -S"                        # install package
-alias pacsyu="aura -Syyu"                     # update all pkgs and database
-alias pacrem="aura -Rns"                      # remove package and dependencies
-alias unlock="sudo rm /var/lib/pacman/db.lck" # remove pacman lock
-alias parsua="paru -Sua" 					  # update AUR packages
+alias unlock="sudo rm /var/lib/pacman/db.lck"     # remove pacman lock
+alias  pacin="aura -S"                            # install package
+alias pacsyu="aura -Syu"                          # update all pkgs and database
+alias pacrem="aura -Rsu"                          # remove package and dependencies
+alias parsua="aura -Au"                           # update AUR packages
+alias orphan="aura -Oj"
 
 # python
 alias     activate="source .venv/bin/activate"

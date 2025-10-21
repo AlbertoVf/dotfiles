@@ -22,6 +22,7 @@ Thumbs.db
 node_modules/
 venv/
 .venv/
+.git/
 
 # Cache
 pnpm/
