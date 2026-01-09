@@ -18,7 +18,7 @@ configuration {
 }
 
 * {
-	font : "MonaspiceRn Nerd Font Mono Bold 13";
+	font : "MonaspiceRn Nerd Font Bold 13";
 }
 
 textbox-prompt-colon {

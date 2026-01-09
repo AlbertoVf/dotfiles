@@ -46,9 +46,9 @@ github_origin(){
 }
 
 img2pdf() {
-	if [[ $# -eq 0 ]]; then
+	if [ $# -eq 0 ]; then
 		echo "No se ha pasado ningún parámetro"
-	elif [[ $# -eq 1 ]]; then
+	elif [ $# -eq 1 ]; then
 		filepath=$1
 		filename="${filepath##*/}"
 		name="${filename%.*}"
@@ -56,6 +56,10 @@ img2pdf() {
 	else
 		pdf="$(basename "$PWD").pdf"
 	fi
-	# command img2pdf -o "$pdf" "$@"
+	command img2pdf -o "$pdf" "$@"
 	echo "Imagenes convertidas a PDF: $pdf"
+}
+
+pico2wave(){
+	command pico2wave -l es-ES -w salida.wav "$@"
 }

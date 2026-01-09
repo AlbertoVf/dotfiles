@@ -5,7 +5,7 @@ config = {
 	-- https://wezterm.org/colorschemes/index.html
 	color_scheme                 = 'Catppuccin Frappe',
 	-- Fonts
-	font                         = wezterm.font('GeistMono Nerd Font Mono', { weight = 'Bold', italic = false }),
+	font                         = wezterm.font('GeistMono Nerd Font', { weight = 'Bold', italic = false }),
 	font_size                    = 12.5,
 	-- Mouse and url
 	default_cursor_style         = "BlinkingBar",

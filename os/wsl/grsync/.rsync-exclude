@@ -1,7 +1,6 @@
 # Trash
-.Trash-1000/
-.trash/
-Trash/
+.[Tt]rash*/
+[Tt]rash/
 
 # Crash reports and logs
 *.log
@@ -30,7 +29,10 @@ pnpm/
 pipx/
 .npm/
 .pnpm-store/
+**/*[cC]ache*/
 
 # Exclude files
 .ssh/
 Descargas/
+*.backup/
+*-backup/
