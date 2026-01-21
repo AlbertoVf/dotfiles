@@ -7,20 +7,48 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+	"base_keymap": "Cursor",
+	"git": {
+		"inline_blame": {
+			"show_commit_summary": true
+		}
+	},
+	"status_bar": {
+		"cursor_position_button": true
+	},
+	"diagnostics": {
+		"button": true
+	},
+	"search": {
+		"button": false
+	},
+	"debugger": {
+		"button": false
+	},
+	"title_bar": {
+		"show_branch_name": false,
+		"show_project_items": false,
+		"show_onboarding_banner": false,
+		"show_user_picture": false,
+		"show_sign_in": false,
+		"show_menus": true,
+		"show_branch_icon": false
+	},
+	"always_treat_brackets_as_autoclosed": true,
+	"soft_wrap": "bounded",
+	"agent_ui_font_size": 12.0,
+	"restore_on_startup": "none",
+	"icon_theme": "Symbols Icon Theme",
 	"ui_font_size": 16,
 	"buffer_font_size": 15,
-	"theme": {
-		"mode": "dark",
-		"dark": "Ayu Mirage",
-		"light": "One Dark"
-	},
+	"theme": "Ayu Mirage",
 	"ui_font_family": "MonaspiceRn Nerd Font",
 	"buffer_font_family": "MonaspiceRn Nerd Font",
 	"hard_tabs": true,
 	"buffer_line_height": { "custom": 2.1 },
 	"autosave": {
 		"after_delay": {
-			"milliseconds": 30000
+			"milliseconds": 29100
 		}
 	},
 	"cursor_blink": true,
@@ -31,11 +59,13 @@
 		"git_diff": true,
 		"search_results": true,
 		"selected_symbol": true,
-		"diagnostics": true
+		"diagnostics": "all"
 	},
 	"toolbar": {
 		"breadcrumbs": true,
-		"quick_actions": true
+		"agent_review": false,
+		"code_actions": true,
+		"quick_actions": false
 	},
 	"file_types": {
 		"csv(semicolon)": ["csv", "dat"],
@@ -45,9 +75,7 @@
 	"indent_guides": {
 		"enabled": true,
 		"line_width": 1,
-		"active_line_width": 1,
-		"coloring": "fixed",
-		"background_coloring": "disabled"
+		"active_line_width": 1
 	},
 	"inlay_hints": {
 		"enabled": false,
@@ -86,20 +114,20 @@
 			}
 		},
 		"option_as_meta": true,
-		"button": false,
-		"toolbar": {
-			"title": true
-		},
+		"button": true,
 		"working_directory": "current_project_directory"
 	},
 	"project_panel": {
+		"hide_hidden": true,
+		"entry_spacing": "standard",
+		"starts_open": false,
 		"button": true,
 		"default_width": 140,
 		"dock": "left",
 		"file_icons": true,
 		"folder_icons": true,
 		"git_status": true,
-		"indent_size": 32,
+		"indent_size": 16.0,
 		"auto_reveal_entries": true,
 		"auto_fold_dirs": true,
 		"scrollbar": {

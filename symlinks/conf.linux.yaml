@@ -10,6 +10,7 @@
 
 - link:
     #* UI
+
     ~/.config/betterlockscreen: os/linux/betterlockscreen
     ~/.config/variety/variety.conf: os/linux/variety/variety.conf
     ~/.config/fastfetch: os/wsl/fastfetch
@@ -17,24 +18,44 @@
     ~/.config/gtk-3.0/settings.ini: os/linux/gtk/settings-30.ini
     ~/.config/gtk-4.0/settings.ini: os/linux/gtk/settings-40.ini
     ~/.config/rofi/config.rasi: launchers/rofi/config.rasi
+
     #* KEYBINDINGS
+
     ~/.config/user-dirs.dirs: os/wsl/user-dirs.dirs
     ~/.config/sxhkd/sxhkdrc: os/linux/sxhkd/sxhkdrc
     ~/.config/rofi/scripts: launchers/rofi/scripts
+
     #* MANAGER
+
     ~/.config/xfce4/xfconf/xfce-perchannel-xml: os/linux/xfce4/xfconf/xfce-perchannel-xml/*.xml
     ~/.config/xfce4/helpers.rc: os/linux/xfce4/helpers.rc
     ~/.config/Thunar: os/linux/Thunar
     ~/.config/zellij: os/wsl/zellij
     ~/.config/autostart: os/linux/autostart/*.sh
+
     #* SYSTEM
+
     ~/.config/grsync/.rsync-exclude: os/wsl/grsync/.rsync-exclude
     ~/.config/gh/config.yml: git/gh/config.yml
     ~/.config/mpv: os/linux/mpv
+
     #* EDITORS
-    ~/.config/Code/User: editors/code/*.json
-    ~/.config/Code/User/snippets: editors/code/User/snippets
+
+    # ~/.config/Cursor/User            : editors/cursor/*.json
+    # ~/.config/Cursor/User/snippets   : editors/Code-forks/snippets
+    # ~/.config/Cursor/User/tasks.json : editors/Code-forks/tasks.json
+
+    # ~/.config/Code/User            : editors/Code-forks/*.json
+    # ~/.config/Code/User/snippets   : editors/Code-forks/snippets
+
+    ~/.config/VSCodium/User: editors/Code-forks/*.json
+    ~/.config/VSCodium/User/snippets: editors/Code-forks/snippets
+
+    # ~/.config/Code - OSS/User            : editors/Code-forks/*.json
+    # ~/.config/Code - OSS/User/snippets   : editors/Code-forks/snippets
+
     #* TERMINALS
+
     ~/.config/alacritty/alacritty.toml: terminal/alacritty/alacritty.toml
     ~/.config/kitty: terminal/kitty/*.conf
     ~/.config/wezterm: terminal/wezterm

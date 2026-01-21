@@ -12,21 +12,28 @@
 			"label": "Pip install",
 			"type": "process",
 			"command": ".venv/bin/pip",
-			"args": [ "install", "-r", "requirements.txt" ],
-			"problemMatcher": []
+			"args": [
+				"install",
+				"-r",
+				"requirements.txt"
+			]
 		},
 		// * MAKEFILES
 		{
 			"label": "Run Server",
 			"type": "process",
 			"command": "make",
-			"args": [ "server" ]
+			"args": [
+				"server"
+			]
 		},
 		{
 			"label": "Prettier Code",
 			"type": "process",
 			"command": "make",
-			"args": [ "format" ]
+			"args": [
+				"format"
+			]
 		}
 	]
 }

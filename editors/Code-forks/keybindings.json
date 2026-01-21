@@ -1,0 +1,25 @@
+[
+	{ "command": "workbench.action.terminal.toggleTerminal", "key": "ctrl+[Comma]", "when": "terminal.active" },
+	{ "command": "workbench.action.openSettings", "key": "ctrl+`" },
+	{ "command": "workbench.action.tasks.runTask", "key": "alt+t", "when": "textInputFocus && !editorReadonly" },
+	{ "command": "workbench.action.toggleScreencastMode", "key": "alt+f12" },
+	{ "command": "workbench.action.moveEditorToAboveGroup", "key": "ctrl+alt+up" },
+	{ "command": "workbench.action.moveEditorToBelowGroup", "key": "ctrl+alt+down" },
+
+	{ "command": "editor.action.joinLines", "key": "alt+space" },
+	{ "command": "editor.action.blockComment", "key": "ctrl+alt+7", "when": "editorTextFocus && !editorReadonly" },
+	{ "command": "editor.action.deleteLines", "key": "ctrl+shift+backspace", "when": "textInputFocus && !editorReadonly" },
+	{ "command": "editor.action.indentationToSpaces", "key": "ctrl+alt+s", "when": "textInputFocus && !editorReadonly" },
+	{ "command": "editor.action.indentationToTabs", "key": "ctrl+alt+t", "when": "textInputFocus && !editorReadonly" },
+
+	{ "command": "hediet.vscode-drawio.export", "key": "ctrl+alt+p" },
+
+	{ "command": "markdownExtended.formateTable", "key": "ctrl+alt+[Comma]", "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/" },
+	{ "command": "editor.action.formatDocument", "key": "ctrl+alt+l", "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor" },
+
+
+	{ "command": "rainbow-csv.Align", "key": "alt+a", "when": "editorLangId =~ /^csv/" },
+	{ "command": "rainbow-csv.Shrink", "key": "shift+alt+a", "when": "editorLangId =~ /^csv/" },
+
+	{ "key": "alt+l", "command": "vscode-better-align.align", "when": "editorLangId !~ '/^csv/" }
+]

@@ -1,0 +1,46 @@
+{
+	"image": {
+		"prefix": "image",
+		"description": ". ",
+		"body": [
+			"#figure(",
+			"image($1),",
+			"caption: [$2]",
+			")"
+		]
+	},
+	"table": {
+		"prefix": "table",
+		"description": ". ",
+		"body": [
+			"#figure(",
+			"table(",
+			"table.header(),",
+			"),\ncaption: [\n$2\n]",
+			")"
+		]
+	},
+	"code": {
+		"prefix": "code",
+		"description": ". ",
+		"body": [
+			"#figure(",
+			"```$2",
+			"$TM_SELECTED_TEXT",
+			"```,",
+			"caption: \"$1\"",
+			")"
+		]
+	},
+	"equation": {
+		"prefix": "equation",
+		"body": [
+			"#figure(",
+			"$ $0 $,",
+			"supplement: \"Ecuacion\",",
+			"kind: \"equation\",",
+			"caption: \"$1\"",
+			")"
+		]
+	}
+}
